@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="block parcel-details mb-g">
+                <div class="block customs-details mb-g">
                     <h4>Customs details</h4>
                     <p>Customs documents are required when sending items internationally. To create the documents
                         please enter the following details to allow your parcel to pass through customs.
@@ -154,4 +154,8 @@
 </section>
 
 {% include "modules/_login-modal.njk" %}
+{% endblock %}
+
+{% block scripts %}
+<script src='/js/app/pages/customs-details.js'></script>
 {% endblock %}
