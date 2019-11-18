@@ -1,0 +1,48 @@
+.parcel-details {
+  .d-flex {
+    .info-input {
+      width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+      display: block !important;
+      button {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+      .info-input ~ button {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.parcel-adress {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .parcel-adress-location {
+    display: flex;
+
+    .parcel-adress-edit {
+      cursor: pointer;
+      color: $blue-btn;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
+    >div {
+      font-size: 0.875rem;
+      color: $darker-gray;
+      line-height: 2em;
+
+      &:first-child{
+        padding-right: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

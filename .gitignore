@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+dist/style/style.css
+dist/style/style.css.map
+.idea

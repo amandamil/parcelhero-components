@@ -1,0 +1,38 @@
+{% extends "structure/_layout-checkout.njk" %}
+
+{% block content %}
+  <header class="header-account" id="main-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="logo-with-progress">
+            <a href="./"><img src="img/ph_logo.svg" alt="parcel-logo" class='logo-img'></a>
+            <div class="progress-tracker absolute-center">
+              <div class="completed">
+                <div><span>1</span><i class="icon-check"></i></div><span>Parcel details</span>
+              </div>
+              <div class="current">
+                <div><span>2</span><i class="icon-check"></i></div><span>Order summary</span>
+              </div>
+              <div>
+                <div><span>3</span><i class="icon-check"></i></div><span>Payment details</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-gray-light p-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <a class="btn btn-additional not-rounded disabled mb-4" href="order-payment.html">Continue to payment</a>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
