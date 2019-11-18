@@ -1,4 +1,72 @@
 .customs-details {
+  .sale-option {
+    display: none;
+
+    &#sale-option-title {
+      label > span {
+        font-size: 15px;
+        color: #999999;
+        padding-left: 5px;
+        font-weight: normal;
+      }
+    }
+  
+    &#sale-option-edit {
+      span {
+        font-size: 14px;
+        color: #5555ff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .personal-gift-option {
+    display: none;
+
+    &-text {
+      display: flex;
+      background-color: rgba(223, 238, 251, 1);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgba(97, 172, 235, 1);
+      padding: 1.4rem;
+  
+      .icon-info {
+        line-height: 1.4rem;
+        font-size: 1.2rem;
+        color: #61aceb;
+      }
+    }
+
+    &-warn {
+      background-color: rgba(249, 179, 65, 0.176470588235294);
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgba(249, 179, 65, 1);
+      padding: 1.4rem;
+
+      .info-title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+
+        .fa-exclamation-triangle {
+          line-height: 1.4rem;
+          font-size: 1.4rem;
+          color: rgba(249, 179, 65, 1);
+        }
+
+      }
+    }
+  }
+
+  #sale-option-editor {
+    width: 100%;
+    display: none;
+    padding: .625rem .75rem;
+  }
+  
   .quantity-input-block {
     span.fa-stack {
       cursor: pointer;

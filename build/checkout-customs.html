@@ -49,16 +49,30 @@
                         </div>
                         <div class="search-input">
                             <select class="form-control not-rounded dark-theme" id="export-reason">
-                                <option selected disabled>Please select a reason for export</option>
-                                <option>Sale</option>
-                                <option>Personal gift</option>
-                                <option>Other reason</option>
+                                <option value="none" selected disabled>Please select a reason for export</option>
+                                <option value="sale">Sale</option>
+                                <option value="personal-gift">Personal gift</option>
+                                <option value="other-reason">Other reason</option>
                             </select>
                         </div>
+
+                        <div class="block-title sale-option sale-option-title mt-4 mb-0">
+                            <label class="text-label">Declaration statement<span>Optional</span></label>
+                        </div>
+
+                        <p class="sale-option mb-0" id="sale-option-text">Declaration statement lorem ipsum dolor sit amet, consectetur adipiscing elit ut euismod mi consequat.</p>
+                        <p class="sale-option" id="sale-option-edit"><span>Edit</span></p>
+                        <textarea id="sale-option-editor">Declaration statement lorem ipsum dolor sit amet, consectetur adipiscing elit ut euismod mi consequat.</textarea>
                     </div>
 
                     <h5 class="header-underline mb-4">Shipment contents</h5>
                     <p>Please describe the contents and enter the value of your items below.</p>
+                    
+                    <div class="personal-gift-option mb-4">
+                        <div class="personal-gift-option-text">
+                            <i class="icon-info mr-2"></i><p class="mb-0">For gifts the maximum value you can send to <country> is £100. Exceeding this amount may incur charges at customs.</p>
+                        </div>
+                    </div>
 
                     <div class="item-box">
                         <h5 class="header-underline mb-3">Item 1</h5>
@@ -77,8 +91,6 @@
                               <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
                             </span>
                         </div>
-
-
 
                         <div class="block-title mt-4 mb-0">
                             <label class="text-label" for="product-name">Product name</label>
@@ -116,6 +128,16 @@
                             <i class="fa-plus fa"></i>
                             Add another item
                         </button>
+                    </div>
+
+                    <div class="personal-gift-option mt-3">
+                        <div class="personal-gift-option-warn">
+                            <div class="info-title">
+                                <p class="mb-0"><i class="fa fa-exclamation-triangle mr-2"></i> Total value</p>
+                                <p>£102.00</p>
+                            </div>
+                            <p class="mb-0">The total value exceeds customs limits for gifts, you may proceed with your order but you may incur extra customs charges at the destination country.</p>
+                        </div>
                     </div>
                 </div>
 
