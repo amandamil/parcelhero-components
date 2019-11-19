@@ -142,7 +142,7 @@ addItemBtn.onclick = function() {
   const itemHtml = `<div class="item-box mb-2">
     <div class="item-header">
       <h5 class="header-underline mb-3 item_title">Item ${(itemCount)}</h5>
-      <h5 class="item-tool"><i>&pound;</i>&nbsp;<span class="item-value">0.00</span><i class="fas fa-edit ml-2"></i><i class="fas fa-trash ml-2"></i></h5>
+      <h5 class="item-tool"><i>&pound;</i>&nbsp;<span class="item-value">0.00</span><i class="fas fa-edit ml-3"></i><i class="fas fa-trash ml-3"></i></h5>
     </div>
 
     <div class="item-details">
