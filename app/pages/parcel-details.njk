@@ -34,20 +34,40 @@
               <div class="block-title">
                 <h4 class="text-medium-subtitle">Parcel details</h4><i class="icon-help"></i>
               </div>
-              <label class="text-label" for="">Contents</label>
+
               <div class="d-flex mb-4">
-                <div class="search-input"><input type="text" data-data="contents" id="parcel-contents" class="form-control not-rounded dark-theme"></div>
+                <div class="search-input">
+                  <label class="text-label" for="">Contents description</label>
+                  <input type="text" data-data="contents" id="parcel-contents" class="form-control not-rounded dark-theme">
+                </div>
+
                 <button class="btn btn-success-neutral d-none"><i class="icon-check"></i>Description saved</button>
                 <button class="btn save-btn ml-md-4 mx-auto disabled" id="parcel-save">Save description</button>
               </div>
-              <label class="text-label" for="">Value</label>
-              <input type="text" id="parcel-value" value="£ " class="form-control not-rounded value-input dark-theme mb-4">
+
+              <div class="d-flex mb-g">
+                <div class="search-input">
+                  <label class="text-label" for="">Reference 1</label>
+                  <input type="text" id="parcel-reference" value="" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Reference 2 <span>Optional</span></label>
+                  <input type="text" id="parcel-reference-o" value="" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Cost centre</label>
+                  <input type="text" id="parcel-cost-centre" value="" class="form-control not-rounded dark-theme">
+                </div>
+
+                <button class="btn btn-success-neutral d-none"><i class="icon-check"></i>Cost centre saved</button>
+                <button class="btn save-btn ml-md-4 mx-auto disabled" id="parcel-save">Save cost centre</button>
+              </div>
+              
               <div class="insurance-info">
                 <h5 class="insurance-info-title"><i class="icon-shield-check"></i>You're covered for loss and damage</h5>
                 <div class="insurance-content">
                   <p class="short-info m-0">£50 free cover included.</p>
                 </div>
               </div>
+
               <div class="insurance-info">
                 <h5 class="insurance-info-title"><i class="icon-shield-check"></i>Full Cover - Recommended Option</h5>
                 <div class="insurance-content">
@@ -81,31 +101,56 @@
                   </div>
                   <div class="insurance-variants" id="insurance-types">
                     <label class="insurance-item">
-                      <input type="radio" name="hi">
+                      <input type="radio" class="insurance-radio" name="hi">
                       <span class="checkmark"></span>
                       <span class="insurance-item-title">Yes please increase my cover, I've read the <a href="#">compensation exclusion</a> list.</span>
-                      <span class="insurance-item-title-additional">Enhanced cover entitles you to claim up to the stated value if your goods are lost or damaged in transit. However in the case of damage, it does not cover:</span>
-                      <ul class="list-check list-sm">
-                        <li>Damage to any exterior packaging, such <br>as suitcase wheels or handles</li>
-                        <li>Goods not packaged in accordance with <br>our labelling and packaging criteria</li>
-                        <li>Goods on our Compensation exclusions item list</li>
-                      </ul>
-                      <div class="restrictions">
-                        <span class="restrictions-title">Prohibited items</span>
-                        <div class="restrictions-list">
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                          <i></i>
+                      
+                      <div class="checked-content">
+                        <span class="insurance-item-title-additional">Enhanced cover entitles you to claim up to the stated value if your goods are lost or damaged in transit. However in the case of damage, it does not cover:</span>
+                        <ul class="list-check list-sm">
+                          <li>Damage to any exterior packaging, such <br>as suitcase wheels or handles</li>
+                          <li>Goods not packaged in accordance with <br>our labelling and packaging criteria</li>
+                          <li>Goods on our Compensation exclusions item list</li>
+                        </ul>
+                        <div class="restrictions">
+                          <span class="restrictions-title">Prohibited items</span>
+                          <div class="restrictions-list">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                          </div>
+                          <span class="restrictions-title-additional">View all <a href="#">prohibited items</a></span>
                         </div>
-                        <span class="restrictions-title-additional">View all <a href="#">prohibited items</a></span>
                       </div>
+
                     </label>
                     <label class="insurance-item">
-                      <input type="radio" name="hi">
+                      <input type="radio" class="insurance-radio" name="hi">
                       <span class="checkmark"></span>
-                      <span class="insurance-item-title">No thanks, I accept the risk and confirm I'm not sending a <a href="#">compensation exclusion</a> item.</span>
+                      <span class="insurance-item-title unchecked-content">No thanks, I accept the risk and confirm I'm not sending a <a href="#">compensation exclusion</a> item.</span>
+                      <span class="insurance-item-title checked-content">No thanks, I accept the risk.</span>
+
+                      <div class="checked-content">
+                        <span class="insurance-item-title-additional">If your goods are damaged, you will not be covered for:</span>
+                        <ul class="list-check list-sm">
+                          <li>Damage to any exterior packaging</li>
+                          <li>Goods not packaged in accordance with our <a href="#">labelling and packaging</a> criteria</li>
+                          <li>Goods on our Compensation exclusions item list</li>
+                        </ul>
+                        <div class="restrictions">
+                          <span class="restrictions-title">Prohibited items</span>
+                          <div class="restrictions-list">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                          </div>
+                          <span class="restrictions-title-additional">These items are prohibited from being sent through any of our services. View all <a href="#">prohibited items</a></span>
+                        </div>
+                      </div>
                     </label>
                   </div>
                 </div>

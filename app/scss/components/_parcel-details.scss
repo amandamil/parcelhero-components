@@ -1,8 +1,11 @@
 .parcel-details {
   .d-flex {
+    align-items: flex-end;
+
     .info-input {
       width: 100%;
     }
+    
     @include media-breakpoint-down(sm) {
       display: block !important;
       button {
@@ -12,6 +15,30 @@
       .info-input ~ button {
         margin-top: 2rem;
       }
+    }
+
+    label {
+      span {
+        color: #999999;
+      }
+    }
+  }
+
+  #insurance-types {
+    .checked-content {
+      display: none;
+    }
+  
+    .insurance-radio:checked ~ .checked-content {
+      display: block;
+    }
+  
+    .insurance-radio:checked ~ .unchecked-content {
+      display: none;
+    }
+  
+    .insurance-item-title.checked-content {
+      font-weight: bold;
     }
   }
 }
