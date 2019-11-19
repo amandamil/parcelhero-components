@@ -75,8 +75,11 @@
                     </div>
 
                     <div id="item-box-list">
-                        <div class="item-box">
-                            <h5 class="header-underline mb-3">Item 1</h5>
+                        <div class="item-box mb-2">
+                            <div class="item-header">
+                                <h5 class="header-underline mb-3 item_title">Item 1</h5>
+                                <h5 class="item-tool"><i>&pound;</i>&nbsp;<span class="item-value">0.00</span><i class="fas fa-edit ml-3"></i><i class="fas fa-trash ml-3"></i></h5>
+                            </div>
 
                             <div class="item-details">
                                 <div class="block-title mb-0">
@@ -98,7 +101,7 @@
                                     <label class="text-label" for="product-name">Product name</label>
                                 </div>
                                 <div class="search-input">
-                                    <input type="text" name="product-name" placeholder="" class="form-control not-rounded product-name">
+                                    <input type="text" name="product-name" placeholder="" value="Item 1" class="form-control not-rounded product-name">
                                 </div>
 
                                 <div class="row mt-4">
@@ -108,7 +111,7 @@
                                         </div>
                                         <div class="search-input">
                                             <div class="input-icon">
-                                                <input type="tel" name="value-input" placeholder="" class="form-control not-rounded value-input">
+                                                <input type="number" min="0" value="0" name="value-input" placeholder="" class="form-control not-rounded value-input">
                                                 <i>&pound;</i>
                                             </div>
                                         </div>

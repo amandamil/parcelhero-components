@@ -70,15 +70,34 @@
   #item-box-list {
     .item-box {
       &.hide {
-        margin-bottom: 1rem!important;
-        
-        .header-underline {
-          margin-bottom: 0 !important;
-          padding-bottom: 0;
-          border: none;
+        .item-header {
+          display: flex;
+          justify-content: space-between;
+
+          .header-underline {
+            margin-bottom: 0 !important;
+            padding-bottom: 0;
+            border: none;
+          }
+
+          .item-tool {
+            display: block;
+            margin-bottom: 0;
+            padding-bottom: 0;
+
+            i {
+              cursor: pointer;
+            }
+          }
         }
-  
+
         .item-details {
+          display: none;
+        }
+      }
+
+      .item-header {
+        .item-tool {
           display: none;
         }
       }
@@ -88,6 +107,10 @@
           span.fa-stack {
             cursor: pointer;
           }
+        }
+
+        .value-input {
+          padding-right: 0.5rem;
         }
       }
     }

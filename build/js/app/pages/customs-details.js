@@ -91,61 +91,104 @@ function changeQuantityCount(){
 
 changeQuantityCount();
 
+function changeItemDetails() {
+  const itemBoxes = document.getElementsByClassName('item-box');
+
+  for(let itemBox of itemBoxes) {
+    const itemTitle = itemBox.querySelector('.item_title');
+    const itemValue = itemBox.querySelector('.item-value');
+
+    const productName = itemBox.querySelector('.product-name');
+    const quantityCount = itemBox.querySelector('.quantity-count');
+    const valueInput = itemBox.querySelector('.value-input');
+
+    productName.onkeyup = function() {
+      itemTitle.innerHTML = productName.value;
+    }
+
+    valueInput.onchange = function() {
+      itemValue.innerHTML = quantityCount.value * valueInput.value;
+    }
+
+    quantityCount.onchange = function() {
+      itemValue.innerHTML = quantityCount.value * valueInput.value;
+    }
+
+    const editBtn = itemBox.querySelector('.fa-edit');
+
+    editBtn.onclick = function() {
+      hideAllItemBox();
+      itemBox.classList.remove('hide');
+    }
+
+    const deleteBtn = itemBox.querySelector('.fa-trash');
+
+    deleteBtn.onclick = function() {
+      itemBox.remove();
+    }
+  }
+}
+
+changeItemDetails();
+
 const addItemBtn = document.getElementById('add-item-btn');
+let itemCount = 1;
 
 addItemBtn.onclick = function() {
   hideAllItemBox();
 
-  const itemBoxes = document.getElementsByClassName('item-box');
+  itemCount++;
 
-  const itemHtml = `<div class="item-box">
-    <h5 class="header-underline mb-3">Item ${(itemBoxes.length + 1)}</h5>
+  const itemHtml = `<div class="item-box mb-2">
+    <div class="item-header">
+      <h5 class="header-underline mb-3 item_title">Item ${(itemCount)}</h5>
+      <h5 class="item-tool"><i>&pound;</i>&nbsp;<span class="item-value">0.00</span><i class="fas fa-edit ml-2"></i><i class="fas fa-trash ml-2"></i></h5>
+    </div>
 
     <div class="item-details">
-        <div class="block-title mb-0">
-            <label class="text-label" for="quantity">Quantity</label>
-        </div>
-        <div class="search-input quantity-input-block">
-            <span class="fa-stack quantity-minus" style="vertical-align: top;">
-                <i class="fas fa-circle disabled fa-stack-2x"></i>
-                <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
-            </span>
-            <input type="tel" name="quantity" placeholder="" class="form-control not-rounded quantity-count" value="1">
-            <span class="fa-stack quantity-plus" style="vertical-align: top;">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
+      <div class="block-title mb-0">
+        <label class="text-label" for="quantity">Quantity</label>
+      </div>
+      <div class="search-input quantity-input-block">
+          <span class="fa-stack quantity-minus" style="vertical-align: top;">
+            <i class="fas fa-circle disabled fa-stack-2x"></i>
+            <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
+          </span>
+          <input type="tel" name="quantity" placeholder="" class="form-control not-rounded quantity-count" value="1">
+          <span class="fa-stack quantity-plus" style="vertical-align: top;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+          </span>
+      </div>
 
-        <div class="block-title mt-4 mb-0">
-            <label class="text-label" for="product-name">Product name</label>
-        </div>
-        <div class="search-input">
-            <input type="text" name="product-name" placeholder="" class="form-control not-rounded product-name">
-        </div>
+      <div class="block-title mt-4 mb-0">
+        <label class="text-label" for="product-name">Product name</label>
+      </div>
+      <div class="search-input">
+        <input type="text" value="Item ${(itemCount)}" name="product-name" placeholder="" class="form-control not-rounded product-name">
+      </div>
 
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="block-title mb-0">
-                    <label class="text-label" for="value-input">Value</label>
-                </div>
-                <div class="search-input">
-                    <div class="input-icon">
-                        <input type="tel" name="value-input" placeholder="" class="form-control not-rounded value-input">
-                        <i>&pound;</i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-4 mt-md-0">
-                <div class="block-title mb-0">
-                    <label class="text-label" for="tarrif-code">Tarrif code</label> <i class="icon-help"></i>
-                </div>
-                <div class="search-input">
-                    <input type="text" name="tarrif-code" placeholder="" class="form-control not-rounded tarrif-code">
-                </div>
-            </div>
-        </div>
+      <div class="row mt-4">
+          <div class="col-md-6">
+              <div class="block-title mb-0">
+                <label class="text-label" for="value-input">Value</label>
+              </div>
+              <div class="search-input">
+                  <div class="input-icon">
+                    <input type="number" min="0" value="0" name="value-input" placeholder="" class="form-control not-rounded value-input">
+                    <i>&pound;</i>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+              <div class="block-title mb-0">
+                <label class="text-label" for="tarrif-code">Tarrif code</label> <i class="icon-help"></i>
+              </div>
+              <div class="search-input">
+                <input type="text" name="tarrif-code" placeholder="" class="form-control not-rounded tarrif-code">
+              </div>
+          </div>
+      </div>
     </div>
   </div>`;
 
@@ -154,6 +197,7 @@ addItemBtn.onclick = function() {
   itemBoxList.innerHTML += itemHtml;
 
   changeQuantityCount();
+  changeItemDetails();
 }
 
 function hideAllItemBox() {
