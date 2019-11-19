@@ -66,10 +66,30 @@
     display: none;
     padding: .625rem .75rem;
   }
+
+  #item-box-list {
+    .item-box {
+      &.hide {
+        margin-bottom: 1rem!important;
+        
+        .header-underline {
+          margin-bottom: 0 !important;
+          padding-bottom: 0;
+          border: none;
+        }
   
-  .quantity-input-block {
-    span.fa-stack {
-      cursor: pointer;
+        .item-details {
+          display: none;
+        }
+      }
+  
+      .item-details {
+        .quantity-input-block {
+          span.fa-stack {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
