@@ -1,8 +1,11 @@
 .parcel-details {
   .d-flex {
+    align-items: flex-end;
+
     .info-input {
       width: 100%;
     }
+    
     @include media-breakpoint-down(sm) {
       display: block !important;
       button {
@@ -11,6 +14,12 @@
       }
       .info-input ~ button {
         margin-top: 2rem;
+      }
+    }
+
+    label {
+      span {
+        color: #999999;
       }
     }
   }
