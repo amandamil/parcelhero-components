@@ -68,6 +68,22 @@
         cursor: pointer;
         transition: all $transition ease;
 
+        .checked-content {
+          display: none;
+        }
+      
+        .insurance-radio:checked ~ .checked-content {
+          display: block;
+        }
+      
+        .insurance-radio:checked ~ .unchecked-content {
+          display: none;
+        }
+      
+        .insurance-item-title.checked-content {
+          font-weight: bold;
+        }
+
         &.checked {
           border-color: $success;
           -webkit-box-shadow: 0px 0px 0px 2px $success;

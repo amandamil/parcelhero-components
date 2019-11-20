@@ -17,10 +17,9 @@
 
       .fa-caret-down {
         color: #aaa;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         position: absolute;
         right: 1rem;
-
       }
     }
 
@@ -38,45 +37,6 @@
     label {
       span {
         color: #999999;
-      }
-    }
-  }
-
-  #insurance-types {
-    .checked-content {
-      display: none;
-    }
-  
-    .insurance-radio:checked ~ .checked-content {
-      display: block;
-    }
-  
-    .insurance-radio:checked ~ .unchecked-content {
-      display: none;
-    }
-  
-    .insurance-item-title.checked-content {
-      font-weight: bold;
-    }
-  }
-
-  #dropdown-list {
-    width: 100%; 
-    border: 1px solid grey; 
-    background: white; 
-    border: 1px solid #ced4da; 
-    margin-top: 0.4rem;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 2px 4px rgba(102,175,233,.6) !important;
-    position: absolute;
-    z-index: 100;
-
-    p {
-      padding: 0.4rem 1rem;
-      margin: 0;
-
-      &:hover {
-        background: rgba(102,175,233,.2) !important;
-
       }
     }
   }
