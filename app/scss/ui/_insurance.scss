@@ -68,16 +68,26 @@
         cursor: pointer;
         transition: all $transition ease;
 
-        .checked-content {
-          display: none;
+        div.checked-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s;
         }
       
-        .insurance-radio:checked ~ .checked-content {
-          display: block;
+        .insurance-radio:checked ~ div.checked-content {
+          max-height: 300px;
+        }
+
+        span.checked-content {
+          display: none !important;
+        }
+
+        .insurance-radio:checked ~ span.checked-content {
+          display: block !important;
         }
       
         .insurance-radio:checked ~ .unchecked-content {
-          display: none;
+          display: none !important;
         }
       
         .insurance-item-title.checked-content {
