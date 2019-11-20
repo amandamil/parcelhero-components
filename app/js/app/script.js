@@ -49,7 +49,7 @@ function searchInputs(){
     input.addEventListener("blur", function(){
       setTimeout(function(){
         inputC.classList.remove("focus");
-      }, 100);
+      }, 200);
     });
 
     input.addEventListener("input", function(e){

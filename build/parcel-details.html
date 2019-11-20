@@ -55,25 +55,36 @@
               </div>
 
               <div class="d-flex mb-g">
-                <div class="search-input">
+                <div class="details-input">
                   <label class="text-label" for="">Reference 1</label>
                   <input type="text" id="parcel-reference" value="" class="form-control not-rounded dark-theme mb-4">
 
                   <label class="text-label" for="">Reference 2 <span>Optional</span></label>
                   <input type="text" id="parcel-reference-o" value="" class="form-control not-rounded dark-theme mb-4">
 
-                  <label class="text-label" for="">Cost centre</label>
-                  <input type="text" id="parcel-cost-centre" value="" class="form-control not-rounded dark-theme">
+                  <div class="search-input">
+                    <label class="text-label" for="">Cost centre</label>
+                    <input type="text" data-data="contents" id="parcel-cost-centre" value="" class="form-control not-rounded dark-theme">
+                  </div>
                 </div>
 
                 <button class="btn btn-success-neutral d-none"><i class="icon-check"></i>Cost centre saved</button>
-                <button class="btn save-btn ml-md-4 mx-auto disabled" id="parcel-save">Save cost centre</button>
+                <button class="btn save-btn ml-md-4 mx-auto disabled" id="cost-save">Save cost centre</button>
               </div>
               
               <div class="insurance-info">
                 <h5 class="insurance-info-title"><i class="icon-shield-check"></i>You're covered for loss and damage</h5>
                 <div class="insurance-content">
-                  <p class="short-info m-0">£50 free cover included.</p>
+                  <p>To increase your cover, please enter the shipment value below.</p>
+
+                  <div class="d-flex mb-2">
+                    <div>
+                      <label class="text-label" for="">Parcel value</label>
+                      <input type="text" id="parcel-value" value="£ " class="form-control not-rounded dark-theme">
+                    </div>
+
+                    <button class="btn save-btn ml-md-4 mx-auto" id="calc-cost">Calculate cost</button>
+                  </div>
                 </div>
               </div>
 
@@ -394,6 +405,7 @@
 <script src='/js/form-anims.js'></script>
 <script src='/js/jquery.ripple.js'></script>
 <script src='/js/app/iefixes.js'></script>
+<script src='/js/app/data.js'></script>
 <script src='/js/app/script.js'></script>
 <script src='/js/app/middle-sidebar.js'></script>
 <script src='/js/app/header.js'></script>
