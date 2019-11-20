@@ -97,6 +97,7 @@ function changeItemDetails() {
   for(let itemBox of itemBoxes) {
     const itemTitle = itemBox.querySelector('.item_title');
     const itemValue = itemBox.querySelector('.item-value');
+    const itemQuantity = itemBox.querySelector('.item-quantity');
 
     const productName = itemBox.querySelector('.product-name');
     const quantityCount = itemBox.querySelector('.quantity-count');
@@ -112,6 +113,7 @@ function changeItemDetails() {
 
     quantityCount.onchange = function() {
       itemValue.innerHTML = quantityCount.value * valueInput.value;
+      itemQuantity.innerHTML = quantityCount.value;
     }
 
     const editBtn = itemBox.querySelector('.fa-edit');
@@ -121,7 +123,7 @@ function changeItemDetails() {
       itemBox.classList.remove('hide');
     }
 
-    const deleteBtn = itemBox.querySelector('.fa-trash');
+    const deleteBtn = itemBox.querySelector('.delete-item');
 
     deleteBtn.onclick = function() {
       itemBox.remove();
@@ -141,8 +143,12 @@ addItemBtn.onclick = function() {
 
   const itemHtml = `<div class="item-box mb-2">
     <div class="item-header">
-      <h5 class="header-underline mb-3 item_title">Item ${(itemCount)}</h5>
-      <h5 class="item-tool"><i>&pound;</i>&nbsp;<span class="item-value">0.00</span><i class="fas fa-edit ml-3"></i><i class="fas fa-trash ml-3"></i></h5>
+      <h5 class="header-underline mb-3 item_title"><span class="item-quantity mr-2">1</span>Item ${(itemCount)}</h5>
+      <h5 class="item-tool">
+        <i>&pound;</i>&nbsp;<span class="item-value">0.00</span>
+        <i class="fas fa-edit ml-3"></i>
+        <img src="img/icon_delete_bin.svg" class="delete-item ml-2" alt="American Express">
+      </h5>
     </div>
 
     <div class="item-details">

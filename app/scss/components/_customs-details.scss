@@ -78,14 +78,24 @@
             margin-bottom: 0 !important;
             padding-bottom: 0;
             border: none;
+
+            .item-quantity {
+              display: inline-block;
+            }
           }
 
           .item-tool {
             display: block;
             margin-bottom: 0;
             padding-bottom: 0;
+            display: flex;
+            align-items: center;
 
             i {
+              cursor: pointer;
+            }
+
+            .delete-item {
               cursor: pointer;
             }
           }
@@ -97,6 +107,12 @@
       }
 
       .item-header {
+        .header-underline {
+          .item-quantity {
+            display: none;
+          }
+        }
+
         .item-tool {
           display: none;
         }
