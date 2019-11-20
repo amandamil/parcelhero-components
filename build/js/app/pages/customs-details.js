@@ -116,7 +116,7 @@ function changeItemDetails() {
       itemQuantity.innerHTML = quantityCount.value;
     }
 
-    const editBtn = itemBox.querySelector('.fa-edit');
+    const editBtn = itemBox.querySelector('.edit-item');
 
     editBtn.onclick = function() {
       hideAllItemBox();
@@ -146,7 +146,7 @@ addItemBtn.onclick = function() {
       <h5 class="header-underline mb-3 item_title"><span class="item-quantity mr-2">1</span>Item ${(itemCount)}</h5>
       <h5 class="item-tool">
         <i>&pound;</i>&nbsp;<span class="item-value">0.00</span>
-        <i class="fas fa-edit ml-3"></i>
+        <img src="img/icon_edit_pencil.svg" class="edit-item ml-2" alt="Edit Icon">
         <img src="img/icon_delete_bin.svg" class="delete-item ml-2" alt="American Express">
       </h5>
     </div>
