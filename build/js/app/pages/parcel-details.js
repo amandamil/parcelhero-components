@@ -15,6 +15,12 @@ var parcelFindDAdressResult = document.querySelector("#parcel-find-dadress-resul
 var parcelCollectionSerachNew = document.querySelector("#parcel-collection-serach-new");
 var parcelCollectionSerachNewD = document.querySelector("#parcel-collection-serach-new-d");
 
+const changeCollectionDateBtn = document.querySelector("#change-collection-date");
+const cancelChooseCollectionDateBtn = document.querySelector("#cancel-choose-collection-date");
+const parcelChangeCollectionDate = document.querySelector("#parcel-change-collection-date");
+const parcelChooseCollectionDate = document.querySelector("#parcel-choose-collection-date");
+const setCollectionDateBtn = document.querySelector("#set-collection-date");
+
 $(function () {
   init();
   events();
@@ -35,6 +41,8 @@ function events() {
   });
 
   parcelCollectionSerachNew.addEventListener('click', function () {
+    console.log(parcelFindAdressResult);
+
     parcelFindAdressResult.classList.add("d-none");
     parcelFindAdress.classList.remove("d-none");
   });
@@ -65,4 +73,19 @@ function events() {
       parcelVatIns.innerHTML = '';
     }
   });
+
+  changeCollectionDateBtn.addEventListener("click", function() {
+    parcelChangeCollectionDate.classList.add("d-none");
+    parcelChooseCollectionDate.classList.remove("d-none");
+  });
+
+  cancelChooseCollectionDateBtn.addEventListener("click", function() {
+    parcelChangeCollectionDate.classList.remove("d-none");
+    parcelChooseCollectionDate.classList.add("d-none");
+  });
+
+  setCollectionDateBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+  })
 }
+

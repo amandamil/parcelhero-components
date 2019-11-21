@@ -1,6 +1,8 @@
 .parcel-details {
   .d-flex {
-    align-items: flex-end;
+    &.parcel-details-inputs {
+      align-items: flex-end;
+    }
 
     .info-input {
       width: 100%;
@@ -40,34 +42,101 @@
       }
     }
   }
-}
 
-.parcel-adress {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  .parcel-adress-location {
+  .parcel-adress {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    .parcel-adress-edit {
-      cursor: pointer;
-      color: $blue-btn;
+    .parcel-adress-location {
+      display: flex;
 
-      &:hover{
-        text-decoration: underline;
+      .parcel-adress-edit {
+        cursor: pointer;
+        color: $blue-btn;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
+      >div {
+        font-size: 0.875rem;
+        color: $darker-gray;
+        line-height: 2em;
+
+        &:first-child{
+          padding-right: 1rem;
+          font-size: 1.2rem;
+        }
       }
     }
+  }
 
-    >div {
-      font-size: 0.875rem;
-      color: $darker-gray;
-      line-height: 2em;
+  #parcel-find-adress-adv {   
+    #parcel-choose-collection-date {
+      .d-flex.box-header {
+        justify-content: space-between;
+      }
+      
+      .collection-calender {
+        justify-content: space-between;
 
-      &:first-child{
-        padding-right: 1rem;
-        font-size: 1.2rem;
+        .day-box {
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+          font-size: 12px;
+          text-align: center;
+          margin: 0 0.5rem;
+          border-radius: 0.25rem;
+          flex: 1 15%;
+          cursor: pointer;
+
+          @media (max-width: 767.98px) {
+            margin: 0;
+            margin-bottom: 0.5rem;
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          p {
+            margin: 0;
+          }
+
+          p.day-num {
+            font-size: 1.5rem;
+          }
+
+          .fa-caret-up {
+            display: none;
+          }
+
+          &.active {
+            border: 2px solid #398f14;
+            position: relative;
+            color: #398f14;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              width: 0;
+              height: 0;
+              border-left: 0.7rem solid transparent;
+              border-right: 0.7rem solid transparent;
+              border-bottom: 0.5rem solid #398f14;
+              left: 50%;
+              margin-left: -0.5rem;
+            }
+          }
+        }
       }
     }
   }
