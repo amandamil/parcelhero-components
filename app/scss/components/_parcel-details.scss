@@ -138,6 +138,31 @@
           }
         }
       }
+
+      .collection-time {
+        justify-content: flex-start;
+
+        .time-box {
+          flex: 0 1 120px;
+          text-align: center;
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+          margin: 0 0.5rem;
+
+          @media (max-width: 767.98px) {
+            margin: 0;
+            margin-bottom: 0.5rem;
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+  
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 }
