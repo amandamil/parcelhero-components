@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ParcelHero</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/compare-style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
@@ -12,24 +12,29 @@
 <header class="header-account" id="main-header">
     <div class="header-account-sidebar header-home-sidebar">
         <div class="container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-lg-6"></div>
-                    <div class="col-md-8 col-lg-6 d-flex justify-content-end pr-md-5">
-                        <div class="header-profile-section">
-                            <button class="btn btn-blue-adv btn-sm not-rounded">Track parcel <i class="ml-2 fas fa-chevron-right"></i></button>
-                            <button class="top-menu-btn m-0" id="top-menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                            <div class="profile-section-wrap z-1" id="profile-section-wrap">
-                                <div class="profile-section-shop">
-                                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                                </div>
-                                <div class="profile-account-name">
-                                    <i class="fas fa-user"></i>
-                                    Hello Joe !
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </div>
+            <div class="row">
+                <div class="col-lg-12 pr-sm-0 d-flex justify-content-end">
+                    <div class="header-profile-section pt-3 pb-3">
+
+                        <div class="profile-section-wrap z-1 mr-0" id="profile-section-wrap">
+                            <div class="profile-section-shop pr-2">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                                My Basket (0)
+                            </div>
+
+                            <div class="profile-account-name pl-2 pr-2">
+                                <i class="fas fa-user"></i>
+                                My Account
+                            </div>
+
+                            <div class="profile-account-register pl-2">
+                                Register
                             </div>
                         </div>
+
+                        <a href="#" class="tracking-link" title="Tracking">Tracking</a>
+
+                        <button class="top-menu-btn m-0" id="top-menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
@@ -38,11 +43,31 @@
 
     <div class="container">
         <div class="row pt-0 pb-0 pr-0">
-            <div class="col-md-6 pr-0 pr-md-2">
-                <a href="./"><img src="/img/parcel_compare_logo_text.svg" alt="parcel-logo" class="logo-img"></a>
+            <div class="col-md-6 pr-0 pr-md-2 pl-sm-0">
+                <a href="./"><img src="/img/parcelcompare/parcel_compare_logo_text.svg" alt="parcel-logo" class="logo-img"></a>
             </div>
-            <div class="col-md-6 pr-0 pr-md-2">
-
+            <div class="col-md-6 pr-0 pr-md-2 d-flex justify-content-end align-items-center pt-g">
+                <nav class="navbar navbar-expand-lg z-1000">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown pl-4">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-4">
+                            <a class="nav-link disabled" href="#">Support</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -54,76 +79,73 @@
 <!-- HOME CONTENT -->
 
 <div class="home-content">
-    <section class="parcel-widget-full home-widget-full pt-4 pb-4 mb-md-3 mb-sm-2 mb-1">
+    <section class="parcel-widget-full home-widget-full pt-4 pb-4">
         <div class="container">
-        <h2 class="text-title-white">Compare quotes in seconds - great delivery at great prices</h2>
-             <div class="details-list theme-blue">
-                 <div class="row mb-0">
-                     <div class="col-md-10 mr-0 pr-0">
-                         <div class="border-bottom widget-input-container d-flex pb-3">
-                             <div class="info-input-group">
-                                 <div class="info-input">
-                                     <div class="info-input-label">
-                                         Collection Country
-                                     </div>
-                                     <div class="dropdown bootstrap-select form-control custom-picker">
-                                         <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
-                                             <option value="Great Britain">Great Britain</option>
-                                             <option value="France">France</option>
-                                             <option value="Germany">Germany</option>
-                                         </select>
-                                    </div>
-                                 </div>
-                                 <div class="info-input">
-                                     <div class="info-input-label">
-                                         Postcode
-                                     </div>
-                                     <div class="input-group">
-                                         <input type="text" class="form-control" tabindex="1" placeholder="Postcode">
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="info-input-group">
-                                 <div class="info-input">
-                                     <div class="info-input-label">
-                                         Delivery Country
-                                     </div>
-                                     <div class="dropdown bootstrap-select form-control custom-picker">
-                                         <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
-                                             <option value="Great Britain">Great Britain</option>
-                                             <option value="France">France</option>
-                                             <option value="Germany">Germany</option>
-                                         </select>
-                                     </div>
-                                 </div>
-                                 <div class="info-input">
-                                     <div class="info-input-label">
-                                         Postcode
-                                     </div>
-                                     <div class="input-group">
-                                         <input type="text" class="form-control" tabindex="1" placeholder="Postcode">
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="info-input-group">
-                                 <div class="info-input">
-                                     <div class="info-input-label">
-                                         No. of Parcels
-                                     </div>
-                                     <div class="input-group">
-                                         <input type="text" class="form-control" tabindex="1" placeholder="No. of parcels">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-md-2 d-flex align-items-start justify-content-center w-100">
-                         <button class="btn not-rounded btn-orange mt-4 pl-0 pr-0 w-100">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
-                     </div>
-                 </div>
-             </div>
+            <div class="row">
+                <div class="col-12 px-sm-0">
+                    <h2 class="text-title-white">Compare quotes in seconds - great delivery at great prices</h2>
+                </div>
+
+                <div class="col-md-10 mr-0 pr-0 px-sm-0">
+                    <div class="widget-input-container d-flex pb-3">
+                        <div class="info-input-group">
+                            <div class="info-input">
+                                <div class="info-input-label">
+                                    Collection Country
+                                </div>
+
+                                <div class="dropdown bootstrap-select form-control custom-picker">
+                                    <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
+                                        <option value="Great Britain">Great Britain</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Postcode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group">
+                            <div class="info-input">
+                                <div class="info-input-label">
+                                    Delivery Country
+                                </div>
+                                <div class="dropdown bootstrap-select form-control custom-picker">
+                                    <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
+                                        <option value="Great Britain">Great Britain</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Postcode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group">
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="No. of parcels">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 d-flex align-items-start justify-content-center w-100">
+                    <button class="btn not-rounded btn-orange mt-4 pl-0 pr-0 w-100 quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                </div>
+            </div>
         </div>
-        </section>
+    </section>
 
     <section class="middle-account-sidebar">
         <div class="container">
