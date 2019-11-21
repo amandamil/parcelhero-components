@@ -1,10 +1,24 @@
 footer {
   display: block;
-  background-color: $blue-light-2;
-  font-size: 0.875rem;
+  background-color: #4d69b1;
+  font-size: 0.95rem;
   padding-top: 3em;
   color: $white;
   line-height: 1.8em;
+
+  .logo-img {
+    width: 369px;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  .footer-menu {
+    li {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
 
   .leftLinks {
     display: inline-block;
@@ -28,10 +42,6 @@ footer {
 
       a {
         color: $white;
-
-        &:hover {
-          text-decoration: underline !important;
-        }
       }
 
       a:visited,
@@ -42,17 +52,32 @@ footer {
   }
 
   .footer-copyright {
-    background-color: $blue-light-3;
+    background-color: #55bb6c;
     color: $white;
     font-size: 0.9em;
     min-height: 40px;
-    padding: 2em 0;
+    padding: 1.5em 0;
     margin-top: 3em;
 
-    ul {
-      li {
+    a {
+      color: #FFF;
+      width: 36px;
+      height: 36px;
+      margin-left: 7px;
+      line-height: 36px;
+      text-align: center;
+      background: #bbc0c6;
+      display: inline-block;
+      transition: all .5s ease;
+
+      i {
+        font-size: 26px;
+        line-height: 38px;
         display: inline-block;
-        margin-left: 10px;
+      }
+
+      &:hover {
+        background: #3C5A98;
       }
     }
   }
