@@ -54,12 +54,12 @@ header {
     color: #fff;
     display: flex;
     flex-direction: row;
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       display: none;
       top: 0;
       right: 0;
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       background: $cover;
       position: absolute !important;
       padding: 20px;
@@ -83,13 +83,23 @@ header {
     color: $white;
     border: none;
     background-color: transparent;
+    color: #4d69b1;
+    height: 36px;
+    padding: 0 15px;
+    line-height: 36px;
+    position: absolute;
+    background: #fff;
+    margin-right: 1rem;
+    border-radius: 5px;
+
     i {
       margin-right: 10px;
       color: $black;
       display: block;
       margin: 0 auto;
+      line-height: 36px;
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       display: block;
     }
     &:focus {
