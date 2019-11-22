@@ -39,7 +39,7 @@
         }
       }
 
-      .quantity-plus {
+      .fa-stack {
         height: calc(1.5em + 1rem + 2px);
         align-items: center;
         display: flex;
@@ -50,6 +50,10 @@
         }
   
         .fa-plus {
+          color: #55bb6c;
+        }
+
+        .fa-minus {
           color: #55bb6c;
         }
       }

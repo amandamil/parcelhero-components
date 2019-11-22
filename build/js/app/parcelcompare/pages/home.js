@@ -88,6 +88,7 @@ deleteSavedTableData();
 
 const quoteBtn = document.getElementById('quote-btn');
 const ParcelNoInput = document.getElementById('parcel-no-input');
+const dropDownRow = document.getElementById('add-rows');
 
 quoteBtn.addEventListener('click', function () {
     $("#dropdown-row").collapse('show');
@@ -96,3 +97,95 @@ quoteBtn.addEventListener('click', function () {
 ParcelNoInput.addEventListener('focus', function () {
     $("#dropdown-row").collapse('show');
 })
+
+const addRowBtn = document.getElementById('add-row-btn');
+
+
+addRowBtn.addEventListener('click', function () {
+    const node = document.createElement("div");  
+
+    node.classList.add('col-md-9');
+    node.classList.add('mr-0');
+    node.classList.add('pr-0');
+    node.classList.add('px-sm-0');
+
+    node.innerHTML = `<div class="widget-input-container d-flex pb-3">
+        <div class="info-input-group">
+            <div class="info-input">
+                <div class="info-input-label">
+                    Quantity
+                </div>
+
+                <div class="dropdown bootstrap-select form-control custom-picker">
+                    <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-input-group mt-2 mt-md-0">
+            <div class="info-input">
+                <div class="input-group">
+                    <input type="text" class="form-control" tabindex="1" placeholder="Weight">
+                </div>
+                <button class="btn not-rounded unit-btn">kg</button>
+            </div>
+        </div>
+
+        <div class="info-input-group mt-2 mt-md-0">
+            <div class="info-input">
+                <div class="input-group">
+                    <input type="text" class="form-control" tabindex="1" placeholder="Length">
+                </div>
+                <button class="btn not-rounded unit-btn">cm</button>
+            </div>
+        </div>
+
+        <div class="info-input-group mt-2 mt-md-0">
+            <div class="info-input">
+                <div class="input-group">
+                    <input type="text" class="form-control" tabindex="1" placeholder="Width">
+                </div>
+                <button class="btn not-rounded unit-btn">cm</button>
+            </div>
+        </div>
+
+        <div class="info-input-group mt-2 mt-md-0">
+            <div class="info-input">
+                <div class="input-group">
+                    <input type="text" class="form-control" tabindex="1" placeholder="Height">
+                </div>
+                <button class="btn not-rounded unit-btn">cm</button>
+            </div>
+        </div>
+
+        <div class="info-input-group mt-2 mt-md-0">
+            <div class="info-input">
+                <span class="fa-stack del-row">
+                    <i class="fas fa-circle disabled fa-stack-2x"></i>
+                    <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+        </div>
+    </div>`;
+
+
+    dropDownRow.appendChild(node);
+
+    detailList();
+
+    const delRow = node.querySelector('.del-row');
+
+    delRow.addEventListener('click', function () {
+        node.remove();
+    })
+});
