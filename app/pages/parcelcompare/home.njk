@@ -7,7 +7,7 @@
 <div class="home-content">
     <section class="parcel-widget-full home-widget-full pt-4 pb-4">
         <div class="container">
-            <div class="row">
+            <div class="row first-row">
                 <div class="col-12 px-sm-0">
                     <h2 class="text-title-white">Compare quotes in seconds - great delivery at great prices</h2>
                 </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="info-input-group">
+                        <div class="info-input-group mt-2 mt-md-0">
                             <div class="info-input">
                                 <div class="info-input-label">
                                     Delivery Country
@@ -56,10 +56,10 @@
                             </div>
                         </div>
 
-                        <div class="info-input-group">
+                        <div class="info-input-group mt-4 mt-md-0">
                             <div class="info-input">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" tabindex="1" placeholder="No. of parcels">
+                                    <input type="text" class="form-control" tabindex="1" id="parcel-no-input" placeholder="No. of parcels">
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,78 @@
                 </div>
 
                 <div class="col-md-2 d-flex align-items-start justify-content-center w-100">
-                    <button class="btn not-rounded btn-orange mt-4 pl-0 pr-0 w-100 quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                    <button class="btn not-rounded btn-orange mt-4 pl-0 pr-0 w-100 quote-btn" id="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="row mt-4 pt-3 border-top collapse" id="dropdown-row">
+                <div class="col-12 px-sm-0 mt-2">
+                    <h4 class="text-title-white mb-2">Enter parcel size and weight:</h4>
+                </div>
+
+                <div class="col-md-9 mr-0 pr-0 px-sm-0">
+                    <div class="widget-input-container d-flex pb-3">
+                        <div class="info-input-group">
+                            <div class="info-input">
+                                <div class="info-input-label">
+                                    Collection Country
+                                </div>
+
+                                <div class="dropdown bootstrap-select form-control custom-picker">
+                                    <select class="form-control custom-picker" data-live-search="true" data-size="5" data-style="select-light" tabindex="-98">
+                                        <option value="Great Britain">Great Britain</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group mt-2 mt-md-0">
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Weight">
+                                </div>
+                                <button class="btn not-rounded unit-btn">kg</button>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group mt-2 mt-md-0">
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Length">
+                                </div>
+                                <button class="btn not-rounded unit-btn">cm</button>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group mt-2 mt-md-0">
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Width">
+                                </div>
+                                <button class="btn not-rounded unit-btn">cm</button>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group mt-2 mt-md-0">
+                            <div class="info-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" tabindex="1" placeholder="Height">
+                                </div>
+                                <button class="btn not-rounded unit-btn">cm</button>
+                            </div>
+                        </div>
+
+                        <div class="info-input-group mt-2 mt-md-0">
+                            <div class="info-input">
+                                <span class="fa-stack quantity-plus">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2051,5 +2122,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src='/js/app/pages/home.js'></script>
+<script src='/js/app/parcelcompare/pages/home.js'></script>
 {% endblock %}
