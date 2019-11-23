@@ -203,11 +203,15 @@
                   <input type="text" name="collection-company" class="form-control w-50 w-md-100 not-rounded dark-theme">
                 </div>
 
-                <div class="mb-4" id="parcel-change-collection-date">
+                <div id="parcel-change-collection-date">
                   Collection scheduled for <strong>Tue, 14 July between 9am to 5pm</strong> <span class="link-primary-spec" id="change-collection-date">Change</span>
                 </div>
 
-                <div class="mb-4 d-none" id="parcel-choose-collection-date">
+                <div class="mt-2 d-none" id="save-collection-date">
+                  <i class="icon-info mr-2"></i>Based on the new collection date you have selected, the revised delivery date is 24th July.
+                </div>
+
+                <div class="mt-4 d-none" id="parcel-choose-collection-date">
                   <div class="d-flex box-header">
                     <strong>Choose a collection date</strong> <span class="link-primary-spec" id="cancel-choose-collection-date">Cancel</span>
                   </div>
@@ -252,7 +256,7 @@
                   </div>
 
                   <div class="d-flex collection-time">
-                    <div class="time-box">
+                    <div class="time-box active">
                       9am - 6pm
                     </div>
 
@@ -261,10 +265,10 @@
                     </div>
                   </div>
                   
-                  <button class="btn btn-blue-adv not-rounded mt-3 pr-5 pl-5 mb-3 pt-2 pb-2 btn-sm" id="set-collection-date">SET COLLECTION DATE</button>
+                  <button class="btn btn-blue-adv not-rounded mt-4 pr-5 pl-5 mb-3 pt-2 pb-2 btn-sm" id="set-collection-date">SET COLLECTION DATE</button>
                 </div>
 
-                <div class="link-icon-primary-spec pb-4" data-toggle="collapse" data-target="#collapseInstr" aria-expanded="false" aria-controls="collapseInstr">
+                <div class="link-icon-primary-spec pb-4 mt-4" data-toggle="collapse" data-target="#collapseInstr" aria-expanded="false" aria-controls="collapseInstr">
                   <i class="toggle-icon-show fas fa-minus-circle"></i><i class="toggle-icon-hide fas fa-plus-circle"></i> Add collection instructions
                 </div>
                 <div class="collapse" id="collapseInstr">

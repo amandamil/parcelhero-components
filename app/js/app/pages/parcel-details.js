@@ -20,6 +20,10 @@ const cancelChooseCollectionDateBtn = document.querySelector("#cancel-choose-col
 const parcelChangeCollectionDate = document.querySelector("#parcel-change-collection-date");
 const parcelChooseCollectionDate = document.querySelector("#parcel-choose-collection-date");
 const setCollectionDateBtn = document.querySelector("#set-collection-date");
+const saveCollectionDate = document.querySelector("#save-collection-date");
+
+const dayBoxes = document.querySelectorAll(".day-box");
+const timeBoxes = document.querySelectorAll(".time-box");
 
 $(function () {
   init();
@@ -77,15 +81,39 @@ function events() {
   changeCollectionDateBtn.addEventListener("click", function() {
     parcelChangeCollectionDate.classList.add("d-none");
     parcelChooseCollectionDate.classList.remove("d-none");
+    saveCollectionDate.classList.add("d-none");
   });
 
   cancelChooseCollectionDateBtn.addEventListener("click", function() {
     parcelChangeCollectionDate.classList.remove("d-none");
     parcelChooseCollectionDate.classList.add("d-none");
+    saveCollectionDate.classList.add("d-none");
   });
 
   setCollectionDateBtn.addEventListener("click", function(e) {
     e.preventDefault();
-  })
-}
 
+    parcelChangeCollectionDate.classList.remove("d-none");
+    parcelChooseCollectionDate.classList.add("d-none");
+    saveCollectionDate.classList.remove("d-none");
+  })
+
+  dayBoxes.forEach(function(dayBox){
+    dayBox.addEventListener('click', function () {
+      const activeDayBox = document.querySelector(".day-box.active");
+      activeDayBox.classList.remove('active');
+  
+      dayBox.classList.add('active');
+    });
+  });
+  
+  timeBoxes.forEach(function(timeBox){
+    timeBox.addEventListener('click', function () {
+      const activeTimeBox = document.querySelector(".time-box.active");
+      activeTimeBox.classList.remove('active');
+  
+      timeBox.classList.add('active');
+    });
+  });
+  
+}
