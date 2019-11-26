@@ -39,6 +39,7 @@ function searchInputs(){
     var hide = document.querySelector(input.dataset.hide);
     var target = document.querySelector(input.dataset.target);
     var targetAdv = document.querySelector(input.dataset.adv);
+    var targetCustom = document.querySelector(input.dataset.custom);
     var resultContainer = document.createElement("ul");
     inputC.appendChild(resultContainer);
 
@@ -49,6 +50,9 @@ function searchInputs(){
     input.addEventListener("blur", function(){
       setTimeout(function(){
         inputC.classList.remove("focus");
+
+        // const listElement = inputC.querySelector("ul");
+        // listElement.innerHTML = "";
       }, 200);
     });
 
@@ -79,8 +83,13 @@ function searchInputs(){
           custom.innerHTML = "Or, enter address manually";
           custom.classList.add("search-input-footer");
           notifi.classList.add("search-input-notifi");
-          custom.setAttribute("id", "add-custom-adress");
+          custom.classList.add("add-custom-adress");
           resultContainer.appendChild(notifi);
+
+          custom.addEventListener("click", function(){
+            hide.classList.add("d-none");
+            targetCustom.classList.remove("d-none");
+          });
         }
 
         result.forEach(function(item, i){

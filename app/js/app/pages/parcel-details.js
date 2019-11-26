@@ -10,8 +10,12 @@ var parcelShipingVat = document.querySelector("#parcel-shiping-vat");
 var parcelShipingTotal = document.querySelector("#parcel-shiping-total");
 var parcelFindAdress = document.querySelector("#parcel-find-adress");
 var parcelFindAdressResult = document.querySelector("#parcel-find-adress-result");
+var parcelFindAdressAdvResult = document.querySelector("#parcel-find-adress-adv");
+
 var parcelFindDAdress = document.querySelector("#parcel-find-dadress");
 var parcelFindDAdressResult = document.querySelector("#parcel-find-dadress-result");
+var parcelFindDAdressAvdResult = document.querySelector("#parcel-find-dadress-adv");
+
 var parcelCollectionSerachNew = document.querySelector("#parcel-collection-serach-new");
 var parcelCollectionSerachNewD = document.querySelector("#parcel-collection-serach-new-d");
 
@@ -25,6 +29,8 @@ const saveCollectionDate = document.querySelector("#save-collection-date");
 const dayBoxes = document.querySelectorAll(".day-box");
 const timeBoxes = document.querySelectorAll(".time-box");
 
+const customAddressItems = document.querySelectorAll(".add-custom-address");
+
 $(function () {
   init();
   events();
@@ -35,7 +41,6 @@ function init() {
 }
 
 function events() {
-
   saveButton.addEventListener('click', function () {
     modalOpen("#modal-sign-in");
   });
@@ -45,14 +50,14 @@ function events() {
   });
 
   parcelCollectionSerachNew.addEventListener('click', function () {
-    console.log(parcelFindAdressResult);
-
     parcelFindAdressResult.classList.add("d-none");
+    parcelFindAdressAdvResult.classList.add("d-none");
     parcelFindAdress.classList.remove("d-none");
   });
 
   parcelCollectionSerachNewD.addEventListener('click', function () {
     parcelFindDAdressResult.classList.add("d-none");
+    parcelFindDAdressAvdResult.classList.add("d-none");
     parcelFindDAdress.classList.remove("d-none");
   });
 
@@ -115,5 +120,57 @@ function events() {
       timeBox.classList.add('active');
     });
   });
+
+  customAddressItems.forEach(function(customAddress){
+    customAddress.innerHTML = `<div class="mt-g mb-4">
+        <label class="text-label" for="">Zip code / Postcode</label>
+        <input type="text" name="custom-zipcode" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-4">
+        <label class="text-label" for="">Company <span class="op-05">Optional</span></label>
+        <input type="text" name="custom-company" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-4">
+        <label class="text-label" for="">Address</label>
+        <input type="text" name="custom-address" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-4">
+        <label class="text-label" for="">Address 2 <span class="op-05">Optional</span></label>
+        <input type="text" name="custom-address-o" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-4">
+        <label class="text-label" for="">Town / City</label>
+        <input type="text" name="custom-town" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-4">
+        <label class="text-label" for="">State</label>
+        <input type="text" name="custom-state" class="form-control w-50 w-md-100 not-rounded dark-theme">
+      </div>
+
+      <div class="mt-4 mb-2">
+        <label class="text-label" for="">Country</label>
+        <div class="d-flex justify-content-between">
+          <p>United State</p> <span class="link-primary-spec change-custom-country">Change</span>
+        </div>
+      </div>
+
+      <div class="mt-2 mb-4">
+        <span class="link-primary-spec find-address">Find an address</span>
+      </div>`;
+
+    const backFindAddress = customAddress.querySelector(".find-address");
   
+    backFindAddress.addEventListener('click', function () {
+      const parentElement = customAddress.parentElement;
+      const parcelFindAddress = parentElement.querySelector(".parcel-find-address");
+  
+      customAddress.classList.add("d-none");
+      parcelFindAddress.classList.remove("d-none");
+    });
+  });
 }
