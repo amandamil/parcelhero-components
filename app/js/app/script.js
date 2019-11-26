@@ -79,7 +79,7 @@ function searchInputs(){
           custom.innerHTML = "Or, enter address manually";
           custom.classList.add("search-input-footer");
           notifi.classList.add("search-input-notifi");
-          custom.setAttribute("id", "add-cuatom-adress");
+          custom.setAttribute("id", "add-custom-adress");
           resultContainer.appendChild(notifi);
         }
 
