@@ -31,6 +31,12 @@ const timeBoxes = document.querySelectorAll(".time-box");
 
 const customAddressItems = document.querySelectorAll(".add-custom-address");
 
+const parcelEditCollectionAddress = document.querySelector("#parcel-edit-collection-adress");
+const parcelEditDeliveryAddress = document.querySelector("#parcel-edit-collection-dadress");
+
+const parcelAddCollectionAddress = document.querySelector("#parcel-add-collection-address");
+const parcelAddDeliveryAddress = document.querySelector("#parcel-add-delivery-address");
+
 $(function () {
   init();
   events();
@@ -155,7 +161,7 @@ function events() {
       <div class="mt-4 mb-2">
         <label class="text-label" for="">Country</label>
         <div class="d-flex justify-content-between">
-          <p>United State</p> <span class="link-primary-spec change-custom-country">Change</span>
+          <p class="custom-country">United State</p> <span class="link-primary-spec change-custom-country">Change</span>
         </div>
       </div>
 
@@ -172,5 +178,37 @@ function events() {
       customAddress.classList.add("d-none");
       parcelFindAddress.classList.remove("d-none");
     });
+  });
+
+  parcelEditCollectionAddress.addEventListener('click', function () {
+    parcelAddCollectionAddress.classList.remove("d-none");
+    parcelFindAdressResult.classList.add("d-none");
+    parcelFindAdressAdvResult.classList.add("d-none");
+
+    const resultAddress = parcelFindAdressResult.querySelector("[data-result=adress]").innerHTML;
+    const resultName = parcelFindAdressResult.querySelector("[data-result=name]").innerHTML;
+    const resultPostcode = parcelFindAdressResult.querySelector("[data-result=postCode]").innerHTML;
+    const resultCountry = parcelFindAdressResult.querySelector("[data-result=country]").innerHTML;
+
+    parcelAddCollectionAddress.querySelector("[name=custom-zipcode]").value = resultPostcode;
+    parcelAddCollectionAddress.querySelector("[name=custom-address]").value = resultAddress;
+    parcelAddCollectionAddress.querySelector("[name=custom-company]").value = resultName;
+    parcelAddCollectionAddress.querySelector(".custom-country").value = resultCountry;
+  });
+
+  parcelEditDeliveryAddress.addEventListener('click', function () {
+    parcelAddDeliveryAddress.classList.remove("d-none");
+    parcelFindDAdressResult.classList.add("d-none");
+    parcelFindDAdressAvdResult.classList.add("d-none");
+
+    const resultAddress = parcelFindDAdressResult.querySelector("[data-result=adress]").innerHTML;
+    const resultName = parcelFindDAdressResult.querySelector("[data-result=name]").innerHTML;
+    const resultPostcode = parcelFindDAdressResult.querySelector("[data-result=postCode]").innerHTML;
+    const resultCountry = parcelFindDAdressResult.querySelector("[data-result=country]").innerHTML;
+
+    parcelAddDeliveryAddress.querySelector("[name=custom-zipcode]").value = resultPostcode;
+    parcelAddDeliveryAddress.querySelector("[name=custom-address]").value = resultAddress;
+    parcelAddDeliveryAddress.querySelector("[name=custom-company]").value = resultName;
+    parcelAddDeliveryAddress.querySelector(".custom-country").value = resultCountry;
   });
 }
