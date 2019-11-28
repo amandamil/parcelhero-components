@@ -4,7 +4,7 @@ $(function () {
   selectControl();
   initMaterialUI();
   tables();
-  searchInputs();
+  // searchInputs();
   insurance();
 
   if($('.datepicker').length) {
@@ -29,104 +29,104 @@ function insurance(){
   });
 }
 
-function searchInputs(){
-  var inputs = document.querySelectorAll(".search-input");
+// function searchInputs(){
+//   var inputs = document.querySelectorAll(".search-input");
 
-  inputs.forEach(function(inputC){
-    var input = inputC.querySelector("input");
-    var dataSet = input.dataset.data;
-    var type = input.dataset.type;
-    var hide = document.querySelector(input.dataset.hide);
-    var target = document.querySelector(input.dataset.target);
-    var targetAdv = document.querySelector(input.dataset.adv);
-    var targetCustom = document.querySelector(input.dataset.custom);
-    var resultContainer = document.createElement("ul");
-    inputC.appendChild(resultContainer);
+//   inputs.forEach(function(inputC){
+//     var input = inputC.querySelector("input");
+//     var dataSet = input.dataset.data;
+//     var type = input.dataset.type;
+//     var hide = document.querySelector(input.dataset.hide);
+//     var target = document.querySelector(input.dataset.target);
+//     var targetAdv = document.querySelector(input.dataset.adv);
+//     var targetCustom = document.querySelector(input.dataset.custom);
+//     var resultContainer = document.createElement("ul");
+//     inputC.appendChild(resultContainer);
 
-    input.addEventListener("focus", function(){
-      inputC.classList.add("focus");
-    });
+//     input.addEventListener("focus", function(){
+//       inputC.classList.add("focus");
+//     });
 
-    input.addEventListener("blur", function(){
-      setTimeout(function(){
-        inputC.classList.remove("focus");
+//     input.addEventListener("blur", function(){
+//       setTimeout(function(){
+//         inputC.classList.remove("focus");
 
-        // const listElement = inputC.querySelector("ul");
-        // listElement.innerHTML = "";
-      }, 200);
-    });
+//         // const listElement = inputC.querySelector("ul");
+//         // listElement.innerHTML = "";
+//       }, 200);
+//     });
 
-    input.addEventListener("input", function(e){
+//     input.addEventListener("input", function(e){
 
-      var lis = resultContainer.querySelectorAll("li");
-      var divs = resultContainer.querySelectorAll("div");
+//       var lis = resultContainer.querySelectorAll("li");
+//       var divs = resultContainer.querySelectorAll("div");
 
-      if (lis) lis.forEach(function(li){
-        li.remove();
-      });
+//       if (lis) lis.forEach(function(li){
+//         li.remove();
+//       });
 
-      if (divs) divs.forEach(function(div){
-        div.remove();
-      });
+//       if (divs) divs.forEach(function(div){
+//         div.remove();
+//       });
 
-      var result = search(data[dataSet], e.target.value, type === "advanced");
+//       var result = search(data[dataSet], e.target.value, type === "advanced");
 
-      if(result) {
+//       if(result) {
 
-        var cont = document.createElement("div");
-        cont.classList.add("search-input-overflow");
+//         var cont = document.createElement("div");
+//         cont.classList.add("search-input-overflow");
 
-        if(type === "advanced") {
-          var notifi = document.createElement("div");
-          var custom = document.createElement("div");
-          notifi.innerHTML = "Keep typing to show more results";
-          custom.innerHTML = "Or, enter address manually";
-          custom.classList.add("search-input-footer");
-          notifi.classList.add("search-input-notifi");
-          custom.classList.add("add-custom-adress");
-          resultContainer.appendChild(notifi);
+//         if(type === "advanced") {
+//           var notifi = document.createElement("div");
+//           var custom = document.createElement("div");
+//           notifi.innerHTML = "Keep typing to show more results";
+//           custom.innerHTML = "Or, enter address manually";
+//           custom.classList.add("search-input-footer");
+//           notifi.classList.add("search-input-notifi");
+//           custom.classList.add("add-custom-adress");
+//           resultContainer.appendChild(notifi);
 
-          custom.addEventListener("click", function(){
-            hide.classList.add("d-none");
-            targetCustom.classList.remove("d-none");
-          });
-        }
+//           custom.addEventListener("click", function(){
+//             hide.classList.add("d-none");
+//             targetCustom.classList.remove("d-none");
+//           });
+//         }
 
-        result.forEach(function(item, i){
-          var li = document.createElement("li");
+//         result.forEach(function(item, i){
+//           var li = document.createElement("li");
  
-          if(type === "advanced") {
-            li.innerHTML = "<div>"+item.adress+"</div><div>"+item.name+" "+item.postCode+"</div>";
-          }else{
-            li.innerHTML = item.name;
-          }
+//           if(type === "advanced") {
+//             li.innerHTML = "<div>"+item.adress+"</div><div>"+item.name+" "+item.postCode+"</div>";
+//           }else{
+//             li.innerHTML = item.name;
+//           }
           
-          li.addEventListener("click", function(){
-            if(type === "advanced") {
-              input.value = item.adress;
-              hide.classList.add("d-none");
-              target.classList.remove("d-none");
-              targetAdv.classList.remove("d-none");
+//           li.addEventListener("click", function(){
+//             if(type === "advanced") {
+//               input.value = item.adress;
+//               hide.classList.add("d-none");
+//               target.classList.remove("d-none");
+//               targetAdv.classList.remove("d-none");
 
-              for (elm in item) {
-                var res = target.querySelector("[data-result="+elm+"]");
-                if(res) res.innerHTML = item[elm];
-              }
+//               for (elm in item) {
+//                 var res = target.querySelector("[data-result="+elm+"]");
+//                 if(res) res.innerHTML = item[elm];
+//               }
 
-            }else {
-              input.value = item.name;
-            };
-          });
+//             }else {
+//               input.value = item.name;
+//             };
+//           });
   
-          cont.appendChild(li);
-          resultContainer.appendChild(cont);
-        });
+//           cont.appendChild(li);
+//           resultContainer.appendChild(cont);
+//         });
 
-        if(type === "advanced") resultContainer.appendChild(custom);
-      }
-    });
-  });
-}
+//         if(type === "advanced") resultContainer.appendChild(custom);
+//       }
+//     });
+//   });
+// }
 
 function search (array, value, adv=false){
   if(value.length > 0) {

@@ -1,0 +1,3 @@
+
+
+const searchInputManager = new SearchInputManager();
