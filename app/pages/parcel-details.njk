@@ -1,4 +1,4 @@
-{% extends "structure/_layout-checkout.njk" %}
+{% extends "structure/parcel-hero/_layout-checkout.njk" %}
 
 {% block content %}
 
@@ -401,7 +401,7 @@
           </div>
           <button class="btn btn-block-blue mb-3" id="parcel-login"><i class="icon-login"></i> Book faster: Log in</button>
 
-          {% include "modules/_service-information.njk" %}
+          {% include "modules/parcel-hero/_service-information.njk" %}
 
           <button class="btn btn-block-blue mb-3"><i class="icon-live-chat"></i>Live help</button>
         </div>
@@ -409,10 +409,10 @@
     </div>
   </section>
 
-{% include "modules/_login-modal.njk" %}
+{% include "modules/parcel-hero/_login-modal.njk" %}
 
 {% endblock %}
 
 {% block scripts %}
-<script src='/js/app/pages/parcel-details.js'></script>
+<script src='/js/parcel-hero/pages/parcel-details.js'></script>
 {% endblock %}
