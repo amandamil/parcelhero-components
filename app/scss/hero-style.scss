@@ -1,0 +1,67 @@
+@import "parcel-hero/ui/variables";
+@import "parcel-hero/ui/mixins";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-select/sass/bootstrap-select";
+@import "../../node_modules/flatpickr/dist/flatpickr.css";
+$fa-font-path: "../fonts";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid";
+
+@import "parcel-hero/vendor/form-anims.css";
+@import "parcel-hero/vendor/ripple.css";
+
+
+/*** Styles For Components ***/
+@import "parcel-hero/ui/global";
+@import "parcel-hero/ui/fonts";
+@import "parcel-hero/ui/bootstrap";
+@import "parcel-hero/ui/buttons";
+@import "parcel-hero/ui/inputs";
+@import "parcel-hero/ui/selects";
+@import "parcel-hero/ui/checkbox";
+@import "parcel-hero/ui/texts";
+@import "parcel-hero/ui/table";
+@import "parcel-hero/ui/widgets";
+@import "parcel-hero/ui/blocks";
+@import "parcel-hero/ui/search-input";
+@import "parcel-hero/ui/elements";
+@import "parcel-hero/ui/insurance";
+@import "parcel-hero/ui/quantity-input";
+@import "parcel-hero/components/content";
+@import "parcel-hero/components/modal";
+@import "parcel-hero/components/filters";
+@import "parcel-hero/components/header";
+@import "parcel-hero/components/top-bar";
+@import "parcel-hero/components/map";
+@import "parcel-hero/components/banner";
+@import "parcel-hero/components/footer";
+@import "parcel-hero/components/collection";
+@import "parcel-hero/components/service";
+@import "parcel-hero/components/service-information";
+@import "parcel-hero/components/book-now";
+@import "parcel-hero/components/parcel";
+@import 'parcel-hero/components/search-shipment';
+@import 'parcel-hero/components/account-footer';
+@import 'parcel-hero/components/first-time-widget';
+@import 'parcel-hero/components/wallet-amount-widget';
+@import 'parcel-hero/components/no-search';
+@import 'parcel-hero/components/search-interactive';
+@import 'parcel-hero/components/ebilling';
+@import 'parcel-hero/components/customs';
+@import "parcel-hero/components/shipments";
+@import "parcel-hero/components/middle-sidebar";
+@import "parcel-hero/components/progress-tracker";
+@import "parcel-hero/components/sign-in";
+@import "parcel-hero/components/socials";
+@import "parcel-hero/components/boxes";
+
+
+/*** Styles For Pages ***/
+@import "parcel-hero/pages/account";
+@import "parcel-hero/pages/parcel-details";
+@import "parcel-hero/pages/customs-details";
+@import "parcel-hero/pages/home";
+@import 'parcel-hero/pages/settings';
