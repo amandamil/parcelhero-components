@@ -26,6 +26,10 @@ const parcelChangeCollectionDate = document.querySelector("#parcel-change-collec
 const parcelChooseCollectionDate = document.querySelector("#parcel-choose-collection-date");
 const setCollectionDateBtn = document.querySelector("#set-collection-date");
 const saveCollectionDate = document.querySelector("#save-collection-date");
+const termsAgree = document.querySelector("#terms-agree");
+const parcelFormSubmit = document.querySelector("#parcel-form-submit");
+const parcelContinueOrder = document.querySelector("#parcel-continue-order");
+
 
 function init() {
   parcelContents.value ? saveButton.classList.remove("disabled") : saveButton.classList.add("disabled");
@@ -39,6 +43,18 @@ saveButton.addEventListener('click', function () {
 
 loginButton.addEventListener('click', function () {
   modalOpen("#modal-sign-in");
+});
+
+termsAgree.addEventListener('change', function () {
+  termsAgree.checked ? parcelFormSubmit.classList.remove("disabled") : parcelFormSubmit.classList.add("disabled")
+});
+
+parcelFormSubmit.addEventListener('click', function () {
+  modalOpen("#modal-adress-confirm");
+});
+
+parcelContinueOrder.addEventListener('click', function () {
+  modalClose("#modal-adress-confirm");
 });
 
 parcelCollectionSerachNew.addEventListener('click', function () {
@@ -75,19 +91,19 @@ parcelValue.addEventListener("input", function (item) {
   }
 });
 
-changeCollectionDateBtn.addEventListener("click", function() {
+changeCollectionDateBtn.addEventListener("click", function () {
   parcelChangeCollectionDate.classList.add("d-none");
   parcelChooseCollectionDate.classList.remove("d-none");
   saveCollectionDate.classList.add("d-none");
 });
 
-cancelChooseCollectionDateBtn.addEventListener("click", function() {
+cancelChooseCollectionDateBtn.addEventListener("click", function () {
   parcelChangeCollectionDate.classList.remove("d-none");
   parcelChooseCollectionDate.classList.add("d-none");
   saveCollectionDate.classList.add("d-none");
 });
 
-setCollectionDateBtn.addEventListener("click", function(e) {
+setCollectionDateBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   parcelChangeCollectionDate.classList.remove("d-none");
@@ -103,32 +119,69 @@ setCollectionDateBtn.addEventListener("click", function(e) {
 const collectionAddressSearchModule = searchInputManager.getById('parcel-collection-address');
 const deliveryAddressSearchModule = searchInputManager.getById('parcel-collection-daddress');
 
-const chooseItemAction = function() {
+const chooseItemActionDelivery = function (item) {
   const parentElement = this.searchContainer.parentElement.parentElement;
-  const parcelFindAddress = parentElement.querySelector(".d-none");
-  parcelFindAddress.classList.remove("d-none");
+
+  parcelFindDAdressResult.classList.remove("d-none");
+  parcelFindDAdressAvdResult.classList.remove("d-none");
+
+  this.inputElement.value = item.name;
+
+  for (elm in item) {
+    let res = parentElement.querySelector("[data-result=" + elm + "]");
+    if (res) res.innerHTML = item[elm];
+  }
 }
 
-const inputManuallyAction = function() {
+const chooseItemActionCollection = function (item) {
+  const parentElement = this.searchContainer.parentElement.parentElement;
+  const saveCollectionDate = parentElement.querySelector("#save-collection-date");
+
+  parcelFindAdressResult.classList.remove("d-none");
+  parcelFindAdressAdvResult.classList.remove("d-none");
+  saveCollectionDate.classList.remove("d-none");
+  parcelChooseCollectionDate.classList.remove("d-none");
+
+  this.inputElement.value = item.name;
+
+  for (elm in item) {
+    let res = parentElement.querySelector("[data-result=" + elm + "]");
+    if (res) res.innerHTML = item[elm];
+  }
+}
+
+const inputManuallyCollectionAction = function () {
   const parentElement = this.searchContainer.parentElement.parentElement;
   const parcelFindAddress = parentElement.querySelector(".add-custom-address");
   parcelFindAddress.classList.remove("d-none");
+  parcelFindAdressResult.classList.add("d-none");
+  parcelFindAdressAdvResult.classList.add("d-none");
+  saveCollectionDate.classList.add("d-none");
+  parcelChooseCollectionDate.classList.add("d-none");
+}
+
+const inputManuallyDeliveryAction = function () {
+  const parentElement = this.searchContainer.parentElement.parentElement;
+  const parcelFindAddress = parentElement.querySelector(".add-custom-address");
+  parcelFindAddress.classList.remove("d-none");
+  parcelFindDAdressResult.classList.add("d-none");
+  parcelFindDAdressAvdResult.classList.add("d-none");
 }
 
 collectionAddressSearchModule.initActions({
-  chooseItemAction: chooseItemAction.bind(collectionAddressSearchModule),
-  inputManuallyAction: inputManuallyAction.bind(collectionAddressSearchModule)
+  chooseItemAction: chooseItemActionCollection.bind(collectionAddressSearchModule),
+  inputManuallyAction: inputManuallyCollectionAction.bind(collectionAddressSearchModule)
 })
 
 deliveryAddressSearchModule.initActions({
-  chooseItemAction: chooseItemAction.bind(deliveryAddressSearchModule),
-  inputManuallyAction: inputManuallyAction.bind(deliveryAddressSearchModule)
+  chooseItemAction: chooseItemActionDelivery.bind(deliveryAddressSearchModule),
+  inputManuallyAction: inputManuallyDeliveryAction.bind(deliveryAddressSearchModule)
 })
 
 /*** Collection Scheduled States ***/
 
 const dayBoxes = document.querySelectorAll(".day-box");
-dayBoxes.forEach(function(dayBox){
+dayBoxes.forEach(function (dayBox) {
   dayBox.addEventListener('click', function () {
     const activeDayBox = document.querySelector(".day-box.active");
     activeDayBox.classList.remove('active');
@@ -138,7 +191,7 @@ dayBoxes.forEach(function(dayBox){
 });
 
 const timeBoxes = document.querySelectorAll(".time-box");
-timeBoxes.forEach(function(timeBox){
+timeBoxes.forEach(function (timeBox) {
   timeBox.addEventListener('click', function () {
     const activeTimeBox = document.querySelector(".time-box.active");
     activeTimeBox.classList.remove('active');
@@ -151,7 +204,7 @@ timeBoxes.forEach(function(timeBox){
 
 const customAddressItems = document.querySelectorAll(".add-custom-address");
 
-customAddressItems.forEach(function(customAddress){
+customAddressItems.forEach(function (customAddress) {
   customAddress.innerHTML = `<div class="mt-g mb-4">
       <label class="text-label" for="">Zip code / Postcode</label>
       <input type="text" name="custom-zipcode" class="form-control w-50 w-md-100 not-rounded dark-theme">
@@ -189,11 +242,13 @@ customAddressItems.forEach(function(customAddress){
       </div>
     </div>
 
-    <div class="mt-2 mb-4">
+    <div class="d-flex justify-content-between mt-2 mb-4">
       <span class="link-primary-spec find-address">Find an address</span>
+      <span class="link-primary-spec save-address">Save</span>
     </div>`;
 
   const backFindAddress = customAddress.querySelector(".find-address");
+  const saveAddress = customAddress.querySelector(".save-address");
 
   backFindAddress.addEventListener('click', function () {
     const parentElement = customAddress.parentElement;
@@ -201,6 +256,26 @@ customAddressItems.forEach(function(customAddress){
 
     customAddress.classList.add("d-none");
     parcelFindAddress.classList.remove("d-none");
+  });
+
+  saveAddress.addEventListener('click', function () {
+    const parentElement = customAddress.parentElement;
+    const parcelFindAddress = parentElement.querySelector(".parcel-find-address");
+
+    if (parentElement.querySelector("#parcel-find-adress-result")) parentElement.querySelector("#parcel-find-adress-result").classList.remove("d-none");
+    if (parentElement.querySelector("#parcel-find-adress-adv")) parentElement.querySelector("#parcel-find-adress-adv").classList.remove("d-none");
+    if (parentElement.querySelector("#save-collection-date")) parentElement.querySelector("#save-collection-date").classList.remove("d-none");
+    if (parentElement.querySelector("#parcel-choose-collection-date")) parentElement.querySelector("#parcel-choose-collection-date").classList.remove("d-none");
+
+    if (parentElement.querySelector("#parcel-find-dadress-result")) parentElement.querySelector("#parcel-find-dadress-result").classList.remove("d-none");
+    if (parentElement.querySelector("#parcel-find-dadress-adv")) parentElement.querySelector("#parcel-find-dadress-adv").classList.remove("d-none");
+
+    customAddress.classList.add("d-none");
+    parcelFindAddress.classList.remove("d-none");
+
+    parentElement.querySelector(".parcel-find-address")
+
+
   });
 });
 

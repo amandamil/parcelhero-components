@@ -96,8 +96,9 @@ h5 {
   }
 }
 
-.text-medium {
-  font-size: 0.875rem;
+.text-medium-m {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .section-title {
@@ -175,11 +176,18 @@ h5 {
   font-weight: 400;
 }
 
+.text-medium {
+  font-size: 0.875rem;
+}
+
 .text-lighter {
   color: $darker-gray;
 }
 
 .text-medium-subtitle {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 0;
   font-weight: 500;
 }
 

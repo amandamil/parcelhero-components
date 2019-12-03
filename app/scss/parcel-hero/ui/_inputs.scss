@@ -144,9 +144,25 @@ input, textarea {
   outline: none;
   display: inline-block;
   vertical-align: middle;
+
   &.no-label {
     margin-bottom: 0;
   }
+
+  &.theme-black {
+    .element-static-label {
+      color: $dark;
+      font-weight: 400;
+      .element-style-wrap {
+        background: transparent !important;
+      }
+      &.element-active .element-style-wrap {
+        border-color: $dark !important;
+        background: $dark !important;
+      }
+    }
+  }
+
   .element-style-wrap {
     width: 22px;
     height: 22px;
@@ -304,3 +320,52 @@ input, textarea {
   }
 }
 
+.radio-secondary {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  
+  input:checked {
+    &{
+      border: 2px solid $green-active;
+    }  
+  }
+  
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:checked ~ .checkmark {
+      border: 2px solid $green-active;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background: $green-active;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+  .checkmark {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all $transition ease;
+  }  
+}

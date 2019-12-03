@@ -6,11 +6,31 @@ $(function () {
   tables();
   // searchInputs();
   insurance();
+  groupRadio();
 
   if($('.datepicker').length) {
     $('.datepicker').flatpickr();
   }
 });
+
+function groupRadio(){
+  let radios = document.querySelectorAll(".group-radio");
+
+  radios.forEach((radio)=>{
+    let radioItems = radio.querySelectorAll(".group-radio-item");
+
+    radioItems.forEach((radioItem)=>{
+      radioItem.addEventListener("click", ()=>{
+        radioItems.forEach((radioItem)=>{
+          radioItem.classList.remove("active");
+          radioItem.querySelector("input[type=radio]").checked = false;
+        })
+        radioItem.querySelector("input[type=radio]").checked = true;
+        radioItem.classList.add("active");
+      });
+    });
+  });
+}
 
 function insurance(){
   var insurances = document.querySelectorAll(".insurance-item");

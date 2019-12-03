@@ -1,14 +1,14 @@
 
 
 const SearchInputModule = function(searchContainer) {
-  const inputElement = searchContainer.querySelector("input");
-  this.inputElementId = inputElement.id;
+  this.inputElement = searchContainer.querySelector("input");
+  this.inputElementId = this.inputElement.id;
 
   this.searchContainer = searchContainer;
 
   let eventActions = {
     inputManuallyAction: function() {},
-    chooseItemAction: function(item) { inputElement.value = item.name },
+    chooseItemAction: (item) => {this.inputElement.value = item.name},
     resetAction: function() {},
     hideSearchInputByChoose: false
   };
@@ -20,28 +20,27 @@ const SearchInputModule = function(searchContainer) {
   }
 
   this.resetSearch = function() {
-    inputElement.value = '';
+    this.inputElement.value = '';
     searchResultContainer.innerHTML = '';
-
     eventActions.resetAction();
   }
 
   const searchResultContainer = document.createElement("ul");
   searchContainer.appendChild(searchResultContainer);
 
-  inputElement.addEventListener("focus", function() {
+  this.inputElement.addEventListener("focus", function() {
     searchContainer.classList.add("focus");
   });
 
-  inputElement.addEventListener("blur", function() {
+  this.inputElement.addEventListener("blur", function() {
     setTimeout(function(){
       searchContainer.classList.remove("focus");
     }, 200);
   });
 
-  inputElement.addEventListener("input", function(e){ 
-    const searchData = inputElement.dataset.data;
-    const searchType = inputElement.dataset.type;
+  this.inputElement.addEventListener("input", (e) => { 
+    const searchData = this.inputElement.dataset.data;
+    const searchType = this.inputElement.dataset.type;
 
     searchResultContainer.innerHTML = '';
 
@@ -73,7 +72,7 @@ const SearchInputModule = function(searchContainer) {
         }else{
           li.innerHTML = item.name;
         }
-        
+
         li.addEventListener("click", eventActions.chooseItemAction.bind(null, item));
 
         cont.appendChild(li);

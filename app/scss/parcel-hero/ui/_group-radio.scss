@@ -1,0 +1,150 @@
+.group-radio {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+
+  img {
+    width: 40%;
+  }
+
+  i {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+  }
+
+  .group-radio-img {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .group-radio-item {
+    width: calc(50% - 15px);
+    border: 2px solid $gray;
+    cursor: pointer;
+    transition: border $transition ease;
+
+    .group-radio-title {
+      background-color: $gray;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      font-size: 1rem;
+      padding: 10px 0;
+      color: $dark;
+      font-weight: 500;
+      transition: all $transition ease;
+
+      >span {
+        margin: 0 10px;
+      }
+
+      *{
+        margin: 0;
+      }
+    }
+    .group-radio-content {
+      position: relative;
+      padding: 20px;
+      color: $darker-gray;
+      transition: background-color $transition ease;
+    }
+
+    &:hover {
+      border: 2px solid $primary;
+
+      .group-radio-title {
+        background-color:$primary;
+        color: $white;
+      }
+      .group-radio-content {
+        background-color:rgba($primary, 0.05);
+      }
+
+      .radio-secondary {
+        .checkmark {
+          border-color: $white;
+        }
+        input {
+          &:checked ~ .checkmark {
+            border: 2px solid $green-active;
+            &:before {
+              background: $green-active;
+            }
+          }
+        }
+      }
+    }
+
+    &.active{
+      border: 2px solid $green-active;
+
+      .group-radio-title {
+        background-color: $green-active;
+        color: $white;
+      }
+
+      .radio-secondary {
+        .checkmark {
+          border-color: $white;
+        }
+        input {
+          &:checked ~ .checkmark {
+            border: 2px solid $white;
+            &:before {
+              background: $white;
+            }
+          }
+        }
+      }
+
+      &:hover{
+        border: 2px solid $green-active;
+        .group-radio-title {
+          background-color: $green-active;
+        }
+
+        .group-radio-content {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+
+    .group-radio-item {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.group-description {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+
+  >div {
+    width: calc(50% - 15px);
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    >div{
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
