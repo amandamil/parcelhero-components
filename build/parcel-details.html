@@ -433,7 +433,7 @@
             <div class="element-group theme-black no-label mr-2">
               <label class="element-static-label">
                 <input type="checkbox" name="terms-agree" id="terms-agree" class="element-input" data-materialize />
-                I have read and agree to the  <a href="#">Prohibited items</a> and  <a href="#">Compensation exclusions</a> list
+                I have read and agree to the <a href="#">Prohibited items</a> and <a href="#">Compensation exclusions</a> list
               </label>
             </div>
           </div>
@@ -538,7 +538,117 @@
                 <h4 class="text-medium-subtitle mb-4">Address suggestion</h4>
                 <div>The entered delivery address does not seem to match post records. Please see our suggestion below.</div>
                 <div class="text-danger mb-4">Please note, an invalid address may incur additional costs and cause delays to your shipment.</div>
-                <div class="btn btn-additional not-rounded" id="parcel-continue-order">Continue to order summary</div>
+            </div>
+            <div class="group-description mb-2">
+                <div class="text-left text-sub-regular">Recommended address</div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-sub-regular">Original address</span>
+                    <span class="link-primary-spec" id="change-delivery-adress">change</span>
+                </div>
+            </div>
+            <div class="group-radio simple mb-4">
+                <div class="group-radio-item active">
+                    <div class="group-radio-content d-flex">
+                        <div class="mr-3">
+                            <div class="radio-secondary">
+                                <input type="radio" value="0" name="delivery-adress" checked>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <div>24 Hudson Pl</div>
+                            <div><strong>Hempstead</strong></div>
+                            <div>New York</div>
+                            <div>11550-6214</div>
+                            <div>United States</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-radio-item">
+                    <div class="group-radio-content d-flex">
+                        <div class="mr-3">
+                            <div class="radio-secondary">
+                                <input type="radio" value="0" name="delivery-adress">
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <div>24 Hudson Pl</div>
+                            <div class="text-danger">Queens</div>
+                            <div>New York</div>
+                            <div>11550-6214</div>
+                            <div>United States</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn btn-additional not-rounded" id="parcel-continue-order">Continue to order summary</div>
+        </div>
+    </div>
+</div>
+<div class="modal-custom small not-rounded" id="modal-change-country">
+    <div class="modal-custom-cover"></div>
+    <div class="modal">
+        <div class="modal-custom-content scroll-bg-gray-light">
+            <i alt="close button" class="icon-close close-btn"></i>
+            <h4>Changing country</h4>
+            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
+            <div>
+                <div class="info-input w-100">
+                    <div class="info-input-label">
+                        <strong>Country</strong>
+                    </div>
+                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light" id="select-country">
+                        <option value="United States">United States</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+            </div>
+            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" id="continue-change-country">Continue</div></div>
+            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4" id="go-back">Go back</div></div>
+            
+        </div>
+    </div>
+</div>
+<div class="modal-custom small not-rounded" id="modal-city-suggestion">
+    <div class="modal-custom-cover"></div>
+    <div class="modal">
+        <div class="modal-custom-content scroll-bg-gray-light">
+            <i alt="close button" class="icon-close close-btn"></i>
+            <h4>Town / City name suggestion</h4>
+            <div class="text-small mb-3">The town / city name you entered doesn't seem to match our records. Please use a suggestion below.</div>
+            <div class="d-flex align-items-center border-bottom pt-3 pb-3">
+                <label class="radio-secondary wide reversed">
+                    <input type="radio" value="Hampstead" name="city-suggestion" checked>
+                    <span class="checkmark"></span>
+                    Hampstead
+                </label>
+            </div>
+            <div class="d-flex align-items-center border-bottom pt-3 pb-3">
+                <label class="radio-secondary wide reversed">
+                    <input type="radio" value="Hampsted" name="city-suggestion">
+                    <span class="checkmark"></span>
+                    Hampsted
+                </label>
+            </div>
+            <div class="d-flex align-items-center border-bottom pt-3 pb-3">
+                <label class="radio-secondary wide reversed">
+                    <input type="radio" value="Heampead" name="city-suggestion">
+                    <span class="checkmark"></span>
+                    Heampead
+                </label>
+            </div>
+            <div class="d-flex align-items-center border-bottom pt-3 pb-3">
+                <label class="radio-secondary wide reversed">
+                    <input type="radio" value="Hempsted" name="city-suggestion">
+                    <span class="checkmark"></span>
+                    Hempsted
+                </label>
+            </div>
+            <div>
+                <div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" id="continue-suggestion">Continue</div>
             </div>
         </div>
     </div>

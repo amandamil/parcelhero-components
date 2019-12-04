@@ -17,6 +17,14 @@
     }
   }
 
+  &.small {
+    .modal {
+      .modal-custom-content {
+        max-width: 500px;
+      }
+    }
+  }
+
   .modal-custom-cover {
     position: absolute;
     top: 0;

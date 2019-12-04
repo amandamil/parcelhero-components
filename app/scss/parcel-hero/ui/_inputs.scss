@@ -324,6 +324,27 @@ input, textarea {
   position: relative;
   width: 20px;
   height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  font-size: 1rem;
+
+  &.wide {
+    width: 100%;
+  }
+
+  &.reversed {
+    input {
+      left: auto;
+      right: 0;
+    }
+
+    .checkmark {
+      left: auto;
+      right: 0;
+    }
+  }
   
   input:checked {
     &{

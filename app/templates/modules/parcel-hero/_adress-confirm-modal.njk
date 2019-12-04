@@ -7,8 +7,51 @@
                 <h4 class="text-medium-subtitle mb-4">Address suggestion</h4>
                 <div>The entered delivery address does not seem to match post records. Please see our suggestion below.</div>
                 <div class="text-danger mb-4">Please note, an invalid address may incur additional costs and cause delays to your shipment.</div>
-                <div class="btn btn-additional not-rounded" id="parcel-continue-order">Continue to order summary</div>
             </div>
+            <div class="group-description mb-2">
+                <div class="text-left text-sub-regular">Recommended address</div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-sub-regular">Original address</span>
+                    <span class="link-primary-spec" id="change-delivery-adress">change</span>
+                </div>
+            </div>
+            <div class="group-radio simple mb-4">
+                <div class="group-radio-item active">
+                    <div class="group-radio-content d-flex">
+                        <div class="mr-3">
+                            <div class="radio-secondary">
+                                <input type="radio" value="0" name="delivery-adress" checked>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <div>24 Hudson Pl</div>
+                            <div><strong>Hempstead</strong></div>
+                            <div>New York</div>
+                            <div>11550-6214</div>
+                            <div>United States</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-radio-item">
+                    <div class="group-radio-content d-flex">
+                        <div class="mr-3">
+                            <div class="radio-secondary">
+                                <input type="radio" value="0" name="delivery-adress">
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <div>24 Hudson Pl</div>
+                            <div class="text-danger">Queens</div>
+                            <div>New York</div>
+                            <div>11550-6214</div>
+                            <div>United States</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn btn-additional not-rounded" id="parcel-continue-order">Continue to order summary</div>
         </div>
     </div>
 </div>

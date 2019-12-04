@@ -1,3 +1,5 @@
+var country = "United States";
+
 var parcelContents = document.querySelector("#parcel-contents");
 var saveButton = document.querySelector("#parcel-save");
 var loginButton = document.querySelector("#parcel-login");
@@ -29,6 +31,10 @@ const saveCollectionDate = document.querySelector("#save-collection-date");
 const termsAgree = document.querySelector("#terms-agree");
 const parcelFormSubmit = document.querySelector("#parcel-form-submit");
 const parcelContinueOrder = document.querySelector("#parcel-continue-order");
+const changeDeliveryAdress = document.querySelector("#change-delivery-adress");
+const continueChangeCountry = document.querySelector("#continue-change-country");
+const goBack = document.querySelector("#go-back");
+const continueSuggestion = document.querySelector("#continue-suggestion");
 
 
 function init() {
@@ -50,12 +56,59 @@ termsAgree.addEventListener('change', function () {
 });
 
 parcelFormSubmit.addEventListener('click', function () {
-  modalOpen("#modal-adress-confirm");
+
+  const customTowns = document.querySelectorAll("[name=custom-town]");
+  let adressConfirm = true;
+
+  customTowns.forEach((customTown)=>{
+
+    if(customTown.value.length > 0) adressConfirm = false;
+
+  });
+
+  adressConfirm ? modalOpen("#modal-adress-confirm") : modalOpen("#modal-city-suggestion");
 });
 
 parcelContinueOrder.addEventListener('click', function () {
   modalClose("#modal-adress-confirm");
 });
+
+changeDeliveryAdress.addEventListener('click', function () {
+  modalClose("#modal-adress-confirm");
+});
+
+goBack.addEventListener('click', function () {
+  modalClose("#modal-change-country");
+});
+
+continueChangeCountry.addEventListener('click', function () {
+  country = document.querySelector("#select-country").value;
+  modalClose("#modal-change-country");
+
+  const countries = document.querySelectorAll(".custom-country");
+
+  countries.forEach((countrie)=>{
+    countrie.innerHTML = country;
+  });
+  
+});
+
+continueSuggestion.addEventListener('click', function () {
+  suggestions = document.querySelectorAll("[name=city-suggestion]");
+
+  modalClose("#modal-city-suggestion");
+
+  suggestions.forEach((suggestion)=>{
+    if(suggestion.checked) {
+      towns = document.querySelectorAll("[name=custom-town]");
+      towns.forEach((town)=>{
+        town.value = suggestion.value;
+      });
+    }
+  });
+  
+});
+
 
 parcelCollectionSerachNew.addEventListener('click', function () {
   parcelFindAdressResult.classList.add("d-none");
@@ -238,7 +291,7 @@ customAddressItems.forEach(function (customAddress) {
     <div class="mt-4 mb-2">
       <label class="text-label" for="">Country</label>
       <div class="d-flex justify-content-between">
-        <p class="custom-country">United State</p> <span class="link-primary-spec change-custom-country">Change</span>
+        <p class="custom-country">${country}</p> <span class="link-primary-spec change-custom-country">Change</span>
       </div>
     </div>
 
@@ -249,6 +302,11 @@ customAddressItems.forEach(function (customAddress) {
 
   const backFindAddress = customAddress.querySelector(".find-address");
   const saveAddress = customAddress.querySelector(".save-address");
+  const changeCountry = customAddress.querySelector(".change-custom-country");
+
+  changeCountry.addEventListener("click", ()=>{
+    modalOpen("#modal-change-country");
+  });
 
   backFindAddress.addEventListener('click', function () {
     const parentElement = customAddress.parentElement;

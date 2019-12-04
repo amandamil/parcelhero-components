@@ -36,18 +36,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $white;
       font-size: 1rem;
       padding: 10px 0;
       color: $dark;
       font-weight: 500;
       transition: all $transition ease;
 
-      >span {
+      > span {
         margin: 0 10px;
       }
 
-      *{
+      * {
         margin: 0;
       }
     }
@@ -62,11 +61,11 @@
       border: 2px solid $primary;
 
       .group-radio-title {
-        background-color:$primary;
+        background-color: $primary;
         color: $white;
       }
       .group-radio-content {
-        background-color:rgba($primary, 0.05);
+        background-color: rgba($primary, 0.05);
       }
 
       .radio-secondary {
@@ -84,7 +83,7 @@
       }
     }
 
-    &.active{
+    &.active {
       border: 2px solid $green-active;
 
       .group-radio-title {
@@ -106,7 +105,7 @@
         }
       }
 
-      &:hover{
+      &:hover {
         border: 2px solid $green-active;
         .group-radio-title {
           background-color: $green-active;
@@ -114,6 +113,62 @@
 
         .group-radio-content {
           background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.simple {
+    .group-radio-item {
+      border: none;
+
+      .group-radio-title {
+        background-color: transparent;
+        text-align: left;
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        color: $dark;
+        font-weight: 400;
+        font-size: 1.125rem;
+
+        span {
+          margin: 0;
+        }
+      }
+      .group-radio-content {
+        border: 2px solid $gray;
+        transition: border $transition ease;
+        font-size: 0.875rem;
+        line-height: 1.8;
+
+        .radio-secondary {
+          .checkmark {
+            border-color: $dark;
+          }
+          input {
+            &:checked ~ .checkmark {
+              border: 2px solid $dark;
+              &:before {
+                background: $dark;
+              }
+            }
+          }
+        }
+      }
+
+      &.active {
+        .group-radio-content {
+          border: 2px solid $primary;
+          background-color: rgba($primary, 0.05);
+        }
+      }
+
+      &:hover {
+        border: none;
+        .group-radio-title {
+          background-color: transparent;
+          color: $dark;
         }
       }
     }
@@ -136,13 +191,13 @@
   text-align: center;
   position: relative;
 
-  >div {
+  > div {
     width: calc(50% - 15px);
   }
 
   @include media-breakpoint-down(md) {
     flex-direction: column;
-    >div{
+    > div {
       width: 100%;
       margin-bottom: 10px;
     }
