@@ -211,6 +211,7 @@ const inputManuallyCollectionAction = function () {
   parcelFindAdressAdvResult.classList.add("d-none");
   saveCollectionDate.classList.add("d-none");
   parcelChooseCollectionDate.classList.add("d-none");
+  parcelFindAdress.classList.add("d-none");
 }
 
 const inputManuallyDeliveryAction = function () {
@@ -219,6 +220,7 @@ const inputManuallyDeliveryAction = function () {
   parcelFindAddress.classList.remove("d-none");
   parcelFindDAdressResult.classList.add("d-none");
   parcelFindDAdressAvdResult.classList.add("d-none");
+  parcelFindDAdress.classList.add("d-none");
 }
 
 collectionAddressSearchModule.initActions({
@@ -347,6 +349,7 @@ parcelEditCollectionAddress.addEventListener('click', function () {
   parcelAddCollectionAddress.classList.remove("d-none");
   parcelFindAdressResult.classList.add("d-none");
   parcelFindAdressAdvResult.classList.add("d-none");
+  parcelFindAdress.classList.add("d-none");
 
   const resultAddress = parcelFindAdressResult.querySelector("[data-result=adress]").innerHTML;
   const resultName = parcelFindAdressResult.querySelector("[data-result=name]").innerHTML;
@@ -365,6 +368,7 @@ parcelEditDeliveryAddress.addEventListener('click', function () {
   parcelAddDeliveryAddress.classList.remove("d-none");
   parcelFindDAdressResult.classList.add("d-none");
   parcelFindDAdressAvdResult.classList.add("d-none");
+  parcelFindDAdress.classList.add("d-none");
 
   const resultAddress = parcelFindDAdressResult.querySelector("[data-result=adress]").innerHTML;
   const resultName = parcelFindDAdressResult.querySelector("[data-result=name]").innerHTML;
