@@ -56,17 +56,17 @@
         cursor: pointer;
         color: $blue-btn;
 
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
 
-      >div {
+      > div {
         font-size: 0.875rem;
         color: $darker-gray;
         line-height: 2em;
 
-        &:first-child{
+        &:first-child {
           padding-right: 1rem;
           font-size: 1.2rem;
         }
@@ -74,14 +74,24 @@
     }
   }
 
-  #parcel-find-adress-adv {   
+  .price-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .d-flex-adv {
+    display: flex;
+  }
+
+  #parcel-find-adress-adv {
     #parcel-choose-collection-date {
       .d-flex.box-header {
         justify-content: space-between;
       }
-      
+
       .collection-calender {
         justify-content: space-between;
+        position: relative;
 
         .day-box {
           padding: 0.5rem;
@@ -92,6 +102,10 @@
           border-radius: 0.25rem;
           flex: 1 15%;
           cursor: pointer;
+
+          &.disabled {
+            opacity: 0.5;
+          }
 
           @media (max-width: 767.98px) {
             margin: 0;
@@ -157,7 +171,7 @@
           &:first-child {
             margin-left: 0;
           }
-  
+
           &:last-child {
             margin-right: 0;
           }

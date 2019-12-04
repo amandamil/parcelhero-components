@@ -36,6 +36,25 @@ const continueChangeCountry = document.querySelector("#continue-change-country")
 const goBack = document.querySelector("#go-back");
 const continueSuggestion = document.querySelector("#continue-suggestion");
 
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel(
+    {
+      margin:10,
+      dots:false,
+      nav:false,
+      responsive:{
+          0:{
+              items:3,
+              stagePadding:24,
+          },
+          767:{
+              items:7,
+          },
+      }
+  }
+  );
+});
+
 
 function init() {
   parcelContents.value ? saveButton.classList.remove("disabled") : saveButton.classList.add("disabled");
@@ -292,14 +311,14 @@ customAddressItems.forEach(function (customAddress) {
 
     <div class="mt-4 mb-2">
       <label class="text-label" for="">Country</label>
-      <div class="d-flex justify-content-between">
-        <p class="custom-country">${country}</p> <span class="link-primary-spec change-custom-country">Change</span>
+      <div class="d-flex-adv">
+        <p class="custom-country">${country}</p> <span class="link-primary-spec change-custom-country ml-2">Change</span>
       </div>
     </div>
 
     <div class="d-flex justify-content-between mt-2 mb-4">
       <span class="link-primary-spec find-address">Find an address</span>
-      <span class="link-primary-spec save-address">Save</span>
+      <span class="link-primary-spec save-address d-none">Save</span>
     </div>`;
 
   const backFindAddress = customAddress.querySelector(".find-address");

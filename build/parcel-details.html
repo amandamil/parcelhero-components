@@ -11,6 +11,9 @@
 
 
 
+<link rel="stylesheet" href="/js/parcel-hero/libs/owlcarousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/js/parcel-hero/libs/owlcarousel/assets/owl.theme.default.min.css">
+
 <header class="header-account" id="main-header">
   <div class="container-fluid">
     <div class="row">
@@ -227,7 +230,7 @@
 
                 <p class="mt-3 mb-2">July 2019</p>
 
-                <div class="d-flex collection-calender mb-4">
+                <div class="d-flex collection-calender mb-4 owl-carousel">
                   <div class="day-box active">
                     <p class="day-name">Wednesday</p>
                     <p class="day-num">20</p>
@@ -243,12 +246,12 @@
                     <p class="day-num">22</p>
                   </div>
 
-                  <div class="day-box">
+                  <div class="day-box disabled">
                     <p class="day-name">Saturday</p>
                     <p class="day-num">23</p>
                   </div>
 
-                  <div class="day-box">
+                  <div class="day-box disabled">
                     <p class="day-name">Sunday</p>
                     <p class="day-num">24</p>
                   </div>
@@ -261,6 +264,11 @@
                   <div class="day-box">
                     <p class="day-name">Tuesday</p>
                     <p class="day-num">26</p>
+                  </div>
+
+                  <div class="day-box empty">
+                    <p class="day-name"></p>
+                    <p class="day-num"></p>
                   </div>
                 </div>
 
@@ -304,7 +312,7 @@
               </div> -->
 
               <div class="insurance-info success">
-                <h5 class="insurance-info-title d-flex justify-content-between">SAVE £2.96 by dropping off your parcel <i class="icon-help presset-icon-medium"></i></h5>
+                <h5 class="insurance-info-title d-flex justify-content-between">SAVE £2.96 by dropping off your parcel <i class="icon-help presset-icon-medium text-white"></i></h5>
                 <div class="insurance-content">
                   <div class="d-flex">
                     <div>
@@ -431,7 +439,7 @@
           </div>
           <div class="block parcel-details mb-g">
             <div class="p-4 border border-primary">
-              <div class="d-flex align-items-center">
+              <div class="price-title">
                 <i class="icon-info presset-icon-medium mr-2"></i>
                 <div class="text-medium-subtitle">Price change</div>
               </div>
@@ -457,8 +465,8 @@
           <div class="collapse show" id="collapseDtl">
             <div class="border-bottom text-gray-darker">
               <div class="mb-2">1 x 1.5kg, 45cm x 16cm x 12cm</div>
-              <div class="pb-4">To: United Kingdom</div>
-              <div id="parcel-cost" class="text-gray-darker d-none">
+              <div class="pb-3 border-bottom">To: United Kingdom</div>
+              <div id="parcel-cost" class="text-gray-darker pt-3">
                 <div class="fw-500">Billing summary</div>
                 <div class="text-small d-flex justify-content-between pt-3 pb-3">
                   <span>Shipping costs</span>
@@ -690,6 +698,7 @@
 <script src="/js/parcel-hero/custom-script.js"></script>
 
 <script src='/js/parcel-hero/pages/parcel-details.js'></script>
+<script src="/js/parcel-hero/libs/owlcarousel/owl.carousel.min.js"></script>
 
 
 </body>
