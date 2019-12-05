@@ -26,4 +26,16 @@
       }
     }
   }
+
+  @include media-breakpoint-down(md){
+    .pagiator-pagination {
+      font-size: 0.8rem;
+      white-space: nowrap;
+      justify-content: space-between;
+
+      .pagiator-prev, .pagiator-next{
+        margin: 0 10px;
+      }
+    }
+  }
 }
