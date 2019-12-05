@@ -98,3 +98,28 @@ const SearchInputManager = function(querySelector = ".search-input") {
   }
 }
 
+const Pagiator = function(querySelector = ".pagiator") {
+  const pagiatorContainers = document.querySelectorAll(querySelector);
+  const itemsPerPage = 4;
+  const currentPage = 1;
+
+  pagiatorContainers.forEach(function(pagiatorContainer) {
+    const pagiatorContent = pagiatorContainer.querySelector(".pagiator-content");
+    const pagiatorPagination = document.createElement("div");
+    const items = Array.from(pagiatorContainer.querySelectorAll(".pagiator-item"));
+    const visibleItems = items.slice((currentPage-1)*itemsPerPage, currentPage*itemsPerPage);
+    pagiatorPagination.classList.add("pagiator-pagination");
+
+
+    pagiatorContent.innerHTML = '';
+    pagiatorPagination.innerHTML = "<div class='pagiator-prev'>< PREV</div><div>"+currentPage+ ' to '+(currentPage*itemsPerPage)+" of "+items.length+"</div><div class='pagiator-next active'>NEXT ></div>";
+    pagiatorContainer.appendChild(pagiatorPagination);
+    const pagiatorPrev = pagiatorContainer.querySelector(".pagiator-prev");
+    const pagiatorNext = pagiatorContainer.querySelector(".pagiator-next");
+
+    visibleItems.forEach((visibleItem)=>{
+      pagiatorContent.appendChild(visibleItem);
+    });
+  });
+}
+

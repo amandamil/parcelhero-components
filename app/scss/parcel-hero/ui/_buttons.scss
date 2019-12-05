@@ -3,6 +3,10 @@
   box-shadow: none;
   cursor: pointer;
 
+  &.double{
+    border-width: 2px;
+  }
+
   &.strong {
     font-weight: 600;
     border-width: 2px;

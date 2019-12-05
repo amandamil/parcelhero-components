@@ -12,6 +12,26 @@
   }
 }
 
+.w-md-100 {
+  @include media-breakpoint-down(md) {
+    width: 100% !important;
+  }
+}
+
+.toggler-primary {
+  i {
+    transform-origin: center center;
+    transition: transform $transition ease;
+    transform: rotate(-180deg);
+  }
+
+  &.collapsed {
+    i {
+      transform: rotate(0);
+    }
+  }
+}
+
 .nav-tabs {
   position: relative;
   flex-wrap: nowrap;
@@ -177,8 +197,12 @@
   padding-bottom: $grid-gutter-width;
 }
 
-.op-05 {opacity: 0.5;}
-.op-02 {opacity: 0.2;}
+.op-05 {
+  opacity: 0.5;
+}
+.op-02 {
+  opacity: 0.2;
+}
 
 .dropdown-icon {
   display: flex;
