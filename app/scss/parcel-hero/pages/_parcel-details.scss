@@ -54,9 +54,8 @@
 
   .parcel-adress {
     display: flex;
-    align-items: flex-start;
+    align-items:stretch;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     .parcel-adress-location {
       display: flex;
@@ -81,13 +80,23 @@
         }
       }
     }
+
+    @include media-breakpoint-down(md){
+      >div {
+        &:last-child{
+          display: flex;
+          align-items: flex-end;
+          white-space: nowrap;
+        }
+      }
+    }
   }
 
   #parcel-find-adress-adv { 
     #save-collection-date {
       font-size: .875rem;
       color: #666;
-      line-height: 2em;
+      line-height: 1.5rem;
     } 
 
     #parcel-choose-collection-date {
@@ -230,6 +239,14 @@
             border: 2px solid #398f14;
             position: relative;
             color: #398f14;
+          }
+        }
+      }
+      @include media-breakpoint-down(md){
+        .collection-time {
+
+          .time-box {
+            margin: 0 10px;
           }
         }
       }

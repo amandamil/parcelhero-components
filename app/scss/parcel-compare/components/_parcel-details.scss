@@ -177,6 +177,11 @@
           }
         }
       }
+      @include media-breakpoint-down(md){
+        .collection-time {
+          justify-content: space-between;
+        }
+      }
     }
   }
 }
