@@ -37,8 +37,13 @@ const goBack = document.querySelector("#go-back");
 const continueSuggestion = document.querySelector("#continue-suggestion");
 const dropOffBlock = document.querySelector("#drop-off-block");
 const dropOffButton = document.querySelector("#drop-off-button");
+const revertBack = document.querySelector("#revert-back");
+const collectParcel = document.querySelector("#collect-parcel");
+const parcelCollectionAddress = document.querySelector("#parcel-collection-address");
+const dropMapTab = document.querySelector("#drop-map-tab");
 
-
+const collectionAddressSearchModule = searchInputManager.getById('parcel-collection-address');
+const deliveryAddressSearchModule = searchInputManager.getById('parcel-collection-daddress');
 
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel(
@@ -70,10 +75,26 @@ saveButton.addEventListener('click', function () {
   modalOpen("#modal-sign-in");
 });
 
+dropMapTab.addEventListener('click', function () {
+  modalOpen("#modal-drop-off");
+});
+
 dropOffButton.addEventListener('click', function (e) {
   e.preventDefault();
   dropOffBlock.classList.remove("d-none");
   dropOffBlock.scrollIntoView({behavior: "smooth"});
+});
+
+revertBack.addEventListener('click', function (e) {
+  e.preventDefault();
+  dropOffBlock.classList.add("d-none");
+});
+
+collectParcel.addEventListener('click', function (e) {
+  e.preventDefault();
+  parcelCollectionAddress.scrollIntoView({behavior: "smooth"});
+  parcelCollectionAddress.value = "TW8 8HP";
+  parcelCollectionAddress.focus();
 });
 
 loginButton.addEventListener('click', function () {
@@ -197,9 +218,6 @@ setCollectionDateBtn.addEventListener("click", function (e) {
 /********************************************* Address States *********************************************/
 
 /*** Search Input Init ***/
-
-const collectionAddressSearchModule = searchInputManager.getById('parcel-collection-address');
-const deliveryAddressSearchModule = searchInputManager.getById('parcel-collection-daddress');
 
 const chooseItemActionDelivery = function (item) {
   const parentElement = this.searchContainer.parentElement.parentElement;

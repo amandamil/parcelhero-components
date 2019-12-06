@@ -3,3 +3,18 @@
   top: 6px;
   left: 0;
 }
+
+.preset-map {
+
+  &.map {
+    width: 800px;
+    margin-top: 2rem;
+  }
+  
+
+  @include media-breakpoint-down(md){
+    &.map {
+      width: 80vw;
+    }
+  }
+}
