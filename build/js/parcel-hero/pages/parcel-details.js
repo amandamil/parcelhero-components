@@ -35,6 +35,10 @@ const changeDeliveryAdress = document.querySelector("#change-delivery-adress");
 const continueChangeCountry = document.querySelector("#continue-change-country");
 const goBack = document.querySelector("#go-back");
 const continueSuggestion = document.querySelector("#continue-suggestion");
+const dropOffBlock = document.querySelector("#drop-off-block");
+const dropOffButton = document.querySelector("#drop-off-button");
+
+
 
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel(
@@ -64,6 +68,12 @@ init();
 
 saveButton.addEventListener('click', function () {
   modalOpen("#modal-sign-in");
+});
+
+dropOffButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  dropOffBlock.classList.remove("d-none");
+  dropOffBlock.scrollIntoView({behavior: "smooth"});
 });
 
 loginButton.addEventListener('click', function () {

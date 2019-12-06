@@ -11,6 +11,17 @@
     }
   }
 
+  &.success-outline {
+    border-color: $success;
+
+    .insurance-info-title {
+      background: rgba($success, 0.2);
+      color: $success;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
   .insurance-info-title {
     font-size: 1.1rem;
     color: $white;

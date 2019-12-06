@@ -325,7 +325,7 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-center mt-md-4 mt-1">
-                    <button class="btn btn-outline-success not-rounded strong mb-md-0 mb-3">DROP OFF MY PARCEL</button>
+                    <button class="btn btn-outline-success not-rounded strong mb-md-0 mb-3" id="drop-off-button">DROP OFF MY PARCEL</button>
                     <div data-toggle="collapse" href="#more-collaction-adress" class="ml-4 link-icon-primary-spec small-icon toggler-primary collapsed">View more locations <i class="ml-2 fs arrow fas fa-chevron-down"></i></div>
                   </div>
                   <div class="pagiator collapse" id="more-collaction-adress">
@@ -383,7 +383,7 @@
                           <div>1.1 miles</div>
                           <div><strong>Collect+ at MARTINS</strong></div>
                           <div class="link-primary-spec">See opening times</div>
-                          <div>205 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div>210 High Street, Brentford, Middlesex, TW8 8AH</div>
                           <div class="link-primary-spec">Show on map</div>
                         </div>
                         <div class="w-25 w-md-100">
@@ -395,7 +395,7 @@
                           <div>1.2 miles</div>
                           <div><strong>Star save</strong></div>
                           <div class="link-primary-spec">See opening times</div>
-                          <div>210 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div>205 High Street, Brentford, Middlesex, TW8 8AH</div>
                           <div class="link-primary-spec">Show on map</div>
                         </div>
                         <div class="w-25 w-md-100">
@@ -407,7 +407,7 @@
                           <div>1.5 miles</div>
                           <div><strong>Collect+ at Morrisions</strong></div>
                           <div class="link-primary-spec">See opening times</div>
-                          <div>235 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div>193 London Road, Isleworth Middlesex, TW8 8AH</div>
                           <div class="link-primary-spec">Show on map</div>
                         </div>
                         <div class="w-25 w-md-100">
@@ -419,7 +419,43 @@
                           <div>2.0 mile</div>
                           <div><strong>Tesco Express</strong></div>
                           <div class="link-primary-spec">See opening times</div>
-                          <div>193 London Road, Isleworth Middlesex, TW8 8AH</div>
+                          <div>235 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div class="link-primary-spec">Show on map</div>
+                        </div>
+                        <div class="w-25 w-md-100">
+                          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase">select</button>
+                        </div>
+                      </div>
+                      <div class="pagiator-item d-flex border-top pb-3 pt-3">
+                        <div class="w-75 lh-18">
+                          <div>0.1 miles</div>
+                          <div><strong>Collect+ at MARTINS</strong></div>
+                          <div class="link-primary-spec">See opening times</div>
+                          <div>205 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div class="link-primary-spec">Show on map</div>
+                        </div>
+                        <div class="w-25 w-md-100">
+                          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase">select</button>
+                        </div>
+                      </div>
+                      <div class="pagiator-item d-flex border-top pb-3 pt-3">
+                        <div class="w-75 lh-18">
+                          <div>0.2 miles</div>
+                          <div><strong>Star save</strong></div>
+                          <div class="link-primary-spec">See opening times</div>
+                          <div>210 High Street, Brentford, Middlesex, TW8 8AH</div>
+                          <div class="link-primary-spec">Show on map</div>
+                        </div>
+                        <div class="w-25 w-md-100">
+                          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase">select</button>
+                        </div>
+                      </div>
+                      <div class="pagiator-item d-flex border-top pb-3 pt-3">
+                        <div class="w-75 lh-18">
+                          <div>0.5 miles</div>
+                          <div><strong>Collect+ at Morrisions</strong></div>
+                          <div class="link-primary-spec">See opening times</div>
+                          <div>235 High Street, Brentford, Middlesex, TW8 8AH</div>
                           <div class="link-primary-spec">Show on map</div>
                         </div>
                         <div class="w-25 w-md-100">
@@ -433,6 +469,48 @@
             </div>
 
             <div class="d-none add-custom-address" id="parcel-add-collection-address">
+            </div>
+          </div>
+          <div class="block parcel-details mb-g d-none" id="drop-off-block">
+            <div class="block-title">
+              <h4 class="text-medium-subtitle">Find a local drop-off point</h4><i class="icon-help presset-icon-medium"></i>
+            </div>
+            <p>Enter the postcode for where you would like to drop off your parcel.</p>
+            <label class="text-label" for="">Postcode</label>
+            <div class="d-flex">
+              <input type="text" autocomplete="new-zip" placeholder="TW8 8HP" name="zip-collection" class="form-control not-rounded dark-theme w-25 w-md-100">
+              <button class="ml-0 ml-md-3 btn btn-primary not-rounded mb-2">FIND DROP-OFF POINTS</button>
+            </div>
+            <div class="link-primary-spec mb-4">Revert back to Drop-off service</div>
+            <div class="d-flex justify-content-between">
+              <span class="text-sub-regular">Your nearest drop-off point:</span>
+              <ul class="nav nav-tabs simple" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">List view</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Map view</a>
+                </li>
+              </ul>
+            </div>
+            <div class="insurance-info success-outline">
+              <h5 class="insurance-info-title"><i class="fas fa-check-circle mr-3"></i> SELECTED</h5>
+              <div class="insurance-content">
+                <div class="text-small">0.37 Miles</div>
+                <div class="text-sub-regular fw-500">27 St. Johns Road</div>
+                <div class="link-primary-spec mb-4">View on map</div>
+                <div class="preset-icon-row mb-4">
+                  <div><i class="icon-location"></i></div>
+                  <div>27 St. Johns Road, Syon Park,<br> TW7 5BG</div>
+                </div>
+                <div class="preset-icon-row">
+                  <div><i class="icon-clock"></i></div>
+                  <div>Mon-Sat: 08:00-22:00<br>Sun: 08:00-22:00</div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex-adv justify-content-center mt-4">
+              <div data-toggle="collapse" href="#more-drop-adress" class="link-icon-primary-spec small-icon toggler-primary collapsed">View more locations <i class="ml-2 fs arrow fas fa-chevron-down"></i></div>
             </div>
           </div>
           <div class="block parcel-details mb-g">
