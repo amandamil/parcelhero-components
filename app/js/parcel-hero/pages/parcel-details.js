@@ -1,4 +1,5 @@
 var country = "United States";
+var dropoff = 1;
 
 var parcelContents = document.querySelector("#parcel-contents");
 var saveButton = document.querySelector("#parcel-save");
@@ -45,31 +46,129 @@ const dropMapTab = document.querySelector("#drop-map-tab");
 const collectionAddressSearchModule = searchInputManager.getById('parcel-collection-address');
 const deliveryAddressSearchModule = searchInputManager.getById('parcel-collection-daddress');
 
-$(document).ready(function(){
+const nearestAdress = document.querySelector("#nearest-adress");
+const nearestDistance = document.querySelector("#nearest-distance");
+const nearestViewOnMap = document.querySelector("#nearest-view-on-map");
+
+const selectedDistance = document.querySelector("#selected-distance");
+const selectedName = document.querySelector("#selected-name");
+const selectedViewOnmap = document.querySelector("#selected-view-onmap");
+const selectedAdress = document.querySelector("#selected-adress");
+const selectedPostal = document.querySelector("#selected-postal");
+
+$(document).ready(function () {
   $(".owl-carousel").owlCarousel(
     {
-      margin:10,
-      dots:false,
-      nav:false,
-      responsive:{
-          0:{
-              items:3,
-              stagePadding:24,
-          },
-          767:{
-              items:7,
-          },
+      margin: 10,
+      dots: false,
+      nav: false,
+      responsive: {
+        0: {
+          items: 3,
+          stagePadding: 24,
+        },
+        767: {
+          items: 7,
+        },
       }
-  }
+    }
   );
 });
 
+init();
+buildDropOffList();
+buildDropOffSelected();
+events();
+
+function events() {
+  let showOnMaps = document.querySelectorAll("[data-action='showOnMap']");
+  let selects = document.querySelectorAll("[data-action='selectDropOff']");
+
+  showOnMaps.forEach(function (showOnMap) {
+    showOnMap.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalOpen("#modal-show-onmap");
+    });
+  });
+
+  selects.forEach(function (select) {
+    select.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("selectDropOff");
+    });
+  });
+}
+
+function buildDropOffSelected() {
+
+  nearestAdress.innerHTML = collectionsAdr[dropoff].adress;
+  nearestDistance.innerHTML = collectionsAdr[dropoff].distance;
+  nearestViewOnMap.setAttribute("data-action", "showOnMap");
+  nearestViewOnMap.setAttribute("data-ltd", collectionsAdr[dropoff].x);
+  nearestViewOnMap.setAttribute("data-lng", collectionsAdr[dropoff].y);
+
+  selectedDistance.innerHTML = collectionsAdr[dropoff].distance;
+  selectedName.innerHTML = collectionsAdr[dropoff].name;
+  selectedAdress.innerHTML = collectionsAdr[dropoff].adress;
+  selectedPostal.innerHTML = collectionsAdr[dropoff].postal;
+
+  selectedViewOnmap.setAttribute("data-action", "showOnMap");
+  selectedViewOnmap.setAttribute("data-ltd", collectionsAdr[dropoff].x);
+  selectedViewOnmap.setAttribute("data-lng", collectionsAdr[dropoff].y);
+
+}
+
+function buildDropOffList() {
+
+  let containers = document.querySelectorAll(".pagiator-content");
+
+  containers.forEach(function (container) {
+    let html = '';
+    let adv = container.dataset.adv;
+
+    collectionsAdr.forEach(function (item) {
+
+      if (adv) {
+        html += `<div class="pagiator-item d-flex border-top pb-3 pt-3">
+        <div class="w-75 w-md-100 lh-18 pl-5 position-relative">
+          <img class="preset-icononlist" src="../img/icons/store.png" alt="">
+          <div>${item.distance} miles</div>
+          <div><strong>${item.name}</strong></div>
+          <div class="link-primary-spec">See opening times</div>
+          <div>${item.adress}, ${item.postal}</div>
+          <div class="link-primary-spec" data-action="showOnMap" data-ltd="${item.x}" data-lng="${item.y}">Show on map</div>
+        </div>
+        <div class="w-25 w-md-100">
+          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectDropOff">select</button>
+        </div>
+      </div>
+    `
+      } else {
+        html += `<div class="pagiator-item d-flex border-top pb-3 pt-3">
+        <div class="w-75 lh-18">
+          <div>${item.distance} miles</div>
+          <div><strong>${item.name}</strong></div>
+          <div class="link-primary-spec">See opening times</div>
+          <div>${item.adress}, ${item.postal}</div>
+          <div class="link-primary-spec" data-action="showOnMap" data-ltd="${item.x}" data-lng="${item.y}">Show on map</div>
+        </div>
+        <div class="w-25 w-md-100">
+          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectDropOff">select</button>
+        </div>
+      </div>`;
+      }
+
+    });
+
+    container.innerHTML = html;
+  });
+
+  const pagiatorManager = new Pagiator();
+}
 
 function init() {
   parcelContents.value ? saveButton.classList.remove("disabled") : saveButton.classList.add("disabled");
 }
-
-init();
 
 saveButton.addEventListener('click', function () {
   modalOpen("#modal-sign-in");
@@ -82,7 +181,7 @@ dropMapTab.addEventListener('click', function () {
 dropOffButton.addEventListener('click', function (e) {
   e.preventDefault();
   dropOffBlock.classList.remove("d-none");
-  dropOffBlock.scrollIntoView({behavior: "smooth"});
+  dropOffBlock.scrollIntoView({ behavior: "smooth" });
 });
 
 revertBack.addEventListener('click', function (e) {
@@ -92,7 +191,7 @@ revertBack.addEventListener('click', function (e) {
 
 collectParcel.addEventListener('click', function (e) {
   e.preventDefault();
-  parcelCollectionAddress.scrollIntoView({behavior: "smooth"});
+  parcelCollectionAddress.scrollIntoView({ behavior: "smooth" });
   parcelCollectionAddress.value = "TW8 8HP";
   parcelCollectionAddress.focus();
 });
@@ -110,9 +209,9 @@ parcelFormSubmit.addEventListener('click', function () {
   const customTowns = document.querySelectorAll("[name=custom-town]");
   let adressConfirm = true;
 
-  customTowns.forEach((customTown)=>{
+  customTowns.forEach((customTown) => {
 
-    if(customTown.value.length > 0) adressConfirm = false;
+    if (customTown.value.length > 0) adressConfirm = false;
 
   });
 
@@ -137,10 +236,10 @@ continueChangeCountry.addEventListener('click', function () {
 
   const countries = document.querySelectorAll(".custom-country");
 
-  countries.forEach((countrie)=>{
+  countries.forEach((countrie) => {
     countrie.innerHTML = country;
   });
-  
+
 });
 
 continueSuggestion.addEventListener('click', function () {
@@ -148,15 +247,15 @@ continueSuggestion.addEventListener('click', function () {
 
   modalClose("#modal-city-suggestion");
 
-  suggestions.forEach((suggestion)=>{
-    if(suggestion.checked) {
+  suggestions.forEach((suggestion) => {
+    if (suggestion.checked) {
       towns = document.querySelectorAll("[name=custom-town]");
-      towns.forEach((town)=>{
+      towns.forEach((town) => {
         town.value = suggestion.value;
       });
     }
   });
-  
+
 });
 
 
@@ -353,7 +452,7 @@ customAddressItems.forEach(function (customAddress) {
   const saveAddress = customAddress.querySelector(".save-address");
   const changeCountry = customAddress.querySelector(".change-custom-country");
 
-  changeCountry.addEventListener("click", ()=>{
+  changeCountry.addEventListener("click", () => {
     modalOpen("#modal-change-country");
   });
 
