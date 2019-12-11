@@ -56,6 +56,16 @@ const selectedViewOnmap = document.querySelector("#selected-view-onmap");
 const selectedAdress = document.querySelector("#selected-adress");
 const selectedPostal = document.querySelector("#selected-postal");
 
+
+const showOnmapDistance = document.querySelector("#show-onmap-distance");
+const showOnmapName = document.querySelector("#show-onmap-name");
+const showOnmapAdress = document.querySelector("#show-onmap-adress");
+const showOnmapPostal = document.querySelector("#show-onmap-postal");
+const showOnmapWorktime = document.querySelector("#show-onmap-worktime");
+
+const nearestInsurance = document.querySelector("#nearest-insurance");
+
+
 $(document).ready(function () {
   $(".owl-carousel").owlCarousel(
     {
@@ -77,44 +87,85 @@ $(document).ready(function () {
 
 init();
 buildDropOffList();
-buildDropOffSelected();
+buildDropOffSelected(1);
+buildNearest(1);
 events();
+buttonsEvents();
 
-function events() {
-  let showOnMaps = document.querySelectorAll("[data-action='showOnMap']");
-  let selects = document.querySelectorAll("[data-action='selectDropOff']");
+function buttonsEvents(){
+  let selectsDO = document.querySelectorAll("[data-action='selectDropOff']");
+  let selectsNE = document.querySelectorAll("[data-action='selectNearest']");
 
-  showOnMaps.forEach(function (showOnMap) {
-    showOnMap.addEventListener("click", function (e) {
+  selectsDO.forEach(function (select) {
+    select.addEventListener("click", function (e) {
       e.preventDefault();
-      modalOpen("#modal-show-onmap");
+      buildDropOffSelected(select.dataset.id);
+      dropOffBlock.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  selects.forEach(function (select) {
+  selectsNE.forEach(function (select) {
     select.addEventListener("click", function (e) {
       e.preventDefault();
-      console.log("selectDropOff");
+      buildNearest(select.dataset.id);
+      nearestInsurance.scrollIntoView({ behavior: "smooth" });
     });
   });
 }
 
-function buildDropOffSelected() {
+function events() {
+  let showOnMaps = document.querySelectorAll("[data-action='showOnMap']");
 
-  nearestAdress.innerHTML = collectionsAdr[dropoff].adress;
-  nearestDistance.innerHTML = collectionsAdr[dropoff].distance;
+  showOnMaps.forEach(function (showOnMap) {
+    showOnMap.addEventListener("click", function (e) {
+      let eventUpdDropOffMap = new CustomEvent('updateDropOffMap', { 'detail': { id: showOnMap.dataset.id } });
+      document.dispatchEvent(eventUpdDropOffMap);
+      modalOpen("#modal-show-onmap");
+    });
+  });
+
+  document.addEventListener("updateDropOffMap", function (e) {
+    showOnmapDistance.innerHTML = collectionsAdr[e.detail.id].distance
+    showOnmapName.innerHTML = collectionsAdr[e.detail.id].name;
+    showOnmapAdress.innerHTML = collectionsAdr[e.detail.id].adress;
+    showOnmapPostal.innerHTML =  collectionsAdr[e.detail.id].postcode;
+    showOnmapWorktime.innerHTML = '';
+
+    collectionsAdr[e.detail.id].worktime.forEach(function(item){
+      showOnmapWorktime.innerHTML += item.days+": "+ item.time+"<br>";
+    });
+    
+  });
+
+  document.addEventListener("updateSelected", function (e) {
+    buildDropOffSelected(e.detail.id);
+    modalClose("#modal-drop-off");
+  });
+
+  document.addEventListener("updatePagiator", function (e) {
+    buttonsEvents();
+  });
+  
+}
+
+function buildNearest(i) {
+
+  nearestAdress.innerHTML = collectionsAdr[i].adress;
+  nearestDistance.innerHTML = collectionsAdr[i].distance;
   nearestViewOnMap.setAttribute("data-action", "showOnMap");
-  nearestViewOnMap.setAttribute("data-ltd", collectionsAdr[dropoff].x);
-  nearestViewOnMap.setAttribute("data-lng", collectionsAdr[dropoff].y);
+  nearestViewOnMap.setAttribute("data-id", i);
 
-  selectedDistance.innerHTML = collectionsAdr[dropoff].distance;
-  selectedName.innerHTML = collectionsAdr[dropoff].name;
-  selectedAdress.innerHTML = collectionsAdr[dropoff].adress;
-  selectedPostal.innerHTML = collectionsAdr[dropoff].postal;
+}
+
+function buildDropOffSelected(i) {
+
+  selectedDistance.innerHTML = collectionsAdr[i].distance;
+  selectedName.innerHTML = collectionsAdr[i].name;
+  selectedAdress.innerHTML = collectionsAdr[i].adress;
+  selectedPostal.innerHTML = collectionsAdr[i].postcode;
 
   selectedViewOnmap.setAttribute("data-action", "showOnMap");
-  selectedViewOnmap.setAttribute("data-ltd", collectionsAdr[dropoff].x);
-  selectedViewOnmap.setAttribute("data-lng", collectionsAdr[dropoff].y);
+  selectedViewOnmap.setAttribute("data-id", i);
 
 }
 
@@ -126,7 +177,7 @@ function buildDropOffList() {
     let html = '';
     let adv = container.dataset.adv;
 
-    collectionsAdr.forEach(function (item) {
+    collectionsAdr.forEach(function (item, i) {
 
       if (adv) {
         html += `<div class="pagiator-item d-flex border-top pb-3 pt-3">
@@ -135,11 +186,11 @@ function buildDropOffList() {
           <div>${item.distance} miles</div>
           <div><strong>${item.name}</strong></div>
           <div class="link-primary-spec">See opening times</div>
-          <div>${item.adress}, ${item.postal}</div>
-          <div class="link-primary-spec" data-action="showOnMap" data-ltd="${item.x}" data-lng="${item.y}">Show on map</div>
+          <div>${item.adress}, ${item.postcode}</div>
+          <div class="link-primary-spec" data-action="showOnMap" data-id="${i}">Show on map</div>
         </div>
         <div class="w-25 w-md-100">
-          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectDropOff">select</button>
+          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectDropOff" data-id=${i}>select</button>
         </div>
       </div>
     `
@@ -149,11 +200,11 @@ function buildDropOffList() {
           <div>${item.distance} miles</div>
           <div><strong>${item.name}</strong></div>
           <div class="link-primary-spec">See opening times</div>
-          <div>${item.adress}, ${item.postal}</div>
-          <div class="link-primary-spec" data-action="showOnMap" data-ltd="${item.x}" data-lng="${item.y}">Show on map</div>
+          <div>${item.adress}, ${item.postcode}</div>
+          <div class="link-primary-spec" data-action="showOnMap" data-id="${i}">Show on map</div>
         </div>
         <div class="w-25 w-md-100">
-          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectDropOff">select</button>
+          <button class="btn btn-outline-gray-darker double not-rounded w-100 text-uppercase" data-action="selectNearest" data-id=${i}>select</button>
         </div>
       </div>`;
       }
@@ -168,6 +219,8 @@ function buildDropOffList() {
 
 function init() {
   parcelContents.value ? saveButton.classList.remove("disabled") : saveButton.classList.add("disabled");
+
+  buttonsEvents();
 }
 
 saveButton.addEventListener('click', function () {

@@ -174,297 +174,187 @@ function initMap() {
 function initMapPD() {
   // The location of Uluru
 
-  var control = {
-    class: "map-window",
-    container: document.createElement('DIV'),
-    closeBtn: document.createElement('DIV'),
-    bookBtn: document.createElement('DIV'),
-    content: document.createElement('DIV'),
+  initDropOff();
+  initShowMap();
 
-    init: function (map) {
-      this.container.className = "map-window";
-      this.container.style.display = "none";
-      this.closeBtn.className = "map-window-close";
-      this.content.className = "map-window-content";
-      this.closeBtn.innerHTML = "<img src='./img/icons/close-btn.png' alt='close button' class='window-close-icon'>";
-      this.bookBtn.className = "map-window-book";
-      this.bookBtn.innerHTML = "<button class='btn btn-primary w-100'>SELECT</button>";
+  function initDropOff() {
+    var control = {
+      class: "map-window",
+      container: document.createElement('DIV'),
+      closeBtn: document.createElement('DIV'),
+      bookBtn: document.createElement('DIV'),
+      content: document.createElement('DIV'),
 
-      this.distance = document.createElement('DIV');
-      this.distance.className = "map-window-distance";
+      init: function (map) {
+        this.container.className = "map-window";
+        this.container.style.display = "none";
+        this.closeBtn.className = "map-window-close";
+        this.content.className = "map-window-content";
+        this.closeBtn.innerHTML = "<img src='./img/icons/close-btn.png' alt='close button' class='window-close-icon'>";
+        this.bookBtn.className = "map-window-book";
+        this.bookBtn.innerHTML = "<button class='btn btn-primary w-100'>SELECT</button>";
 
-      this.name = document.createElement('h2');
+        this.distance = document.createElement('DIV');
+        this.distance.className = "map-window-distance";
 
-      this.adress = document.createElement('DIV');
-      this.adress.className = "map-window-adress";
+        this.name = document.createElement('h2');
 
-      this.workTime = document.createElement('DIV');
-      this.workTime.className = "map-window-work-time";
+        this.adress = document.createElement('DIV');
+        this.adress.className = "map-window-adress";
 
-      this.printer = document.createElement('DIV');
-      this.printer.className = "map-window-printer";
+        this.workTime = document.createElement('DIV');
+        this.workTime.className = "map-window-work-time";
 
-      this.drop = document.createElement('DIV');
-      this.drop.className = "map-window-drop";
+        this.printer = document.createElement('DIV');
+        this.printer.className = "map-window-printer";
 
-      this.price = document.createElement('h3');
-      this.price.className = "text-price";
+        this.drop = document.createElement('DIV');
+        this.drop.className = "map-window-drop";
 
-      this.vat = document.createElement('h4');
-      this.vat.className = "text-price-ext";
+        this.price = document.createElement('h3');
+        this.price.className = "text-price";
 
-      this.container.appendChild(this.distance);
-      this.container.appendChild(this.closeBtn);
-      this.container.appendChild(this.content);
-      this.container.appendChild(this.bookBtn);
-      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(this.container);
+        this.vat = document.createElement('h4');
+        this.vat.className = "text-price-ext";
 
-      self = this;
+        this.container.appendChild(this.distance);
+        this.container.appendChild(this.closeBtn);
+        this.container.appendChild(this.content);
+        this.container.appendChild(this.bookBtn);
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(this.container);
 
-      this.closeBtn.addEventListener('click', function () {
-        self.close();
-      })
-    },
-    setContent: function (i) {
-      var self = this;
-      this.container.style.display = "flex";
-      this.distance.innerHTML = collectionsAdr[i].distance + " Miles";
-      this.content.innerHTML = "<h2>" + collectionsAdr[i].name + "</h2><div class='map-window-adress'>" + collectionsAdr[i].adress + ", " + collectionsAdr[i].postcode + "</div>";
-      if (collectionsAdr[i].worktime) {
-        collectionsAdr[i].worktime.forEach(function (elm) {
-          self.content.innerHTML += "<div class='map-window-work'><div>" + elm.days + "</div><div>" + elm.time + "</div></div>";
-        });
+        self = this;
+
+        this.closeBtn.addEventListener('click', function () {
+          self.close();
+        })
+      },
+      setContent: function (i) {
+        var self = this;
+        this.container.style.display = "flex";
+        this.distance.innerHTML = collectionsAdr[i].distance + " Miles";
+        this.content.innerHTML = "<h2>" + collectionsAdr[i].name + "</h2><div class='map-window-adress'>" + collectionsAdr[i].adress + ", " + collectionsAdr[i].postcode + "</div>";
+        if (collectionsAdr[i].worktime) {
+          collectionsAdr[i].worktime.forEach(function (elm) {
+            self.content.innerHTML += "<div class='map-window-work'><div>" + elm.days + "</div><div>" + elm.time + "</div></div>";
+          });
+        }
+
+        this.bookBtn.addEventListener('click', function () {
+          self.close();
+          let updateSelected = new CustomEvent('updateSelected', { 'detail': { id: i } });
+          document.dispatchEvent(updateSelected);
+          
+        })
+      },
+      open: function () {
+        this.container.style.display = "flex";
+      },
+      close: function () {
+        this.container.style.display = "none";
       }
-    },
-    open: function () {
-      this.container.style.display = "flex";
-    },
-    close: function () {
-      this.container.style.display = "none";
     }
-  }
 
-  function HTMLMarker(lat, lng, map, i) {
-    this.lat = lat;
-    this.lng = lng;
-    this.i = i;
-    this.map = map;
-    this.pos = new google.maps.LatLng(lat, lng);
-  }
+    function HTMLMarker(lat, lng, map, i) {
+      this.lat = lat;
+      this.lng = lng;
+      this.i = i;
+      this.map = map;
+      this.pos = new google.maps.LatLng(lat, lng);
+    }
 
-  HTMLMarker.prototype = new google.maps.OverlayView();
-  HTMLMarker.prototype.onRemove = function () { }
+    HTMLMarker.prototype = new google.maps.OverlayView();
+    HTMLMarker.prototype.onRemove = function () { }
 
-  HTMLMarker.prototype.onAdd = function () {
+    HTMLMarker.prototype.onAdd = function () {
 
-    var i = this.i;
-    var map = this.map;
+      var i = this.i;
+      var map = this.map;
 
-    this.container = document.createElement('DIV');
-    this.container.className = "map-marker";
-    this.container.style.position = 'absolute';
-    this.container.innerHTML = "<img src='./img/icons/" + collectionsAdr[i].logo + "' alt=''><div><span>" + collectionsAdr[i].distance + " Miles</span><span>More info</span></div>";
-    var panes = this.getPanes();
-    panes.overlayImage.appendChild(this.container);
+      this.container = document.createElement('DIV');
+      this.container.className = "map-marker";
+      this.container.style.position = 'absolute';
+      this.container.innerHTML = "<img src='./img/icons/" + collectionsAdr[i].logo + "' alt=''><div><span>" + collectionsAdr[i].distance + " Miles</span><span>More info</span></div>";
+      var panes = this.getPanes();
+      panes.overlayImage.appendChild(this.container);
 
-    this.container.addEventListener('click', function (e) {
-      document.querySelectorAll(".map-marker").forEach(function (elm) {
-        elm.classList.remove("active");
+      this.container.addEventListener('click', function (e) {
+        document.querySelectorAll(".map-marker").forEach(function (elm) {
+          elm.classList.remove("active");
+        });
+
+        $(e.target).closest(".map-marker").addClass("active");
+        map.panTo(new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y));
+        control.setContent(i);
+        control.open();
+      })
+    }
+
+    HTMLMarker.prototype.draw = function () {
+      var overlayProjection = this.getProjection();
+      var position = overlayProjection.fromLatLngToDivPixel(this.pos);
+      var panes = this.getPanes();
+      this.container.style.left = position.x - 20 + 'px';
+      this.container.style.top = position.y - 44 + 'px';
+    }
+
+    var maps = document.querySelectorAll("[data-action=map]");
+
+    maps.forEach(function (elm) {
+
+      var bounds = new google.maps.LatLngBounds();
+
+      var map = new google.maps.Map(elm, {
+        zoom: 18,
+        center: new google.maps.LatLng(51.483120, -0.308564),
+        clickableIcons: false,
+        mapTypeControl: false,
       });
 
-      $(e.target).closest(".map-marker").addClass("active");
-      map.panTo(new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y));
-      control.setContent(i);
-      control.open();
-    })
+      control.init(map);
+
+      var i;
+
+      for (i = 0; i < collectionsAdr.length; i++) {
+
+        var loc = new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y);
+
+        var htmlMarker = new HTMLMarker(collectionsAdr[i].x, collectionsAdr[i].y, map, i);
+        htmlMarker.setMap(map);
+
+        bounds.extend(loc);
+      }
+
+    });
   }
 
-  HTMLMarker.prototype.draw = function () {
-    var overlayProjection = this.getProjection();
-    var position = overlayProjection.fromLatLngToDivPixel(this.pos);
-    var panes = this.getPanes();
-    this.container.style.left = position.x - 20 + 'px';
-    this.container.style.top = position.y - 44 + 'px';
-  }
-
-  var maps = document.querySelectorAll("[data-action=map]");
-
-  maps.forEach(function (elm) {
+  function initShowMap() {
+    var cont = document.querySelector("[data-action=mapss]");
 
     var bounds = new google.maps.LatLngBounds();
 
-    var map = new google.maps.Map(elm, {
+    var map = new google.maps.Map(cont, {
       zoom: 18,
       center: new google.maps.LatLng(51.483120, -0.308564),
       clickableIcons: false,
       mapTypeControl: false,
     });
 
-    control.init(map);
+    var marker = null;
 
-    var i;
+    document.addEventListener("updateDropOffMap", function(e){
+      if(marker) marker.setMap(null);
 
-    for (i = 0; i < collectionsAdr.length; i++) {
+      var loc = new google.maps.LatLng(collectionsAdr[e.detail.id].x, collectionsAdr[e.detail.id].y);
 
-      var loc = new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y);
-
-      var htmlMarker = new HTMLMarker(collectionsAdr[i].x, collectionsAdr[i].y, map, i);
-      htmlMarker.setMap(map);
-
-      bounds.extend(loc);
-    }
-
-    //map.panToBounds(bounds);
-    //map.fitBounds(bounds, 0); 
-
-  });
-
-}
-
-// Initialize and add the map
-function initMapSS() {
-  // The location of Uluru
-
-  var control = {
-    class: "map-window",
-    container: document.createElement('DIV'),
-    closeBtn: document.createElement('DIV'),
-    bookBtn: document.createElement('DIV'),
-    content: document.createElement('DIV'),
-
-    init: function (map) {
-      this.container.className = "map-window";
-      this.container.style.display = "none";
-      this.closeBtn.className = "map-window-close";
-      this.content.className = "map-window-content";
-      this.closeBtn.innerHTML = "<img src='./img/icons/close-btn.png' alt='close button' class='window-close-icon'>";
-      this.bookBtn.className = "map-window-book";
-      this.bookBtn.innerHTML = "<button class='btn btn-primary w-100'>SELECT</button>";
-
-      this.distance = document.createElement('DIV');
-      this.distance.className = "map-window-distance";
-
-      this.name = document.createElement('h2');
-
-      this.adress = document.createElement('DIV');
-      this.adress.className = "map-window-adress";
-
-      this.workTime = document.createElement('DIV');
-      this.workTime.className = "map-window-work-time";
-
-      this.printer = document.createElement('DIV');
-      this.printer.className = "map-window-printer";
-
-      this.drop = document.createElement('DIV');
-      this.drop.className = "map-window-drop";
-
-      this.price = document.createElement('h3');
-      this.price.className = "text-price";
-
-      this.vat = document.createElement('h4');
-      this.vat.className = "text-price-ext";
-
-      this.container.appendChild(this.distance);
-      this.container.appendChild(this.closeBtn);
-      this.container.appendChild(this.content);
-      this.container.appendChild(this.bookBtn);
-      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(this.container);
-
-      self = this;
-
-      this.closeBtn.addEventListener('click', function () {
-        self.close();
-      })
-    },
-    setContent: function (i) {
-      var self = this;
-      this.container.style.display = "flex";
-      this.distance.innerHTML = collectionsAdr[i].distance + " Miles";
-      this.content.innerHTML = "<h2>" + collectionsAdr[i].name + "</h2><div class='map-window-adress'>" + collectionsAdr[i].adress + ", " + collectionsAdr[i].postcode + "</div>";
-      if (collectionsAdr[i].worktime) {
-        collectionsAdr[i].worktime.forEach(function (elm) {
-          self.content.innerHTML += "<div class='map-window-work'><div>" + elm.days + "</div><div>" + elm.time + "</div></div>";
-        });
-      }
-    },
-    open: function () {
-      this.container.style.display = "flex";
-    },
-    close: function () {
-      this.container.style.display = "none";
-    }
-  }
-
-  function HTMLMarker(lat, lng, map, i) {
-    this.lat = lat;
-    this.lng = lng;
-    this.i = i;
-    this.map = map;
-    this.pos = new google.maps.LatLng(lat, lng);
-  }
-
-  HTMLMarker.prototype = new google.maps.OverlayView();
-  HTMLMarker.prototype.onRemove = function () { }
-
-  HTMLMarker.prototype.onAdd = function () {
-
-    var i = this.i;
-    var map = this.map;
-
-    this.container = document.createElement('DIV');
-    this.container.className = "map-marker";
-    this.container.style.position = 'absolute';
-    this.container.innerHTML = "<img src='./img/icons/" + collectionsAdr[i].logo + "' alt=''><div><span>" + collectionsAdr[i].distance + " Miles</span><span>More info</span></div>";
-    var panes = this.getPanes();
-    panes.overlayImage.appendChild(this.container);
-
-    this.container.addEventListener('click', function (e) {
-      document.querySelectorAll(".map-marker").forEach(function (elm) {
-        elm.classList.remove("active");
+      marker = new google.maps.Marker({
+        position: loc,
       });
 
-      $(e.target).closest(".map-marker").addClass("active");
-      map.panTo(new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y));
-      control.setContent(i);
-      control.open();
-    })
+      map.panTo(loc);
+
+      marker.setMap(map);
+      bounds.extend(loc);
+    });
   }
-
-  HTMLMarker.prototype.draw = function () {
-    var overlayProjection = this.getProjection();
-    var position = overlayProjection.fromLatLngToDivPixel(this.pos);
-    var panes = this.getPanes();
-    this.container.style.left = position.x - 20 + 'px';
-    this.container.style.top = position.y - 44 + 'px';
-  }
-
-  var cont = document.querySelector("[data-action=mapss]");
-
-  var bounds = new google.maps.LatLngBounds();
-
-  var map = new google.maps.Map(cont, {
-    zoom: 18,
-    center: new google.maps.LatLng(51.483120, -0.308564),
-    clickableIcons: false,
-    mapTypeControl: false,
-  });
-
-  control.init(map);
-
-  var i;
-
-  for (i = 0; i < collectionsAdr.length; i++) {
-
-    var loc = new google.maps.LatLng(collectionsAdr[i].x, collectionsAdr[i].y);
-
-    var htmlMarker = new HTMLMarker(collectionsAdr[i].x, collectionsAdr[i].y, map, i);
-    htmlMarker.setMap(map);
-
-    bounds.extend(loc);
-  }
-
-  //map.panToBounds(bounds);
-  //map.fitBounds(bounds, 0); 
-
-
 }

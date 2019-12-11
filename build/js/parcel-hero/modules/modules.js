@@ -139,7 +139,10 @@ const Pagiator = function (querySelector = ".pagiator") {
       if (currentPage - 1 == 1) pagiatorPrev.classList.remove("active");
       if (currentPage - 1 > 0) {
         pagiatorPages.innerHTML = ((currentPage - 1) * itemsPerPage - itemsPerPage + 1) + ' to ' + ((currentPage - 1) * itemsPerPage) + " of " + length;
-        eventActions.rebuild(pagiatorContainer, items, -1)
+        eventActions.rebuild(pagiatorContainer, items, -1);
+
+        let updatePagiator = new CustomEvent('updatePagiator');
+        document.dispatchEvent(updatePagiator);
       }
     });
     pagiatorNext.addEventListener("click", () => {
@@ -152,6 +155,8 @@ const Pagiator = function (querySelector = ".pagiator") {
           pagiatorPages.innerHTML = ((currentPage + 1) * itemsPerPage - itemsPerPage + 1) + ' to ' + ((currentPage + 1) * itemsPerPage) + " of " + length;
         }
         eventActions.rebuild(pagiatorContainer, items, 1)
+        let updatePagiator = new CustomEvent('updatePagiator');
+        document.dispatchEvent(updatePagiator);
       }
     });
   });
