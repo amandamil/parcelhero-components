@@ -113,6 +113,12 @@ h5 {
   font-weight: 500;
 }
 
+.text-regular-primary {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: $primary;
+}
+
 .section-title {
   color: $dark;
   font-size: 2em;
@@ -222,4 +228,23 @@ h5 {
 .text-small-light {
   font-size: 0.875rem;
   color: $dark-gray;
+}
+
+.text-title-confirmation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $green-active;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.text-neutral-middle {
+  font-size: 1.25rem;
+  color: $darker-gray;
+}
+
+.text-neutral-small {
+  font-size: 1rem;
+  color: $darker-gray;
 }

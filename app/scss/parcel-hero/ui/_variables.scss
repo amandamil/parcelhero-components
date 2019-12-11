@@ -50,6 +50,7 @@ $success-adv:    #3db4ab;
 
 $orange:         #fa633c;
 
+$cover-lg:        #ebf4e7;
 // ADDITIONAL COLORS
 
 $blue-light:     #4fb1e3;
@@ -95,7 +96,8 @@ $theme-colors: map-merge(
     "gray-darker":$darker-gray,
     "success-adv": $success-adv,
     "primary-spec": $primary-spec,
-    "deep": $deep
+    "deep": $deep,
+    "cover-lg":    $cover-lg
 
   ),
   $theme-colors
