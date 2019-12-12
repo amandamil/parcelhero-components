@@ -7,11 +7,25 @@ $(function () {
   // searchInputs();
   insurance();
   groupRadio();
+  passwordInputs()
 
   if($('.datepicker').length) {
     $('.datepicker').flatpickr();
   }
 });
+
+function passwordInputs(){
+  $(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $(this).parent().find("input");;
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+}
 
 function groupRadio(){
   let radios = document.querySelectorAll(".group-radio");

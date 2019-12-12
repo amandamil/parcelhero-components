@@ -10,8 +10,8 @@
     font-weight: 500;
     color: $darker-gray;
 
-    &::before{
-      content: '\e902';
+    &::before {
+      content: "\e902";
       width: 1.4rem;
       height: 1.4rem;
       color: $success-adv;
@@ -21,7 +21,7 @@
       border-radius: 50%;
       align-items: center;
       justify-content: center;
-      font-family: 'icomoon' !important;
+      font-family: "icomoon" !important;
       speak: none;
       font-style: normal;
       font-weight: normal;
@@ -29,6 +29,30 @@
       text-transform: none;
       line-height: 1;
       margin-right: 1rem;
+    }
+  }
+}
+
+.triangle-down-big {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f00;
+  }
+
+  &.triangle-cover-lg {
+    &::after {
+      border-top: 20px solid $cover-lg;
     }
   }
 }

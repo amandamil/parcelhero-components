@@ -22,6 +22,18 @@ input, textarea {
   }
 }
 
+.input-password {
+  position: relative;
+
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    color: $darker-gray;
+  }
+}
+
 .info-input {
   width: 14%;
   margin-right: 10px;
