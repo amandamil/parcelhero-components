@@ -1,0 +1,450 @@
+{% extends "structure/parcel-hero/_layout.njk" %}
+
+{% block content %}
+
+<section class="p-4 bg-cover-lg text-center triangle-down-big triangle-cover-lg">
+  <h2 class="text-title-confirmation mb-3"><img class="mr-md-4 mr-2" src="../img/icons/icon-check.png" alt=""> Your parcel is booked!</h2>
+  <div class="text-neutral-middle">A confirmation email has been sent to <strong>john.smith@gmail.com</strong></div>
+</section>
+
+<section class="p-4">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="p-5 border border-success bw-2">
+          <div class="accordion theme-light">
+            <div class="accordion-group mt-4">
+              <button class="collapse-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseUps" aria-expanded="false" aria-controls="collapseMan">
+                <div class="accordion-preset-1">
+                  <div>
+                    <img src="./img/icons/ups-logo.svg" class="icon-big">
+                  </div>
+                  <div>
+                    <span class="text-left">
+                      21 shipments
+                    </span>
+                  </div>
+                </div>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+
+              <div class="collapse" id="collapseUps">
+                <div class="settings-form settings-content">
+                  <div class="table mt-4 pr-4 pl-4 account-table settings-table">
+                    <div class="table-wrap overflow-hidden">
+                      <div class="text-sub-medium mb-4">Collection for Wed, 22 Sep 18:00</div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              4 parcels
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              Toybox643
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2 parcels
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group mt-4">
+              <button class="collapse-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseFedex" aria-expanded="false" aria-controls="collapseMan">
+                <div class="accordion-preset-1">
+                  <div>
+                    <img src="./img/icons/dhl-logo.png" class="icon-big">
+                  </div>
+                  <div>
+                    <span class="text-left">
+                      21 shipments
+                    </span>
+                  </div>
+                </div>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="collapse" id="collapseFedex">
+                <div class="settings-form settings-content">
+                  <div class="table mt-5 pl-4 pr-4 account-table settings-table">
+                    <div class="table-wrap overflow-hidden">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              6
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              4
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              8
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group mt-4">
+              <button class="collapse-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseTnt" aria-expanded="false" aria-controls="collapseMan">
+                <div class="accordion-preset-1">
+                  <div>
+                    <img src="./img/icons/tnt-logo.png" class="icon-big">
+                  </div>
+                  <div>
+                    <span class="text-left">
+                      21 shipments
+                    </span>
+                  </div>
+                </div>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="collapse" id="collapseTnt">
+                <div class="settings-form settings-content">
+                  <div class="table mt-5 pr-4 pl-4 account-table settings-table">
+                    <div class="table-wrap overflow-hidden">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              6
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              4
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              8
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>
+                              John Smith
+                            </td>
+                            <td>
+                              United States
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
+                                  <span class="sr-only">Remove</span>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-5 pb-5 bg-neutral">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mb-md-0 mb-4">
+        <div class="border bg-white p-4 border border-primary h-100 bw-2">
+          <div class="text-title-dark mb-4"><img src="../img/icons/icon-info.png" class="mr-3" alt=""> Important information</div>
+          <div class="mb-4 d-flex">
+            <div>
+              <div class="text-neutral-medium mb-2">Packaging</div>
+              <div class="text-small mb-2">If your items are not packaged safely, you may not be entitled to claim in the event of damage.</div>
+              <a class="link-primary-spec" href="#">Packing your items safely</a>
+            </div>
+            <div><img src="../img/icons/icon-package-check.png" alt=""></div>
+          </div>
+          <div>
+            <div class="text-neutral-medium mb-2">Haverhill</div>
+            <div class="text-small mb-2">Your items are travelling to our Haverhill sorting centre where they will be checked prior to export. This will not affect delivery date.</div>
+            <a class="link-primary-spec" href="#">Why are my items going to Haverhill?</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-block-blue bw-2"><i class="icon-live-chat"></i>Live help</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

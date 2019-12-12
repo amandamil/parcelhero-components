@@ -18,6 +18,12 @@
   }
 }
 
+.w-md-0 {
+  @include media-breakpoint-up(md) {
+    width: auto !important;
+  }
+}
+
 .toggler-primary {
   i {
     transform-origin: center center;
@@ -46,6 +52,9 @@
   >div {
     &:first-child{
       width: 40px;
+    }
+    &:last-child{
+      padding-right: 2rem;
     }
   }
 

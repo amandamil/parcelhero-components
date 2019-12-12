@@ -85,6 +85,11 @@ h5 {
   display: block;
 }
 
+.text-sub-medium {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
 .text-strong-title {
   font-weight: 600;
   font-size: 1.125rem;
@@ -265,4 +270,28 @@ h5 {
 .text-neutral-small {
   font-size: 1rem;
   color: $darker-gray;
+}
+
+@include media-breakpoint-down(sm) {
+  .text-title-confirmation {
+    font-size: 1.375rem;
+
+    img{
+      max-width: 30px;
+      max-height: 30px;
+    }
+  }
+
+  .text-title-secondary {
+    font-size: 1.25rem;
+
+    img{
+      max-width: 22px;
+      max-height: 22px;
+    }
+  }
+
+  .text-title-dark {
+    
+  }
 }
