@@ -371,6 +371,12 @@
   }
 }
 
+.overflow-md-hidden {
+  @include media-breakpoint-down(md) {
+    overflow: hidden !important;
+  }
+}
+
 .bootstrap-select {
   > .dropdown-toggle:after {
     transform-origin: center center;
@@ -380,6 +386,18 @@
     > .dropdown-toggle:after {
       transform: rotate(-180deg);
     }
+  }
+}
+
+.d-none-md {
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
+}
+
+.d-inline-block-md {
+  @include media-breakpoint-down(md) {
+    display: inline-block !important;
   }
 }
 

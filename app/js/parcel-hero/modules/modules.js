@@ -161,4 +161,3 @@ const Pagiator = function (querySelector = ".pagiator") {
     });
   });
 }
-

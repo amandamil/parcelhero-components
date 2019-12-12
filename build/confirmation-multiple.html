@@ -56,11 +56,24 @@
   <div class="text-neutral-middle">A confirmation email has been sent to <strong>john.smith@gmail.com</strong></div>
 </section>
 
-<section class="p-4">
+<section class="preset-padding-4">
   <div class="container mt-3">
     <div class="row">
       <div class="col-md-12">
-        <div class="p-5 border border-success bw-2">
+        <div class="p-md-5 p-2 border border-success bw-2">
+          <div class="text-confirmation-strong mb-5">15 labels to print</div>
+          <div class="d-md-flex d-block justify-content-between">
+            <button class="btn btn-outline-primary not-rounded w-md-100 mb-md-0 mb-4">PRINT ALL LABELS (10)</button>
+            <form class="h-100 d-flex align-items-center w-md-100">
+              <div class="form-group search-widget mb-0 w-md-100">
+                <input type="text" class="form-control not-rounded dark-theme" placeholder="Search shipment">
+                <div class="search-widget-icons">
+                  <i class="search-widget-search fas fa-search active"></i>
+                  <i class="search-widget-remove fas fa-times"></i>
+                </div>
+              </div>
+            </form>
+          </div>
           <div class="accordion theme-light">
             <div class="accordion-group mt-4">
               <button class="collapse-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseUps" aria-expanded="false" aria-controls="collapseMan">
@@ -70,7 +83,7 @@
                   </div>
                   <div>
                     <span class="text-left">
-                      21 shipments
+                      4 shipments
                     </span>
                   </div>
                 </div>
@@ -79,8 +92,8 @@
 
               <div class="collapse" id="collapseUps">
                 <div class="settings-form settings-content">
-                  <div class="table mt-4 pr-4 pl-4 account-table settings-table">
-                    <div class="table-wrap overflow-hidden">
+                  <div class="table confirmation-table">
+                    <div class="table-wrap overflow-md-hidden">
                       <div class="text-sub-medium mb-4">Collection for Wed, 22 Sep 18:00</div>
                       <table class="table">
                         <thead>
@@ -116,9 +129,23 @@
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
@@ -144,9 +171,123 @@
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="text-sub-medium mb-4 mt-5">Collection for Wed, 22 Sep 18:00</div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              1 parcel
+                            </td>
+                            <td>
+                              Earnest Scott
+                            </td>
+                            <td>
+                              United Kingdom
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              1 parcel
+                            </td>
+                            <td>
+                              Earnest Scott
+                            </td>
+                            <td>
+                              United Kingdom
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
@@ -166,7 +307,7 @@
                   </div>
                   <div>
                     <span class="text-left">
-                      21 shipments
+                      4 shipments
                     </span>
                   </div>
                 </div>
@@ -174,21 +315,24 @@
               </button>
               <div class="collapse" id="collapseFedex">
                 <div class="settings-form settings-content">
-                  <div class="table mt-5 pl-4 pr-4 account-table settings-table">
-                    <div class="table-wrap overflow-hidden">
+                  <div class="table confirmation-table">
+                    <div class="table-wrap overflow-md-hidden">
+                      <div class="text-sub-medium mb-4">Collection for Wed, 22 Sep 18:00</div>
                       <table class="table">
                         <thead>
                           <tr>
                             <th class="w-0">Contents</th>
                             <th class="w-0">Racipient</th>
                             <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
                             <th class="w-0"></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>
-                              6
+                              4 parcels
                             </td>
                             <td>
                               John Smith
@@ -197,21 +341,41 @@
                               United States
                             </td>
                             <td>
+                              Toybox643
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
                               <div class="table-actions pull-right mr-2">
                                 <span>
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              2
+                              2 parcels
                             </td>
                             <td>
                               John Smith
@@ -220,50 +384,109 @@
                               United States
                             </td>
                             <td>
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
                               <div class="table-actions pull-right mr-2">
                                 <span>
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="text-sub-medium mb-4 mt-5">Collection for Wed, 22 Sep 18:00</div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              1 parcel
+                            </td>
+                            <td>
+                              Earnest Scott
+                            </td>
+                            <td>
+                              United Kingdom
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              4
+                              1 parcel
                             </td>
                             <td>
-                              John Smith
+                              Earnest Scott
                             </td>
                             <td>
-                              United States
+                              United Kingdom
                             </td>
                             <td>
-                              <div class="table-actions pull-right mr-2">
-                                <span>
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
-                                  <span class="sr-only">Print</span>
-                                </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
-                                </span>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              8
                             </td>
                             <td>
-                              John Smith
-                            </td>
-                            <td>
-                              United States
+                              £32.34
                             </td>
                             <td>
                               <div class="table-actions pull-right mr-2">
@@ -271,32 +494,23 @@
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
                                 </span>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              1
-                            </td>
-                            <td>
-                              John Smith
-                            </td>
-                            <td>
-                              United States
-                            </td>
-                            <td>
-                              <div class="table-actions pull-right mr-2">
-                                <span>
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
-                                  <span class="sr-only">Print</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
@@ -316,7 +530,7 @@
                   </div>
                   <div>
                     <span class="text-left">
-                      21 shipments
+                      4 shipments
                     </span>
                   </div>
                 </div>
@@ -324,21 +538,24 @@
               </button>
               <div class="collapse" id="collapseTnt">
                 <div class="settings-form settings-content">
-                  <div class="table mt-5 pr-4 pl-4 account-table settings-table">
-                    <div class="table-wrap overflow-hidden">
+                  <div class="table confirmation-table">
+                    <div class="table-wrap overflow-md-hidden">
+                      <div class="text-sub-medium mb-4">Collection for Wed, 22 Sep 18:00</div>
                       <table class="table">
                         <thead>
                           <tr>
                             <th class="w-0">Contents</th>
                             <th class="w-0">Racipient</th>
                             <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
                             <th class="w-0"></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>
-                              6
+                              4 parcels
                             </td>
                             <td>
                               John Smith
@@ -347,21 +564,41 @@
                               United States
                             </td>
                             <td>
+                              Toybox643
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
                               <div class="table-actions pull-right mr-2">
                                 <span>
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              2
+                              2 parcels
                             </td>
                             <td>
                               John Smith
@@ -370,50 +607,109 @@
                               United States
                             </td>
                             <td>
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
                               <div class="table-actions pull-right mr-2">
                                 <span>
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
+                                </span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="text-sub-medium mb-4 mt-5">Collection for Wed, 22 Sep 18:00</div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="w-0">Contents</th>
+                            <th class="w-0">Racipient</th>
+                            <th class="w-0">Destination</th>
+                            <th class="w-0">Reference</th>
+                            <th class="w-0"></th>
+                            <th class="w-0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              1 parcel
+                            </td>
+                            <td>
+                              Earnest Scott
+                            </td>
+                            <td>
+                              United Kingdom
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                              £32.34
+                            </td>
+                            <td>
+                              <div class="table-actions pull-right mr-2">
+                                <span>
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
+                                  <span class="sr-only">Print</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
+                                </span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
+                                </span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              4
+                              1 parcel
                             </td>
                             <td>
-                              John Smith
+                              Earnest Scott
                             </td>
                             <td>
-                              United States
+                              United Kingdom
                             </td>
                             <td>
-                              <div class="table-actions pull-right mr-2">
-                                <span>
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
-                                  <span class="sr-only">Print</span>
-                                </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
-                                </span>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              8
                             </td>
                             <td>
-                              John Smith
-                            </td>
-                            <td>
-                              United States
+                              £32.34
                             </td>
                             <td>
                               <div class="table-actions pull-right mr-2">
@@ -421,32 +717,23 @@
                                   <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
                                   <span class="sr-only">Print</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                  <span class="sr-only">View details</span>
                                 </span>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              1
-                            </td>
-                            <td>
-                              John Smith
-                            </td>
-                            <td>
-                              United States
-                            </td>
-                            <td>
-                              <div class="table-actions pull-right mr-2">
-                                <span>
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-print" aria-hidden="true" data-original-title="Print"></i>
-                                  <span class="sr-only">Print</span>
+                                <span class="d-none d-none d-inline-block-md">
+                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                  <span class="sr-only">Delete</span>
                                 </span>
-                                <span data-toggle="modal" data-target="#confirmRemove" class="mr-1">
-                                  <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Remove"></i>
-                                  <span class="sr-only">Remove</span>
+                                <span class="mr-1 d-none-md">
+                                  <i class="fas fa-ellipsis-h dropdown-custom">
+                                    <div class="dropdown-menu-custom">
+                                      <div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                      </div>
+                                    </div>
+                                  </i>
                                 </span>
                               </div>
                             </td>

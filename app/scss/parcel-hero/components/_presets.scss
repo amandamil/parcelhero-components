@@ -18,3 +18,50 @@
     }
   }
 }
+
+.confirmation-table {
+  overflow: visible;
+  color: $darker-gray;
+  padding:2rem;
+  margin: 0;
+
+  .table-wrap {
+    overflow: visible;
+
+    table {
+      overflow: visible;
+      color: $darker-gray;
+
+      .table-actions {
+        pointer-events: none;
+      }
+
+      tr{
+        &:hover{
+          .table-actions {
+            pointer-events: all;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    overflow-x: auto;
+
+    table {
+      .table-actions {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.preset-padding-4 {
+  padding: 2rem;
+
+  @include media-breakpoint-down(md){
+    padding: 2rem 0rem;
+  }
+}

@@ -21,6 +21,10 @@
       >div {
         &:first-child{
           width: 100px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           margin-right: 1rem;
 
           img {
@@ -33,6 +37,27 @@
         &:last-child{
           display: flex;
           align-items: center;
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+
+      .accordion-group {  
+        .collapse-toggler {
+          padding: .625rem 1rem; 
+        }
+      }
+
+      .accordion-preset-1 {
+        >div {
+          &:first-child{
+            width: 60px;
+            height: 20px;
+  
+            img {
+              max-height: 20px;
+            }
+          }
         }
       }
     }
