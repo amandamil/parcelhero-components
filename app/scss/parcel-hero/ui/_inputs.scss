@@ -339,6 +339,78 @@ input, textarea {
   }
 }
 
+.radio {
+  position: relative;
+  width: 120px;
+  padding-left: 26px;
+  height: 20px;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &.wide {
+    width: 100%;
+  }
+
+  &.reversed {
+    input {
+      left: auto;
+      right: 0;
+    }
+
+    .checkmark {
+      left: auto;
+      right: 0;
+    }
+  }
+  
+  input:checked {
+    &{
+      border: 2px solid $green-active;
+    }  
+  }
+  
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:checked ~ .checkmark {
+      border: 2px solid $green-active;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background: $green-active;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+  .checkmark {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all $transition ease;
+  }  
+}
+
 .radio-secondary {
   position: relative;
   width: 20px;
