@@ -162,3 +162,20 @@ const Pagiator = function (querySelector = ".pagiator") {
   });
 }
 
+const SearchWidget = function (querySelector = ".search-widget") {
+  searchs = document.querySelectorAll(querySelector);
+
+  searchs.forEach(function (search) {
+    search.querySelector("input").addEventListener("input", function (e) {
+      search.querySelectorAll("i").forEach(function (icon) {
+        icon.classList.remove("active");
+      })
+      e.target.value.length != 0 ? search.querySelector(".search-widget-remove").classList.add("active") : search.querySelector(".search-widget-search").classList.add("active")
+    });
+    search.querySelector(".search-widget-remove").addEventListener("click", function (e) {
+      search.querySelector("input").value = '';
+      search.querySelector(".search-widget-remove").classList.remove("active")
+      search.querySelector(".search-widget-search").classList.add("active")
+    })
+  });
+}

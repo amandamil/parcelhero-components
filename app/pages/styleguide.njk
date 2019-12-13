@@ -1,0 +1,251 @@
+{% extends "structure/parcel-hero/_layout-simple.njk" %}
+
+{% set title = "Parcel hero Styleguide" %}
+
+{% block content %}
+
+<section class="bg-gray-light pt-g pb-g">
+  <div class="container">
+    <div class="row align-items-stretch">
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Inputs</h2>
+          <div>
+            <input type="text" placeholder="Input dark" name="input" class="form-control mb-4 dark-theme">
+
+            <input type="text" placeholder="Input light" name="input" class="form-control mb-4">
+
+            <div class="input-password mb-4">
+              <input type="password" placeholder="Input password" name="input-password" class="form-control w-100 dark-theme">
+              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+
+            <div class="form-group search-widget mb-4">
+              <input type="text" class="form-control dark-theme" placeholder="Search input">
+              <div class="search-widget-icons">
+                <i class="search-widget-search fas fa-search active"></i>
+                <i class="search-widget-remove fas fa-times"></i>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="text-label" for="">Find address</label>
+              <div class="search-input">
+                <input type="text" autocomplete="new-adress" name="collection-adress" data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control not-rounded dark-theme">
+              </div>
+            </div>
+
+            <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light">
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+              <option value="6">Option 6</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100 sg-buttons">
+          <h2 class="mb-4">Buttons</h2>
+          <div>
+            <button class="btn btn-primary">Primary button</button>
+            <button class="btn btn-secondary">Secondary button</button>
+            <button class="btn btn-orange">Orange button</button>
+            <button class="btn btn-blue-adv btn-sm">Button small with icon <i class="ml-2 fas fa-chevron-right"></i></button>
+            <button class="btn btn-primary btn-sm">Primary small button</button>
+            <button class="btn btn-gradient-primary btn-12">Gradient button</button>
+            <button href="#" class="btn btn-gradient-secondary">Gradient button <i class="ml-2 fas fa-chevron-right"></i></button>
+          </div>
+          <h2 class="mb-4 mt-4">Outline buttons</h2>
+          <div>
+            <button class="btn btn-outline-primary">Primary button</button>
+            <button class="btn btn-outline-secondary btn-md">Secondary medium button</button>
+            <button class="btn not-rounded btn-orange-outline">Orange outline</button>
+            <button class="btn btn-orange-outline">Orange outline</button>
+            <button type="button" class="btn btn-outline-dark not-rounded text-uppercase">Dark outline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Togglers</h2>
+          <div class="accordion" id="accordionDemo">
+            <div class="accordion-group">
+              <button class="collapse-toggler mt-4" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                <div>Accordion 1</div><i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="collapse" id="collapse-1" data-parent="#accordionDemo">
+                <div class="p-4">
+                  Accordion content
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <button class="collapse-toggler mt-4" type="button" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                <div>Accordion 2</div><i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="collapse" id="collapse-2" data-parent="#accordionDemo">
+                <div class="p-4">
+                  Accordion content
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <button class="collapse-toggler mt-4" type="button" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                <div>Accordion 3</div><i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="collapse" id="collapse-3" data-parent="#accordionDemo">
+                <div class="p-4">
+                  Accordion content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Headings</h2>
+          <div>
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+          </div>
+          <h2 class="mt-4">Colors</h2>
+          <div class="sg-boxes">
+            <div>
+              <span class="text-primary">primary</span>
+              <div class="bg-primary"></div>
+            </div>
+            <div>
+              <span class="text-secondary">secondary</span>
+              <div class="bg-secondary"></div>
+            </div>
+            <div>
+              <span class="text-success">success</span>
+              <div class="bg-success"></div>
+            </div>
+            <div>
+              <span class="text-info">info</span>
+              <div class="bg-info"></div>
+            </div>
+            <div>
+              <span class="text-warning">warning</span>
+              <div class="bg-warning"></div>
+            </div>
+            <div>
+              <span class="text-danger">danger</span>
+              <div class="bg-danger"></div>
+            </div>
+            <div>
+              <span class="text-light">light</span>
+              <div class="bg-light"></div>
+            </div>
+            <div>
+              <span class="text-dark">dark</span>
+              <div class="bg-dark"></div>
+            </div>
+            <div>
+              <span class="text-filter">filter</span>
+              <div class="bg-filter"></div>
+            </div>
+            <div>
+              <span class="text-gray">gray</span>
+              <div class="bg-gray"></div>
+            </div>
+            <div>
+              <span class="text-dblue">dblue</span>
+              <div class="bg-dblue"></div>
+            </div>
+            <div>
+              <span class="text-blue-adv">blue-adv</span>
+              <div class="bg-blue-adv"></div>
+            </div>
+            <div>
+              <span class="text-blue-cover">blue-cover</span>
+              <div class="bg-blue-cover"></div>
+            </div>
+            <div>
+              <span class="text-orange">orange</span>
+              <div class="bg-orange"></div>
+            </div>
+            <div>
+              <span class="text-neutral">neutral</span>
+              <div class="bg-neutral"></div>
+            </div>
+            <div>
+              <span class="text-gray-darker">gray-darker</span>
+              <div class="bg-gray-darker"></div>
+            </div>
+            <div>
+              <span class="text-success-adv">success-adv</span>
+              <div class="bg-success-adv"></div>
+            </div>
+            <div>
+              <span class="text-primary-spec">primary-spec</span>
+              <div class="bg-primary-spec"></div>
+            </div>
+            <div>
+              <span class="text-deep">deep</span>
+              <div class="bg-deep"></div>
+            </div>
+            <div>
+              <span class="text-cover-lg">cover-lg</span>
+              <div class="bg-cover-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Texts</h2>
+          <div>
+            <div class="text-title-medium">text-title-medium</div>
+            <div class="text-sub-title">text-sub-title</div>
+            <div class="text-sub-regular">text-sub-regular</div>
+            <div class="text-sub-medium">text-sub-medium</div>
+            <div class="text-strong-title">text-strong-title</div>
+            <div class="text-link">text-link</div>
+            <div class="text-medium-m">text-medium-m</div>
+            <div class="text-regular-primary">text-regular-primary</div>
+            <div class="text-medium-title">text-medium-title</div>
+            <div class="text-title-secondary">text-title-secondary</div>
+            <div class="text-title-dark">text-title-dark</div>
+            <div class="text-strong">text-strong</div>
+            <div class="text-regular-medium">text-regular-medium</div>
+            <div class="text-medium">text-medium</div>
+            <div class="text-lighter">text-lighter</div>
+            <div class="text-light-subtitle">text-light-subtitle</div>
+            <div class="text-label">text-label</div>
+            <div class="text-small-medium">text-small-medium</div>
+            <div class="text-small-light">text-small-medium</div>
+            <div class="text-confirmation-strong">text-confirmation-strong</div>
+            <div class="text-neutral-middle">text-neutral-middle</div>
+            <div class="text-neutral-medium">text-neutral-medium</div>
+            <div class="text-neutral-small">text-neutral-small</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

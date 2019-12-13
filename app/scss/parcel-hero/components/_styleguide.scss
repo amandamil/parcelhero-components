@@ -1,0 +1,21 @@
+.sg-buttons {
+  button {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.sg-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  >div {
+    width: 80px;
+    font-size: .8rem;
+    margin-bottom: 1rem;
+
+    >div{
+      width: 2rem;
+      height: 2rem;
+      border-radius: 4px;
+    }
+  }
+}

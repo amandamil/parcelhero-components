@@ -14,17 +14,10 @@ function widgetAllShipments() {
     search.querySelector("input").addEventListener("input", function (e) {
       filter(e.target.value, search);
       calculate(search)
-      search.querySelectorAll("i").forEach(function (icon) {
-        icon.classList.remove("active");
-      })
-      e.target.value.length != 0 ? search.querySelector(".search-widget-remove").classList.add("active") : search.querySelector(".search-widget-search").classList.add("active")
     });
     search.querySelector(".search-widget-remove").addEventListener("click", function (e) {
       filter('', search);
       calculate(search);
-      search.querySelector("input").value = '';
-      search.querySelector(".search-widget-remove").classList.remove("active")
-      search.querySelector(".search-widget-search").classList.add("active")
     })
 
     function filter(txt, search) {
