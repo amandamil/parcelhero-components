@@ -8,11 +8,11 @@
 {% block content %}
   {% include "../templates/modules/checkout/_checkout-header.njk" %}
 
-  <section class="bg-gray-light pt-g">
+  <main class="bg-gray-light order-summary-main">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="block your-details mb-g">
+          {# <div class="block your-details mb-g">
             <div class="block-title mb-1">
               <h4 class="text-medium-subtitle">Your details<i class="icon-help ml-2"></i></h4>
             </div>
@@ -23,12 +23,70 @@
                 <p>I am the receiver: <span>Peter Jones</span></p>
               </div>
             </div>
-          </div>
+          </div> #}
+
+          <section class="block order-section">
+            <div class="block-title order-section__title">
+              <h1 class="text-medium-subtitle order-section__heading">Order summary</h1>
+            </div>
+
+            <section class="shipment-group">
+              <div class="shipment-group__heading header-underline">
+                <div class="shipment-group__heading-row">
+                  <div class="shipment-group__delivery-company">
+                    <img class="shipment-group__delivery-company-logo" src="img/icons/fedex-logo.png" alt="FedEx" width="50">
+                  </div>
+                  <h2 class="shipment-group__amount">
+                    <span class="shipment-group__amount-count">1</span> shipment
+                  </h2>
+                </div>
+              </div>
+
+              <div class="shipments-collection">
+                <div class="shipments-collection__heading-row">
+                  <h3 class="shipments-collection__heading">Collection for <time>Wed, 22 Sep 18:00</time></h3>
+                  <div class="shipments-collection__amount">£13.13</div>
+                </div>
+                <div class="row shipments-collection__details-row">
+                  <div class="col-md-6">
+                    <div class="collection-detail">
+                      <h4>Collect from</h4>
+                      <p>
+                        Earnest Scott<br>
+                        ParcelHero<br>
+                        6 Canute House,<br>
+                        Durum Warf Drive,<br>
+                        United Kingdom
+                      </p>
+                    </div>
+                    <div class="collection-detail">
+                      <h4>Description</h4>
+                      <p>Kitchen accessories</p>
+                    </div>
+                    <div class="collection-detail">
+                      <h4>Weight &amp; size</h4>
+                      <p>
+                          <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
+                          <span>2 parcels:</span> <span>12 x 23 x 16cm, 3.1kg</span>
+                          <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+
+          </section>
+
         </div>
           
         <div class="col-lg-4">
+          {% include "../templates/modules/checkout/_checkout-sidebar.njk" %}
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
 {% endblock %}
