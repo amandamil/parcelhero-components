@@ -36,12 +36,12 @@
             </div>
 
             <div class="form-group search-widget mb-4">
-                <input type="text" class="form-control" placeholder="Search input">
-                <div class="search-widget-icons">
-                  <i class="search-widget-search fas fa-search active"></i>
-                  <i class="search-widget-remove fas fa-times"></i>
-                </div>
+              <input type="text" class="form-control" placeholder="Search input">
+              <div class="search-widget-icons">
+                <i class="search-widget-search fas fa-search active"></i>
+                <i class="search-widget-remove fas fa-times"></i>
               </div>
+            </div>
 
             <div class="mb-4">
               <label class="text-label" for="">Find address</label>
@@ -76,8 +76,8 @@
           </div>
           <h2 class="mb-4 mt-4">Outline buttons</h2>
           <div>
-            <button class="btn btn-outline-primary">Primary button</button>
-            <button class="btn btn-outline-secondary btn-md">Secondary medium button</button>
+            <button class="btn btn-outline-primary">Primary outline</button>
+            <button class="btn btn-outline-secondary btn-md">Secondary outline</button>
             <button class="btn not-rounded btn-orange-outline">Orange outline</button>
             <button class="btn btn-orange-outline">Orange outline</button>
             <button type="button" class="btn btn-outline-dark not-rounded text-uppercase">Dark outline</button>
@@ -88,8 +88,9 @@
     <div class="row">
       <div class="col-md-6 pb-g">
         <div class="block h-100">
-          <h2 class="mb-4">Togglers</h2>
-          <div class="accordion" id="accordionDemo">
+          <h2 class="mb-4">Collapses</h2>
+
+          <div class="accordion mb-4" id="accordionDemo">
             <div class="accordion-group">
               <button class="collapse-toggler mt-4" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
                 <div>Accordion 1</div><i class="fas fa-chevron-down"></i>
@@ -121,11 +122,348 @@
               </div>
             </div>
           </div>
+
+          <div class="mb-4">
+            <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-1">
+              <div>Collapse default</div><i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="collapse" id="collapse-4">
+              <div class="p-4">
+                Collapse content
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse-toggler simple-primary" data-toggle="collapse" data-target="#collapseSimple" aria-expanded="false" aria-controls="collapseSimple">Simple collapse<i class="fas fa-chevron-down ml-1"></i></div>
+          <div class="collapse" id="collapseSimple">
+            <div class="pt-2">
+              Collapse content
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="col-md-6 pb-g">
         <div class="block h-100">
+          <h2 class="mb-4">Tabs</h2>
 
+          <nav class="nav-tabs-container">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Tab 1</a>
+              <a class="nav-item nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Tab 2</a>
+              <a class="nav-item nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Tab 3</a>
+              <a class="nav-item nav-link" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Tab 4</a>
+            </div>
+          </nav>
+          <div class="tab-content p-4" id="nav-tabs">
+            <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+              Content 1
+            </div>
+            <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+              Content 2
+            </div>
+            <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+              Content 3
+            </div>
+            <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab-4">
+              Content 4
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Cards</h2>
+
+          <div class="card mb-4">
+            <div class="card-body double-padding">
+              <h5 class="card-title">Card title</h5>
+              <div class="card-middle-t">
+                Card content
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-neutral mb-4">
+            <div class="card-body double-padding">
+              <h5 class="card-title">Card title</h5>
+              <div class="card-middle-t">
+                Card content
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body double-padding">
+              <div class="row">
+                <div class="col-8">
+                  <h5 class="card-title">Cards with select</h5>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                  <select class='form-control custom-picker card-select-t' data-size="5" data-style="select-light" select-controll="card-select">
+                    <option value="option-1" select-target="option-1">Option 1</option>
+                    <option value="option-2" select-target="option-2">Option 2</option>
+                    <option value="option-3" select-target="option-3">Option 3</option>
+                    <option value="option-4" select-target="option-4">Option 4</option>
+                  </select>
+                </div>
+              </div>
+              <div class="collapse show" select-group="card-select" id="option-1">
+                <span>Content 1</span>
+              </div>
+              <div class="collapse" select-group="card-select" id="option-2">
+                <span>Content 2</span>
+              </div>
+              <div class="collapse" select-group="card-select" id="option-3">
+                <span>Content 3</span>
+              </div>
+              <div class="collapse" select-group="card-select" id="option-4">
+                <span>Content 4</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Radio buttons & Checkboxes</h2>
+          <div>
+
+            <div class="element-group no-label">
+              <label class="element-static-label">
+                <input type="checkbox" name="checkbox-2" class="element-input" data-materialize />
+              </label>
+            </div>
+
+          </div>
+          <div>
+
+            <div class="element-group no-label">
+              <label class="element-static-label">
+                <input type="checkbox" name="checkbox-1" class="element-input" data-materialize />
+                With label
+              </label>
+            </div>
+
+          </div>
+          <div class="pb-4 border-bottom">
+
+            <div class="element-group theme-black no-label">
+              <label class="element-static-label">
+                <input type="checkbox" name="checkbox-3" class="element-input" data-materialize />
+                Dark with label
+              </label>
+            </div>
+
+          </div>
+
+          <div class="pt-4">
+            <label class="radio">
+              <input type="radio" value="0" name="radio-1" checked>
+              <span class="checkmark"></span>
+              Radio 1
+            </label>
+            <label class="radio">
+              <input type="radio" value="1" name="radio-1" checked>
+              <span class="checkmark"></span>
+              Radio 2
+            </label>
+            <label class="radio">
+              <input type="radio" value="2" name="radio-1" checked>
+              <span class="checkmark"></span>
+              Radio 3
+            </label>
+          </div>
+
+          <div class="pt-4">
+            <div class="group-radio">
+              <div class="group-radio-item active">
+                <div class="group-radio-title">
+                  <div class="radio-secondary">
+                    <input type="radio" value="0" name="delivery-price" checked>
+                    <span class="checkmark"></span>
+                  </div>
+                  <span>Original selection</span>
+                </div>
+                <div class="group-radio-content">
+                  <i class="icon-info presset-icon-medium"></i>
+                  <div class="group-radio-img"><img src="../img/icons/dhl-logo.png" alt=""></div>
+                  <div class="text-medium-m text-deep">£24.96</div>
+                  <div>Delivers Tue 29th</div>
+                </div>
+              </div>
+              <div class="group-radio-item">
+                <div class="group-radio-title">
+                  <div class="radio-secondary">
+                    <input type="radio" value="0" name="delivery-price">
+                    <span class="checkmark"></span>
+                  </div>
+                  <span>Cheaper service</span>
+                </div>
+                <div class="group-radio-content">
+                  <i class="icon-info presset-icon-medium"></i>
+                  <div class="group-radio-img"><img src="../img/icons/ups.svg" alt=""></div>
+                  <div class="text-medium-m text-deep">£22.32</div>
+                  <div>Delivers Wed 30th</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pb-g">
+        <div class="block">
+          <h2 class="mb-4">Tables</h2>
+
+          <div class="table confirmation-table p-0">
+            <div class="table-wrap overflow-md-hidden">
+              <table class="table ">
+                <thead>
+                  <tr>
+                    <th class="w-0">Parcels</th>
+                    <th class="w-0">Recipient</th>
+                    <th class="w-0">Destination</th>
+                    <th class="w-0">Reference</th>
+                    <th class="w-0">Price</th>
+                    <th class="w-0 text-right">Label printing</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      4 parcels
+                    </td>
+                    <td>
+                      John Smith
+                    </td>
+                    <td>
+                      United States
+                    </td>
+                    <td>
+                      Toybox643
+                    </td>
+                    <td>
+                      £32.34
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center justify-content-end link-primary">
+                        <i class="mr-1 fas fa-print"></i> Print docs
+                      </div>
+                    </td>
+                    <td>
+                      <div class="table-actions pull-right mr-2">
+                        <span class="d-none d-none d-inline-block-md">
+                          <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                          <span class="sr-only">View details</span>
+                        </span>
+                        <span class="d-none d-none d-inline-block-md">
+                          <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                          <span class="sr-only">Delete</span>
+                        </span>
+                        <span class="mr-1 d-none-md">
+                          <i class="fas fa-ellipsis-h dropdown-custom">
+                            <div class="dropdown-menu-custom">
+                              <div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                              </div>
+                            </div>
+                          </i>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2 parcels
+                    </td>
+                    <td>
+                      John Smith
+                    </td>
+                    <td>
+                      United States
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                      £32.34
+                    </td>
+                    <td class="text-right">
+                      Not required
+                    </td>
+                    <td>
+                      <div class="table-actions pull-right mr-2">
+                        <span class="d-none d-none d-inline-block-md">
+                          <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                          <span class="sr-only">View details</span>
+                        </span>
+                        <span class="d-none d-none d-inline-block-md">
+                          <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                          <span class="sr-only">Delete</span>
+                        </span>
+                        <span class="mr-1 d-none-md">
+                          <i class="fas fa-ellipsis-h dropdown-custom">
+                            <div class="dropdown-menu-custom">
+                              <div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                              </div>
+                            </div>
+                          </i>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="table mt-2 account-table collapse show">
+            <table>
+              <thead>
+                <tr>
+                  <th>Reference</th>
+                  <th>Recipient</th>
+                  <th>Destination</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>76548455</td>
+                  <td>John Smith</td>
+                  <td>United States</td>
+                  <td class="text-right">
+                    <div class="table-actions d-inline-block"><i data-toggle="tooltip" data-placement="top" title="Print" class="fas fa-print"></i><span data-toggle="modal" data-target="#confirmRemove"><i data-toggle="tooltip" data-placement="top" title="Cancel" class="fas fa-times"></i></span></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>83654366</td>
+                  <td>Cora Khalil</td>
+                  <td>United Kingdom</td>
+                  <td class="text-right">
+                    <div class="table-actions d-inline-block"><i data-toggle="tooltip" data-placement="top" title="Print" class="fas fa-print"></i><span data-toggle="modal" data-target="#confirmRemove"><i data-toggle="tooltip" data-placement="top" title="Cancel" class="fas fa-times"></i></span></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>83654366</td>
+                  <td>Cora Khalil</td>
+                  <td>United Kingdom</td>
+                  <td class="text-right">
+                    <div class="table-actions d-inline-block"><i data-toggle="tooltip" data-placement="top" title="Print" class="fas fa-print"></i><span data-toggle="modal" data-target="#confirmRemove"><i data-toggle="tooltip" data-placement="top" title="Cancel" class="fas fa-times"></i></span></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
