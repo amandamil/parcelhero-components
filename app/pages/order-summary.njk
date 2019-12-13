@@ -1,11 +1,25 @@
 {# ===== Variables ===== #}
-{% set pageTitle = 'Order Summary' %}
+{% set pageTitle = 'ParcelHero: Order Summary' %}
 {% set activeStep = 2 %}
+{% set paymentMethods = [
+  { icon: "credit-card", text: "Debit card" },
+  { icon: "credit-card-black", text: "Credit card 2% surcharge" },
+  { icon: "paypal", text: "PayPal 2% surcharge" },
+  { icon: "wallet", text: "Login to use Wallet" }
+] %}
 {# === Variables end === #}
+
+{# Macro for inserting inline svg icon from sprite #}
+{% macro svgIcon(name, width='1em', height='1em') %}
+  <svg width="{{width}}" height="{{height}}" class="inline-svg" aria-hidden="true">
+    <use xlink:href="#{{name}}" />
+  </svg>
+{% endmacro %}
 
 {% extends "structure/parcel-hero/_layout-checkout.njk" %}
 
 {% block content %}
+  {% include "../templates/modules/checkout/_checkout-sprite.njk" %}
   {% include "../templates/modules/checkout/_checkout-header.njk" %}
 
   <main class="bg-gray-light order-summary-main">
@@ -25,86 +39,164 @@
             </div>
           </div> #}
 
-          <section class="block order-section">
-            <div class="block-title order-section__title">
-              <h2 class="text-medium-subtitle order-section__heading">Order summary</h2>
-            </div>
+          <div class="block order-summary-block">
 
-            <section class="shipment-group">
-              <div class="shipment-group__heading header-underline">
-                <div class="shipment-group__heading-row">
-                  <div class="shipment-group__delivery-company">
-                    <img class="shipment-group__delivery-company-logo" src="img/icons/fedex-logo.png" alt="FedEx" width="50">
-                  </div>
-                  <h3 class="shipment-group__amount">
-                    <span class="shipment-group__amount-count">1</span> shipment
-                  </h3>
-                </div>
+            <section class="order-section">
+              <div class="block-title order-section__title">
+                <h2 class="text-medium-subtitle order-section__heading">Order summary</h2>
               </div>
 
-              <div class="shipments-collection">
-                <div class="shipments-collection__heading-row">
-                  <h4 class="shipments-collection__heading">Collection for <time>Wed, 22 Sep 18:00</time></h4>
-                  <div class="shipments-collection__amount">£13.13</div>
-                </div>
-                <div class="row shipments-collection__details-row">
-                  <div class="col-md-6">
-                    <div class="collection-detail">
-                      <h5>Collect from</h5>
-                      <p>
-                        Earnest Scott<br>
-                        ParcelHero<br>
-                        6 Canute House,<br>
-                        Durum Warf Drive,<br>
-                        United Kingdom
-                      </p>
+              {# BLOCK: Shipment (single) #}
+              <section class="shipment-group">
+                <div class="shipment-group__heading header-underline">
+                  <div class="shipment-group__heading-row">
+                    <div class="shipment-group__delivery-company">
+                      <img class="shipment-group__delivery-company-logo" src="img/icons/fedex-logo.png" alt="FedEx" width="50">
                     </div>
-                    <div class="collection-detail">
-                      <h5>Description</h5>
-                      <p>Kitchen accessories</p>
-                    </div>
-                    <div class="collection-detail">
-                      <h5>Weight &amp; size</h5>
-                      <p>
-                        <ul>
-                          <li>
-                            <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
-                          </li>
-                          <li>
-                            <span>2 parcels:</span> <span>12 x 23 x 16cm, 3.1kg</span>
-                          </li>
-                          <li>
-                            <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
-                          </li>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="collection-detail">
-                      <h5>Deliver to</h5>
-                      <p>
-                        John Smith<br>
-                        Sky LTD<br>
-                        32 London Road,<br>
-                        Durum Warf Drive, Brentford, TW8 8H<br>
-                        United Kingdom
-                      </p>
-                    </div>
-                    <div class="collection-detail">
-                      <h5>Delivered by</h5>
-                      <p>
-                        <time>Tue, 17 Sep<time>
-                        <button type="button" class="btn btn-link">Need it quicker</button>
-                      </p>
-                    </div>
+                    <h3 class="shipment-group__amount">
+                      <span class="shipment-group__amount-count">1</span> shipment
+                    </h3>
                   </div>
                 </div>
-              </div>
+
+                <div class="shipments-collection">
+                  <div class="shipments-collection__heading-row">
+                    <h4 class="shipments-collection__heading">Collection for <time>Wed, 22 Sep 18:00</time></h4>
+                    <div class="shipments-collection__amount">£13.13</div>
+                  </div>
+                  <div class="row shipments-collection__details-row">
+                    <div class="col-md-6">
+                      <div class="collection-detail">
+                        <h5>Collect from</h5>
+                        <p>
+                          Earnest Scott<br>
+                          ParcelHero<br>
+                          6 Canute House,<br>
+                          Durum Warf Drive,<br>
+                          United Kingdom
+                        </p>
+                      </div>
+                      <div class="collection-detail">
+                        <h5>Description</h5>
+                        <p>Kitchen accessories</p>
+                      </div>
+                      <div class="collection-detail">
+                        <h5>Weight &amp; size</h5>
+                        <p>
+                          <ul>
+                            <li>
+                              <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
+                            </li>
+                            <li>
+                              <span>2 parcels:</span> <span>12 x 23 x 16cm, 3.1kg</span>
+                            </li>
+                            <li>
+                              <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
+                            </li>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="collection-detail">
+                        <h5>Deliver to</h5>
+                        <p>
+                          John Smith<br>
+                          Sky LTD<br>
+                          32 London Road,<br>
+                          Durum Warf Drive, Brentford, TW8 8H<br>
+                          United Kingdom
+                        </p>
+                      </div>
+                      <div class="collection-detail">
+                        <h5>Delivered by</h5>
+                        <p>
+                          <time>Tue, 17 Sep<time>
+                          <button type="button" class="btn btn-link">
+                            {{ svgIcon("quick-delivery", 41, 28) }}
+                            Need it quicker
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="shipment-collection__controls">
+                    <button type="button" class="btn btn-link">
+                      {{ svgIcon("pencil", 20, 20) }}
+                      Edit
+                    </button>
+                    <button type="button" class="btn btn-link">
+                      {{ svgIcon("trash", 20, 22) }}
+                      Delete
+                    </button>
+                  </div>
+                </div>
+
+                <div class="shipment-group__add-block">
+                  <button type="button" class="btn btn-outline-primary shipment-group__add-btn">Add shipment</button>
+                </div>
+              </section>
+
+              {# BLOCk: Payment #}
+              {# from here {% include "./payment.njk" %} #}
 
             </section>
 
+            {# BLOCK: Your contact details #}
+            <section class="shipment-contacts">
+              <h2>Your details</h2>
+              <p>We need to know who to contact if any issues occur.</p>
+            </section>
 
-          </section>
+            {# BLOCK: Payment method #}
+            <section class="payment-method">
+              <div class="payment-method__header">
+                <div class="payment-method__row">
+                  <h2>Payment method</h2>
+                  <div class="payment-method__trusted-block">
+                    <img src="img/icons/verisign-logo.png" class="payment-method__verisign-logo" alt="Verisign Trusted">
+                  </div>
+                </div>
+                <h3>Total to pay: <span>£15.56</span>
+              </div>
+              <div class="payment-method__body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="custom-checkbox">
+                      <input type="checkbox" name="private-purchase-flag" id="private-purchase-flag">
+                      <label for="private-purchase-flag">Private purchase<label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 text-right">
+                    <p>Pay Securely with
+                      {# {% for card in ["visa", "mastercard", "amex", "paypal"] %}
+                        <span>
+                          <img src="img/{{card}}-logo.png" alt={{card}}>
+                        </span>
+                      {% endfor %} #}
+                      <img src="img/icons/payments-methods.png" alt="Visa, Mastercard, American Express, PayPal">
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="payment-methods-list">
+                  {% for method in paymentMethods %}
+                    <li class="payment-methods-list__item">
+                      <div class="payment-radio">
+                        <input type="radio" name="payment-method" id="payment-method-{{loop.index}}">
+                        <label class="payment-radio__label" for="payment-method-{{loop.index}}">
+                          {{ svgIcon(method.icon, 40, 32) }}
+                          <span class="payment-radio__text">{{method.text}}<span>
+                        </label>
+                      <div class="payment-radio">
+                    </li>
+                  {% endfor %}
+                </ul>
+
+              </div>
+              
+            </section>
+
+          </div>
 
         </div>
           
