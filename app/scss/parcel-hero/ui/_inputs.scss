@@ -30,7 +30,14 @@ input, textarea {
     top: 50%;
     transform: translateY(-50%);
     right: 12px;
-    color: $darker-gray;
+    opacity: 0.5;
+    transition: opacity $transition ease;
+  }
+
+  &:hover {
+    .toggle-password {
+      opacity: 1;
+    }
   }
 }
 

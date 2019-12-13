@@ -427,6 +427,24 @@
     }
   }
 
+  &.simple-primary {
+    background-color: transparent;
+    color: $primary;
+    transition: color $transition ease;
+    font-size: 1rem;
+    padding: 0;
+    display: inline-block;
+
+    i {
+      font-size: 0.875rem;
+    }
+
+    &:hover {
+      color: $dark-blue;
+      background-color: transparent;
+    }
+  }
+
   &:hover {
     background-color: $gray-8;
   }
@@ -461,6 +479,10 @@
 
 .pt-g {
   padding-top: $grid-gutter-width !important;
+}
+
+.pb-g {
+  padding-bottom: $grid-gutter-width !important;
 }
 
 .fw-500 {

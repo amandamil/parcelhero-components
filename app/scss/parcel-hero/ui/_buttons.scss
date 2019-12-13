@@ -482,6 +482,17 @@
   }
 }
 
+.link-primary {
+  color: $primary-spec;
+  cursor: pointer;
+  display: inline-block;
+  transition: color $transition ease;
+
+  &:hover {
+    color: $dark-blue;
+  }
+}
+
 .link-icon-primary-spec {
   color: $primary-spec;
   cursor: pointer;

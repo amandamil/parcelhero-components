@@ -19,6 +19,15 @@
   }
 }
 
+.payment-table {
+  width: 100%;
+  color: $darker-gray;
+
+  td{
+    padding: .4rem 0;
+  }
+}
+
 .confirmation-table {
   overflow: visible;
   color: $darker-gray;
