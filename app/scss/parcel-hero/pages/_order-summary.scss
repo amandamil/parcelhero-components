@@ -11,6 +11,50 @@
   }
 }
 
+
+
+/* Block: shipment group */
+.shipment-group {
+
+  &__header {
+    border-bottom: 1px solid rgb(228, 228, 228);
+  }
+
+  &__header-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  &__delivery-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    margin-right: 1rem;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__delivery-logo {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  &__amount {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    color: $label-form;
+  }
+
+}
+
+
 // Payment methods radio buttons
 .payment-methods-list {
   list-style-type: none;
