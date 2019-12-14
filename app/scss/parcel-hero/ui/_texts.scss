@@ -247,6 +247,11 @@ h5 {
   color: $dark-gray;
 }
 
+.text-small-gray {
+  font-size: 0.875rem;
+  color: $darker-gray;
+}
+
 .text-title-confirmation {
   color: $green-active;
   font-size: 1.75rem;
@@ -267,6 +272,11 @@ h5 {
 .text-neutral-middle {
   font-size: 1.25rem;
   color: $darker-gray;
+}
+
+.text-dark-large {
+  font-size: 1.25rem;
+  color:$dark;
 }
 
 .text-neutral-medium {
@@ -299,7 +309,11 @@ h5 {
     }
   }
 
-  .text-title-dark {
+  .text-medium-m {
+    font-size: 1.2rem;
+  }
 
+  .text-dark-large {
+    font-size: 1.1rem;
   }
 }
