@@ -168,6 +168,12 @@ input, textarea {
     margin-bottom: 0;
   }
 
+  &.theme-dark {
+    .element-static-label {
+      color: $darker-gray;
+    }
+  }
+
   &.theme-black {
     .element-static-label {
       color: $dark;
@@ -341,7 +347,6 @@ input, textarea {
 
 .radio {
   position: relative;
-  width: 120px;
   padding-left: 26px;
   height: 20px;
   margin: 0.5rem 0;
