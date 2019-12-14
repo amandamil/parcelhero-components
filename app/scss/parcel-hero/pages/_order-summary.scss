@@ -5,14 +5,6 @@
   padding-bottom: 30px;
 }
 
-.order-section {
-  &__title {
-    margin-bottom: 2rem;
-  }
-}
-
-
-
 /* Block: shipment group */
 .shipment-group {
 
@@ -52,6 +44,105 @@
     color: $label-form;
   }
 
+}
+
+.shipments-collection {
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.shipments-collection-body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.collection-detail {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+  font-size: 14 / 16 + rem;
+  color: $darker-gray;
+
+  &-label {
+    display: block;
+    flex: 0 0 100px;
+    font-weight: 500;
+    font-size: inherit;
+  }
+
+  &-value {
+    margin-bottom: 0;
+    font-size: inherit;
+  }
+
+  &-parcels {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: table;
+    font-size: inherit;
+
+    & > li {
+      display: table-row;
+
+      & > span {
+        display: table-cell;
+
+        &:first-child {
+          min-width: 70px;
+        }
+      }
+    }
+  }
+
+  &-btn-link {
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+    font-size: inherit;
+    text-align: left;
+    color: $link-color;
+    transition: all .3s;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      color: $link-hover-color;
+    }
+
+    svg {
+      display: inline-block;
+      height: 18 / 16 + rem;
+      width: 26 / 16 + rem;
+      margin-right: 0.25rem;
+      color: currentColor;
+    }
+  }
+}
+
+
+
+.collection-control-btn {
+  padding: 0.25rem 1rem;
+  font-size: 14/16 + rem;
+  color: $darker-gray;
+  svg {
+    display: inline-block;
+    height: 18 / 16 + rem;
+    width: 17 / 16 + rem;
+    margin-right: 0.25rem;
+    color: currentColor;
+  }
+}
+
+
+.add-shipment-btn {
+  font-size: 14 / 16 + rem;
+  font-weight: 500;
+  line-height: 1rem;
+  padding: (10 / 16 + rem) 1.5rem;
+  border-width: 2px;
+  border-radius: 0;
+  text-transform: uppercase;
 }
 
 

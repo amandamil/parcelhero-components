@@ -30,8 +30,8 @@
           <div class="block order-summary-block">
 
             <section class="order-section">
-              <div class="block-title order-section__title">
-                <h2 class="text-medium-subtitle order-section__heading">Order summary</h2>
+              <div class="block-title">
+                <h2 class="text-medium-subtitle mb-0">Order summary</h2>
               </div>
 
               {# BLOCK: Shipment (single) #}
@@ -41,86 +41,99 @@
                     <div class="shipment-group__delivery-company">
                       <img class="shipment-group__delivery-logo" src="img/icons/fedex-logo.png" alt="FedEx">
                     </div>
-                    <h3 class="shipment-group__amount">
+                    <h3 class="shipment-group__amount mb-0">
                       <span class="shipment-group__amount-count">1</span> shipment
                     </h3>
                   </div>
                 </div>
 
                 <div class="shipments-collection">
-                  <div class="shipments-collection__heading-row">
-                    <h4 class="shipments-collection__heading">Collection for <time>Wed, 22 Sep 18:00</time></h4>
-                    <div class="shipments-collection__amount">£13.13</div>
+                  <div class="shipments-collection-header d-flex justify-content-between p-3">
+                    <h4 class="text-sub-regular mb-0">Collection for <time>Wed, 22 Sep 18:00</time></h4>
+                    <div class="amount text-sub-regular">£13.13</div>
                   </div>
-                  <div class="row shipments-collection__details-row">
-                    <div class="col-md-6">
-                      <div class="collection-detail">
-                        <h5>Collect from</h5>
-                        <p>
-                          Earnest Scott<br>
-                          ParcelHero<br>
-                          6 Canute House,<br>
-                          Durum Warf Drive,<br>
-                          United Kingdom
-                        </p>
+
+                  <div class="shipments-collection-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Collect from</div>
+                          <div class="collection-detail-value">
+                            Earnest Scott<br>
+                            ParcelHero<br>
+                            6 Canute House,<br>
+                            Durum Warf Drive,<br>
+                            United Kingdom
+                          </div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Description</div>
+                          <div class="collection-detail-value">Kitchen accessories</div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Weight &amp; size</div>
+                          <div class="collection-detail-value">
+                            <ul class="collection-detail-parcels">
+                              <li>
+                                <span>1 parcel:</span> 
+                                <span>43 x 31 x 16cm, 3.5kg</span>
+                              </li>
+                              <li>
+                                <span>2 parcels:</span> 
+                                <span>12 x 23 x 16cm, 3.1kg</span>
+                              </li>
+                              <li>
+                                <span>1 parcel:</span> 
+                                <span>43 x 31 x 16cm, 3.5kg</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <div class="collection-detail">
-                        <h5>Description</h5>
-                        <p>Kitchen accessories</p>
-                      </div>
-                      <div class="collection-detail">
-                        <h5>Weight &amp; size</h5>
-                        <p>
-                          <ul>
-                            <li>
-                              <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
-                            </li>
-                            <li>
-                              <span>2 parcels:</span> <span>12 x 23 x 16cm, 3.1kg</span>
-                            </li>
-                            <li>
-                              <span>1 parcel:</span> <span>43 x 31 x 16cm, 3.5kg</span>
-                            </li>
-                        </p>
+                      <div class="col-md-6">
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Deliver to</div>
+                          <div class="collection-detail-value">
+                            John Smith<br>
+                            Sky LTD<br>
+                            32 London Road,<br>
+                            Durum Warf Drive, Brentford, TW8 8H<br>
+                            United Kingdom
+                          </div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Delivered by</div>
+                          <div class="collection-detail-value">
+                            <div>
+                              <time>Tue, 17 Sep</time>
+                            </div>
+                            <div>
+                              <button type="button" class="btn btn-link collection-detail-btn-link">
+                              {{ svgIcon("quick-delivery", 41, 28) }}
+                              Need it quicker
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="collection-detail">
-                        <h5>Deliver to</h5>
-                        <p>
-                          John Smith<br>
-                          Sky LTD<br>
-                          32 London Road,<br>
-                          Durum Warf Drive, Brentford, TW8 8H<br>
-                          United Kingdom
-                        </p>
-                      </div>
-                      <div class="collection-detail">
-                        <h5>Delivered by</h5>
-                        <p>
-                          <time>Tue, 17 Sep<time>
-                          <button type="button" class="btn btn-link">
-                            {{ svgIcon("quick-delivery", 41, 28) }}
-                            Need it quicker
-                          </button>
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                  <div class="shipment-collection__controls">
-                    <button type="button" class="btn btn-link">
+                
+
+                  <div class="shipment-collection-controls d-flex justify-content-end pb-2">
+                    <button type="button" class="btn btn-link collection-control-btn">
                       {{ svgIcon("pencil", 20, 20) }}
                       Edit
                     </button>
-                    <button type="button" class="btn btn-link">
+                    <button type="button" class="btn btn-link collection-control-btn">
                       {{ svgIcon("trash", 20, 22) }}
                       Delete
                     </button>
                   </div>
                 </div>
 
-                <div class="shipment-group__add-block">
-                  <button type="button" class="btn btn-outline-primary shipment-group__add-btn">Add shipment</button>
+                <div class="add-shipment pt-3 pb-3">
+                  <button type="button" class="btn btn-outline-primary add-shipment-btn">Add shipment</button>
                 </div>
               </section>
 
