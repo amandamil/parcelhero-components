@@ -241,6 +241,40 @@
 
               
               
+              <div class="order-payment">
+
+                <div class="order-payment-summary">
+                  <table class="payment-table border-bottom">
+                    <tbody>
+                      <tr>
+                        <td>Sub total</td>
+                        <td class="text-right">£13.13</td>
+                      </tr>
+                      <tr>
+                        <td>Wallet balance <span class="text-dark ml-1"><strong>Remove</strong></span></td>
+                        <td class="text-right">-£12.56</td>
+                      </tr>
+                      <tr>
+                        <td>VAT</td>
+                        <td class="text-right">£2.43</td>
+                      </tr>
+                      <tr class="text-neutral-medium text-dark">
+                        <td>TOTAL</td>
+                        <td class="text-right">£3.56</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="order-payment-promo pt-3 pb-3">
+                  <div class="collapse-toggler simple-primary text-right" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">Enter promo code <i class="fas fa-chevron-down ml-1"></i></div>
+                  <div class="collapse" id="collapsePromo">
+                    <div class="pt-2">
+                      <input type="text" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme w-25 w-md-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </section>
 
@@ -290,7 +324,7 @@
 
                           <span class="payment-radio__text">Debit card<span>
                         </label>
-                      <div class="payment-radio">
+                      </div>
                     </li>
                   
                     <li class="payment-methods-list__item">
@@ -304,7 +338,7 @@
 
                           <span class="payment-radio__text">Credit card 2% surcharge<span>
                         </label>
-                      <div class="payment-radio">
+                      </div>
                     </li>
                   
                     <li class="payment-methods-list__item">
@@ -318,7 +352,7 @@
 
                           <span class="payment-radio__text">PayPal 2% surcharge<span>
                         </label>
-                      <div class="payment-radio">
+                      </div>
                     </li>
                   
                     <li class="payment-methods-list__item">
@@ -332,7 +366,7 @@
 
                           <span class="payment-radio__text">Login to use Wallet<span>
                         </label>
-                      <div class="payment-radio">
+                      </div>
                     </li>
                   
                 </ul>
@@ -346,7 +380,53 @@
         </div>
           
         <div class="col-lg-4">
-          <h1>Hello</h1>
+          <div class="block pt-0 pb-0 mb-3">
+<div class="collapse-toggler simple disabled enabled-md" data-toggle="collapse" data-target="#collapseDtl" aria-expanded="true" aria-controls="collapseDtl">
+  <h4 class="text-light-subtitle">Parcel details</h4><i class="fas fa-chevron-down d-block d-lg-none"></i>
+</div>
+<div class="collapse show" id="collapseDtl">
+  <div class="border-bottom text-gray-darker">
+    <div class="mb-2">1 x 1.5kg, 45cm x 16cm x 12cm</div>
+    <div class="pb-3 border-bottom">To: United Kingdom</div>
+    <div id="parcel-cost" class="text-gray-darker pt-3">
+      <div class="fw-500">Billing summary</div>
+      <div class="text-small d-flex justify-content-between pt-3 pb-3">
+        <span>Shipping costs</span>
+        <span>£<span id="parcel-shiping-cost">12.13</span></span>
+      </div>
+      <div class="text-small d-flex justify-content-between pb-3 border-bottom">
+        <span>VAT</span>
+        <span>£<span id="parcel-shiping-vat">2.43</span></span>
+      </div>
+      <div class="text-dark text-strong-title mb-0 d-flex justify-content-between pt-3 pb-3">
+        <span>TOTAL</span>
+        <span>£<span id="parcel-shiping-total">14.56</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 text-right pb-4">
+    <span class="text-tiny mr-2">Pay Securely with</span><img src="./img/icons/payments-methods.png" alt="">
+  </div>
+</div>
+</div>
+<button class="btn btn-block-blue mb-3" id="parcel-login"><i class="icon-login"></i> Book faster: Log in</button>
+
+<div class="block pt-0 pb-0 mb-3">
+    <div class="collapse-toggler simple disabled enabled-md" data-toggle="collapse" data-target="#collapseInf" aria-expanded="true" aria-controls="collapseInf">
+        <h4 class="text-light-subtitle">Service information</h4><i class="fas fa-chevron-down d-block d-lg-none"></i>
+    </div>
+    <div class="collapse show" id="collapseInf">
+        <div><img class="icon-xl mr-3" src="./img/icons/ups-square.png" alt=""><span class="text-strong">UPS Standard</span></div>
+        <div class="text-small pb-4 pt-4">
+            <div><strong>Service conditions:</strong></div>
+            <div>Max Parcel Length: 270 cm</div>
+            <div>Max Parcel Weight: 70 kg</div>
+            <div>Max Length + Girth: 330 cm</div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-block-blue mb-3"><i class="icon-live-chat"></i>Live help</button>
         </div>
       </div>
     </div>

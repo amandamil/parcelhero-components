@@ -139,6 +139,40 @@
 
               {# BLOCk: Payment #}
               {# from here {% include "./payment.njk" %} #}
+              <div class="order-payment">
+
+                <div class="order-payment-summary">
+                  <table class="payment-table border-bottom">
+                    <tbody>
+                      <tr>
+                        <td>Sub total</td>
+                        <td class="text-right">£13.13</td>
+                      </tr>
+                      <tr>
+                        <td>Wallet balance <span class="text-dark ml-1"><strong>Remove</strong></span></td>
+                        <td class="text-right">-£12.56</td>
+                      </tr>
+                      <tr>
+                        <td>VAT</td>
+                        <td class="text-right">£2.43</td>
+                      </tr>
+                      <tr class="text-neutral-medium text-dark">
+                        <td>TOTAL</td>
+                        <td class="text-right">£3.56</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="order-payment-promo pt-3 pb-3">
+                  <div class="collapse-toggler simple-primary text-right" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">Enter promo code <i class="fas fa-chevron-down ml-1"></i></div>
+                  <div class="collapse" id="collapsePromo">
+                    <div class="pt-2">
+                      <input type="text" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme w-25 w-md-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </section>
 
@@ -188,7 +222,7 @@
                           {{ svgIcon(method.icon, 40, 32) }}
                           <span class="payment-radio__text">{{method.text}}<span>
                         </label>
-                      <div class="payment-radio">
+                      </div>
                     </li>
                   {% endfor %}
                 </ul>
