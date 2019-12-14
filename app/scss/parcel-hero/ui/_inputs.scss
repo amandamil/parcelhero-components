@@ -355,6 +355,27 @@ input, textarea {
   cursor: pointer;
   font-size: 1rem;
 
+  &.light {
+    padding: 0.5rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    height: auto;
+    display: flex;
+    align-items: center;
+    
+    img {
+      margin: 0 1rem;
+      margin-left: 2rem;
+    }
+
+    .checkmark, input {
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+
+  }
+
   &.wide {
     width: 100%;
   }
