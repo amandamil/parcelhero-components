@@ -237,7 +237,7 @@
 
     &:focus ~ .payment-radio__label {
       box-shadow: 0 0 0 2px rgba($success, .25);
-      
+
       &:after {
         opacity: 1;
       }
@@ -258,4 +258,12 @@
 
 .inline-svg {
   fill: currentColor;
+}
+
+.parcelhero-radio {
+
+}
+
+.parcelhero-checkbox {
+  
 }
