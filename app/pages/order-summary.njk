@@ -3,8 +3,8 @@
 {% set activeStep = 2 %}
 {% set paymentMethods = [
   { icon: "credit-card", text: "Debit card" },
-  { icon: "credit-card-black", text: "Credit card 2% surcharge" },
-  { icon: "paypal", text: "PayPal 2% surcharge" },
+  { icon: "credit-card-black", text: "Credit card<br> 2% surcharge" },
+  { icon: "paypal", text: "PayPal<br> 2% surcharge" },
   { icon: "wallet", text: "Login to use Wallet" }
 ] %}
 {# === Variables end === #}
@@ -178,30 +178,61 @@
 
             {# BLOCK: Your contact details #}
             <section class="shipment-contacts">
-              <h2>Your details</h2>
+              <h3 class="text-medium-m">Your details 
+                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">{{ svgIcon("question-circle", 20, 20) }}</a>
+              </h3>
               <p>We need to know who to contact if any issues occur.</p>
+              <ul class="list-unstyled mt-4 shipment-contacts-choice">
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-1">
+                    <label for="contacts-options-1">
+                      I am the receiver: <b>Peter Jones</b>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-2">
+                    <label for="contacts-options-2">
+                      I am the shipper: <b>John Smith</b>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-3">
+                    <label for="contacts-options-3">
+                      Someone else
+                    </label>
+                  </div>
+                </li>
+              </ul>
+
             </section>
 
             {# BLOCK: Payment method #}
             <section class="payment-method">
-              <div class="payment-method__header">
-                <div class="payment-method__row">
-                  <h2>Payment method</h2>
-                  <div class="payment-method__trusted-block">
+              <div class="payment-method-header mb-4">
+                <div class="row align-items-center mb-1">
+                  <div class="col">
+                    <h3 class="text-medium-m mb-0">Payment method</h3>
+                  </div>
+                  <div class="col-auto payment-method__trusted-block">
                     <img src="img/icons/verisign-logo.png" class="payment-method__verisign-logo" alt="Verisign Trusted">
                   </div>
                 </div>
-                <h3>Total to pay: <span>£15.56</span>
+                <h4 class="text-title-dark">Total to pay: <span>£15.56</span></h4>
               </div>
-              <div class="payment-method__body">
-                <div class="row">
+              <div class="payment-method-body">
+                <div class="row mb-4">
                   <div class="col-sm-6">
-                    <div class="custom-checkbox">
+                    <div class="parcelhero-checkbox">
                       <input type="checkbox" name="private-purchase-flag" id="private-purchase-flag">
-                      <label for="private-purchase-flag">Private purchase<label>
+                      <label for="private-purchase-flag">Private purchase</label>
                     </div>
                   </div>
-                  <div class="col-sm-6 text-right">
+                  <div class="col-sm-6 text-right text-small-light">
                     <p>Pay Securely with
                       {# {% for card in ["visa", "mastercard", "amex", "paypal"] %}
                         <span>
@@ -220,7 +251,7 @@
                         <input type="radio" name="payment-method" id="payment-method-{{loop.index}}">
                         <label class="payment-radio__label" for="payment-method-{{loop.index}}">
                           {{ svgIcon(method.icon, 40, 32) }}
-                          <span class="payment-radio__text">{{method.text}}<span>
+                          <span class="payment-radio__text">{{method.text | safe}}<span>
                         </label>
                       </div>
                     </li>
