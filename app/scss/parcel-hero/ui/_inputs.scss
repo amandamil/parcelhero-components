@@ -507,3 +507,7 @@ input, textarea {
     transition: all $transition ease;
   }  
 }
+
+.form-control.not-rounded {
+  border-radius: 0;
+}

@@ -251,16 +251,22 @@
                     <tbody>
                       <tr>
                         <td>Sub total</td>
-                        <td class="text-right">£13.13</td>
+                        <td class="text-right">
+                          <span id="pt-subtotal">£13.13</span>
+                        </td>
                       </tr>
                       
                       <tr>
                         <td>VAT</td>
-                        <td class="text-right">£2.43</td>
+                        <td class="text-right">
+                          <span id="pt-vat">£2.43</span>
+                        </td>
                       </tr>
                       <tr class="text-neutral-medium text-dark">
                         <td>TOTAL</td>
-                        <td class="text-right">£15.56</td>
+                        <td class="text-right">
+                          <span id="pt-total">£15.56</span>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -269,9 +275,17 @@
                 <div class="order-payment-promo pt-3 pb-3">
                   <div class="collapse-toggler simple-primary text-right" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">Enter promo code <i class="fas fa-chevron-down ml-1"></i></div>
                   <div class="collapse" id="collapsePromo">
-                    <div class="pt-2">
-                      <input type="text" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme w-25 w-md-100">
-                    </div>
+                    <form id="form-promocode" class="pt-2">
+                      <div class="form-row justify-content-end">
+                        <div class="form-group col-sm-5 col-xl-4">
+                          <label for="promocode" class="sr-only">enter your promocode</label>
+                          <input type="text" id="promocode" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme">
+                        </div>
+                        <div class="form-group col-sm-3 col-xl-2">
+                          <button type="submit" class="form-control btn btn-outline-primary not-rounded btn-thick">Apply</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -314,6 +328,25 @@
                   </div>
                 </li>
               </ul>
+
+            </section>
+
+            
+            <section class="shipment-contacts">
+              <h3 class="text-medium-m">Your details 
+                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">
+  <svg width="20" height="20" class="inline-svg" aria-hidden="true">
+    <use xlink:href="#question-circle" />
+  </svg>
+</a>
+              </h3>
+              <p class="mw-75">We need to know who to contact if any issues occur. Please enter your address and details below:</p>
+              <form class="mt-4">
+                <label class="text-label" for="parcel-collection-address">Find address</label>
+                <div class="search-input form-group">
+                  <input type="text" autocomplete="new-adress" name="collection-adress"  data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control not-rounded dark-theme">
+                </div>
+              </form>
 
             </section>
 
@@ -371,7 +404,7 @@
     <use xlink:href="#credit-card-black" />
   </svg>
 
-                          <span class="payment-radio__text">Credit card<br> 2% surcharge<span>
+                          <span class="payment-radio__text">Credit card <span class='d-inline-block'>2% surcharge</span><span>
                         </label>
                       </div>
                     </li>
@@ -385,7 +418,7 @@
     <use xlink:href="#paypal" />
   </svg>
 
-                          <span class="payment-radio__text">PayPal<br> 2% surcharge<span>
+                          <span class="payment-radio__text">PayPal <span class='d-inline-block'>2% surcharge</span><span>
                         </label>
                       </div>
                     </li>
@@ -496,6 +529,7 @@
 <script src="/js/parcel-hero/custom-script.js"></script>
 
 
+  <script src='/js/parcel-hero/pages/order-summary.js'></script>
 
 
 </body>
