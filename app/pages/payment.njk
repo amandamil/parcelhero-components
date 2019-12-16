@@ -42,15 +42,15 @@
           <label class="radio mt-4 mb-4">
             <input type="radio" value="0" name="radio-1" checked>
             <span class="checkmark"></span>
-            I am the receiver: <strong>Peter Jones</strong>
+            I am the receiver: <strong class="ml-1">Peter Jones</strong>
           </label>
           <label class="radio mt-4 mb-4">
-            <input type="radio" value="1" name="radio-1" checked>
+            <input type="radio" value="1" name="radio-1">
             <span class="checkmark"></span>
-            I am the shipper: <strong>John Smith</strong>
+            I am the shipper: <strong class="ml-1">John Smith</strong>
           </label>
           <label class="radio mt-4 mb-4">
-            <input type="radio" value="2" name="radio-1" checked>
+            <input type="radio" value="2" name="radio-1">
             <span class="checkmark"></span>
             Someone else
           </label>
@@ -103,6 +103,15 @@
                     <option value="4">Bussiness card</option>
                   </select>
                 </div>
+                <div class="w-25 w-md-100 mb-4">
+                  <label class="text-label" for="">Use card</label>
+                  <div class="form-group has-error has-feedback">
+                    <select class='form-control custom-picker' disabled data-live-search="true" data-size="5" data-style="select-light">
+                      <option value="1">Debit card ending 1653 (Expired)</option>
+                    </select>
+                    <div class="text-small text-danger mt-2">This card has expired, select another or add a new one</div>
+                  </div>
+                </div>
                 <div>
                   <button class="btn btn-add mb-4" id="payment-add-card">
                     <i class="fa-plus fa"></i>
@@ -144,7 +153,7 @@
                         <input type="text" value="" name="card-number" class="form-control not-rounded dark-theme mb-4">
                       </div>
                       <div class="w-15 w-md-100 no-wrap">
-                        <label class="text-label" for="">Expiry date<span class="text-lighter">(MM/YY)</span></label>
+                        <label class="text-label" for="">Expiry date<span class="text-lighter ml-2">(MM/YY)</span></label>
                         <input type="text" value="" name="expiry-date" class="form-control not-rounded dark-theme mb-4">
 
                         <label class="text-label" for="">Security number</label>
@@ -154,12 +163,32 @@
 
                     <div>
                       <div class="text-sub-medium mb-3">Billing address</div>
-                      <div class="text-small">
+                      <div class="text-small" id="payment-billing">
                         <div>Parcelhero, 3-6 Canute House</div>
                         <div>Durham Wharf Drive,</div>
                         <div>Brentford,</div>
                         <div>Tw8 8hp</div>
-                        <div class="link-primary mt-3 mb-4">Change</div>
+                        <div class="link-primary mt-3 mb-4" id="change-payment-billing">Change</div>
+                      </div>
+                      <div class="w-25 w-md-100 d-none" id="payment-billing-form">
+                        <label class="text-label" for="">Zip code / Postcode</label>
+                        <input type="text" value="" name="zip" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">Company <span class="text-label-light">Optional</span></label>
+                        <input type="text" value="" name="company" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">Address</label>
+                        <input type="text" value="" name="address" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">Address 2 <span class="text-label-light">Optional</span></label>
+                        <input type="text" value="" name="address-2" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">Town / City</label>
+                        <input type="text" value="" name="city" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">State</label>
+                        <input type="text" value="" name="state" class="form-control not-rounded dark-theme mb-4">
+                        <label class="text-label" for="">Country</label>
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex">
+                            <p class="custom-country" id="billign-country"></p> <span class="link-primary-spec ml-2" id="change-billing-country">Change</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -186,7 +215,46 @@
             </button>
             <div class="collapse" id="acl-2" data-parent="#accordionLightSelect">
               <div class="p-4">
-                Accordion content
+                <div class="d-md-flex d-block align-items-center mb-3">
+                  <label class="radio light">
+                    <input type="radio" value="visa" name="debit-card-type" checked>
+                    <span class="checkmark"></span>
+
+                    <div>
+                      <img class="icon-medium" src="../img/icons/visa-icon.png" alt="">
+                    </div>
+                    <div>
+                      Visa
+                    </div>
+                  </label>
+
+                  <label class="radio light ml-md-3 ml-0">
+                    <input type="radio" value="mastercard" name="debit-card-type" checked>
+                    <span class="checkmark"></span>
+
+                    <div>
+                      <img class="icon-medium" src="../img/icons/master-card-icon.png" alt="">
+                    </div>
+                    <div>
+                      Mastercard
+                    </div>
+                  </label>
+                </div>
+                <div class="w-25 w-md-100">
+                  <label class="text-label" for="">Name on card</label>
+                  <input type="text" value="" name="debit-name-on-card" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Card number</label>
+                  <input type="text" value="" name="debit-card-number" class="form-control not-rounded dark-theme mb-4">
+                </div>
+                <div class="w-15 w-md-100 no-wrap">
+                  <label class="text-label" for="">Expiry date<span class="text-lighter ml-2">(MM/YY)</span></label>
+                  <input type="text" value="" name="debit-expiry-date" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Security number</label>
+                  <input type="text" value="" name="debit-security-number" class="form-control not-rounded dark-theme mb-4">
+                </div>
+                <button class="btn btn-orange">PAY NOW</button>
               </div>
             </div>
           </div>
@@ -200,7 +268,46 @@
             </button>
             <div class="collapse" id="acl-3" data-parent="#accordionLightSelect">
               <div class="p-4">
-                Accordion content
+                <div class="d-md-flex d-block align-items-center mb-3">
+                  <label class="radio light">
+                    <input type="radio" value="visa" name="credit-card-type" checked>
+                    <span class="checkmark"></span>
+
+                    <div>
+                      <img class="icon-medium" src="../img/icons/visa-icon.png" alt="">
+                    </div>
+                    <div>
+                      Visa
+                    </div>
+                  </label>
+
+                  <label class="radio light ml-md-3 ml-0">
+                    <input type="radio" value="mastercard" name="credit-card-type" checked>
+                    <span class="checkmark"></span>
+
+                    <div>
+                      <img class="icon-medium" src="../img/icons/master-card-icon.png" alt="">
+                    </div>
+                    <div>
+                      Mastercard
+                    </div>
+                  </label>
+                </div>
+                <div class="w-25 w-md-100">
+                  <label class="text-label" for="">Name on card</label>
+                  <input type="text" value="" name="credit-name-on-card" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Card number</label>
+                  <input type="text" value="" name="credit-card-number" class="form-control not-rounded dark-theme mb-4">
+                </div>
+                <div class="w-15 w-md-100 no-wrap">
+                  <label class="text-label" for="">Expiry date<span class="text-lighter ml-2">(MM/YY)</span></label>
+                  <input type="text" value="" name="credit-expiry-date" class="form-control not-rounded dark-theme mb-4">
+
+                  <label class="text-label" for="">Security number</label>
+                  <input type="text" value="" name="credit-security-number" class="form-control not-rounded dark-theme mb-4">
+                </div>
+                <button class="btn btn-orange">PAY NOW</button>
               </div>
             </div>
           </div>
@@ -214,7 +321,11 @@
             </button>
             <div class="collapse" id="acl-4" data-parent="#accordionLightSelect">
               <div class="p-4">
-                Accordion content
+                <div class="w-25 w-md-100 no-wrap">
+                  <label class="text-label" for="">Enter your account e-mail</label>
+                  <input type="text" type="email" value="" name="paypal-email" class="form-control not-rounded dark-theme mb-4">
+                </div>
+                <button class="btn btn-orange">CONTINUE</button>
               </div>
             </div>
           </div>
@@ -223,6 +334,8 @@
     </div>
   </div>
 </section>
+
+{% include "modules/parcel-hero/_change-country-modal.njk" %}
 
 
 {% endblock %}
