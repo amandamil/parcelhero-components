@@ -115,12 +115,12 @@ function events() {
   handlePaymentTable();
 
   $('td > .collapse').on('show.bs.collapse', function () {
-    console.log(this);
+    console.log(this, $(this).closest("tr").prev("tr"));
     $(this).closest("tr").prev("tr").addClass("has-open-details");
   });
 
   $('td > .collapse').on('hidden.bs.collapse', function () {
-    console.log(this);
+    console.log(this, $(this).closest("tr").prev("tr"));
     $(this).closest("tr").prev("tr").removeClass("has-open-details");
   });
 
