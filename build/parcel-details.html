@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
-<body>
+<body class="bg-gray-light">
 
 
 
@@ -50,7 +50,7 @@
             <label class="text-label" for="">Contents description</label>
             <div class="d-flex mb-4">
               <div class="search-input">
-                <input type="text" data-data="contents" id="parcel-contents" class="form-control not-rounded dark-theme">
+                <input type="text" data-data="contents" id="parcel-contents" class="form-control dark-theme">
                 <i class="fa fa-caret-down"></i>
               </div>
 
@@ -61,14 +61,14 @@
             <div class="d-flex mb-g parcel-details-inputs">
               <div class="details-input">
                 <label class="text-label" for="">Reference 1</label>
-                <input type="text" id="parcel-reference" value="" class="form-control not-rounded dark-theme mb-4">
+                <input type="text" id="parcel-reference" value="" class="form-control dark-theme mb-4">
 
                 <label class="text-label" for="">Reference 2 <span>Optional</span></label>
-                <input type="text" id="parcel-reference-o" value="" class="form-control not-rounded dark-theme mb-4">
+                <input type="text" id="parcel-reference-o" value="" class="form-control dark-theme mb-4">
 
                 <label class="text-label" for="">Cost centre</label>
                 <div class="search-input">
-                  <input type="text" data-data="contents" id="parcel-cost-centre" value="" class="form-control not-rounded dark-theme">
+                  <input type="text" data-data="contents" id="parcel-cost-centre" value="" class="form-control dark-theme">
                 </div>
               </div>
 
@@ -84,7 +84,7 @@
                 <label class="text-label" for="">Parcel value</label>
                 <div class="d-flex mb-2">
                   <div>
-                    <input type="text" id="parcel-value" value="£ " class="form-control not-rounded dark-theme">
+                    <input type="text" id="parcel-value" value="£ " class="form-control dark-theme">
                   </div>
 
                   <button class="btn save-btn ml-md-4 mx-auto" id="calc-cost">Calculate cost</button>
@@ -188,7 +188,7 @@
             <div class="parcel-find-address" id="parcel-find-adress">
               <label class="text-label" for="">Find address</label>
               <div class="search-input">
-                <input type="text" autocomplete="new-adress" name="collection-adress" data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control not-rounded dark-theme">
+                <input type="text" autocomplete="new-adress" name="collection-adress" data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control dark-theme">
               </div>
             </div>
 
@@ -293,7 +293,7 @@
               </div>
               <div class="collapse" id="collapseInstr">
                 <label class="text-label" for="">Collection instructions <span class="op-05">Optional</span></label>
-                <textarea type="text" name="collection-instructions" class="form-control not-rounded dark-theme"></textarea>
+                <textarea type="text" name="collection-instructions" class="form-control dark-theme"></textarea>
                 <div class="text-small-light mt-2 pb-4">Couriers are not certain to receive these instructions. <a href="#" class="link-primary-spec">Learn more</a></div>
               </div>
 
@@ -317,7 +317,7 @@
               </div>
               <div class="collapse" id="collapseUpd">
                 <label class="text-label" for="">Your e-mail <span class="op-05">Optional</span></label>
-                <input type="text" name="collection-email" class="form-control not-rounded dark-theme">
+                <input type="text" name="collection-email" class="form-control dark-theme">
               </div> -->
 
               <div class="insurance-info success" id="nearest-insurance">
@@ -355,7 +355,7 @@
             <p>Enter the postcode for where you would like to drop off your parcel.</p>
             <label class="text-label" for="">Postcode</label>
             <div class="d-flex">
-              <input type="text" autocomplete="new-zip" placeholder="TW8 8HP" name="zip-collection" class="form-control not-rounded dark-theme w-25 w-md-100">
+              <input type="text" autocomplete="new-zip" placeholder="TW8 8HP" name="zip-collection" class="form-control dark-theme w-25 w-md-100">
               <button class="ml-0 ml-md-3 btn btn-primary not-rounded mb-2">FIND DROP-OFF POINTS</button>
             </div>
             <div class="link-primary-spec mb-4" id="revert-back">Revert back to Drop-off service</div>
@@ -411,7 +411,7 @@
             <div class="mt-4" class="parcel-find-address" id="parcel-find-dadress">
               <label class="text-label" for="">Find address</label>
               <div class="search-input">
-                <input type="text" autocomplete="new-adress" name="delivery-adress" data-type="advanced" data-custom="#parcel-add-delivery-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-dadress-adv" data-hide="#parcel-find-dadress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-daddress" class="form-control not-rounded dark-theme">
+                <input type="text" autocomplete="new-adress" name="delivery-adress" data-type="advanced" data-custom="#parcel-add-delivery-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-dadress-adv" data-hide="#parcel-find-dadress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-daddress" class="form-control dark-theme">
               </div>
             </div>
             <div class="d-none mt-4" id="parcel-find-dadress-result">
@@ -440,7 +440,7 @@
               </div>
               <div class="collapse" id="collapseInstr">
                 <label class="text-label" for="">Delivery instructions <span class="op-05">Optional</span></label>
-                <textarea type="text" name="collection-instructions" class="form-control not-rounded dark-theme"></textarea>
+                <textarea type="text" name="collection-instructions" class="form-control dark-theme"></textarea>
                 <div class="text-small-light mt-2 pb-4">Couriers are not certain to receive these instructions. <a href="#" class="link-primary-spec">Learn more</a></div>
               </div>
               <h4 class="mt-2 mb-4">Delivery contact details</h4>

@@ -19,4 +19,8 @@
       margin: 0;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    padding: 1.5rem 1rem;
+  }
 }

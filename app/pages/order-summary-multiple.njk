@@ -393,55 +393,7 @@
 
 
             {# BLOCK: Payment method #}
-            <section class="payment-method">
-              <div class="payment-method-header mb-4">
-                <div class="row align-items-center mb-1">
-                  <div class="col">
-                    <h3 class="text-medium-m mb-0">Payment method</h3>
-                  </div>
-                  <div class="col-auto payment-method__trusted-block">
-                    <img src="img/icons/verisign-logo.png" class="payment-method__verisign-logo" alt="Verisign Trusted">
-                  </div>
-                </div>
-                <h4 class="text-title-dark">Total to pay: <span>£143.56</span></h4>
-              </div>
-              <div class="payment-method-body">
-                <div class="row mb-4">
-                  <div class="col-sm-6">
-                    <div class="parcelhero-checkbox">
-                      <input type="checkbox" name="private-purchase-flag" id="private-purchase-flag">
-                      <label for="private-purchase-flag">Private purchase</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 text-right text-small-light">
-                    <p>Pay Securely with
-                      {# {% for card in ["visa", "mastercard", "amex", "paypal"] %}
-                        <span>
-                          <img src="img/{{card}}-logo.png" alt={{card}}>
-                        </span>
-                      {% endfor %} #}
-                      <img src="img/icons/payments-methods.png" alt="Visa, Mastercard, American Express, PayPal">
-                    </p>
-                  </div>
-                </div>
-
-                <ul class="payment-methods-list">
-                  {% for method in paymentMethods %}
-                    <li class="payment-methods-list__item">
-                      <div class="payment-radio">
-                        <input type="radio" name="payment-method" id="payment-method-{{loop.index}}">
-                        <label class="payment-radio__label" for="payment-method-{{loop.index}}">
-                          {{ svgIcon(method.icon, 40, 32) }}
-                          <span class="payment-radio__text">{{method.text | safe}}<span>
-                        </label>
-                      </div>
-                    </li>
-                  {% endfor %}
-                </ul>
-
-              </div>
-              
-            </section>
+            {% include "../templates/modules/checkout/_checkout-payment.njk" %}
 
           </div>
 
@@ -454,9 +406,12 @@
     </div>
   </main>
 
+{% include "modules/parcel-hero/_change-country-modal.njk" %}
+
 {% endblock %}
 
 {% block scripts %}
+  <script src='/js/parcel-hero/pages/payment.js'></script>
   <script src='/js/parcel-hero/pages/order-summary.js'></script>
 {% endblock %}
 
