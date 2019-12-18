@@ -498,3 +498,7 @@
     width: 100% !important;
   }
 }
+
+.mh-layout {
+  min-height: calc(100vh - #{$nav-height});
+}
