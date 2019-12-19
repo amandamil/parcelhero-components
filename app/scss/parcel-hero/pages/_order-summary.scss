@@ -449,3 +449,88 @@
   text-transform: uppercase;
 }
 
+/* Radio accordion */
+.accordion-radio {
+
+  // Radio accordion toggle button
+  &-toggler {
+    position: relative;
+    // padding: 0;
+    padding-left: 30px;
+    color: inherit;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -10px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $dark-gray;
+      border-radius: 50%;
+      transition: all .25s ease-in;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      margin-top: -5px;
+      width: 10px;
+      height: 10px;
+      border: 5px solid $dark-gray;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all .25s ease-in;
+    }
+
+    // &:focus,
+    &:hover {
+      color: $gray-4;
+
+      &:before {
+        // border-color: $gray-4;
+        opacity: .75;
+      }
+
+      &:after {
+        border-color: $gray-4;
+        opacity: .25;
+      }
+    }
+
+    .accordion-radio-item.open & {
+      color: $success;
+      // border-color: $success;
+
+      &:before {
+        border-color: $success;
+      }
+
+      &:after {
+        border-color: $success;
+        opacity: 1;
+      }
+    }
+  
+  }
+
+  &-item-body {
+    position: relative;
+    padding: .5rem 1rem .5rem 30px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 0.5rem;
+      width: 0;
+      height: calc(100% - 1rem);
+      border-left: 6px solid $primary;
+    }
+  }
+}
+
+

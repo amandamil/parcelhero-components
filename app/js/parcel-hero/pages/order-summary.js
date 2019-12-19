@@ -115,14 +115,27 @@
 
     handlePaymentTable();
 
+
+    // Toggle show collection details in the table
     $('td > .collapse').on('show.bs.collapse', function () {
-      console.log(this, $(this).closest("tr").prev("tr"));
+      // console.log(this, $(this).closest("tr").prev("tr"));
       $(this).closest("tr").prev("tr").addClass("has-open-details");
     });
 
     $('td > .collapse').on('hidden.bs.collapse', function () {
-      console.log(this, $(this).closest("tr").prev("tr"));
+      // console.log(this, $(this).closest("tr").prev("tr"));
       $(this).closest("tr").prev("tr").removeClass("has-open-details");
+    });
+
+
+
+    // Radio accordion - toggling .active class
+    $('.accordion-radio .collapse').on('show.bs.collapse', function() {
+      $(this).closest('.accordion-radio-item').addClass("open");
+    });
+
+    $('.accordion-radio .collapse').on('hide.bs.collapse', function () {
+      $(this).closest('.accordion-radio-item').removeClass("open");
     });
 
   }

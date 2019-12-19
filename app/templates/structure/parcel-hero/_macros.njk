@@ -1,0 +1,6 @@
+{# Macro for inserting inline svg icon from sprite #}
+{% macro svgIcon(name, width='1em', height='1em') %}
+  <svg width="{{width}}" height="{{height}}" class="inline-svg" aria-hidden="true">
+    <use xlink:href="#{{name}}" />
+  </svg>
+{% endmacro %}

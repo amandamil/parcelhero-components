@@ -293,62 +293,120 @@
             </section>
 
             
-            <section class="shipment-contacts">
-              <h3 class="text-medium-m">Your details 
-                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">
+            
+
+
+
+
+<section class="shipment-contacts">
+  <h3 class="text-medium-m">Your details 
+    <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">
   <svg width="20" height="20" class="inline-svg" aria-hidden="true">
     <use xlink:href="#question-circle" />
   </svg>
 </a>
-              </h3>
-              <p>We need to know who to contact if any issues occur.</p>
-              <ul class="list-unstyled mt-4 shipment-contacts-choice">
-                <li>
-                  <div class="parcelhero-radio">
-                    <input type="radio" name="contacts-options" id="contacts-options-1">
-                    <label for="contacts-options-1">
-                      I am the receiver: <b>Peter Jones</b>
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="parcelhero-radio">
-                    <input type="radio" name="contacts-options" id="contacts-options-2">
-                    <label for="contacts-options-2">
-                      I am the shipper: <b>John Smith</b>
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="parcelhero-radio">
-                    <input type="radio" name="contacts-options" id="contacts-options-3">
-                    <label for="contacts-options-3">
-                      Someone else
-                    </label>
-                  </div>
-                </li>
-              </ul>
+  </h3>
+  <p>We need to know who to contact if any issues occur.</p>
 
-            </section>
+  <div class="accordion accordion-radio" id="accordion-details">
+
+    <div class="accordion-radio-item">
+      <div class="accordion-radio-item-header" id="accordion-detail-1">
+        <button class="btn btn-link accordion-radio-toggler" type="button" data-toggle="collapse" data-target="#collapse-detail-1" aria-expanded="true" aria-controls="collapse-detail-1">I am the receiver: <b>Peter Jones</b></button>
+      </div>
+      <div class="collapse" id="collapse-detail-1" aria-labelledby="accordion-detail-1" data-parent="#accordion-details">
+        <div class="accordion-radio-item-body">
+          <p>
+            Parcelhero, 3-6 Canute House<br>
+            Durham Wharf Drive,<br>
+            Brentford,<br>
+            Tw8 8hp
+          </p>
+          <div class="parcelhero-checkbox">
+            <input type="checkbox" id="onbehalf-flag">
+            <label for="onbehalf-flag">I am shipping on behalf of Parcelhero</label>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="form-group">
+                <label for="cd-phone">Phone number</label>
+                <input type="tel" id="cd-phone" name="input" class="form-control dark-theme">
+              </div>
+              <div class="form-group">
+                <label for="cd-email">Email</label>
+                <input type="email" id="cd-email" name="input" class="form-control dark-theme">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-radio-item">
+      <div class="accordion-radio-item-header" id="accordion-detail-2">
+        <button class="btn btn-link accordion-radio-toggler" type="button" data-toggle="collapse" data-target="#collapse-detail-2" aria-expanded="true" aria-controls="collapse-detail-2">I am the receiver: <b>John Smith</b></button>
+      </div>
+      <div class="collapse" id="collapse-detail-2" aria-labelledby="accordion-detail-2" data-parent="#accordion-details">
+        <div class="accordion-radio-item-body">
+          <p>
+            Parcelhero<br>
+            3-6 Canute House Durham Wharf Drive,<br>
+            Brentford, Tw8 8hp
+          </p>
+          <ul class="list-unstyled">
+            <li>
+              <div class="parcelhero-radio">
+                <input type="radio" name="contacts-options" id="contacts-options-1">
+                <label for="contacts-options-1">
+                  I am shipping on behalf of '<span>Parcelhero</span>'
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="parcelhero-radio">
+                <input type="radio" name="contacts-options" id="contacts-options-2">
+                <label for="contacts-options-2">
+                  I am shipping as an individual
+                </label>
+              </div>
+            </li>
+          </ul>
+          <p class="mb-0">(A/B test 1)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-radio-item">
+      <div class="accordion-radio-item-header" id="accordion-detail-3">
+        <button class="btn btn-link accordion-radio-toggler" type="button" data-toggle="collapse" data-target="#collapse-detail-3" aria-expanded="true" aria-controls="collapse-detail-3">Someone else</button>
+      </div>
+      <div class="collapse" id="collapse-detail-3" aria-labelledby="accordion-detail-3" data-parent="#accordion-details">
+        <div class="accordion-radio-item-body">
+          <p>accordion content</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pt-3 pb-3 pl-1 border-top border-bottom">
+
+    <div class="parcelhero-checkbox mb-0">
+      <input type="checkbox" id="subscribe-flag">
+      <label for="subscribe-flag">Send me exclusive deals and offers. <i>We don’t ever share your data.</i></label>
+    </div>
+
+  </div>
+
+</section>
+
 
             
-            <section class="shipment-contacts">
-              <h3 class="text-medium-m">Your details 
-                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">
-  <svg width="20" height="20" class="inline-svg" aria-hidden="true">
-    <use xlink:href="#question-circle" />
-  </svg>
-</a>
-              </h3>
-              <p class="mw-75">We need to know who to contact if any issues occur. Please enter your address and details below:</p>
-              <form class="mt-4">
-                <label class="text-label" for="parcel-collection-address">Find address</label>
-                <div class="search-input form-group">
-                  <input type="text" autocomplete="new-adress" name="collection-adress"  data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control dark-theme">
-                </div>
-              </form>
 
-            </section>
+            
+            
 
             
             

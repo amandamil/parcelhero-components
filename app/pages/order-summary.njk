@@ -191,7 +191,8 @@
             </section>
 
             {# BLOCK: Your contact details #}
-            <section class="shipment-contacts">
+            {% include "../templates/modules/checkout/_checkout-details.njk" %}
+            {# <section class="shipment-contacts">
               <h3 class="text-medium-m">Your details 
                 <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">{{ svgIcon("question-circle", 20, 20) }}</a>
               </h3>
@@ -223,10 +224,10 @@
                 </li>
               </ul>
 
-            </section>
+            </section> #}
 
             {# BLOCK: Your contact details - anonymous #}
-            <section class="shipment-contacts">
+            {# <section class="shipment-contacts">
               <h3 class="text-medium-m">Your details 
                 <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">{{ svgIcon("question-circle", 20, 20) }}</a>
               </h3>
@@ -238,7 +239,7 @@
                 </div>
               </form>
 
-            </section>
+            </section> #}
 
             {# BLOCK: Payment method #}
             {% include "../templates/modules/checkout/_checkout-payment.njk" %}
