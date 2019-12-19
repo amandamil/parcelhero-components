@@ -1,6 +1,7 @@
 const
     gulp  = require("gulp"),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     cleanCss = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render');
@@ -51,9 +52,11 @@ function Nunjucks() {
 
 function Styles() {
     return gulp.src(paths.Styles.src)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(cleanCss({compatibility: '*'}))
         .on('error', onError)
+        .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(paths.Styles.destCss))
 }
 

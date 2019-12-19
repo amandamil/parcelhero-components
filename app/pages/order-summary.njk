@@ -1,50 +1,264 @@
+{# ===== Variables ===== #}
+{% set pageTitle = 'ParcelHero: Order Summary' %}
+{% set activeStep = 2 %}
+{% set paymentMethods = [
+  { icon: "credit-card", text: "Debit card" },
+  { icon: "credit-card-black", text: "Credit card <span class='d-inline-block'>2% surcharge</span>" },
+  { icon: "paypal", text: "PayPal <span class='d-inline-block'>2% surcharge</span>" },
+  { icon: "wallet", text: "Login to use Wallet" }
+] %}
+{# === Variables end === #}
+
+{# Macro for inserting inline svg icon from sprite #}
+{% macro svgIcon(name, width='1em', height='1em') %}
+  <svg width="{{width}}" height="{{height}}" class="inline-svg" aria-hidden="true">
+    <use xlink:href="#{{name}}" />
+  </svg>
+{% endmacro %}
+
 {% extends "structure/parcel-hero/_layout-checkout.njk" %}
 
 {% block content %}
-  <header class="header-account" id="main-header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="logo-with-progress">
-            <a href="./"><img src="img/ph_logo.svg" alt="parcel-logo" class='logo-img'></a>
-            <div class="progress-tracker absolute-center">
-              <div class="completed">
-                <div><span>1</span><i class="icon-check"></i></div><span>Parcel details</span>
-              </div>
-              <div class="current">
-                <div><span>2</span><i class="icon-check"></i></div><span>Order summary</span>
-              </div>
-              <div>
-                <div><span>3</span><i class="icon-check"></i></div><span>Payment details</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  {% include "../templates/modules/checkout/_checkout-sprite.njk" %}
+  {% include "../templates/modules/checkout/_checkout-header.njk" %}
 
-  <section class="bg-gray-light pt-g">
+  <main class="bg-gray-light order-summary-main">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="block your-details mb-g">
-            <div class="block-title mb-1">
-              <h4 class="text-medium-subtitle">Your details<i class="icon-help ml-2"></i></h4>
-            </div>
-            <p>We need to know who to contact if any issues occur.</p>
 
-            <div class="your-type">
-              <div class="d-flex">
-                <p>I am the receiver: <span>Peter Jones</span></p>
+          <div class="block order-summary-block">
+
+            <section class="order-section">
+              <div class="block-title">
+                <h2 class="text-medium-subtitle mb-0">Order summary</h2>
               </div>
-            </div>
+
+              {# BLOCK: Shipment (single) #}
+              <section class="shipment-group">
+                <div class="border-bottom p-2">
+                  <div class="d-flex align-items-center">
+                    <div class="shipment-group__delivery-company">
+                      <img class="shipment-group__delivery-logo" src="img/icons/fedex-logo.png" alt="FedEx">
+                    </div>
+                    <h3 class="shipment-group__amount mb-0">
+                      <span class="shipment-group__amount-count">1</span> shipment
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="shipments-collection border-bottom">
+                  <div class="shipments-collection-header d-flex justify-content-between p-3">
+                    <h4 class="text-sub-regular mb-0">Collection for <time>Wed, 22 Sep 18:00</time></h4>
+                    <div class="amount text-sub-regular">£13.13</div>
+                  </div>
+
+                  <div class="shipments-collection-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Collect from</div>
+                          <div class="collection-detail-value">
+                            Earnest Scott<br>
+                            ParcelHero<br>
+                            6 Canute House,<br>
+                            Durum Warf Drive,<br>
+                            United Kingdom
+                          </div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Description</div>
+                          <div class="collection-detail-value">Kitchen accessories</div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Weight &amp; size</div>
+                          <div class="collection-detail-value">
+                            <ul class="collection-detail-parcels">
+                              <li>
+                                <span>1 parcel:</span> 
+                                <span>43 x 31 x 16cm, 3.5kg</span>
+                              </li>
+                              <li>
+                                <span>2 parcels:</span> 
+                                <span>12 x 23 x 16cm, 3.1kg</span>
+                              </li>
+                              <li>
+                                <span>1 parcel:</span> 
+                                <span>43 x 31 x 16cm, 3.5kg</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Deliver to</div>
+                          <div class="collection-detail-value">
+                            John Smith<br>
+                            Sky LTD<br>
+                            32 London Road,<br>
+                            Durum Warf Drive, Brentford, TW8 8H<br>
+                            United Kingdom
+                          </div>
+                        </div>
+                        <div class="collection-detail">
+                          <div class="collection-detail-label">Delivered by</div>
+                          <div class="collection-detail-value">
+                            <div>
+                              <time>Tue, 17 Sep</time>
+                            </div>
+                            <div>
+                              <button type="button" class="btn btn-link collection-detail-btn-link">
+                              {{ svgIcon("quick-delivery", 41, 28) }}
+                              Need it quicker
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+
+                  <div class="shipment-collection-controls d-flex justify-content-end pb-2">
+                    <button type="button" class="btn btn-link collection-control-btn">
+                      {{ svgIcon("pencil", 20, 20) }}
+                      Edit
+                    </button>
+                    <button type="button" class="btn btn-link collection-control-btn">
+                      {{ svgIcon("trash", 20, 22) }}
+                      Delete
+                    </button>
+                  </div>
+                </div>
+
+                <div class="add-shipment pt-3 pb-3">
+                  <button type="button" class="btn btn-outline-primary add-shipment-btn">Add shipment</button>
+                </div>
+              </section>
+
+              {# BLOCk: Payment #}
+              {# from here {% include "./payment.njk" %} #}
+              <div class="order-payment">
+
+                <div class="order-payment-summary">
+                  <table class="payment-table border-bottom">
+                    <tbody>
+                      <tr>
+                        <td>Sub total</td>
+                        <td class="text-right">
+                          <span id="pt-subtotal">£13.13</span>
+                        </td>
+                      </tr>
+                      {# <tr>
+                        <td>Wallet balance <span class="text-dark ml-1"><strong>Remove</strong></span></td>
+                        <td class="text-right">-£12.56</td>
+                      </tr> #}
+                      <tr>
+                        <td>VAT</td>
+                        <td class="text-right">
+                          <span id="pt-vat">£2.43</span>
+                        </td>
+                      </tr>
+                      <tr class="text-neutral-medium text-dark">
+                        <td>TOTAL</td>
+                        <td class="text-right">
+                          <span id="pt-total">£15.56</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="order-payment-promo pt-3 pb-3">
+                  <div class="collapse-toggler simple-primary text-right" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">Enter promo code <i class="fas fa-chevron-down ml-1"></i></div>
+                  <div class="collapse" id="collapsePromo">
+                    <form id="form-promocode" class="pt-2">
+                      <div class="form-row justify-content-end">
+                        <div class="form-group col-sm-5 col-xl-4">
+                          <label for="promocode" class="sr-only">enter your promocode</label>
+                          <input type="text" id="promocode" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme">
+                        </div>
+                        <div class="form-group col-sm-3 col-xl-2">
+                          <button type="submit" class="form-control btn btn-outline-primary not-rounded btn-thick">Apply</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+            {# BLOCK: Your contact details #}
+            <section class="shipment-contacts">
+              <h3 class="text-medium-m">Your details 
+                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">{{ svgIcon("question-circle", 20, 20) }}</a>
+              </h3>
+              <p>We need to know who to contact if any issues occur.</p>
+              <ul class="list-unstyled mt-4 shipment-contacts-choice">
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-1">
+                    <label for="contacts-options-1">
+                      I am the receiver: <b>Peter Jones</b>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-2">
+                    <label for="contacts-options-2">
+                      I am the shipper: <b>John Smith</b>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="parcelhero-radio">
+                    <input type="radio" name="contacts-options" id="contacts-options-3">
+                    <label for="contacts-options-3">
+                      Someone else
+                    </label>
+                  </div>
+                </li>
+              </ul>
+
+            </section>
+
+            {# BLOCK: Your contact details - anonymous #}
+            <section class="shipment-contacts">
+              <h3 class="text-medium-m">Your details 
+                <a href="#" data-toggle="tooltip" title="helpful info" data-original-title="Some helpful information"  class="shipment-contacts-help ml-2">{{ svgIcon("question-circle", 20, 20) }}</a>
+              </h3>
+              <p class="mw-75">We need to know who to contact if any issues occur. Please enter your address and details below:</p>
+              <form class="mt-4">
+                <label class="text-label" for="parcel-collection-address">Find address</label>
+                <div class="search-input form-group">
+                  <input type="text" autocomplete="new-adress" name="collection-adress"  data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control dark-theme">
+                </div>
+              </form>
+
+            </section>
+
+            {# BLOCK: Payment method #}
+            {% include "../templates/modules/checkout/_checkout-payment.njk" %}
+
           </div>
+
         </div>
           
         <div class="col-lg-4">
+          {% include "../templates/modules/checkout/_checkout-sidebar.njk" %}
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+{% include "modules/parcel-hero/_change-country-modal.njk" %}
+
+{% endblock %}
+
+{% block scripts %}
+  <script src='/js/parcel-hero/pages/payment.js'></script>
+  <script src='/js/parcel-hero/pages/order-summary.js'></script>
 {% endblock %}

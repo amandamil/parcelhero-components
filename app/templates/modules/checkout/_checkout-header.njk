@@ -1,0 +1,37 @@
+{% set steps = ['Parcel details', 'Order summary', 'Payment details'] %}
+
+<header class="header-account" id="main-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="logo-with-progress">
+          <a href="./"><img src="img/ph_logo.svg" alt="parcel-logo" class='logo-img'></a>
+
+          <div class="progress-tracker absolute-center">
+
+            {% for step in steps %}
+
+              {# defining classes for completed and active steps #}
+              {% set stepClassName = "" %}
+              {% if loop.index < activeStep %}
+                {% set stepClassName = "completed" %}
+              {% endif %}
+              {% if loop.index === activeStep %}
+                {% set stepClassName = "current" %}
+              {% endif %}
+
+              <div class="{{stepClassName}}">
+                <div>
+                  <span>{{loop.index}}</span>
+                  <i class="icon-check"></i></div>
+                  <span>{{step}}</span>
+              </div>
+            {% endfor %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

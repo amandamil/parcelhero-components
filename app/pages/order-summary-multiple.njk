@@ -1,0 +1,494 @@
+{# ===== Variables ===== #}
+{% set pageTitle = 'ParcelHero: Order Summary' %}
+{% set activeStep = 2 %}
+{% set paymentMethods = [
+  { icon: "credit-card", text: "Debit card" },
+  { icon: "credit-card-black", text: "Credit card <span class='d-inline-block'>2% surcharge</span>" },
+  { icon: "paypal", text: "PayPal <span class='d-inline-block'>2% surcharge</span>" },
+  { icon: "wallet", text: "Login to use Wallet" }
+] %}
+{# === Variables end === #}
+
+{# Macro for inserting inline svg icon from sprite #}
+{% macro svgIcon(name, width='1em', height='1em') %}
+  <svg width="{{width}}" height="{{height}}" class="inline-svg" aria-hidden="true">
+    <use xlink:href="#{{name}}" />
+  </svg>
+{% endmacro %}
+
+{% extends "structure/parcel-hero/_layout-checkout.njk" %}
+
+{% block content %}
+  {% include "../templates/modules/checkout/_checkout-sprite.njk" %}
+  {% include "../templates/modules/checkout/_checkout-header.njk" %}
+
+  <main class="bg-gray-light order-summary-main">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <div class="block order-summary-block">
+
+            <section class="order-section">
+              <div class="block-title">
+                <h2 class="text-medium-subtitle mb-0">Order summary</h2>
+              </div>
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="text-sub-medium mb-3">
+                      <span>12</span> shipments
+                    </h3>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                  <div class="form-group search-widget">
+                    <input type="text" class="form-control dark-theme" placeholder="Search input">
+                    <div class="search-widget-icons">
+                      <i class="search-widget-search fas fa-search active"></i>
+                      <i class="search-widget-remove fas fa-times"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {# BLOCK: Shipments (multiple) #}
+              <div class="accordion theme-light mb-4" id="accordionShipments">
+
+                <div class="accordion-group mb-2">
+                  <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#ac-shipment-1" aria-expanded="false" aria-controls="ac-shipment-1">
+                    <div class="d-flex align-items-center">
+                      <div class="shipment-group__delivery-company">
+                        <img class="shipment-group__delivery-logo" src="img/icons/ups-logo.svg" alt="UPS">
+                      </div>
+                      <h3 class="shipment-group__amount mb-0">
+                        <span>4</span> shipments
+                      </h3>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="collapse" id="ac-shipment-1" data-parent="#accordionShipments">
+                    <div class="p-4">
+                      <div class="shipments-collection">
+                        <div class="shipments-collection-header d-flex justify-content-between">
+                          <h4 class="text-sub-regular mb-0">Collection for <time>Wed, 22 Sep 18:00</time></h4>
+                          <div class="amount text-sub-regular">£13.13</div>
+                        </div>
+                        {# existing sturcture for actions: ".table table ..." #}
+                        {# <div class="table table-responsive-md"> #}
+                        <div class="table confirmation-table p-0">
+                          <div class="table-wrap overflow-md-hidden">
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    4 parcels
+                                  </td>
+                                  <td>
+                                    John Smith
+                                  </td>
+                                  <td>
+                                    United States
+                                  </td>
+                                  <td>
+                                    £32.34
+                                  </td>
+                                  <td>
+                                    <div class="table-actions pull-right mr-2">
+                                      <button type="button" class="btn btn-toggle-cell" data-toggle="collapse" data-target="#collapseCell-1" aria-expanded="false" aria-controls="collapseCell-1" title="toggle details">
+                                        <i class="fas fa-chevron-up"></i>
+                                      </button>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                        <span class="sr-only">View details</span>
+                                      </span>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                        <span class="sr-only">Delete</span>
+                                      </span>
+                                      <span class="mr-1 d-none-md">
+                                        <i class="fas fa-ellipsis-h dropdown-custom">
+                                          <div class="dropdown-menu-custom">
+                                            <div>
+                                              <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                              <a class="dropdown-item" href="#"><i class="far fa-pencil mr-2"></i>Edit</a>
+                                              <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#collapseCell-1" aria-expanded="false" aria-controls="collapseCell-1"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                            </div>
+                                          </div>
+                                        </i>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="5" class="details-cell p-0">
+                                    <div id="collapseCell-1" class="collapse">
+                                      {{ collectionDetails() }}
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    1 parcel
+                                  </td>
+                                  <td>
+                                    John Smith
+                                  </td>
+                                  <td>
+                                    United States
+                                  </td>
+                                  <td>
+                                    £32.34
+                                  </td>
+                                  <td>
+                                    <div class="table-actions pull-right mr-2">
+                                      <button type="button" class="btn btn-toggle-cell" data-toggle="collapse" data-target="#collapseCell-2" aria-expanded="false" aria-controls="collapseCell-2" title="toggle details">
+                                        <i class="fas fa-chevron-up"></i>
+                                      </button>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                        <span class="sr-only">View details</span>
+                                      </span>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                        <span class="sr-only">Delete</span>
+                                      </span>
+                                      <span class="mr-1 d-none-md">
+                                        <i class="fas fa-ellipsis-h dropdown-custom">
+                                          <div class="dropdown-menu-custom">
+                                            <div>
+                                              <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                              <a class="dropdown-item" href="#"><i class="far fa-pencil mr-2"></i>Edit</a>
+                                              <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#collapseCell-2" aria-expanded="false" aria-controls="collapseCell-2"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                            </div>
+                                          </div>
+                                        </i>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="5" class="details-cell p-0">
+                                    <div id="collapseCell-2" class="collapse">
+                                      {{ collectionDetails() }}
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="shipments-collection">
+                        <div class="shipments-collection-header d-flex justify-content-between">
+                          <h4 class="text-sub-regular mb-0">Collection for <time>Wed, 22 Sep 18:00</time></h4>
+                          <div class="amount text-sub-regular">£13.13</div>
+                        </div>
+                        {# existing sturcture for actions: ".table table ..." #}
+                        {# <div class="table table-responsive-md"> #}
+                        <div class="table confirmation-table p-0">
+                          <div class="table-wrap overflow-md-hidden">
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    4 parcels
+                                  </td>
+                                  <td>
+                                    John Smith
+                                  </td>
+                                  <td>
+                                    United States
+                                  </td>
+                                  <td>
+                                    £32.34
+                                  </td>
+                                  <td>
+                                    <div class="table-actions pull-right mr-2">
+                                      <button type="button" class="btn btn-toggle-cell" data-toggle="collapse" data-target="#collapseCell-3" aria-expanded="false" aria-controls="collapseCell-3" title="toggle details">
+                                        <i class="fas fa-chevron-up"></i>
+                                      </button>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                        <span class="sr-only">View details</span>
+                                      </span>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                        <span class="sr-only">Delete</span>
+                                      </span>
+                                      <span class="mr-1 d-none-md">
+                                        <i class="fas fa-ellipsis-h dropdown-custom">
+                                          <div class="dropdown-menu-custom">
+                                            <div>
+                                              <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                              <a class="dropdown-item" href="#"><i class="far fa-pencil mr-2"></i>Edit</a>
+                                              <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#collapseCell-3" aria-expanded="false" aria-controls="collapseCell-3"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                            </div>
+                                          </div>
+                                        </i>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="5" class="details-cell p-0">
+                                    <div id="collapseCell-3" class="collapse">
+                                      {{ collectionDetails() }}
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    1 parcel
+                                  </td>
+                                  <td>
+                                    John Smith
+                                  </td>
+                                  <td>
+                                    United States
+                                  </td>
+                                  <td>
+                                    £32.34
+                                  </td>
+                                  <td>
+                                    <div class="table-actions pull-right mr-2">
+                                      <button type="button" class="btn btn-toggle-cell" data-toggle="collapse" data-target="#collapseCell-4" aria-expanded="false" aria-controls="collapseCell-4" title="toggle details">
+                                        <i class="fas fa-chevron-up"></i>
+                                      </button>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="fas fa-list-ul" aria-hidden="true" data-original-title="View details"></i>
+                                        <span class="sr-only">View details</span>
+                                      </span>
+                                      <span class="d-none d-none d-inline-block-md">
+                                        <i data-toggle="tooltip" data-placement="top" title="" class="far fa-trash-alt" aria-hidden="true" data-original-title="Delete"></i>
+                                        <span class="sr-only">Delete</span>
+                                      </span>
+                                      <span class="mr-1 d-none-md">
+                                        <i class="fas fa-ellipsis-h dropdown-custom">
+                                          <div class="dropdown-menu-custom">
+                                            <div>
+                                              <a class="dropdown-item" href="#"><i class="far fa-trash-alt mr-2"></i>Delete</a>
+                                              <a class="dropdown-item" href="#"><i class="far fa-pencil mr-2"></i>Edit</a>
+                                              <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#collapseCell-4" aria-expanded="false" aria-controls="collapseCell-4"><i class="fas fa-list-ul mr-2"></i>View details</a>
+                                            </div>
+                                          </div>
+                                        </i>
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="5"  class="details-cell p-0">
+                                    <div id="collapseCell-4" class="collapse">
+                                      {{ collectionDetails() }}
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-group mb-2">
+                  <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#ac-shipment-2" aria-expanded="false" aria-controls="ac-shipment-2">
+                    <div class="d-flex align-items-center">
+                      <div class="shipment-group__delivery-company">
+                        <img class="shipment-group__delivery-logo" src="img/icons/fedex-logo.png" alt="FedEx">
+                      </div>
+                      <h3 class="shipment-group__amount mb-0">
+                        <span>4</span> shipments
+                      </h3>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="collapse" id="ac-shipment-2" data-parent="#accordionShipments">
+                    <div class="p-4">
+                      Accordion content
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-group mb-2">
+                  <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#ac-shipment-3" aria-expanded="false" aria-controls="ac-shipment-3">
+                    <div class="d-flex align-items-center">
+                      <h3 class="shipment-group__amount mb-0">
+                        <span>4</span> imports to your address
+                      </h3>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="collapse" id="ac-shipment-3" data-parent="#accordionShipments">
+                    <div class="p-4">
+                      Accordion content
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+              
+
+              <div class="add-shipment pt-3 pb-3">
+                <button type="button" class="btn btn-outline-primary add-shipment-btn">Add shipment</button>
+              </div>
+            </section>
+
+              {# BLOCk: Payment #}
+              {# from here {% include "./payment.njk" %} #}
+              <div class="order-payment">
+
+                <div class="order-payment-summary">
+                  <table class="payment-table border-bottom">
+                    <tbody>
+                      <tr>
+                        <td>Sub total</td>
+                        <td class="text-right">
+                          <span id="pt-subtotal">£141.13</span>
+                        </td>
+                      </tr>
+                      {# <tr>
+                        <td>Wallet balance <span class="text-dark ml-1"><strong>Remove</strong></span></td>
+                        <td class="text-right">-£12.56</td>
+                      </tr> #}
+                      <tr>
+                        <td>VAT</td>
+                        <td class="text-right">
+                          <span id="pt-vat">£2.43</span>
+                        </td>
+                      </tr>
+                      <tr class="text-neutral-medium text-dark">
+                        <td>TOTAL</td>
+                        <td class="text-right">
+                          <span id="pt-total">£143.56</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="order-payment-promo pt-3 pb-3">
+                  <div class="collapse-toggler simple-primary text-right" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="false" aria-controls="collapsePromo">Enter promo code <i class="fas fa-chevron-down ml-1"></i></div>
+                  <div class="collapse" id="collapsePromo">
+                    <form id="form-promocode" class="pt-2">
+                      <div class="form-row justify-content-end">
+                        <div class="form-group col-sm-5 col-xl-4">
+                          <label for="promocode" class="sr-only">enter your promocode</label>
+                          <input type="text" id="promocode" autocomplete="new-promocode" placeholder="Enter promo code" name="promocode" class="form-control not-rounded dark-theme">
+                        </div>
+                        <div class="form-group col-sm-3 col-xl-2">
+                          <button type="submit" class="form-control btn btn-outline-primary not-rounded btn-thick">Apply</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+
+
+            {# BLOCK: Payment method #}
+            {% include "../templates/modules/checkout/_checkout-payment.njk" %}
+
+          </div>
+
+        </div>
+          
+        <div class="col-lg-4">
+          {% include "../templates/modules/checkout/_checkout-sidebar.njk" %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% include "modules/parcel-hero/_change-country-modal.njk" %}
+
+{% endblock %}
+
+{% block scripts %}
+  <script src='/js/parcel-hero/pages/payment.js'></script>
+  <script src='/js/parcel-hero/pages/order-summary.js'></script>
+{% endblock %}
+
+{% macro collectionDetails() %}
+  <div class="shipments-collection-body pt-2">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="collection-detail">
+          <div class="collection-detail-label">Collect from</div>
+          <div class="collection-detail-value">
+            Earnest Scott<br>
+            ParcelHero<br>
+            6 Canute House,<br>
+            Durum Warf Drive,<br>
+            United Kingdom
+          </div>
+        </div>
+        <div class="collection-detail">
+          <div class="collection-detail-label">Description</div>
+          <div class="collection-detail-value">Kitchen accessories</div>
+        </div>
+        <div class="collection-detail">
+          <div class="collection-detail-label">Weight &amp; size</div>
+          <div class="collection-detail-value">
+            <ul class="collection-detail-parcels">
+              <li>
+                <span>1 parcel:</span> 
+                <span>43 x 31 x 16cm, 3.5kg</span>
+              </li>
+              <li>
+                <span>2 parcels:</span> 
+                <span>12 x 23 x 16cm, 3.1kg</span>
+              </li>
+              <li>
+                <span>1 parcel:</span> 
+                <span>43 x 31 x 16cm, 3.5kg</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="collection-detail">
+          <div class="collection-detail-label">Deliver to</div>
+          <div class="collection-detail-value">
+            John Smith<br>
+            Sky LTD<br>
+            32 London Road,<br>
+            Durum Warf Drive, Brentford, TW8 8H<br>
+            United Kingdom
+          </div>
+        </div>
+        <div class="collection-detail">
+          <div class="collection-detail-label">Delivered by</div>
+          <div class="collection-detail-value">
+            <div>
+              <time>Tue, 17 Sep</time>
+            </div>
+            <div>
+              <button type="button" class="btn btn-link collection-detail-btn-link">
+              {{ svgIcon("quick-delivery", 41, 28) }}
+              Need it quicker
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shipment-collection-controls d-flex justify-content-end pb-2">
+    <button type="button" class="btn btn-link collection-control-btn">
+      {{ svgIcon("pencil", 20, 20) }}
+      Edit
+    </button>
+    <button type="button" class="btn btn-link collection-control-btn">
+      {{ svgIcon("trash", 20, 22) }}
+      Delete
+    </button>
+  </div>
+{% endmacro %}
