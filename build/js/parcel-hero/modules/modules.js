@@ -179,3 +179,31 @@ const SearchWidget = function (querySelector = ".search-widget") {
     })
   });
 }
+
+const ChangeCountry = function (querySelector = ".module-change-country") {
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    const link =  block.querySelector("[data-action='change-country']");
+    const proceed =  block.querySelector("[data-action='change-country-continue']");
+    const label =  block.querySelector("[data-action='change-country-label']");
+    const back =  block.querySelector("[data-action='change-country-back']");
+    const input =  block.querySelector("input");
+    const modal = block.querySelector(".modal-custom");
+    
+    link.addEventListener("click", function(){
+      modalOpen(modal);
+    });
+  
+    proceed.addEventListener('click', function () {
+      country = block.querySelector("select").value;
+      modalClose(modal);
+      input.value = country;
+      label.innerHTML = country;
+    });
+
+    back.addEventListener('click', function () {
+      modalClose(modal);
+    })
+  });
+}

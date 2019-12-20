@@ -10,6 +10,7 @@
       <div class="col-md-6 pb-g">
         <div class="block h-100">
           <h2 class="mb-4">Inputs</h2>
+
           <div>
             <input type="text" placeholder="Input dark" name="input" class="form-control mb-4 dark-theme">
 
@@ -75,6 +76,7 @@
             <button class="btn btn-orange-outline">Orange outline</button>
             <button type="button" class="btn btn-outline-dark not-rounded text-uppercase">Dark outline</button>
           </div>
+
         </div>
       </div>
     </div>
@@ -152,7 +154,9 @@
           <div class="accordion theme-light grouped mb-4" id="accordionLight">
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#accordion-1" aria-expanded="false" aria-controls="accordion-1">
-                <div><div>Accordion 1</div></div>
+                <div>
+                  <div>Accordion 1</div>
+                </div>
                 <div></div>
               </button>
               <div class="collapse" id="accordion-1" data-parent="#accordionLight">
@@ -163,7 +167,9 @@
             </div>
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#accordion-2" aria-expanded="false" aria-controls="accordion-2">
-                <div><div>Accordion 2</div></div>
+                <div>
+                  <div>Accordion 2</div>
+                </div>
                 <div></div>
               </button>
               <div class="collapse" id="accordion-2" data-parent="#accordionLight">
@@ -174,7 +180,9 @@
             </div>
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#accordion-3" aria-expanded="false" aria-controls="accordion-3">
-                <div><div>Accordion 3</div></div>
+                <div>
+                  <div>Accordion 3</div>
+                </div>
                 <div></div>
               </button>
               <div class="collapse" id="accordion-3" data-parent="#accordionLight">
@@ -184,11 +192,18 @@
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Collapses</h2>
           <div class="accordion theme-light grouped mb-4" id="accordionLightSelect">
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#acl-1" aria-expanded="false" aria-controls="acl-1">
-                <div class="d-flex align-items-center"><div class="accordion-select mr-2"></div><div>Accordion 1</div></div>
+                <div class="d-flex align-items-center">
+                  <div class="accordion-select mr-2"></div>
+                  <div>Accordion 1</div>
+                </div>
                 <div><img src="../img/ph_logo.svg" alt=""></div>
               </button>
               <div class="collapse" id="acl-1" data-parent="#accordionLightSelect">
@@ -199,7 +214,10 @@
             </div>
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#acl-2" aria-expanded="false" aria-controls="acl-2">
-                <div class="d-flex align-items-center"><div class="accordion-select mr-2"></div><div>Accordion 2</div></div>
+                <div class="d-flex align-items-center">
+                  <div class="accordion-select mr-2"></div>
+                  <div>Accordion 2</div>
+                </div>
                 <div><img src="../img/ph_logo.svg" alt=""></div>
               </button>
               <div class="collapse" id="acl-2" data-parent="#accordionLightSelect">
@@ -210,7 +228,10 @@
             </div>
             <div class="accordion-group">
               <button class="collapse-toggler" type="button" data-toggle="collapse" data-target="#acl-3" aria-expanded="false" aria-controls="acl-3">
-                <div class="d-flex align-items-center"><div class="accordion-select mr-2"></div><div>Accordion 3</div></div>
+                <div class="d-flex align-items-center">
+                  <div class="accordion-select mr-2"></div>
+                  <div>Accordion 3</div>
+                </div>
                 <div><img src="../img/ph_logo.svg" alt=""></div>
               </button>
               <div class="collapse" id="acl-3" data-parent="#accordionLightSelect">
@@ -238,7 +259,6 @@
               Collapse content
             </div>
           </div>
-
         </div>
       </div>
       <div class="col-md-6 pb-g">
@@ -267,6 +287,23 @@
               Content 4
             </div>
           </div>
+        </div>
+      </div>
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Modals</h2>
+
+          <div class="module-change-country">
+            <label class="text-label" for="">Country</label>
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
+                <input type="hidden" name="country" value="United States">
+                <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
+              </div>
+            </div>
+            {% include "modules/parcel-hero/_change-country-modal.njk" %}
+          </div>
+          
         </div>
       </div>
     </div>
@@ -328,64 +365,41 @@
       <div class="col-md-6 pb-g">
         <div class="block h-100">
           <h2 class="mb-4">Radio buttons & Checkboxes</h2>
-          <div>
 
-            <div class="element-group no-label">
-              <label class="element-static-label">
-                <input type="checkbox" name="checkbox-2" class="element-input" data-materialize />
-              </label>
-            </div>
-
-          </div>
-          <div>
-
-            <div class="element-group no-label">
-              <label class="element-static-label">
-                <input type="checkbox" name="checkbox-1" class="element-input" data-materialize />
-                With label
-              </label>
-            </div>
-
+          <div class="parcelhero-checkbox">
+            <input type="checkbox" id="checkbox-1">
+            <label for="checkbox-1"></label>
           </div>
 
-          <div>
-
-            <div class="element-group theme-dark no-label">
-              <label class="element-static-label">
-                <input type="checkbox" name="checkbox-1" class="element-input" data-materialize />
-                With label
-              </label>
-            </div>
-
+          <div class="parcelhero-checkbox">
+            <input type="checkbox" id="checkbox-2">
+            <label for="checkbox-2">With label</label>
           </div>
 
-          <div class="pb-4 border-bottom">
-
-            <div class="element-group theme-black no-label">
-              <label class="element-static-label">
-                <input type="checkbox" name="checkbox-3" class="element-input" data-materialize />
-                Dark with label
-              </label>
-            </div>
-
+          <div class="parcelhero-checkbox theme-black">
+            <input type="checkbox" id="checkbox-3">
+            <label for="checkbox-3">With label dark</label>
           </div>
 
           <div class="pt-4">
-            <label class="radio">
-              <input type="radio" value="0" name="radio-1" checked>
-              <span class="checkmark"></span>
-              Radio 1
-            </label>
-            <label class="radio">
-              <input type="radio" value="1" name="radio-1" checked>
-              <span class="checkmark"></span>
-              Radio 2
-            </label>
-            <label class="radio">
-              <input type="radio" value="2" name="radio-1" checked>
-              <span class="checkmark"></span>
-              Radio 3
-            </label>
+            <div class="parcelhero-radio">
+              <input type="radio" name="radio-new" value="0" id="radio-new-1">
+              <label for="radio-new-1">
+                Radio - 1
+              </label>
+            </div>
+            <div class="parcelhero-radio">
+              <input type="radio" name="radio-new" value="1" id="radio-new-2">
+              <label for="radio-new-2">
+                Radio - 2
+              </label>
+            </div>
+            <div class="parcelhero-radio">
+              <input type="radio" name="radio-new" value="2" id="radio-new-3">
+              <label for="radio-new-3">
+                Radio - 3
+              </label>
+            </div>
           </div>
 
           <div class="pt-4">
