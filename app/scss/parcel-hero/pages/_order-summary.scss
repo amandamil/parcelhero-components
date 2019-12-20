@@ -434,6 +434,30 @@
       }
     }
   }
+
+  // grey variation
+  &.gray {
+    input[type="checkbox"] {
+
+      &:focus~label {
+        &:before {
+          box-shadow: 0 0 0 2px white,
+            0 0 0 4px rgba($darker-gray, .25);
+        }
+      }
+
+      &:checked~label {
+        color: $darker-gray;
+        border-color: $darker-gray;
+
+        &:before {
+          border-color: $darker-gray;
+          background-color: $darker-gray;
+        }
+
+      }
+    }
+  }
   
 }
 
@@ -524,11 +548,12 @@
     &:before {
       content: "";
       position: absolute;
-      left: 7px;
+      left: 8px;
       top: 0.5rem;
       width: 0;
       height: calc(100% - 1rem);
-      border-left: 6px solid $primary;
+      // border-left: 6px solid $primary;
+      border-left: 5px solid $success;
     }
   }
 }
