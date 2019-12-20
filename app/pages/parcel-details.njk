@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/js/parcel-hero/libs/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="/js/parcel-hero/libs/owlcarousel/assets/owl.theme.default.min.css">
 
-<header class="header-account" id="main-header">
+<header class="header-account bg-white" id="main-header">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
@@ -337,6 +337,51 @@
             </div>
 
             <div class="d-none add-custom-address" id="parcel-add-collection-address">
+              <div class="mt-g mb-4">
+                <label class="text-label" for="">Zip code / Postcode</label>
+                <input type="text" name="custom-zipcode" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Company <span class="op-05">Optional</span></label>
+                <input type="text" name="custom-company" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Address</label>
+                <input type="text" name="custom-address" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Address 2 <span class="op-05">Optional</span></label>
+                <input type="text" name="custom-address-o" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Town / City</label>
+                <input type="text" name="custom-town" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">State</label>
+                <input type="text" name="custom-state" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="module-change-country">
+                <label class="text-label" for="">Country</label>
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <input type="hidden" name="country" value="United States">
+                    <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
+                  </div>
+                </div>
+                {% include "modules/parcel-hero/_change-country-modal.njk" %}
+              </div>
+
+              <div class="d-flex justify-content-between mt-2 mb-4">
+                <span class="link-primary-spec find-address">Find an address</span>
+                <span class="link-primary-spec save-address d-none">Save</span>
+              </div>
             </div>
           </div>
           <div class="block parcel-details mb-g d-none" id="drop-off-block">
@@ -474,6 +519,51 @@
               </div>
             </div>
             <div class="d-none add-custom-address" id="parcel-add-delivery-address">
+              <div class="mt-g mb-4">
+                <label class="text-label" for="">Zip code / Postcode</label>
+                <input type="text" name="custom-zipcode" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Company <span class="op-05">Optional</span></label>
+                <input type="text" name="custom-company" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Address</label>
+                <input type="text" name="custom-address" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Address 2 <span class="op-05">Optional</span></label>
+                <input type="text" name="custom-address-o" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">Town / City</label>
+                <input type="text" name="custom-town" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="mt-4 mb-4">
+                <label class="text-label" for="">State</label>
+                <input type="text" name="custom-state" class="form-control w-50 w-md-100 not-rounded dark-theme">
+              </div>
+
+              <div class="module-change-country">
+                <label class="text-label" for="">Country</label>
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <input type="hidden" name="country" value="United States">
+                    <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
+                  </div>
+                </div>
+                {% include "modules/parcel-hero/_change-country-modal.njk" %}
+              </div>
+
+              <div class="d-flex justify-content-between mt-2 mb-4">
+                <span class="link-primary-spec find-address">Find an address</span>
+                <span class="link-primary-spec save-address d-none">Save</span>
+              </div>
             </div>
           </div>
           <div class="block parcel-details mb-g">
@@ -583,7 +673,6 @@
 
 {% include "modules/parcel-hero/_login-modal.njk" %}
 {% include "modules/parcel-hero/_adress-confirm-modal.njk" %}
-{% include "modules/parcel-hero/_change-country-modal.njk" %}
 {% include "modules/parcel-hero/_drop-off-modal.njk" %}
 {% include "modules/parcel-hero/_show-onmap-modal.njk" %}
 {% include "modules/parcel-hero/_city-suggestion-modal.njk" %}

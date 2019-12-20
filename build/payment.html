@@ -215,12 +215,43 @@
                             <input type="text" value="" name="city" class="form-control dark-theme mb-4">
                             <label class="text-label" for="">State</label>
                             <input type="text" value="" name="state" class="form-control dark-theme mb-4">
-                            <label class="text-label" for="">Country</label>
-                            <div class="d-flex justify-content-between">
-                              <div class="d-flex">
-                                <p class="custom-country" id="billign-country"></p> <span class="link-primary-spec ml-2" id="change-billing-country">Change</span>
+
+                            <div class="module-change-country">
+                              <label class="text-label" for="">Country</label>
+                              <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                  <input type="hidden" name="country" value="United States">
+                                  <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
+                                </div>
                               </div>
+                              <div class="modal-custom small not-rounded">
+    <div class="modal-custom-cover"></div>
+    <div class="modal">
+        <div class="modal-custom-content scroll-bg-gray-light">
+            <i alt="close button" class="icon-close close-btn"></i>
+            <h4>Changing country</h4>
+            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
+            <div>
+                <div class="info-input w-100">
+                    <div class="info-input-label">
+                        <strong>Country</strong>
+                    </div>
+                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light">
+                        <option value="United States">United States</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+            </div>
+            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" data-action="change-country-continue">Continue</div></div>
+            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4"  data-action="change-country-back">Go back</div></div>
+            
+        </div>
+    </div>
+</div>
                             </div>
+                            
                           </div>
                         </div>
 
@@ -417,34 +448,6 @@
     </div>
   </div>
 </section>
-
-<div class="modal-custom small not-rounded" id="modal-change-country">
-    <div class="modal-custom-cover"></div>
-    <div class="modal">
-        <div class="modal-custom-content scroll-bg-gray-light">
-            <i alt="close button" class="icon-close close-btn"></i>
-            <h4>Changing country</h4>
-            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
-            <div>
-                <div class="info-input w-100">
-                    <div class="info-input-label">
-                        <strong>Country</strong>
-                    </div>
-                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light" id="select-country">
-                        <option value="United States">United States</option>
-                        <option value="Great Britain">Great Britain</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                    </select>
-                </div>
-            </div>
-            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" id="continue-change-country">Continue</div></div>
-            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4" id="go-back">Go back</div></div>
-            
-        </div>
-    </div>
-</div>
-
 
 
 
