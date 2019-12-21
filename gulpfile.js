@@ -4,6 +4,7 @@ const
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     cleanCss = require('gulp-clean-css'),
+    watch = require('gulp-watch'),
     nunjucksRender = require('gulp-nunjucks-render');
 
 const paths = {
@@ -85,19 +86,19 @@ function onError(err) {
 
 function reload(done) {
     browserSync.reload();
-    done();
+    //done();
 }
 
 gulp.task('server', function (done) {
-    gulp.watch(paths.Styles.src, {interval: 1000, usePolling: true, delay: 500}, Styles);
-    gulp.watch(paths.Nunjucks.src, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
-    gulp.watch(paths.Nunjucks.templateWatch, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
-    gulp.watch(paths.Styles.images, {interval: 1000, usePolling: true, delay: 500}, Images);
-    gulp.watch(paths.Styles.js, {interval: 1000, usePolling: true, delay: 500}, Javascript);
-    gulp.watch(paths.Styles.fonts, {interval: 1000, usePolling: true, delay: 500}, Fonts);
-    gulp.watch(paths.browserSync.html, reload);
-    gulp.watch(paths.browserSync.js, reload);
-    gulp.watch(paths.browserSync.css, reload);
+    watch(paths.Styles.src, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Styles);
+    watch(paths.Nunjucks.src, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Nunjucks);
+    watch(paths.Nunjucks.templateWatch, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Nunjucks);
+    watch(paths.Styles.images, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Images);
+    watch(paths.Styles.js, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Javascript);
+    watch(paths.Styles.fonts, {interval: 1000, usePolling: true, delay: 500, verbose:true}, Fonts);
+    watch(paths.browserSync.html, reload);
+    watch(paths.browserSync.js, reload);
+    watch(paths.browserSync.css, reload);
     browserSync.init({
         server: {
             baseDir: paths.browserSync.baseDir
