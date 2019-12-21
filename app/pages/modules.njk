@@ -1,0 +1,38 @@
+{% extends "structure/parcel-hero/_layout-simple.njk" %}
+
+{% set title = "Parcel hero Modules" %}
+
+{% block content %}
+
+<section class="bg-gray-light pt-g pb-g">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mb-4">Modules</h2>
+      </div>
+
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          {% include "modules/parcel-hero/_module-adress.njk" %}
+        </div>
+      </div>
+
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          {% include "modules/parcel-hero/_module-change-country.njk" %}
+        </div>
+      </div>
+
+      <div class="col-md-12 pb-g">
+        <div class="block h-100">
+          {% include "modules/parcel-hero/_module-payment-method.njk" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

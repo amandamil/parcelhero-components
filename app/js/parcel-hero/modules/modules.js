@@ -207,3 +207,32 @@ const ChangeCountry = function (querySelector = ".module-change-country") {
     })
   });
 }
+
+const Adress = function (querySelector = ".module-adress") {
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    const preview =  block.querySelector("[data-action='adress-preview']");
+    const change =  block.querySelector("[data-action='adress-change']");
+    const form =  block.querySelector("[data-action='adress-form']");
+    
+    change.addEventListener("click", function(){
+      preview.classList.add("d-none");
+      form.classList.remove("d-none");
+    });
+  });
+}
+
+const PaymentMethod = function (querySelector = ".module-payment-method") {
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    const add =  block.querySelector("[data-action='add-card']");
+    const form =  block.querySelector("[data-action='card-form']");
+    
+    add.addEventListener("click", function(){
+      add.classList.add("d-none");
+      form.classList.remove("d-none");
+    });
+  });
+}
