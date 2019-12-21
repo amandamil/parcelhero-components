@@ -293,17 +293,8 @@
         <div class="block h-100">
           <h2 class="mb-4">Modals</h2>
 
-          <div class="module-change-country">
-            <label class="text-label" for="">Country</label>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex">
-                <input type="hidden" name="country" value="United States">
-                <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
-              </div>
-            </div>
-            {% include "modules/parcel-hero/_change-country-modal.njk" %}
-          </div>
-          
+          {% include "modules/parcel-hero/_module-change-country.njk" %}
+
         </div>
       </div>
     </div>
@@ -716,6 +707,26 @@
             <div class="text-neutral-medium">text-neutral-medium</div>
             <div class="text-neutral-small">text-neutral-small</div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pb-g">
+        <div class="block h-100">
+          <h2 class="mb-4">Modules</h2>
+
+          <div class="pb-2 border-bottom">
+
+            {% include "modules/parcel-hero/_module-adress.njk" %}
+
+          </div>
+
+          <div class="pb-2 pt-4 border-bottom">
+
+            {% include "modules/parcel-hero/_module-change-country.njk" %}
+
+          </div>
+
         </div>
       </div>
     </div>
