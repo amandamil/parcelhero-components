@@ -388,7 +388,7 @@
     const parcelFindAddress = parentElement.querySelector(".add-custom-address");
     parcelFindAddress.classList.remove("d-none");
     parcelFindAdressResult.classList.add("d-none");
-    parcelFindAdressAdvResult.classList.add("d-none");
+    parcelFindAdressAdvResult.classList.remove("d-none");
     saveCollectionDate.classList.add("d-none");
     parcelChooseCollectionDate.classList.add("d-none");
     parcelFindAdress.classList.add("d-none");
@@ -399,7 +399,7 @@
     const parcelFindAddress = parentElement.querySelector(".add-custom-address");
     parcelFindAddress.classList.remove("d-none");
     parcelFindDAdressResult.classList.add("d-none");
-    parcelFindDAdressAvdResult.classList.add("d-none");
+    parcelFindDAdressAvdResult.classList.remove("d-none");
     parcelFindDAdress.classList.add("d-none");
   }
 
@@ -448,6 +448,9 @@
       const parentElement = customAddress.parentElement;
       const parcelFindAddress = parentElement.querySelector(".parcel-find-address");
 
+      if (parentElement.querySelector("#parcel-find-adress-adv")) parentElement.querySelector("#parcel-find-adress-adv").classList.add("d-none");
+      if (parentElement.querySelector("#parcel-find-dadress-adv")) parentElement.querySelector("#parcel-find-dadress-adv").classList.add("d-none");
+
       customAddress.classList.add("d-none");
       parcelFindAddress.classList.remove("d-none");
     });
@@ -467,7 +470,6 @@
       customAddress.classList.add("d-none");
       parcelFindAddress.classList.remove("d-none");
 
-      parentElement.querySelector(".parcel-find-address")
 
 
     });
@@ -482,7 +484,6 @@
   parcelEditCollectionAddress.addEventListener('click', function () {
     parcelAddCollectionAddress.classList.remove("d-none");
     parcelFindAdressResult.classList.add("d-none");
-    parcelFindAdressAdvResult.classList.add("d-none");
     parcelFindAdress.classList.add("d-none");
 
     const resultAddress = parcelFindAdressResult.querySelector("[data-result=adress]").innerHTML;
@@ -501,7 +502,6 @@
   parcelEditDeliveryAddress.addEventListener('click', function () {
     parcelAddDeliveryAddress.classList.remove("d-none");
     parcelFindDAdressResult.classList.add("d-none");
-    parcelFindDAdressAvdResult.classList.add("d-none");
     parcelFindDAdress.classList.add("d-none");
 
     const resultAddress = parcelFindDAdressResult.querySelector("[data-result=adress]").innerHTML;
