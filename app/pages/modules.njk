@@ -1,6 +1,7 @@
 {% extends "structure/parcel-hero/_layout-simple.njk" %}
 
 {% set title = "Parcel hero Modules" %}
+{% set idMod = "demo" %}
 
 {% block content %}
 
@@ -13,7 +14,11 @@
 
       <div class="col-md-6 pb-g">
         <div class="block h-100">
-          {% include "modules/parcel-hero/_module-adress.njk" %}
+          <div class="row">
+            <div class="col-md-6">
+              {% include "modules/parcel-hero/_module-adress.njk" %}
+            </div>
+          </div>
         </div>
       </div>
 

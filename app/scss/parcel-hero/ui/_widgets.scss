@@ -28,3 +28,33 @@
     }
   }
 }
+
+// Address module
+.module-adress-wrapper {
+  position: relative;
+  padding-left: 20px;
+  overflow: hidden;
+
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 12px;
+  //   height: 19px;
+  //   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M172 502C27 291 0 269 0 192a192 192 0 11384 0c0 77-27 99-172 310a24 24 0 01-40 0zm20-230a80 80 0 100-160 80 80 0 000 160z"/></svg>');
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+
+  // }
+  &:before {
+    content: "\e913";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: icomoon;
+    line-height: 1;
+  }
+}
+

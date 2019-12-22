@@ -204,28 +204,45 @@
               <div>
                 <div class="text-sub-medium mb-3">Billing address</div>
 
-                <div class="module-adress">
-  <div class="text-small" data-action="adress-preview">
-    <div>Parcelhero, 3-6 Canute House</div>
-    <div>Durham Wharf Drive,</div>
-    <div>Brentford,</div>
-    <div>Tw8 8hp</div>
-    <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
+                
+
+<div class="module-adress">
+
+  <div class="module-adress-wrapper">
+    <div class="text-small" data-action="adress-preview">
+      <div>Parcelhero, 3-6 Canute House</div>
+      <div>Durham Wharf Drive,</div>
+      <div>Brentford,</div>
+      <div>Tw8 8hp</div>
+      <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
+    </div>
   </div>
 
-  <div class="w-50 w-md-100 d-none" data-action="adress-form">
-    <label class="text-label" for="">Zip code / Postcode</label>
-    <input type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Company <span class="text-label-light">Optional</span></label>
-    <input type="text" value="Parcelhero" name="company" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Address</label>
-    <input type="text" value="3-6 Canute House" name="address" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Address 2 <span class="text-label-light">Optional</span></label>
-    <input type="text" value="" name="address-2" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Town / City</label>
-    <input type="text" value="Brentford" name="city" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">State</label>
-    <input type="text" value="" name="state" class="form-control dark-theme mb-4">
+  <div class="d-none" data-action="adress-form">
+    <div class="form-group">
+      <label class="text-label" for="af-zip-1">Zip code / Postcode</label>
+      <input id="af-zip-1" type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-company-1">Company <span class="text-label-light">Optional</span></label>
+      <input id="af-company-1" type="text" value="Parcelhero" name="company" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address-1">Address</label>
+      <input id="af-address-1" type="text" value="3-6 Canute House" name="address" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address2-1">Address 2 <span class="text-label-light">Optional</span></label>
+      <input id="af-address2-1" type="text" value="" name="address-2" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-city-1">Town / City</label>
+      <input id="af-city-1" type="text" value="Brentford" name="city" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-state-1">State</label>
+      <input id="af-state-1" type="text" value="" name="state" class="form-control dark-theme">
+    </div>
 
     <div class="module-change-country">
   <label class="text-label" for="">Country</label>

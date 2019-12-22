@@ -386,86 +386,105 @@
         <div class="accordion-radio-item-body">
 
           
-          <div class="block parcel-details mb-g">
+          <div class="block parcel-details">
             <div class="block-title">
               <h4 class="text-medium-subtitle">Delivery Address</h4><i class="icon-help presset-icon-medium"></i>
             </div>
-            <div class="mt-4" class="parcel-find-address" id="parcel-find-dadress">
+
+            <div class="pt-2 pb-2 mb-2 parcel-find-address" id="parcel-find-dadress">
               <label class="text-label" for="">Find address</label>
               <div class="search-input">
                 <input type="text" autocomplete="new-adress" name="delivery-adress" data-type="advanced" data-custom="#parcel-add-delivery-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-dadress-adv" data-hide="#parcel-find-dadress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-daddress" class="form-control dark-theme">
               </div>
             </div>
-            <div class="d-none mt-4" id="parcel-find-dadress-result">
-              <div class="parcel-adress">
-                <div class="parcel-adress-location">
-                  <div><i class="icon-location"></i></div>
-                  <div>
-                    <div data-result="adress"></div>
-                    <div><span data-result="name"></span> <span data-result="postCode"></span></div>
-                    <div data-result="country"></div>
-                    <div class="link-primary-spec" id="parcel-edit-collection-dadress">Edit</div>
-                  </div>
-                </div>
-                <div>
-                  <span class="link-primary-spec" id="parcel-collection-serach-new-d">Search new</span>
-                </div>
-              </div>
-            </div>
-            <div class="d-none" id="parcel-find-dadress-adv">
-              <div class="mt-4 mb-4">
-                <label class="text-label" for="">Company <span class="op-05">Optional</span></label>
-                <input type="text" name="collection-company" class="form-control w-50 w-md-100 not-rounded dark-theme">
-              </div>
-              <div class="link-icon-primary-spec pb-4" data-toggle="collapse" data-target="#collapseInstr" aria-expanded="false" aria-controls="collapseInstr">
-                <i class="toggle-icon-show fas fa-minus-circle"></i><i class="toggle-icon-hide fas fa-plus-circle"></i> Add delivery instructions
-              </div>
-              <div class="collapse" id="collapseInstr">
-                <label class="text-label" for="">Delivery instructions <span class="op-05">Optional</span></label>
-                <textarea type="text" name="collection-instructions" class="form-control dark-theme"></textarea>
-                <div class="text-small-light mt-2 pb-4">Couriers are not certain to receive these instructions. <a href="#" class="link-primary-spec">Learn more</a></div>
-              </div>
-              <h4 class="mt-2 mb-4">Delivery contact details</h4>
-              <label class="text-label" for="">Contact name for delivery</label>
-              <input type="text" name="delivery-contact-name" class="form-control w-50 w-md-100 not-rounded dark-theme mb-4">
-              <label class="text-label" for="">Phone number</label>
-              <input type="text" name="delivery-phone-number" class="form-control w-50 w-md-100 not-rounded dark-theme">
-              <div class="text-small-light mt-2 mb-4">Using a mobile number will allow us to send delivery updates by SMS</div>
-              <label class="text-label" for="">Email</label>
-              <input type="text" name="delivery-email" class="form-control w-50 w-md-100 not-rounded dark-theme">
-              <div class="text-small-light mt-2 mb-4">An email address will allow for tracking updates and in-transit changes to the delivery.</div>
-              <div class="element-group no-label mr-2 mb-4 d-flex align-items-center">
-                <label class="element-static-label">
-                  <input type="checkbox" name="save-delivery-details" id="save-delivery-details" class="element-input" data-materialize />
-                  <span class="ml-2 text-dark">Save details</span>
-                </label>
-              </div>
-              <div class="insurance-info">
-                <h5 class="insurance-info-title"><i class="icon-intro-1 mr-3"></i> Enhance your shipment</h5>
-                <div class="insurance-content">
-                  <div>
-                    <div class="element-group no-label mr-2 mb-2 d-flex-adv align-items-center">
-                      <label class="element-static-label element-active">
-                        <input type="checkbox" name="deliver-signature" id="deliver-signature" class="element-input" data-materialize checked />
-                        <span class="ml-2 text-dark">Deliver with a signature + £1.00 exc VAT</span>
-                      </label>
-                      <i class="ml-2 icon-help presset-icon-medium"></i>
+
+            <div class="pt-2 pb-2 mb-2 module-wrapper">
+              <div class="row">
+                <div class="col-md-6">
+                  
+                  
+
+<div class="module-adress">
+
+  <div class="module-adress-wrapper">
+    <div class="text-small" data-action="adress-preview">
+      <div>Parcelhero, 3-6 Canute House</div>
+      <div>Durham Wharf Drive,</div>
+      <div>Brentford,</div>
+      <div>Tw8 8hp</div>
+      <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
+    </div>
+  </div>
+
+  <div class="d-none" data-action="adress-form">
+    <div class="form-group">
+      <label class="text-label" for="af-zip-checkout">Zip code / Postcode</label>
+      <input id="af-zip-checkout" type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-company-checkout">Company <span class="text-label-light">Optional</span></label>
+      <input id="af-company-checkout" type="text" value="Parcelhero" name="company" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address-checkout">Address</label>
+      <input id="af-address-checkout" type="text" value="3-6 Canute House" name="address" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address2-checkout">Address 2 <span class="text-label-light">Optional</span></label>
+      <input id="af-address2-checkout" type="text" value="" name="address-2" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-city-checkout">Town / City</label>
+      <input id="af-city-checkout" type="text" value="Brentford" name="city" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-state-checkout">State</label>
+      <input id="af-state-checkout" type="text" value="" name="state" class="form-control dark-theme">
+    </div>
+
+    <div class="module-change-country">
+  <label class="text-label" for="">Country</label>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex">
+      <input type="hidden" name="country" value="United States">
+      <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
+    </div>
+  </div>
+  <div class="modal-custom small not-rounded">
+    <div class="modal-custom-cover"></div>
+    <div class="modal">
+        <div class="modal-custom-content scroll-bg-gray-light">
+            <i alt="close button" class="icon-close close-btn"></i>
+            <h4>Changing country</h4>
+            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
+            <div>
+                <div class="info-input w-100">
+                    <div class="info-input-label">
+                        <strong>Country</strong>
                     </div>
-                  </div>
-                  <div>
-                    <div class="element-group no-label mr-2 d-flex-adv align-items-center">
-                      <label class="element-static-label">
-                        <input type="checkbox" name="guaranteed-delivery" id="guaranteed-delivery" class="element-input" data-materialize />
-                        <span class="ml-2 text-dark">Guaranteed delivery + £1.10 exc VAT</span>
-                      </label>
-                      <i class="ml-2 icon-help presset-icon-medium"></i>
-                    </div>
-                  </div>
+                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light">
+                        <option value="United States">United States</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+            </div>
+            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" data-action="change-country-continue">Continue</div></div>
+            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4"  data-action="change-country-back">Go back</div></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+  </div>
+
+</div>
                 </div>
               </div>
             </div>
-            <div class="d-none add-custom-address" id="parcel-add-delivery-address">
-            </div>
+
           </div>
         </div>
       </div>
@@ -598,28 +617,45 @@
               <div>
                 <div class="text-sub-medium mb-3">Billing address</div>
 
-                <div class="module-adress">
-  <div class="text-small" data-action="adress-preview">
-    <div>Parcelhero, 3-6 Canute House</div>
-    <div>Durham Wharf Drive,</div>
-    <div>Brentford,</div>
-    <div>Tw8 8hp</div>
-    <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
+                
+
+<div class="module-adress">
+
+  <div class="module-adress-wrapper">
+    <div class="text-small" data-action="adress-preview">
+      <div>Parcelhero, 3-6 Canute House</div>
+      <div>Durham Wharf Drive,</div>
+      <div>Brentford,</div>
+      <div>Tw8 8hp</div>
+      <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
+    </div>
   </div>
 
-  <div class="w-50 w-md-100 d-none" data-action="adress-form">
-    <label class="text-label" for="">Zip code / Postcode</label>
-    <input type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Company <span class="text-label-light">Optional</span></label>
-    <input type="text" value="Parcelhero" name="company" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Address</label>
-    <input type="text" value="3-6 Canute House" name="address" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Address 2 <span class="text-label-light">Optional</span></label>
-    <input type="text" value="" name="address-2" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">Town / City</label>
-    <input type="text" value="Brentford" name="city" class="form-control dark-theme mb-4">
-    <label class="text-label" for="">State</label>
-    <input type="text" value="" name="state" class="form-control dark-theme mb-4">
+  <div class="d-none" data-action="adress-form">
+    <div class="form-group">
+      <label class="text-label" for="af-zip-1">Zip code / Postcode</label>
+      <input id="af-zip-1" type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-company-1">Company <span class="text-label-light">Optional</span></label>
+      <input id="af-company-1" type="text" value="Parcelhero" name="company" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address-1">Address</label>
+      <input id="af-address-1" type="text" value="3-6 Canute House" name="address" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-address2-1">Address 2 <span class="text-label-light">Optional</span></label>
+      <input id="af-address2-1" type="text" value="" name="address-2" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-city-1">Town / City</label>
+      <input id="af-city-1" type="text" value="Brentford" name="city" class="form-control dark-theme">
+    </div>
+    <div class="form-group">
+      <label class="text-label" for="af-state-1">State</label>
+      <input id="af-state-1" type="text" value="" name="state" class="form-control dark-theme">
+    </div>
 
     <div class="module-change-country">
   <label class="text-label" for="">Country</label>
