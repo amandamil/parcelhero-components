@@ -65,26 +65,6 @@
       }
 
     }
-    .save-cancel-wrap{
-      display: none;
-      >*{
-        font-size: 0.875em;
-      }
-      >*:first-child{
-        background-color: rgba(22, 155, 213, 1);
-        padding: 0.25em 1.5em;
-
-      }
-      >*:last-child{
-        color: $gray-2;
-        font-weight: 300;
-
-        text-transform: uppercase;
-
-      }
-
-    }
-
   }
 
 }
@@ -141,12 +121,6 @@
     font-weight: 400;
 
   }
-  span{
-    color: $label-form;
-    font-weight: 500;
-    font-size: 1em;
-
-  }
   .disabled{
     color: $gray-6;
     border-color: $gray-6;
@@ -156,16 +130,8 @@
 }
 
 .settings-form{
-  span{
-    font-weight: 400;
-    padding-right: 0.4em;
-
-    font-size: 1em;
-
-  }
   .element-group{
     font-size: 0.875em;
-
   }
   .table-actions{
     a{

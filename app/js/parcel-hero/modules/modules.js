@@ -236,3 +236,21 @@ const PaymentMethod = function (querySelector = ".module-payment-method") {
     });
   });
 }
+
+const Favorite = function (querySelector = ".module-favorite") {
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    block.addEventListener("click", function(){
+      const groupName = block.dataset.favorite;
+      const items = document.querySelectorAll("[data-favorite="+groupName+"]");
+      const id = block.dataset.id;
+
+      items.forEach(function(item){
+        if(item != block) item.classList.remove("active");
+      });
+
+      block.classList.toggle("active");
+    });
+  });
+}
