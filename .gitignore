@@ -1,4 +1,5 @@
 node_modules/
+build/
 .DS_Store
 dist/style/style.css
 dist/style/style.css.map
