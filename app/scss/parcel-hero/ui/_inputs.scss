@@ -765,6 +765,31 @@ textarea {
       }
     }
   }
+
+  // grey variation
+  &.theme-black {
+    input[type="checkbox"] {
+
+      &:focus~label {
+        &:before {
+          box-shadow: 0 0 0 2px white,
+            0 0 0 4px rgba($darker-gray, .25);
+        }
+      }
+
+      &:checked~label {
+        color: $darker-gray;
+        border-color: $darker-gray;
+
+        &:before {
+          border-color: $darker-gray;
+          background-color: $darker-gray;
+        }
+
+      }
+    }
+  }
+  
 }
 
 .search-input {
