@@ -14,16 +14,16 @@ for(let btn of addPackageButtons){
         btn.closest('.settings-form').querySelector('.add-package-table table tbody').insertAdjacentHTML('beforeend', `  
            <tr class="set-packaging-row">
                <td>
-                 <input type="text" class="gray-input" class="not-rounded">
+                 <input type="text" class="form-control dark-theme" class="not-rounded">
                </td>
                <td>
-                  <input type="text" class="gray-input" class="not-rounded">
+                  <input type="text" class="form-control dark-theme" class="not-rounded">
                </td>
                <td>
-                 <input type="text" class="gray-input" class="not-rounded">
+                 <input type="text" class="form-control dark-theme" class="not-rounded">
                </td>
                <td>
-                 <input type="text" class="gray-input" class="not-rounded">
+                 <input type="text" class="form-control dark-theme" class="not-rounded">
                </td>
                <td class="pl-0">
                  <div class="d-flex">
@@ -35,7 +35,7 @@ for(let btn of addPackageButtons){
                          </button>
                       </div>
                </td>
-               <td class="pl-3">
+               <td class="pl-3 text-center">
                    <i class="fas fa-star"></i>
                    </span>
                </td>
@@ -57,7 +57,7 @@ function addPackagingRow(){
             btn.classList.remove('active');
             btn.closest('.add-description-block').querySelector('.save-cancel-wrap').classList.remove('d-block');
 
-            let inputCollection = btn.closest('.settings-form').querySelectorAll('.set-packaging-row .gray-input');
+            let inputCollection = btn.closest('.settings-form').querySelectorAll('.set-packaging-row .form-control dark-theme');
             let arr = [...inputCollection].map(item => item.value);
 
             if(!(arr[0] === '' || arr[1] === '' || arr[2] === '' || arr[3] === '')) {

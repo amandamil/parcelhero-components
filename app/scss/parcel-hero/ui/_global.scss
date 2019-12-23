@@ -208,22 +208,6 @@ body{
 
 }
 
-.add-description-btn{
-  color: $black;
-  font-weight: 300;
-  font-size: 1em;
-  i{
-    color: $blue-adv;
-
-    border: solid 2px $blue-adv;
-    border-radius: 40px;
-
-    padding: 0.1875em 0.25em;
-
-  }
-
-}
-
 .action-d-none {
   display: none;
 }
@@ -303,17 +287,33 @@ body{
 
 }
 
+@include media-breakpoint-down(md){
+  .enabled-md {
+    pointer-events: all !important;
+  }
+}
+
+.set-packaging-row {
+  input {
+    max-width: 150px;
+  }
+}
+
+
+// REMOVE
+
 .settings-tabs{
   h4{
     padding: 1em 0em;
     font-weight: 300;
 
   }
+  
   .active{
     color: $active-link-bar !important;
     padding-bottom: 0px;
-
     font-size: 1em;
+
     &:after{
       content: '';
       position: absolute;
@@ -366,13 +366,5 @@ body{
       background-color: $gray-8;
 
     }
-
-  }
-
-}
-
-@include media-breakpoint-down(md){
-  .enabled-md {
-    pointer-events: all !important;
   }
 }

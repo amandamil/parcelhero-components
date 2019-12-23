@@ -10,7 +10,7 @@
 <body class="bg-gray-light">
 
 
-<header class="header-account" id="main-header">
+<header class="header-account bg-white" id="main-header">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -47,13 +47,15 @@
                         <div class="block-title mb-0">
                             <label class="text-label" for="export-reason">Export Reason</label> <i class="icon-help"></i>
                         </div>
-                        <div class="search-input">
-                            <select class="form-control dark-theme" id="export-reason">
+                        <div>
+
+                            <select class='form-control custom-picker' data-live-search="false" data-style="select-light" id="export-reason">
                                 <option value="none" selected disabled>Please select a reason for export</option>
                                 <option value="sale">Sale</option>
                                 <option value="personal-gift">Personal gift</option>
                                 <option value="other-reason">Other reason</option>
                             </select>
+
                         </div>
 
                         <div class="block-title sale-option mt-4 mb-0" id="sale-option-title">
@@ -67,10 +69,11 @@
 
                     <h5 class="header-underline mb-4">Shipment contents</h5>
                     <p>Please describe the contents and enter the value of your items below.</p>
-                    
+
                     <div class="personal-gift-option mb-4">
                         <div class="personal-gift-option-text">
-                            <i class="icon-info mr-2"></i><p class="mb-0">For gifts the maximum value you can send to <country> is £100. Exceeding this amount may incur charges at customs.</p>
+                            <i class="icon-info mr-2"></i>
+                            <p class="mb-0">For gifts the maximum value you can send to <country> is £100. Exceeding this amount may incur charges at customs.</p>
                         </div>
                     </div>
 
@@ -89,7 +92,7 @@
                                 <div class="block-title mb-0">
                                     <label class="text-label" for="quantity">Quantity</label>
                                 </div>
-                                <div class="search-input quantity-input-block">
+                                <div class="quantity-input-block">
                                     <span class="fa-stack quantity-minus" style="vertical-align: top;">
                                         <i class="fas fa-circle disabled fa-stack-2x"></i>
                                         <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
@@ -104,7 +107,7 @@
                                 <div class="block-title mt-4 mb-0">
                                     <label class="text-label" for="product-name">Product name</label>
                                 </div>
-                                <div class="search-input">
+                                <div>
                                     <input type="text" name="product-name" placeholder="" value="Item 1" class="form-control product-name">
                                 </div>
 
@@ -113,7 +116,7 @@
                                         <div class="block-title mb-0">
                                             <label class="text-label" for="value-input">Value</label>
                                         </div>
-                                        <div class="search-input">
+                                        <div>
                                             <div class="input-icon">
                                                 <input type="number" min="0" value="0" name="value-input" placeholder="" class="form-control value-input">
                                                 <i>&pound;</i>
@@ -125,7 +128,7 @@
                                         <div class="block-title mb-0">
                                             <label class="text-label" for="tarrif-code">Tarrif code</label> <i class="icon-help"></i>
                                         </div>
-                                        <div class="search-input">
+                                        <div>
                                             <input type="text" name="tarrif-code" placeholder="" class="form-control tarrif-code">
                                         </div>
                                     </div>
@@ -135,7 +138,7 @@
                     </div>
 
                     <div class="add-description-block mt-3">
-                        <button class="btn add-description-btn p-0" id="add-item-btn">
+                        <button class="btn btn-add p-0" id="add-item-btn">
                             <i class="fa-plus fa"></i>
                             Add another item
                         </button>

@@ -13,18 +13,6 @@
       position: relative;
     }
 
-    .search-input {
-      display: flex;
-      align-items: center;
-
-      .fa-caret-down {
-        color: #aaa;
-        font-size: 1.4rem;
-        position: absolute;
-        right: 1rem;
-      }
-    }
-
     @include media-breakpoint-down(sm) {
       display: block !important;
       button {
@@ -33,12 +21,6 @@
       }
       .info-input ~ button {
         margin-top: 2rem;
-      }
-    }
-
-    label {
-      span {
-        color: #999999;
       }
     }
   }

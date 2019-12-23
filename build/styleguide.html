@@ -82,6 +82,7 @@
             <button class="btn not-rounded btn-orange-outline">Orange outline</button>
             <button class="btn btn-orange-outline">Orange outline</button>
             <button type="button" class="btn btn-outline-dark not-rounded text-uppercase">Dark outline</button>
+            <button class="btn btn-add p-0" id="add-item-btn"><i class="fa-plus fa"></i>Add item</button>
           </div>
 
         </div>
@@ -398,35 +399,35 @@
         <div class="block h-100">
           <h2 class="mb-4">Radio buttons & Checkboxes</h2>
 
-          <div class="parcelhero-checkbox">
+          <div class="parcelhero-checkbox d-flex">
             <input type="checkbox" id="checkbox-1">
             <label for="checkbox-1"></label>
           </div>
 
-          <div class="parcelhero-checkbox">
+          <div class="parcelhero-checkbox d-flex">
             <input type="checkbox" id="checkbox-2">
             <label for="checkbox-2">With label</label>
           </div>
 
-          <div class="parcelhero-checkbox theme-black">
+          <div class="parcelhero-checkbox d-flex theme-black">
             <input type="checkbox" id="checkbox-3">
             <label for="checkbox-3">With label dark</label>
           </div>
 
           <div class="pt-4">
-            <div class="parcelhero-radio">
+            <div class="parcelhero-radio d-flex">
               <input type="radio" name="radio-new" value="0" id="radio-new-1">
               <label for="radio-new-1">
                 Radio - 1
               </label>
             </div>
-            <div class="parcelhero-radio">
+            <div class="parcelhero-radio d-flex">
               <input type="radio" name="radio-new" value="1" id="radio-new-2">
               <label for="radio-new-2">
                 Radio - 2
               </label>
             </div>
-            <div class="parcelhero-radio">
+            <div class="parcelhero-radio d-flex">
               <input type="radio" name="radio-new" value="2" id="radio-new-3">
               <label for="radio-new-3">
                 Radio - 3
@@ -748,138 +749,6 @@
             <div class="text-neutral-medium">text-neutral-medium</div>
             <div class="text-neutral-small">text-neutral-small</div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 pb-g">
-        <div class="block h-100">
-          <h2 class="mb-4">Modules</h2>
-
-          <div class="pb-2 border-bottom">
-
-            
-
-<div class="module-adress">
-
-  <div class="module-adress-wrapper">
-    <div class="text-small" data-action="adress-preview">
-      <div>Parcelhero, 3-6 Canute House</div>
-      <div>Durham Wharf Drive,</div>
-      <div>Brentford,</div>
-      <div>Tw8 8hp</div>
-      <div class="link-primary-spec mt-3 mb-4" data-action="adress-change">Change</div>
-    </div>
-  </div>
-
-  <div class="d-none" data-action="adress-form">
-    <div class="form-group">
-      <label class="text-label" for="af-zip-1">Zip code / Postcode</label>
-      <input id="af-zip-1" type="text" value="Tw8 8hp" name="zip" class="form-control dark-theme">
-    </div>
-    <div class="form-group">
-      <label class="text-label" for="af-company-1">Company <span class="text-label-light">Optional</span></label>
-      <input id="af-company-1" type="text" value="Parcelhero" name="company" class="form-control dark-theme">
-    </div>
-    <div class="form-group">
-      <label class="text-label" for="af-address-1">Address</label>
-      <input id="af-address-1" type="text" value="3-6 Canute House" name="address" class="form-control dark-theme">
-    </div>
-    <div class="form-group">
-      <label class="text-label" for="af-address2-1">Address 2 <span class="text-label-light">Optional</span></label>
-      <input id="af-address2-1" type="text" value="" name="address-2" class="form-control dark-theme">
-    </div>
-    <div class="form-group">
-      <label class="text-label" for="af-city-1">Town / City</label>
-      <input id="af-city-1" type="text" value="Brentford" name="city" class="form-control dark-theme">
-    </div>
-    <div class="form-group">
-      <label class="text-label" for="af-state-1">State</label>
-      <input id="af-state-1" type="text" value="" name="state" class="form-control dark-theme">
-    </div>
-
-    <div class="module-change-country">
-  <label class="text-label" for="">Country</label>
-  <div class="d-flex justify-content-between">
-    <div class="d-flex">
-      <input type="hidden" name="country" value="United States">
-      <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
-    </div>
-  </div>
-  <div class="modal-custom small not-rounded">
-    <div class="modal-custom-cover"></div>
-    <div class="modal">
-        <div class="modal-custom-content scroll-bg-gray-light">
-            <i alt="close button" class="icon-close close-btn"></i>
-            <h4>Changing country</h4>
-            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
-            <div>
-                <div class="info-input w-100">
-                    <div class="info-input-label">
-                        <strong>Country</strong>
-                    </div>
-                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light">
-                        <option value="United States">United States</option>
-                        <option value="Great Britain">Great Britain</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                    </select>
-                </div>
-            </div>
-            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" data-action="change-country-continue">Continue</div></div>
-            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4"  data-action="change-country-back">Go back</div></div>
-            
-        </div>
-    </div>
-</div>
-</div>
-
-  </div>
-
-</div>
-
-          </div>
-
-          <div class="pb-2 pt-4 border-bottom">
-
-            <div class="module-change-country">
-  <label class="text-label" for="">Country</label>
-  <div class="d-flex justify-content-between">
-    <div class="d-flex">
-      <input type="hidden" name="country" value="United States">
-      <p class="custom-country" data-action="change-country-label">United States</p> <span class="link-primary-spec ml-2" data-action="change-country">Change</span>
-    </div>
-  </div>
-  <div class="modal-custom small not-rounded">
-    <div class="modal-custom-cover"></div>
-    <div class="modal">
-        <div class="modal-custom-content scroll-bg-gray-light">
-            <i alt="close button" class="icon-close close-btn"></i>
-            <h4>Changing country</h4>
-            <div class="text-small mb-3">If you change delivery country, you will need to re-select the delivery service as this differs per delivery location.</div>
-            <div>
-                <div class="info-input w-100">
-                    <div class="info-input-label">
-                        <strong>Country</strong>
-                    </div>
-                    <select class='form-control custom-picker' data-live-search="true" ddata-dropup-auto="false" data-size="5" data-style="select-light">
-                        <option value="United States">United States</option>
-                        <option value="Great Britain">Great Britain</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                    </select>
-                </div>
-            </div>
-            <div><div class="btn w-100 btn-primary not-rounded text-uppercase mt-4" data-action="change-country-continue">Continue</div></div>
-            <div><div class="btn w-100 btn-outline-primary text-uppercase not-rounded mt-3 mb-4"  data-action="change-country-back">Go back</div></div>
-            
-        </div>
-    </div>
-</div>
-</div>
-
-          </div>
-
         </div>
       </div>
     </div>

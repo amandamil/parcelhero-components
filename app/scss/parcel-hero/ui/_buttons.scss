@@ -532,3 +532,17 @@
   }
 }
 
+
+.add-description-btn{
+  color: $black;
+  font-weight: 300;
+  font-size: 1em;
+  i{
+    color: $blue-adv;
+
+    border: solid 2px $blue-adv;
+    border-radius: 40px;
+    padding: 0.1875em 0.25em;
+
+  }
+}

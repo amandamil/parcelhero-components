@@ -1,15 +1,25 @@
-input, textarea {
+input,
+textarea {
   &:focus {
     @include glow();
   }
 
-  &::-webkit-input-placeholder {color: $dark-gray !important;}
-  &::-moz-placeholder {color: $dark-gray !important;}
-  &:-ms-input-placeholder {color: $dark-gray !important;}
-  &:-moz-placeholder {color: $dark-gray !important;}
+  &::-webkit-input-placeholder {
+    color: $dark-gray !important;
+  }
+  &::-moz-placeholder {
+    color: $dark-gray !important;
+  }
+  &:-ms-input-placeholder {
+    color: $dark-gray !important;
+  }
+  &:-moz-placeholder {
+    color: $dark-gray !important;
+  }
 
   &.dark-theme {
     background: $gray-6;
+    transition: all $transition*2 ease;
     @include input-inset();
 
     &.value-input {
@@ -272,22 +282,12 @@ input, textarea {
   }
 }
 
-.gray-input{
-  padding: 5px 6px;
-
-  background: $gray-6;
-  color: $label-form;
-
-}
-
-.input-sm-length{
+.input-sm-length {
   width: 125px !important;
-
 }
 
-.radio-active-hover{
+.radio-active-hover {
   background-color: $checkbox-hover;
-
 }
 
 .element-group .element-static-label.element-active {
@@ -295,9 +295,7 @@ input, textarea {
     position: relative;
     border-color: #388e3c !important;
     background-color: #388e3c !important;
-
   }
-
 }
 
 .radio-inputs-wrap {
@@ -305,24 +303,20 @@ input, textarea {
     .element-style-wrap {
       position: relative;
       border-color: #388e3c !important;
-      background-color: #FFF !important;
-      &:before{
+      background-color: #fff !important;
+      &:before {
         position: absolute;
         width: 0.75em;
         height: 0.75em;
-        content: '';
+        content: "";
         top: 50%;
         right: 50%;
         transform: translate(50%, -50%);
         border-radius: 100px;
         background-color: #388e3c;
-
       }
-
     }
-
   }
-
 }
 
 .input-icon {
@@ -362,18 +356,18 @@ input, textarea {
     height: auto;
     display: flex;
     align-items: center;
-    
+
     img {
       margin: 0 1rem;
       margin-left: 2rem;
     }
 
-    .checkmark, input {
+    .checkmark,
+    input {
       top: 50%;
       left: 1rem;
       transform: translateY(-50%);
     }
-
   }
 
   &.wide {
@@ -391,13 +385,13 @@ input, textarea {
       right: 0;
     }
   }
-  
+
   input:checked {
-    &{
+    & {
       border: 2px solid $green-active;
-    }  
+    }
   }
-  
+
   input {
     position: absolute;
     left: 0;
@@ -434,7 +428,7 @@ input, textarea {
     top: 0;
     left: 0;
     transition: all $transition ease;
-  }  
+  }
 }
 
 .radio-secondary {
@@ -462,13 +456,13 @@ input, textarea {
       right: 0;
     }
   }
-  
+
   input:checked {
-    &{
+    & {
       border: 2px solid $green-active;
-    }  
+    }
   }
-  
+
   input {
     position: absolute;
     left: 0;
@@ -505,7 +499,7 @@ input, textarea {
     top: 0;
     left: 0;
     transition: all $transition ease;
-  }  
+  }
 }
 
 .form-control.not-rounded {
@@ -517,7 +511,7 @@ input, textarea {
 
 .parcelhero-radio {
   margin-bottom: 0.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   label {
@@ -530,7 +524,7 @@ input, textarea {
     align-items: center;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -539,11 +533,11 @@ input, textarea {
       height: 20px;
       border: 2px solid $dark-gray;
       border-radius: 50%;
-      transition: all .25s ease-in;
+      transition: all 0.25s ease-in;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 5px;
@@ -553,26 +547,25 @@ input, textarea {
       border: 5px solid $dark-gray;
       border-radius: 50%;
       opacity: 0;
-      transition: all .25s ease-in;
+      transition: all 0.25s ease-in;
     }
   }
-  input[type=radio] {
+  input[type="radio"] {
     @include sr-only();
 
-    &:hover~label {
+    &:hover ~ label {
       &:before {
         border-color: $gray-4;
       }
       &:after {
         border-color: $gray-4;
-        opacity: .25;
+        opacity: 0.25;
       }
     }
 
     &:focus ~ label {
       &:before {
-        box-shadow: 0 0 0 2px white,
-        0 0 0 4px rgba($success, .25);
+        box-shadow: 0 0 0 2px white, 0 0 0 4px rgba($success, 0.25);
       }
     }
 
@@ -594,7 +587,7 @@ input, textarea {
 
 .parcelhero-checkbox {
   margin-bottom: 0.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   label {
@@ -607,7 +600,7 @@ input, textarea {
     align-items: center;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -616,11 +609,11 @@ input, textarea {
       height: 20px;
       border: 2px solid $dark-gray;
       border-radius: 2px;
-      transition: all .25s ease-in;
+      transition: all 0.25s ease-in;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 4px;
@@ -632,32 +625,31 @@ input, textarea {
       border-radius: 0;
       opacity: 0;
       transform: rotate(-45deg);
-      transition: all .25s ease-in;
+      transition: all 0.25s ease-in;
     }
   }
 
   input[type="checkbox"] {
     @include sr-only();
 
-    &:hover~label {
+    &:hover ~ label {
       &:before {
         border-color: $gray-4;
       }
 
       &:after {
         border-color: $gray-4;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
 
-    &:focus~label {
+    &:focus ~ label {
       &:before {
-        box-shadow: 0 0 0 2px white,
-          0 0 0 4px rgba($success, .25);
+        box-shadow: 0 0 0 2px white, 0 0 0 4px rgba($success, 0.25);
       }
     }
 
-    &:checked~label {
+    &:checked ~ label {
       color: $success;
       border-color: $success;
 
@@ -697,4 +689,94 @@ input, textarea {
     }
   }
   
+}
+
+.search-input {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+
+  &.with-arrow {
+    display: flex;
+    align-items: center;
+
+    .fa-caret-down {
+      color: $darker-gray;
+      font-size: 1rem;
+      position: absolute;
+      right: 1rem;
+    }
+  }
+
+  .search-input-overflow {
+    overflow-y: auto;
+    max-height: 200px;
+  }
+
+  .search-input-footer {
+    padding: $input-btn-padding-x $input-btn-padding-y;
+    background-color: $gray-6;
+    color: $primary;
+    cursor: pointer;
+    transition: color $transition ease;
+
+    &:hover {
+      color: $blue-btn;
+    }
+  }
+
+  .search-input-notifi {
+    padding: $input-btn-padding-x $input-btn-padding-y;
+    font-size: 0.75rem;
+    color: $dark-gray;
+    background-color: $gray-6;
+  }
+
+  > ul {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: $white;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    transform: translateY(100%);
+    overflow: hidden;
+    @include shadow(0px 8px 8px, 0.1);
+    transition: opacity $transition ease;
+
+    li {
+      padding: $input-btn-padding-x $input-btn-padding-y;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background-color $transition ease;
+
+      &:hover {
+        background-color: $gray-6;
+      }
+    }
+  }
+
+  &.focus {
+    z-index: 11;
+    > ul {
+      pointer-events: all;
+      opacity: 1;
+      display: block;
+    }
+  }
+}
+
+
+// REMOVE
+
+.gray-input {
+  padding: 5px 6px;
+
+  background: $gray-6;
+  color: $label-form;
 }
