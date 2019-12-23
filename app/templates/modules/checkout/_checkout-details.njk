@@ -108,9 +108,33 @@
                 <div class="col-md-6">
                   {% set idMod = "checkout" %}
                   {% include "modules/parcel-hero/_module-adress.njk" %}
+                  <p><a href="#0" class="link-primary-spec find-address">Find an address</a></p>
                 </div>
               </div>
             </div>
+
+            <div class="pt-2 pb-2 mb-2">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="" data-action="person-form">
+                    <div class="form-group">
+                      <label class="text-label" for="pf-fullname">Full Name</label>
+                      <input id="pf-fullname" type="text" name="pf-fullname" class="form-control dark-theme">
+                    </div>
+                    <div class="form-group">
+                      <label class="text-label" for="pf-phone">Phone number</label>
+                      <input id="pf-phone" type="tel" name="pf-phone" class="form-control dark-theme">
+                    </div>
+                    <div class="form-group">
+                      <label class="text-label" for="pf-email">Email</label>
+                      <input id="pf-email" type="email" name="pf-email" class="form-control dark-theme">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
           </div>
         </div>
