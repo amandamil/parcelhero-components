@@ -14,16 +14,16 @@ for(let btn of addPackageButtons){
         btn.closest('.settings-form').querySelector('.add-package-table table tbody').insertAdjacentHTML('beforeend', `  
            <tr class="set-packaging-row">
                <td>
-                 <input type="text" class="form-control dark-theme" class="not-rounded">
+                 <input type="text" class="form-control dark-theme">
                </td>
                <td>
-                  <input type="text" class="form-control dark-theme" class="not-rounded">
+                  <input type="text" class="form-control dark-theme">
                </td>
                <td>
-                 <input type="text" class="form-control dark-theme" class="not-rounded">
+                 <input type="text" class="form-control dark-theme">
                </td>
                <td>
-                 <input type="text" class="form-control dark-theme" class="not-rounded">
+                 <input type="text" class="form-control dark-theme">
                </td>
                <td class="pl-0">
                  <div class="d-flex">

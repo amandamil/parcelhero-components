@@ -1,7 +1,7 @@
 let addProductButtons = document.getElementsByClassName('add-product-btn'),
     addExportButtons = document.getElementsByClassName('add-export-btn');
 
-for(let btn of addProductButtons){
+for (let btn of addProductButtons) {
     btn.addEventListener('click', function () {
         if (btn.classList.contains('active')) return false;
         btn.classList.add('active');
@@ -11,31 +11,31 @@ for(let btn of addProductButtons){
            <table>
                <thead>
                    <tr class="set-product-row">
-                      <th class="pl-0 w-25p border-none">Product name</th>
-                      <th class="pl-0 w-25p border-none">Part number</th>
-                      <th class="pl-0 w-25p border-none">Unit price</th>
-                      <th class="pl-0 w-0 border-none" >Tarrif code</th>
-                      <th class="pl-0 w-0 pl-5 pr-5 border-none">Currency</th>
+                      <th class="w-25p border-none">Product name</th>
+                      <th class="w-25p border-none">Part number</th>
+                      <th class="w-25p border-none">Unit price</th>
+                      <th class="w-0 border-none" >Tarrif code</th>
+                      <th class="w-0 pl-5 pr-5 border-none">Currency</th>
                    </tr>
                </thead>
                  <tbody>
                      <tr class="set-product-row">
                          <td>
-                             <input type="text" class="gray-input">
+                            <input type="text" class="form-control dark-theme">
                          </td>
                          <td>
-                             <input type="text" class="gray-input">
+                            <input type="text" class="form-control dark-theme">
                          </td>
                          <td>
-                             <input type="text" class="gray-input">
+                            <input type="text" class="form-control dark-theme">
                          </td>
                          <td>
-                            <input type="text" class="gray-input">
+                            <input type="text" class="form-control dark-theme">
                          </td>
                          <td class="pl-5 pr-5">
-                            <select class="gray-input">
-                               <option selected>GBP</option>
-                               <option selected>US Dollar</option>
+                            <select class='form-control custom-picker card-select-t' data-size="5" data-style="select-light" select-controll="card-select">
+                                <option value="GBP">GBP</option>
+                                <option value="US Dollar">US Dollar</option>
                             </select>
                          </td>
                      </tr>
@@ -43,15 +43,15 @@ for(let btn of addProductButtons){
             </table>
         `);
 
-        btn.closest('.add-product-table').querySelector('.save-product-btn').onclick = function(){
-                    btn.classList.remove('active');
-                    btn.closest('.add-description-block').querySelector('.save-cancel-wrap').style.display = 'none';
+        btn.closest('.add-product-table').querySelector('.save-product-btn').onclick = function () {
+            btn.classList.remove('active');
+            btn.closest('.add-description-block').querySelector('.save-cancel-wrap').style.display = 'none';
 
-                    let inputCollection = btn.closest('.add-product-table').querySelectorAll('.gray-input');
-                    let arr = [...inputCollection].map(item => item.value);
+            let inputCollection = btn.closest('.add-product-table').querySelectorAll('input, select');
+            let arr = [...inputCollection].map(item => item.value);
 
-                    if(!(arr[0] === '' || arr[1] === '' || arr[2] === '' || arr[3] === '')) {
-                        btn.closest('.add-product-table').querySelector('.tbody').insertAdjacentHTML('beforeend', `
+            if (!(arr[0] === '' || arr[1] === '' || arr[2] === '' || arr[3] === '')) {
+                btn.closest('.add-product-table').querySelector('.tbody').insertAdjacentHTML('beforeend', `
                         <tr>
                            <td>
                               ${arr[0]}
@@ -70,25 +70,25 @@ for(let btn of addProductButtons){
                            </td>
                          </tr>
                         `);
-                    }
-                    else{
-                        alert('All fields required');
-                    }
-                    let setProductRow = btn.closest('.add-product-table').querySelectorAll('.set-product-row');
-                    for(let row of setProductRow){
-                        row.outerHTML = "";
-
-                    }
+            }
+            else {
+                alert('All fields required');
+            }
+            let setProductRow = btn.closest('.add-product-table').querySelectorAll('.set-product-row');
+            for (let row of setProductRow) {
+                row.outerHTML = "";
 
             }
 
+        }
+
     })
-    btn.closest('.settings-form').querySelector('.cancel-product-btn').onclick = function(){
+    btn.closest('.settings-form').querySelector('.cancel-product-btn').onclick = function () {
         btn.classList.remove('active');
         let setProductRow = btn.closest('.add-product-table').querySelectorAll('.set-product-row');
         btn.closest('.add-description-block').querySelector('.save-cancel-wrap').style.display = 'none';
 
-        for(let row of setProductRow){
+        for (let row of setProductRow) {
             row.outerHTML = "";
 
         }
@@ -97,17 +97,17 @@ for(let btn of addProductButtons){
 
 }
 
-for(let btn of addExportButtons){
+for (let btn of addExportButtons) {
     btn.onclick = function () {
-        if(document.querySelector('.export-block-active')) return false;
+        if (document.querySelector('.export-block-active')) return false;
 
         btn.closest('.export-wrap').querySelector('.reasons-export-container').insertAdjacentHTML('afterend', `
             <div class="reasons-export-block export-block-active mt-3 mb-3">
                 <span class="reasons-export-span">
-                    <input type="text" class="form-control form-control-sm add-new-export-input" placeholder="Reason for export">
+                    <input type="text" class="form-control mb-2 add-new-export-input" placeholder="Reason for export">
                 </span>
                 <p class="reasons-export-paragraph">
-                   <input type="text" class="form-control form-control-sm add-new-export-input" placeholder="Declaration statement (optional)">
+                   <input type="text" class="form-control mb-2 add-new-export-input" placeholder="Declaration statement (optional)">
                 </p>
                 <div class="tooltip-container">
                     <span>
@@ -125,14 +125,14 @@ for(let btn of addExportButtons){
             </div>
         `);
 
-        btn.closest('.export-wrap').querySelector('.save-export-block-btn').onclick = function(){
+        btn.closest('.export-wrap').querySelector('.save-export-block-btn').onclick = function () {
             let inputCollection = btn.closest('.export-wrap').getElementsByClassName('add-new-export-input');
             let arr = [...inputCollection].map(item => item.value);
 
 
             let saveBtn = btn.closest('.export-wrap').querySelector('.reasons-export-container');
 
-            if(!(arr[0] === '')){
+            if (!(arr[0] === '')) {
                 saveBtn.insertAdjacentHTML('beforeend', `
                 <div class="reasons-export-block mt-3 mb-3">
                     <div>
@@ -146,15 +146,15 @@ for(let btn of addExportButtons){
                 </div>
                `);
             }
-            else{
+            else {
                 alert('Reason required');
 
             }
 
-          }
+        }
 
         let closeBtn = btn.closest('.export-wrap').querySelector('.cancel-export-block-btn');
-        closeBtn.onclick = function(){
+        closeBtn.onclick = function () {
             closeBtn.closest('.reasons-export-block').outerHTML = '';
             btn.classList.remove('active');
 
@@ -165,12 +165,12 @@ for(let btn of addExportButtons){
 }
 
 
-function changeExportBlock(){
+function changeExportBlock() {
     let reasonsExportBlocks = document.getElementsByClassName('reasons-export-block');
 
-    for(let block of reasonsExportBlocks){
+    for (let block of reasonsExportBlocks) {
         block.onclick = function () {
-            if(document.querySelector('.export-block-active')) return false;
+            if (document.querySelector('.export-block-active')) return false;
 
 
             let span = block.querySelector('.reasons-export-span').innerHTML;
@@ -180,11 +180,11 @@ function changeExportBlock(){
         <div class="reasons-export-block export-block-active mt-3 mb-3">
             <div>
                 <span class="reasons-export-span">
-                    <input type="text" class="form-control form-control-sm add-new-export-input" value=${span}>
+                    <input type="text" class="form-control mb-2 add-new-export-input" value=${span}>
                 </span>
             </div>
             <p class="reasons-export-paragraph">
-               <input type="text" class="form-control form-control-sm add-new-export-input" value=${paragraph}>
+               <textarea type="text" class="form-control mb-2 add-new-export-input">${paragraph}</textarea>
             </p>
             <div class="tooltip-container">
                 <span>
@@ -213,7 +213,7 @@ function changeExportBlock(){
 
         let closeBtn = saveBtn.closest('.export-wrap').querySelector('.cancel-export-block-btn');
 
-        closeBtn.onclick = function(){
+        closeBtn.onclick = function () {
             closeBtn.closest('.reasons-export-block').outerHTML = `
               <div class="reasons-export-block mt-3 mb-3">
                     <span class="reasons-export-span">
@@ -227,12 +227,12 @@ function changeExportBlock(){
 
         }
 
-        saveBtn.onclick = function(){
+        saveBtn.onclick = function () {
 
             let inputCollection = saveBtn.closest('.export-wrap').getElementsByClassName('add-new-export-input');
             let arr = [...inputCollection].map(item => item.value);
 
-            if(!(arr[0] === '')){
+            if (!(arr[0] === '')) {
                 saveBtn.closest('.reasons-export-block').outerHTML = `
 
                  <div class="reasons-export-block mt-3 mb-3">
@@ -245,7 +245,7 @@ function changeExportBlock(){
                 `;
 
             }
-            else{
+            else {
                 alert('Heading required');
 
             }
@@ -253,7 +253,7 @@ function changeExportBlock(){
         }
 
         let removeExportBtn = document.querySelector('.remove-export-btn');
-        removeExportBtn.onclick = function(){
+        removeExportBtn.onclick = function () {
             removeExportBtn.closest('.reasons-export-block').outerHTML = ''
 
         }

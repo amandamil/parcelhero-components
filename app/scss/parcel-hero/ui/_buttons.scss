@@ -160,6 +160,17 @@
   }
 }
 
+.btn-outwhite-dark {
+  border: 1px solid $dark;
+  color: $dark;
+  background-color: $white;
+
+  &:hover {
+    background-color: $dark;
+    color: $white;
+  }
+}
+
 .btn-secondary{
   text-transform: uppercase;
   &:hover{
