@@ -91,6 +91,13 @@ function reload(done) {
 }
 
 gulp.task('server', function (done) {
+
+    Styles();
+    Images();
+    Fonts();
+    Javascript();
+    Nunjucks();
+
     gulp.watch(paths.Styles.src, {interval: 1000, usePolling: true, delay: 500}, Styles);
     gulp.watch(paths.Nunjucks.src, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
     gulp.watch(paths.Nunjucks.templateWatch, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
