@@ -32,14 +32,11 @@
 
   &-menu{
     display: flex;
-    background-color: $gray-8;
-
     padding: 0.3em 0em;
-
     font-size: 2rem;
     font-weight: 200;
+
     input{
-      width: 500px;
       @include media-breakpoint-down(md){
         max-width: 350px;
 

@@ -294,6 +294,10 @@ h5 {
   color: $darker-gray;
 }
 
+.text-title-light {
+  font-weight: 400;
+}
+
 @include media-breakpoint-down(sm) {
   .text-title-confirmation {
     font-size: 1.375rem;

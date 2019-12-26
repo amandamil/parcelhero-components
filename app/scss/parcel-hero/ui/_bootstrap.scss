@@ -522,3 +522,13 @@
 .mh-layout {
   min-height: calc(100vh - #{$nav-height});
 }
+
+
+.form-group {
+  margin-bottom: 2rem;
+  
+  label {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+}

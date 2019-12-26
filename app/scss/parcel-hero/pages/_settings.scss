@@ -1,22 +1,14 @@
 .settings-content{
-  h5{
-    font-weight: 300;
-    font-size: 20px;
-
-  }
   .border-pseudo{
     position: relative;
 
     &:after{
       content: '';
       position: absolute;
-
       width: 100%;
       height: 1px;
-
       bottom: -6px;
       left: 0;
-
       background-color: $gray-8;
 
     }
@@ -39,12 +31,10 @@
         > *:first-child {
           @include media-breakpoint-down(sm) {
             padding-right: 0.5em;
-
           }
-
         }
-
       }
+
       td, th{
         color: $label-form;
 
@@ -155,19 +145,7 @@
     }
 
   }
-  .edit-settings-wrap{
-    label{
-      color: $label-form;
-      font-weight: 500;
-
-    }
-    input{
-      margin-top: 3px;
-
-    }
-
-
-  }
+  
   .settings-hidden{
     display: none;
 

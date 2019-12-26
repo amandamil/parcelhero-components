@@ -12,16 +12,20 @@
           <h2 class="mb-4">Inputs</h2>
 
           <div>
-            <input type="text" placeholder="Input dark" name="input" class="form-control mb-4 dark-theme">
+            <div class="form-group">
+              <input type="text" placeholder="Input dark" name="input" class="form-control dark-theme">
+            </div>
 
-            <input type="text" placeholder="Input light" name="input" class="form-control mb-4">
+            <div class="form-group">
+              <input type="text" placeholder="Input light" name="input" class="form-control">
+            </div>
 
-            <div class="input-password mb-4">
+            <div class="form-group input-password">
               <input type="password" placeholder="Input password" name="input-password" class="form-control w-100 dark-theme">
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
             </div>
 
-            <div class="form-group search-widget mb-4">
+            <div class="form-group search-widget">
               <input type="text" class="form-control dark-theme" placeholder="Search input">
               <div class="search-widget-icons">
                 <i class="search-widget-search fas fa-search active"></i>
@@ -29,7 +33,7 @@
               </div>
             </div>
 
-            <div class="form-group search-widget mb-4">
+            <div class="form-group search-widget">
               <input type="text" class="form-control" placeholder="Search input">
               <div class="search-widget-icons">
                 <i class="search-widget-search fas fa-search active"></i>
@@ -37,21 +41,23 @@
               </div>
             </div>
 
-            <div class="mb-4">
-              <label class="text-label" for="">Find address</label>
+            <div class="form-group">
+              <label for="find-address">Find address</label>
               <div class="search-input">
-                <input type="text" autocomplete="new-adress" name="collection-adress" data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="parcel-collection-address" class="form-control not-rounded dark-theme">
+                <input type="text" autocomplete="new-adress" name="find-adress" data-type="advanced" data-custom="#parcel-add-collection-address" data-target="#parcel-find-adress-result" data-adv="#parcel-find-adress-adv" data-hide="#parcel-find-adress" data-data="adress" placeholder="Start typing the address" id="find-address" class="form-control not-rounded dark-theme">
               </div>
             </div>
 
-            <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light">
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
-              <option value="5">Option 5</option>
-              <option value="6">Option 6</option>
-            </select>
+            <div class="form-group">
+              <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+              </select>
+            </div>
 
           </div>
         </div>
@@ -75,7 +81,7 @@
             <button class="btn not-rounded btn-orange-outline">Orange outline</button>
             <button class="btn btn-orange-outline">Orange outline</button>
             <button class="btn btn-outwhite-dark">Dark outline</button>
-            <button type="button" class="btn btn-outline-dark not-rounded text-uppercase">Dark outline</button>
+            <button type="button" class="btn btn-outline-dark text-uppercase">Dark outline</button>
             <button class="btn btn-add p-0" id="add-item-btn"><i class="fa-plus fa"></i>Add item</button>
           </div>
         </div>
