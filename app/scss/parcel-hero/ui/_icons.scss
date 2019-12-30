@@ -9,6 +9,22 @@
   }
 }
 
+.icon {
+  color: $dark-gray;
+  font-size: 1rem;
+  transition: color $transition ease;
+
+  &.icon-regular {
+    font-size: 1rem;
+  }
+  &.icon-medium {
+    font-size: 1.4rem;
+  }
+  &.icon-big {
+    font-size: 2rem;
+  }
+}
+
 .preset-icon-large {
   width: 60px;
   max-height: 80px;

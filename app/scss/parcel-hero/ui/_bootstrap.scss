@@ -517,6 +517,10 @@
   .w-md-100 {
     width: 100% !important;
   }
+
+  .mb-md-g {
+    margin-bottom: $grid-gutter-width !important;
+  }
 }
 
 .mh-layout {

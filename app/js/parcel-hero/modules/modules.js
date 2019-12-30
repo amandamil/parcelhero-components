@@ -254,3 +254,21 @@ const Favorite = function (querySelector = ".module-favorite") {
     });
   });
 }
+
+const ProgressCircle = function (querySelector = ".progress-circle") {
+
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    $(block).circleChart({
+      animate: true,
+      size: (block.dataset.diameter ? block.dataset.diameter : 100),
+      value: block.dataset.percent,
+      text: block.dataset.percent + "%",
+      guage: 8,
+      color: '#248dd5',
+      textSize: '15px',
+      lineCap: "square",
+    });
+  })
+}

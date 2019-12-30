@@ -6,7 +6,7 @@ let deleteSaveButtons = document.getElementsByClassName('delete-save-btn');
 let savedSearchBtn = document.getElementById('saved-search-btn');
 
 const addFilterButtons = document.getElementsByClassName('add-filters-btn');
-const closeWindowButtons = document.getElementsByClassName('close-btn-widget');
+const closeWindowButtons = document.getElementsByClassName('[data-action="close-section"]');
 const deleteSavedDataButtons = document.querySelectorAll('.modal-saved-search .fa-trash');
 
 const swipeChevronButtons = document.getElementsByClassName('swipe-chevron');

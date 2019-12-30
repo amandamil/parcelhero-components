@@ -24,3 +24,8 @@
     padding: 1.5rem 1rem;
   }
 }
+
+.block-style {
+  border: solid 1px $border-color;
+  border-radius: $border-radius;
+}
