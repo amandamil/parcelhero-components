@@ -1,5 +1,5 @@
 const
-    gulp  = require("gulp"),
+    gulp = require("gulp"),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
@@ -55,20 +55,20 @@ function Styles() {
     return gulp.src(paths.Styles.src)
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(cleanCss({compatibility: '*'}))
+        .pipe(cleanCss({ compatibility: '*' }))
         .on('error', onError)
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(paths.Styles.destCss))
 }
 
 function Images() {
-    return gulp.src(paths.Styles.images, {allowEmpty: true})
+    return gulp.src(paths.Styles.images, { allowEmpty: true })
         .on('error', onError)
         .pipe(gulp.dest(paths.Styles.destImages))
 }
 
 function Javascript() {
-    return gulp.src(paths.Styles.js, {allowEmpty: true})
+    return gulp.src(paths.Styles.js, { allowEmpty: true })
         .on('error', onError)
         .pipe(changed(paths.Styles.destJs))
         .pipe(gulp.dest(paths.Styles.destJs))
@@ -90,32 +90,40 @@ function reload(done) {
     done();
 }
 
-gulp.task('server', function (done) {
-
-    gulp.watch(paths.Styles.src, {interval: 1000, usePolling: true, delay: 500}, Styles);
-    gulp.watch(paths.Nunjucks.src, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
-    gulp.watch(paths.Nunjucks.templateWatch, {interval: 1000, usePolling: true, delay: 500}, Nunjucks);
-    gulp.watch(paths.Styles.images, {interval: 1000, usePolling: true, delay: 500}, Images);
-    gulp.watch(paths.Styles.js, {interval: 1000, usePolling: true, delay: 500}, Javascript);
-    gulp.watch(paths.Styles.fonts, {interval: 1000, usePolling: true, delay: 500}, Fonts);
-    gulp.watch(paths.browserSync.html, reload);
-    gulp.watch(paths.browserSync.js, reload);
-    gulp.watch(paths.browserSync.css, reload);
-    browserSync.init({
-        server: {
-            baseDir: paths.browserSync.baseDir
-        },
-        open: false,
-        notify: false
-    });
-    done();
-});
-
-gulp.task('build', function (done) {
+function build(done) {
     Styles();
     Images();
     Fonts();
     Javascript();
     Nunjucks();
     done();
+}
+
+gulp.task('server', function (done) {
+
+    build(function () {
+        gulp.watch(paths.Styles.src, { interval: 1000, usePolling: true, delay: 500 }, Styles);
+        gulp.watch(paths.Nunjucks.src, { interval: 1000, usePolling: true, delay: 500 }, Nunjucks);
+        gulp.watch(paths.Nunjucks.templateWatch, { interval: 1000, usePolling: true, delay: 500 }, Nunjucks);
+        gulp.watch(paths.Styles.images, { interval: 1000, usePolling: true, delay: 500 }, Images);
+        gulp.watch(paths.Styles.js, { interval: 1000, usePolling: true, delay: 500 }, Javascript);
+        gulp.watch(paths.Styles.fonts, { interval: 1000, usePolling: true, delay: 500 }, Fonts);
+        gulp.watch(paths.browserSync.html, reload);
+        gulp.watch(paths.browserSync.js, reload);
+        gulp.watch(paths.browserSync.css, reload);
+        browserSync.init({
+            server: {
+                baseDir: paths.browserSync.baseDir
+            },
+            open: false,
+            notify: false
+        });
+        done();
+    });
+});
+
+gulp.task('build', function (done) {
+    build(function () {
+        done();
+    });
 });
