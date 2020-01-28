@@ -1,0 +1,99 @@
+{% extends "structure/parcel-hero/_layout.njk" %}
+
+{% block content %}
+
+{% include "../templates/structure/parcel-hero/_breadcrumb.njk" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="nav-tabs-container">
+        <div class="nav nav-tabs">
+          <a class="nav-link active" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign in</a>
+          <a class="nav-link" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+        </div>
+      </nav>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+          <div class="text-center text-success-large mt-5"><i class="icon-success-confirmation"></i></div>
+          <h2 class="text-center text-success-large">Registration successful</h2>
+          <p class="text-center text-sub-regular mb-5">You may signin below</p>
+          <h2 class="text-center fw-300 mt-5 mb-5">Sign in</h2>
+          <p class="text-center text-sub-regular mw-400 mx-auto mb-5">To view your order summary please sign in below or press register above to create an account.</p>
+          <div class="container-fluid bg-cover pt-5 pb-5 mb-5">
+            <form action="login.php" method="POST">
+              <div class="form-group row">
+                <div class="col-md-1 offset-md-3 preset-label-center">Email</div>
+                <div class="col-md-5">
+                  <input id="email" type="text" name="email" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <div class="col-md-1 offset-md-3 preset-label-center">Password</div>
+                <div class="col-md-5">
+                  <div class="input-password">
+                    <input id="password" type="password" name="input-password" class="form-control w-100" required>
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-5 offset-md-4">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="parcelhero-checkbox mb-0 regular">
+                      <input type="checkbox" id="remember-me">
+                      <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="./login-forgot.html" class="text-medium-title">
+                      Forgot password?
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mb-0">
+                <div class="col-md-5 offset-md-4">
+                  <button type="submit" class="btn btn-primary text-uppercase w-100">Sign in</button>
+                </div>
+              </div>
+            </form>
+            <div class="text-center mt-5">Don’t have an account? <a class="text-link" href="#register" role="tab-outside">Register now</a></div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+          <h2 class="text-center fw-300 mt-5 mb-5">Register</h2>
+          <div class="container-fluid bg-cover pt-5 pb-5 mb-5">
+            <form action="register.php" method="POST">
+              <div class="form-group row">
+                <div class="col-md-1 offset-md-3 preset-label-center">Email</div>
+                <div class="col-md-5">
+                  <input id="email-register" type="text" name="email" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <div class="col-md-1 offset-md-3 preset-label-center">Password</div>
+                <div class="col-md-5">
+                  <div class="input-password">
+                    <input id="password-register" type="password" name="input-password" class="form-control w-100" required>
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mb-0">
+                <div class="col-md-5 offset-md-4">
+                  <button type="submit" class="btn btn-secondary text-uppercase w-100">Register now</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src='/js/parcel-hero/libs/bootstrap-validate.js'></script>
+<script src='/js/parcel-hero/pages/login.js'></script>
+{% endblock %}

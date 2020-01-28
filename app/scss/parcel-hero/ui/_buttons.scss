@@ -528,13 +528,13 @@
 }
 
 .link-primary {
-  color: $primary-spec;
+  color: $primary;
   cursor: pointer;
   display: inline-block;
   transition: color $transition ease;
 
   &:hover {
-    color: $dark-blue;
+    color: $primary-spec;
   }
 }
 

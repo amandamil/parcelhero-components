@@ -513,6 +513,10 @@
   font-weight: 500 !important;
 }
 
+.fw-300 {
+  font-weight: 300 !important;
+}
+
 @include media-breakpoint-down(md) {
   .w-md-100 {
     width: 100% !important;
@@ -527,6 +531,10 @@
   min-height: calc(100vh - #{$nav-height});
 }
 
+.mw-400 {
+  max-width: 400px;
+}
+
 
 .form-group {
   margin-bottom: 2rem;
@@ -535,4 +543,22 @@
     font-size: 0.9rem;
     font-weight: 700;
   }
+
+  .form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: none;
+  }
+
+  .invalid-feedback {
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .invalid-feedback {
+  //   position: absolute;
+  //   bottom: 0;
+  //   transform: translateY(-100%);
+  // }
 }

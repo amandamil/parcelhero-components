@@ -37,8 +37,7 @@ textarea {
 
   .toggle-password {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1rem;
     right: 12px;
     opacity: 0.5;
     transition: opacity $transition ease;
@@ -650,6 +649,8 @@ textarea {
     height: 20px;
     display: flex;
     align-items: center;
+    font-weight: 400;
+    font-size: 1rem;
 
     &:before {
       content: "";

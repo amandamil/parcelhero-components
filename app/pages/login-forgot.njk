@@ -1,0 +1,42 @@
+{% extends "structure/parcel-hero/_layout.njk" %}
+
+{% block content %}
+
+{% include "../templates/structure/parcel-hero/_breadcrumb.njk" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <h2 class="text-center fw-300 mt-5 mb-5">Forgot password</h2>
+        <div class="container-fluid bg-cover pt-5 pb-5 mb-5">
+          <form action="forgot.php" method="POST">
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <p>Enter your email below and we’ll send you instructions to reset your password.</p>
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <div class="col-md-4 offset-md-4">
+                <input id="email-forgot" type="text" placeholder="Email adress" name="email-forgot" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group row mb-0">
+              <div class="col-md-4 offset-md-4">
+                <button type="submit" class="btn btn-primary text-uppercase w-100">Send</button>
+                <div class="text-center mt-4"><a class="link-primary" href="./login.html">Back to Sign in</a></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src='/js/parcel-hero/libs/bootstrap-validate.js'></script>
+<script src='/js/parcel-hero/pages/login.js'></script>
+{% endblock %}
