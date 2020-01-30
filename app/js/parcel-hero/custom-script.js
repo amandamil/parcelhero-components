@@ -7,3 +7,4 @@ const adressManager = new Adress();
 const paymentMethodManager = new PaymentMethod();
 const favoriteManager = new Favorite();
 const progressCircleManager = new ProgressCircle();
+const parcelWidgetManager = new ParcelWidget();

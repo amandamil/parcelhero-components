@@ -115,6 +115,14 @@ textarea {
   }
 }
 
+.input-toggler {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 0.875rem;
+  transform: translateY(110%);
+}
+
 .input-postcode {
   overflow: hidden;
   position: relative;
@@ -880,4 +888,41 @@ textarea {
 
   background: $gray-6;
   color: $label-form;
+}
+
+.theme-text {
+  color: $white;
+  background-color: transparent;
+  border: none;
+  font-size: 0.875rem;
+  padding-bottom: 7px !important;
+  line-height: 1;
+  padding-left: 5px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+  width: auto !important;
+
+  .select-light {
+    padding: 0;
+    background-color: transparent;
+    color: $white;
+    line-height: 1;
+    border: none;
+    text-decoration: underline;
+    font-size: 0.875rem;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .dropdown-item {
+    padding-left: 0.5rem;
+    line-height: 1.5;
+  }
+
+  &.bootstrap-select.show>.dropdown-toggle {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
 }

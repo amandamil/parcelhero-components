@@ -1,0 +1,905 @@
+{% extends "structure/parcel-hero/_layout.njk" %}
+
+{% block content %}
+
+{% include "../templates/structure/parcel-hero/_breadcrumb.njk" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="parcel-widget-full content-padding mb-5">
+        <h2 class="text-title-white">Send parcels worldwide from only £2.79</h2>
+        <form action="#" method="POST">
+          <div class="details-list theme-blue">
+            <div class="row mb-0">
+              <div class="col-md-12">
+                <div class="border-bottom pb-3">
+                  <div class="info-input-group">
+                    <div class="info-input">
+                      <div class="info-input-label">
+                        Collection Country
+                      </div>
+                      <select class='form-control custom-picker' data-live-search="true" name="collection-country" data-size="5" data-style="select-light">
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                      </select>
+                    </div>
+                    <div class="info-input">
+                      <div class="info-input-label">
+                        Postcode
+                      </div>
+                      <div class="input-group">
+                        <input type="text" class="form-control" tabindex="1" placeholder="Postcode" name="collection-post">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info-input-group">
+                    <div class="info-input">
+                      <div class="info-input-label">
+                        Delivery Country
+                      </div>
+                      <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light" name="delivery-country">
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                      </select>
+                    </div>
+                    <div class="info-input">
+                      <div class="info-input-label">
+                        Postcode
+                      </div>
+                      <div class="input-group">
+                        <input type="text" class="form-control" tabindex="1" placeholder="Postcode" name="collection-post">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info-input-group">
+                    <div class="info-input">
+                      <div class="info-input-label">
+                        No. of Parcels
+                      </div>
+                      <div class="input-group">
+                        <input type="text" class="form-control" tabindex="1" placeholder="Postcode" name="parcel-count">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2 details-list-section">
+              <div class="col-md-9 details-list-container">
+                <div class="details-list-row">
+                  <div class="info-input">
+                    <div class="info-input-label">
+                      Quantity
+                    </div>
+                    <select class='form-control custom-picker' name="quantity[]" data-live-search="true" data-size="5" data-style="select-light">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                    </select>
+                  </div>
+
+                  <div class="info-input">
+                    <div class="info-input-label">
+                      Weight
+                    </div>
+                    <div class="input-group">
+                      <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
+                      <div class='input-measure'>
+                        <p>kg</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="info-input">
+                    <div class="info-input-label">
+                      Length
+                    </div>
+                    <div class="input-group">
+                      <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                      <div class='input-measure'>
+                        <p>cm</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="info-input">
+                    <div class="info-input-label">
+                      Width
+                    </div>
+                    <div class="input-group">
+                      <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                      <div class='input-measure'>
+                        <p>cm</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="info-input">
+                    <div class="info-input-label">
+                      Height
+                    </div>
+                    <div class="input-group">
+                      <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                      <div class='input-measure'>
+                        <p>cm</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="info-input pt-3">
+                    <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
+                    <a href="javascript:void(0)" class='info-input-more remove'><i class="fa fa-minus-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex align-items-start justify-content-end">
+                <button class='btn not-rounded btn-orange mt-4' type="submit">UPDATE RESULTS <i class="ml-2 fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="parcel-widget-full content-padding mb-4">
+        <div class="parcel-widget-full-title">
+          <h2 class="text-title-white d-block" data-action-title="parcel">Send parcels worldwide from only £2.79</h2>
+          <h2 class="text-title-white" data-action-title="document">Save with our <strong>document only</strong> services.</h2>
+        </div>
+        <div class="details-list with-menu theme-blue">
+          <div class="nav nav-tabs">
+            <div class="nav-link active" data-toggle="tab" href="#quotebox-3" role="tab" aria-controls="quotebox-3" aria-selected="true" data-action-ttitle="parcel">Parcels</div>
+            <div class="nav-link" data-toggle="tab" href="#quotebox-4" role="tab" aria-controls="quotebox-4" aria-selected="false" data-action-ttitle="document">Documents</div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane details-list-section fade show active" id="quotebox-3">
+              <form action="#" method="POST">
+                <div class="row mt-4">
+                  <div class="col-xl-5 pr-xl-0">
+                    <div class="parcel-widget-from-to">
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            From:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="from">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="from-post">
+                        </div>
+                      </div>
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            To:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="to">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France" selected>France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="to-post">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
+                    <div class="details-list-container">
+                      <div class="details-list-row">
+                        <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Quantity
+                            </div>
+                            <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light" name="quantity[]">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option>
+                              <option value="32">32</option>
+                              <option value="33">33</option>
+                              <option value="34">34</option>
+                              <option value="35">35</option>
+                              <option value="36">36</option>
+                              <option value="37">37</option>
+                              <option value="38">38</option>
+                              <option value="39">39</option>
+                              <option value="40">40</option>
+                              <option value="41">41</option>
+                              <option value="42">42</option>
+                              <option value="43">43</option>
+                              <option value="44">44</option>
+                              <option value="45">45</option>
+                              <option value="46">46</option>
+                              <option value="47">47</option>
+                              <option value="48">48</option>
+                              <option value="49">49</option>
+                              <option value="50">50</option>
+                            </select>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Weight
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
+                              <div class='input-measure' data-action="toggle-weight">
+                                <p>kg</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Length
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Width
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Height
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-toggler" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                        <div class="info-input add-row">
+                          <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
+                          <a href="javascript:void(0)" class='info-input-more remove'><i class="fa fa-minus-circle"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-4 text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class="w-100 mt-5 parcel-widget-botton-actions">
+                      <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
+                      <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane details-list-section fade" id="quotebox-4">
+              <form action="#" method="POST">
+                <div class="row mt-4">
+                  <div class="col-xl-5 pr-xl-0">
+                    <div class="parcel-widget-from-to">
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            From:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="from">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="from-post">
+                        </div>
+                      </div>
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            To:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="to">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France" selected>France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="to-post">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
+                    <div class="details-list-container">
+                      <div class="details-list-row">
+                        <div class="d-xl-flex d-block d-none w-100" data-action="custom-size-inputs">
+                          <div class="w-100 d-flex mt-xl-0 mt-4">
+                            <div class="info-input wf-95 w-md-100">
+                              <div class="info-input-label">
+                                Quantity
+                              </div>
+                              <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light" name="quantity[]">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                              </select>
+                            </div>
+
+                            <div class="info-input wf-95 w-md-100 mr-adv-0">
+                              <div class="info-input-label">
+                                Weight
+                              </div>
+                              <div class="input-group">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
+                                <div class='input-measure' data-action="toggle-weight">
+                                  <p>kg</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="w-100 d-flex justify-content-between mt-xl-0 mt-4 d-none" data-action="volume-section">
+                            <div class="info-input wf-95 w-md-100">
+                              <div class="info-input-label">
+                                Length
+                              </div>
+                              <div class="input-group">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <div class='input-measure'>
+                                  <p>cm</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="info-input wf-95 w-md-100">
+                              <div class="info-input-label">
+                                Width
+                              </div>
+                              <div class="input-group">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <div class='input-measure'>
+                                  <p>cm</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="info-input wf-95 w-md-100 mr-adv-0">
+                              <div class="info-input-label">
+                                Height
+                              </div>
+                              <div class="input-group">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <div class='input-measure'>
+                                  <p>cm</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div data-action="size-selector">
+                          <div class="info-input wf-300 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                            <div class="info-input-label">
+                              Document type
+                            </div>
+                            <select class='form-control custom-picker' data-live-search="true" name="collection-country" data-size="5" data-style="select-light" name="document-type" data-action="custom-size">
+                              <option value="A4 envelope">A4 envelope (30.3 x 40.6cm)</option>
+                              <option value="A5 envelope">A5 envelope (21cm x 14.8cm)</option>
+                              <option value="Custom size">Custom size</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="input-toggler" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                        <div class="info-input add-row">
+                          <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
+                          <a href="javascript:void(0)" class='info-input-more remove'><i class="fa fa-minus-circle"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-4 text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class="w-100 mt-5 parcel-widget-botton-actions">
+                      <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
+                      <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="parcel-widget-full content-padding mb-4">
+        <div class="parcel-widget-full-title">
+          <h2 class="text-title-white d-block" data-action-title="parcel">Send parcels worldwide from only £2.79</h2>
+          <h2 class="text-title-white" data-action-title="document">Save with our <strong>document only</strong> services.</h2>
+        </div>
+        <div class="details-list with-menu theme-blue">
+          <div class="nav nav-tabs">
+            <div class="nav-link active" data-toggle="tab" href="#quotebox-1" role="tab" aria-controls="quotebox-1" aria-selected="true" data-action-ttitle="parcel">Parcels</div>
+            <div class="nav-link" data-toggle="tab" href="#quotebox-2" role="tab" aria-controls="quotebox-2" aria-selected="false" data-action-ttitle="document">Documents</div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane details-list-section fade show active" id="quotebox-1">
+              <form action="#" method="POST">
+                <div class="row mt-4">
+                  <div class="col-xl-5 pr-xl-0">
+                    <div class="parcel-widget-from-to">
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            From:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="from">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="from-post">
+                        </div>
+                      </div>
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            To:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="to">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France" selected>France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="to-post">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
+                    <div class="details-list-container">
+                      <div class="details-list-row">
+                        <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Quantity
+                            </div>
+                            <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light" name="quantity[]">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option>
+                              <option value="32">32</option>
+                              <option value="33">33</option>
+                              <option value="34">34</option>
+                              <option value="35">35</option>
+                              <option value="36">36</option>
+                              <option value="37">37</option>
+                              <option value="38">38</option>
+                              <option value="39">39</option>
+                              <option value="40">40</option>
+                              <option value="41">41</option>
+                              <option value="42">42</option>
+                              <option value="43">43</option>
+                              <option value="44">44</option>
+                              <option value="45">45</option>
+                              <option value="46">46</option>
+                              <option value="47">47</option>
+                              <option value="48">48</option>
+                              <option value="49">49</option>
+                              <option value="50">50</option>
+                            </select>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Weight
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
+                              <div class='input-measure' data-action="toggle-weight">
+                                <p>kg</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Length
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Width
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Height
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-toggler" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                        <div class="info-input add-row">
+                          <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
+                          <a href="javascript:void(0)" class='info-input-more remove'><i class="fa fa-minus-circle"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-4 text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class="w-100 mt-5 parcel-widget-botton-actions">
+                      <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
+                      <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane details-list-section fade" id="quotebox-2">
+              <form action="#" method="POST">
+                <div class="row mt-4">
+                  <div class="col-md-12">
+                    <div class="mb-4">Get savings on delivery rates with our document only services.</div>
+                  </div>
+                  <div class="col-xl-5 pr-xl-0">
+                    <div class="parcel-widget-from-to">
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            From:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="from">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="from-post">
+                        </div>
+                      </div>
+                      <div class="info-input w-100">
+                        <div class="d-flex align-items-center">
+                          <div class="info-input-label">
+                            To:
+                          </div>
+                          <select class='form-control custom-picker theme-text' data-live-search="true" data-size="5" data-style="select-light" name="to">
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France" selected>France</option>
+                            <option value="Germany">Germany</option>
+                          </select>
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" tabindex="1" placeholder="Postcode (Optional)" name="to-post">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
+                    <div class="details-list-container">
+                      <div class="details-list-row">
+                        <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Quantity
+                            </div>
+                            <select class='form-control custom-picker' data-live-search="true" data-size="5" data-style="select-light" name="quantity[]">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option>
+                              <option value="32">32</option>
+                              <option value="33">33</option>
+                              <option value="34">34</option>
+                              <option value="35">35</option>
+                              <option value="36">36</option>
+                              <option value="37">37</option>
+                              <option value="38">38</option>
+                              <option value="39">39</option>
+                              <option value="40">40</option>
+                              <option value="41">41</option>
+                              <option value="42">42</option>
+                              <option value="43">43</option>
+                              <option value="44">44</option>
+                              <option value="45">45</option>
+                              <option value="46">46</option>
+                              <option value="47">47</option>
+                              <option value="48">48</option>
+                              <option value="49">49</option>
+                              <option value="50">50</option>
+                            </select>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Weight
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
+                              <div class='input-measure' data-action="toggle-weight">
+                                <p>kg</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Length
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100">
+                            <div class="info-input-label">
+                              Width
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="info-input wf-95 w-md-100 mr-adv-0">
+                            <div class="info-input-label">
+                              Height
+                            </div>
+                            <div class="input-group">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <div class='input-measure'>
+                                <p>cm</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-toggler" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                        <div class="info-input add-row">
+                          <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
+                          <a href="javascript:void(0)" class='info-input-more remove'><i class="fa fa-minus-circle"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-4 text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class="w-100 mt-5 parcel-widget-botton-actions">
+                      <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
+                      <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src='/js/parcel-hero/libs/bootstrap-validate.js'></script>
+<script src='/js/parcel-hero/pages/login.js'></script>
+{% endblock %}

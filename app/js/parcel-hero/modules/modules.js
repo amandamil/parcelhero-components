@@ -184,17 +184,17 @@ const ChangeCountry = function (querySelector = ".module-change-country") {
   const blocks = document.querySelectorAll(querySelector);
 
   blocks.forEach(function (block) {
-    const link =  block.querySelector("[data-action='change-country']");
-    const proceed =  block.querySelector("[data-action='change-country-continue']");
-    const label =  block.querySelector("[data-action='change-country-label']");
-    const back =  block.querySelector("[data-action='change-country-back']");
-    const input =  block.querySelector("input");
+    const link = block.querySelector("[data-action='change-country']");
+    const proceed = block.querySelector("[data-action='change-country-continue']");
+    const label = block.querySelector("[data-action='change-country-label']");
+    const back = block.querySelector("[data-action='change-country-back']");
+    const input = block.querySelector("input");
     const modal = block.querySelector(".modal-custom");
-    
-    link.addEventListener("click", function(){
+
+    link.addEventListener("click", function () {
       modalOpen(modal);
     });
-  
+
     proceed.addEventListener('click', function () {
       country = block.querySelector("select").value;
       modalClose(modal);
@@ -212,11 +212,11 @@ const Adress = function (querySelector = ".module-adress") {
   const blocks = document.querySelectorAll(querySelector);
 
   blocks.forEach(function (block) {
-    const preview =  block.querySelector("[data-action='adress-preview']");
-    const change =  block.querySelector("[data-action='adress-change']");
-    const form =  block.querySelector("[data-action='adress-form']");
-    
-    change.addEventListener("click", function(){
+    const preview = block.querySelector("[data-action='adress-preview']");
+    const change = block.querySelector("[data-action='adress-change']");
+    const form = block.querySelector("[data-action='adress-form']");
+
+    change.addEventListener("click", function () {
       preview.classList.add("d-none");
       form.classList.remove("d-none");
     });
@@ -227,10 +227,10 @@ const PaymentMethod = function (querySelector = ".module-payment-method") {
   const blocks = document.querySelectorAll(querySelector);
 
   blocks.forEach(function (block) {
-    const add =  block.querySelector("[data-action='add-card']");
-    const form =  block.querySelector("[data-action='card-form']");
-    
-    add.addEventListener("click", function(){
+    const add = block.querySelector("[data-action='add-card']");
+    const form = block.querySelector("[data-action='card-form']");
+
+    add.addEventListener("click", function () {
       add.classList.add("d-none");
       form.classList.remove("d-none");
     });
@@ -241,13 +241,13 @@ const Favorite = function (querySelector = ".module-favorite") {
   const blocks = document.querySelectorAll(querySelector);
 
   blocks.forEach(function (block) {
-    block.addEventListener("click", function(){
+    block.addEventListener("click", function () {
       const groupName = block.dataset.favorite;
-      const items = document.querySelectorAll("[data-favorite="+groupName+"]");
+      const items = document.querySelectorAll("[data-favorite=" + groupName + "]");
       const id = block.dataset.id;
 
-      items.forEach(function(item){
-        if(item != block) item.classList.remove("active");
+      items.forEach(function (item) {
+        if (item != block) item.classList.remove("active");
       });
 
       block.classList.toggle("active");
@@ -271,4 +271,113 @@ const ProgressCircle = function (querySelector = ".progress-circle") {
       lineCap: "square",
     });
   })
+}
+
+const ParcelWidget = function (querySelector = ".parcel-widget-full") {
+  const blocks = document.querySelectorAll(querySelector);
+
+  blocks.forEach(function (block) {
+    const containers = block.querySelectorAll(".details-list-section");
+    const links = block.querySelectorAll(".nav-link");
+
+    if (links) links.forEach(function(link){
+      link.addEventListener("click", function(){
+        let targetTitle = link.getAttribute("data-action-ttitle");
+        
+        block.querySelectorAll("[data-action-title]").forEach(function(elm){
+          elm.classList.remove("d-block")
+        });
+
+        block.querySelector("[data-action-title="+targetTitle+"]").classList.add("d-block");
+
+      });
+    });
+
+    containers.forEach(function(container){
+      const crow =  container.querySelector(".details-list-row");
+      let rowHTML = '';
+      if(crow) rowHTML = container.querySelector(".details-list-row").cloneNode(true).innerHTML;
+      const add = container.querySelector(".info-input-more");
+      const toggleWeight = container.querySelector("[data-action='target-toggler']");
+      const quoteBtn = container.querySelector("[data-action='quote-btn']");
+      const quoteBtnAdd = container.querySelector("[data-action='quote-btn-additional']");
+      const addRow = container.querySelector("[data-action='add-row']");
+      const listContainer = container;
+      const customSize = container.querySelector("[data-action='custom-size']");
+      let isVolume = false;
+
+      if(customSize) customSize.addEventListener("change", function(e){
+
+        if(e.target.value == "Custom size") {
+          customSize.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.add("d-none");
+          customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
+        }
+      });
+
+      if (toggleWeight) toggleWeight.addEventListener("click", function () {
+        container.querySelectorAll(".details-list-row").forEach(function(rowC){
+          rowC.querySelector("[data-action='volume-section']").classList.toggle("d-none");
+        });
+  
+        isVolume = !isVolume;
+  
+        toggleWeight.classList.toggle("active");
+        listContainer.classList.toggle("w-100");
+        quoteBtn.classList.toggle("d-none");
+        quoteBtnAdd.classList.toggle("d-none");
+      });
+  
+      if(addRow) addRow.addEventListener("click", function () {
+        const row = document.createElement('div');
+        row.classList.add("details-list-row");
+        row.innerHTML = rowHTML;
+        const customSize = row.querySelector("[data-action='custom-size']");
+  
+        container.querySelector(".details-list-container").append(row);
+  
+        row.querySelectorAll('.custom-picker').forEach(function(picker){
+          $(picker).selectpicker();
+        }); 
+  
+        if(isVolume) row.querySelector("[data-action='volume-section']").classList.remove("d-none");
+  
+        const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
+  
+        rows.forEach(function (rowE) {
+          rowE.addEventListener("click", function () {
+            if(rowE) rowE.closest(".details-list-row").remove();
+          })
+        });
+
+        if(customSize) customSize.addEventListener("change", function(e){
+
+          if(e.target.value == "Custom size") {
+            customSize.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.add("d-none");
+            customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
+          }
+        });
+      });
+  
+      if (add) add.addEventListener("click", function () {
+        const row = document.createElement('div');
+        row.classList.add("details-list-row");
+        row.innerHTML = rowHTML;
+        add.closest(".details-list-container").append(row);
+  
+        row.querySelectorAll('.custom-picker').forEach(function(picker){
+          $(picker).selectpicker();
+        }); 
+  
+        const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
+  
+        rows.forEach(function (rowE) {
+          rowE.addEventListener("click", function () {
+            if(rowE) rowE.closest(".details-list-row").remove();
+          })
+        });
+      })
+    })
+  });
+
+  $('.custom-picker').selectpicker();
 }

@@ -1,5 +1,4 @@
 $(function () {
-  detailList();
   tooltips();
   selectControl();
   initMaterialUI();
@@ -245,20 +244,3 @@ function tooltips() {
     $('[data-toggle="tooltip"]').tooltip()
   })
 }
-
-function detailList() {
-  var row = $(".details-list-container").clone().html();
-  var add = $(".info-input-more");
-  var container = $(".details-list-container");
-
-  $('.custom-picker').selectpicker();
-
-  add.on("click", function () {
-    $(row).appendTo(container);
-    $('.custom-picker').selectpicker();
-    $('.details-list-row .info-input-more.remove').on("click", function () {
-      $(this).closest(".details-list-row").remove();
-    })
-  })
-}
-

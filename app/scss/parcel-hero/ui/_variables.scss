@@ -37,6 +37,8 @@ $checkbox-hover: rgba(46, 196, 185, 0.176470588235294);
 $label-hover:    #4f91c9;
 $label-hover-bg: #eaf0f8;
 $active-link-bar:#08A2D5;
+$ocean: #00bcd4;
+$border-new: #94b2f0;
 
 $blue-adv:       #3f88d6;
 $blue-cover:     #459ff5;
@@ -98,7 +100,8 @@ $theme-colors: map-merge(
     "primary-spec": $primary-spec,
     "deep": $deep,
     "cover-lg":    $cover-lg,
-    "cover":    $cover
+    "cover":    $cover,
+    "ocean": $ocean
 
   ),
   $theme-colors
