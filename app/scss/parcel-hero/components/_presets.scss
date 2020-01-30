@@ -75,6 +75,24 @@
   }
 }
 
+.preset-row2cols{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(md){
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+
+    >*{
+      &:first-child{
+        margin-bottom: 1rem !important;
+      }
+    }
+  }
+}
+
 .preset-label-center {
   display: flex;
   align-items: center;
@@ -83,6 +101,6 @@
   font-weight: 500;
 
   @include media-breakpoint-down(md){
-    justify-content: center;
+    justify-content: flex-start;
   }
 }

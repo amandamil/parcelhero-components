@@ -280,23 +280,23 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
     const containers = block.querySelectorAll(".details-list-section");
     const links = block.querySelectorAll(".nav-link");
 
-    if (links) links.forEach(function(link){
-      link.addEventListener("click", function(){
+    if (links) links.forEach(function (link) {
+      link.addEventListener("click", function () {
         let targetTitle = link.getAttribute("data-action-ttitle");
-        
-        block.querySelectorAll("[data-action-title]").forEach(function(elm){
+
+        block.querySelectorAll("[data-action-title]").forEach(function (elm) {
           elm.classList.remove("d-block")
         });
 
-        block.querySelector("[data-action-title="+targetTitle+"]").classList.add("d-block");
+        block.querySelector("[data-action-title=" + targetTitle + "]").classList.add("d-block");
 
       });
     });
 
-    containers.forEach(function(container){
-      const crow =  container.querySelector(".details-list-row");
+    containers.forEach(function (container) {
+      const crow = container.querySelector(".details-list-row");
       let rowHTML = '';
-      if(crow) rowHTML = container.querySelector(".details-list-row").cloneNode(true).innerHTML;
+      if (crow) rowHTML = container.querySelector(".details-list-row").cloneNode(true).innerHTML;
       const add = container.querySelector(".info-input-more");
       const toggleWeight = container.querySelector("[data-action='target-toggler']");
       const quoteBtn = container.querySelector("[data-action='quote-btn']");
@@ -304,75 +304,101 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
       const addRow = container.querySelector("[data-action='add-row']");
       const listContainer = container;
       const customSize = container.querySelector("[data-action='custom-size']");
+      const sizesBack = container.querySelector("[data-action='sizes-back']");
+
       let isVolume = false;
 
-      if(customSize) customSize.addEventListener("change", function(e){
+      if (sizesBack) sizesBack.addEventListener("click", function () {
+        sizesBack.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.add("d-none");
+        sizesBack.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.remove("d-none");
+        quoteBtn.classList.remove("d-none");
+        quoteBtnAdd.classList.add("d-none");
 
-        if(e.target.value == "Custom size") {
+        customSize.value = "";
+
+       $('.custom-picker').selectpicker("refresh");
+        
+      });
+
+      if (customSize) customSize.addEventListener("change", function (e) {
+
+        if (e.target.value == "Custom size") {
           customSize.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.add("d-none");
           customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
+          quoteBtn.classList.add("d-none");
+          quoteBtnAdd.classList.remove("d-none");
         }
       });
 
       if (toggleWeight) toggleWeight.addEventListener("click", function () {
-        container.querySelectorAll(".details-list-row").forEach(function(rowC){
+        container.querySelectorAll(".details-list-row").forEach(function (rowC) {
           rowC.querySelector("[data-action='volume-section']").classList.toggle("d-none");
         });
-  
+
         isVolume = !isVolume;
-  
+
         toggleWeight.classList.toggle("active");
         listContainer.classList.toggle("w-100");
         quoteBtn.classList.toggle("d-none");
         quoteBtnAdd.classList.toggle("d-none");
       });
-  
-      if(addRow) addRow.addEventListener("click", function () {
+
+      if (addRow) addRow.addEventListener("click", function () {
         const row = document.createElement('div');
         row.classList.add("details-list-row");
         row.innerHTML = rowHTML;
         const customSize = row.querySelector("[data-action='custom-size']");
-  
+        const sizesBack = row.querySelector("[data-action='sizes-back']");
+
+        if (sizesBack) sizesBack.addEventListener("click", function () {
+          sizesBack.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.add("d-none");
+          sizesBack.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.remove("d-none");
+
+          customSize.value = "";
+
+          $('.custom-picker').selectpicker("refresh");
+        });
+
         container.querySelector(".details-list-container").append(row);
-  
-        row.querySelectorAll('.custom-picker').forEach(function(picker){
+
+        row.querySelectorAll('.custom-picker').forEach(function (picker) {
           $(picker).selectpicker();
-        }); 
-  
-        if(isVolume) row.querySelector("[data-action='volume-section']").classList.remove("d-none");
-  
+        });
+
+        if (isVolume) row.querySelector("[data-action='volume-section']").classList.remove("d-none");
+
         const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
-  
+
         rows.forEach(function (rowE) {
           rowE.addEventListener("click", function () {
-            if(rowE) rowE.closest(".details-list-row").remove();
+            if (rowE) rowE.closest(".details-list-row").remove();
           })
         });
 
-        if(customSize) customSize.addEventListener("change", function(e){
+        if (customSize) customSize.addEventListener("change", function (e) {
 
-          if(e.target.value == "Custom size") {
+          if (e.target.value == "Custom size") {
             customSize.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.add("d-none");
             customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
           }
         });
       });
-  
+
       if (add) add.addEventListener("click", function () {
         const row = document.createElement('div');
         row.classList.add("details-list-row");
         row.innerHTML = rowHTML;
         add.closest(".details-list-container").append(row);
-  
-        row.querySelectorAll('.custom-picker').forEach(function(picker){
+
+        row.querySelectorAll('.custom-picker').forEach(function (picker) {
           $(picker).selectpicker();
-        }); 
-  
+        });
+
         const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
-  
+
         rows.forEach(function (rowE) {
           rowE.addEventListener("click", function () {
-            if(rowE) rowE.closest(".details-list-row").remove();
+            if (rowE) rowE.closest(".details-list-row").remove();
           })
         });
       })

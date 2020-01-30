@@ -186,9 +186,6 @@
       margin-bottom: 1.4rem;
     }
 
-    &::after {
-      display: none;
-    }
     .nav-link {
       padding: 0.8rem 1rem;
       margin-right: 0;
@@ -489,6 +486,16 @@
 
 .wf-200 {
   width: 200px !important;
+  flex-shrink: 0;
+}
+
+.wf-150 {
+  width: 150px !important;
+  flex-shrink: 0;
+}
+
+.wf-160 {
+  width: 160px !important;
   flex-shrink: 0;
 }
 
