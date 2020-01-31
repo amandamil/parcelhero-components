@@ -58,7 +58,7 @@
   position: relative;
   background-color: $gray-7;
   color: $dark-gray;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 2px solid $gray-8;
   transform-origin: top !important;
   margin-bottom: 20px;
@@ -75,7 +75,7 @@
       position: absolute;
       right: 0;
       top: 50%;
-      transform: translateY(-70%) translateX(140%);
+      transform: translateY(-70%) translateX(135%);
 
       .remove {
         margin: 0;
@@ -166,7 +166,7 @@
   &.theme-blue {
     background-color: $blue-cover-2;
     color: $white;
-    border: 2px solid rgba($white, 0.4);
+    border: 1px solid $border-special;
 
     .details-list-container {
       .details-list-row {
@@ -224,7 +224,7 @@
       .nav-tabs {
         position: absolute;
         top: 0;
-        left: -2px;
+        left: -1px;
         transform: translateY(calc(-100% + 1px));
         display: flex;
         align-items: center;
@@ -237,8 +237,8 @@
         .nav-link {
           cursor: pointer;
           margin-right: 0;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
           background-color: transparent;
           padding: 0.5rem 1rem;
           color: $white;
@@ -257,9 +257,9 @@
 
           &.active {
             background-color: $blue-cover-2;
-            border-left: 2px solid rgba($white, 0.4);
-            border-top: 2px solid rgba($white, 0.4);
-            border-right: 2px solid rgba($white, 0.4);
+            border-left: 1px solid $border-special;
+            border-top: 1px solid $border-special;
+            border-right: 1px solid $border-special;
           }
         }
       }
@@ -280,10 +280,6 @@
     .input-measure {
       background-color: $white;
       border-radius: 0;
-      &:hover {
-        background-color: $blue-light;
-        color: $white;
-      }
     }
   }
 

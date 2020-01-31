@@ -305,6 +305,7 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
       const listContainer = container;
       const customSize = container.querySelector("[data-action='custom-size']");
       const sizesBack = container.querySelector("[data-action='sizes-back']");
+      const focusToggle = container.querySelector("[data-action='focus-toggle']");
 
       let isVolume = false;
 
@@ -316,8 +317,8 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
 
         customSize.value = "";
 
-       $('.custom-picker').selectpicker("refresh");
-        
+        $('.custom-picker').selectpicker("refresh");
+
       });
 
       if (customSize) customSize.addEventListener("change", function (e) {
@@ -330,17 +331,17 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
         }
       });
 
-      if (toggleWeight) toggleWeight.addEventListener("click", function () {
+      if (focusToggle) focusToggle.addEventListener("click", function () {
         container.querySelectorAll(".details-list-row").forEach(function (rowC) {
-          rowC.querySelector("[data-action='volume-section']").classList.toggle("d-none");
+          const vs = rowC.querySelector("[data-action='volume-section']");
+          if (vs) vs.classList.remove("d-none");
         });
 
-        isVolume = !isVolume;
+        isVolume = true;
 
-        toggleWeight.classList.toggle("active");
-        listContainer.classList.toggle("w-100");
-        quoteBtn.classList.toggle("d-none");
-        quoteBtnAdd.classList.toggle("d-none");
+        listContainer.classList.add("w-100");
+        quoteBtn.classList.add("d-none");
+        quoteBtnAdd.classList.remove("d-none");
       });
 
       if (addRow) addRow.addEventListener("click", function () {
@@ -349,6 +350,19 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
         row.innerHTML = rowHTML;
         const customSize = row.querySelector("[data-action='custom-size']");
         const sizesBack = row.querySelector("[data-action='sizes-back']");
+
+        if (toggleWeight) toggleWeight.classList.add("d-none");
+
+        container.querySelectorAll(".details-list-row").forEach(function (rowC) {
+          const vs = rowC.querySelector("[data-action='volume-section']")
+          if (vs) vs.classList.remove("d-none");
+        });
+
+        isVolume = true;
+
+        if (listContainer) listContainer.classList.add("w-100");
+        quoteBtn.classList.add("d-none");
+        quoteBtnAdd.classList.remove("d-none");
 
         if (sizesBack) sizesBack.addEventListener("click", function () {
           sizesBack.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.add("d-none");
@@ -365,15 +379,17 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
           $(picker).selectpicker();
         });
 
-        if (isVolume) row.querySelector("[data-action='volume-section']").classList.remove("d-none");
+        const volumeSection = row.querySelector("[data-action='volume-section']");
 
-        const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
+        if (volumeSection) volumeSection.classList.remove("d-none");
 
-        rows.forEach(function (rowE) {
-          rowE.addEventListener("click", function () {
-            if (rowE) rowE.closest(".details-list-row").remove();
-          })
-        });
+        const remove = row.querySelector('.info-input-more.remove');
+
+        remove.addEventListener("click", function () {
+          const rows = row.closest(".details-list-container").querySelectorAll(".details-list-row");
+          if(rows.length < 3) if(toggleWeight) toggleWeight.classList.remove("d-none");
+          if (row) row.remove();
+        })
 
         if (customSize) customSize.addEventListener("change", function (e) {
 
@@ -394,13 +410,13 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
           $(picker).selectpicker();
         });
 
-        const rows = block.querySelectorAll('.details-list-row .info-input-more.remove');
+        const remove = row.querySelector('.info-input-more.remove');
 
-        rows.forEach(function (rowE) {
-          rowE.addEventListener("click", function () {
-            if (rowE) rowE.closest(".details-list-row").remove();
-          })
-        });
+        remove.addEventListener("click", function () {
+          const rows = row.closest(".details-list-container").querySelectorAll(".details-list-row");
+          if(rows.length < 2) if(toggleWeight) toggleWeight.classList.remove("d-none");
+          if (row) row.remove();
+        })
       })
     })
   });

@@ -85,7 +85,7 @@ textarea {
   .input-measure {
     display: flex;
     position: absolute;
-    cursor: pointer;
+    pointer-events: none;
     right: -$btn-border-radius;
     top: 0px;
     z-index: 999;
@@ -94,20 +94,17 @@ textarea {
     width: 50%;
     height: 100%;
     background-color: $input-cover;
-    color: $dark;
-    font-size: 0.875rem;
+    color: $dark-gray;
+    font-size: 0.8125rem;
     font-weight: 400;
+    padding-top: 10px;
     line-height: 34px;
     text-align: center;
     border: solid 1px $input-border;
+    border-left: none;
     border-top-right-radius: $btn-border-radius;
     border-bottom-right-radius: $btn-border-radius;
     transition: all $transition ease;
-
-    &:hover {
-      background-color: $blue-light;
-      color: $white;
-    }
 
     p {
       margin-bottom: 0;
