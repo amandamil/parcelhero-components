@@ -7,6 +7,10 @@
     }
   }
 
+  .mt-sp {
+    margin-top: 1.7rem;
+  }
+
   .details-list {
     &::after {
       display: none;
@@ -37,7 +41,7 @@
 
 .input-toggler {
   cursor: pointer;
-  transform: translateY(10%);
+  transform: translateY(25%);
 
   &.offset-20 {
     bottom:-20px ;

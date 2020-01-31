@@ -54,10 +54,12 @@ textarea {
   width: 14%;
   margin-right: 10px;
   display: inline-block;
+
   .info-input-label {
-    font-size: 0.8125rem;
-    padding-bottom: 4px;
+    font-size: 0.875rem;
+    padding-bottom: 7px;
   }
+
   .info-input-more {
     color: $primary;
     font-weight: bold;
@@ -65,6 +67,7 @@ textarea {
     white-space: nowrap;
     text-decoration: none;
   }
+
 }
 
 .info-input-group {
@@ -891,8 +894,8 @@ textarea {
   color: $white;
   background-color: transparent;
   border: none;
-  font-size: 0.875rem;
-  padding-bottom: 7px !important;
+  font-size: 1rem;
+  padding-bottom: 10px !important;
   line-height: 1;
   padding-left: 5px !important;
   outline: none !important;
@@ -907,7 +910,7 @@ textarea {
     line-height: 1;
     border: none;
     text-decoration: underline;
-    font-size: 0.875rem;
+    font-size: 1rem;
     outline: none !important;
     box-shadow: none !important;
   }
