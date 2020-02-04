@@ -306,14 +306,27 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
       const customSize = container.querySelector("[data-action='custom-size']");
       const sizesBack = container.querySelector("[data-action='sizes-back']");
       const focusToggle = container.querySelector("[data-action='focus-toggle']");
+      const changeUnit = container.querySelector("[data-action='change-unit']");
+      let unit = "1";
 
       let isVolume = false;
+
+      if (changeUnit) changeUnit.addEventListener("change", function () {
+        let measures = changeUnit.closest(".details-list-container").querySelectorAll(".input-measure");
+
+        measures.forEach(function (measure) {
+          changeUnit.value == "2" ? measure.classList.add("switch") : measure.classList.remove("switch");
+          unit = changeUnit.value;
+        });
+
+      })
 
       if (sizesBack) sizesBack.addEventListener("click", function () {
         sizesBack.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.add("d-none");
         sizesBack.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.remove("d-none");
         quoteBtn.classList.remove("d-none");
         quoteBtnAdd.classList.add("d-none");
+        toggleWeight.classList.add("d-none");
 
         customSize.value = "";
 
@@ -328,6 +341,7 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
           customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
           quoteBtn.classList.add("d-none");
           quoteBtnAdd.classList.remove("d-none");
+          toggleWeight.classList.remove("d-none");
         }
       });
 
@@ -351,7 +365,7 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
         const customSize = row.querySelector("[data-action='custom-size']");
         const sizesBack = row.querySelector("[data-action='sizes-back']");
 
-        if (toggleWeight) toggleWeight.classList.add("d-none");
+        //if (toggleWeight) toggleWeight.classList.add("d-none");
 
         container.querySelectorAll(".details-list-row").forEach(function (rowC) {
           const vs = rowC.querySelector("[data-action='volume-section']")
@@ -387,7 +401,7 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
 
         remove.addEventListener("click", function () {
           const rows = row.closest(".details-list-container").querySelectorAll(".details-list-row");
-          if(rows.length < 3) if(toggleWeight) toggleWeight.classList.remove("d-none");
+          if (rows.length < 3) if (toggleWeight) toggleWeight.classList.remove("d-none");
           if (row) row.remove();
         })
 
@@ -397,6 +411,12 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
             customSize.closest(".details-list-row").querySelector("[data-action='size-selector']").classList.add("d-none");
             customSize.closest(".details-list-row").querySelector("[data-action='custom-size-inputs']").classList.remove("d-none");
           }
+        });
+
+        const measures = row.querySelectorAll(".input-measure");
+
+        measures.forEach(function (measure) {
+          unit == "2" ? measure.classList.add("switch") : measure.classList.remove("switch");
         });
       });
 
@@ -414,7 +434,7 @@ const ParcelWidget = function (querySelector = ".parcel-widget-full") {
 
         remove.addEventListener("click", function () {
           const rows = row.closest(".details-list-container").querySelectorAll(".details-list-row");
-          if(rows.length < 2) if(toggleWeight) toggleWeight.classList.remove("d-none");
+          if (rows.length < 2) if (toggleWeight) toggleWeight.classList.remove("d-none");
           if (row) row.remove();
         })
       })

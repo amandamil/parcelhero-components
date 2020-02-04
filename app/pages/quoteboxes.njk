@@ -59,7 +59,7 @@
                   <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
                     <div class="details-list-container">
                       <div class="details-list-row">
-                        <div class="w-100 d-flex mt-xl-0 mt-4">
+                        <div class="w-100 d-flex">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Quantity
@@ -124,21 +124,21 @@
                             </div>
                             <div class="input-group">
                               <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]" data-action="focus-toggle">
-                              <div class='input-measure' data-action="toggle-weight">
-                                <p>kg</p>
+                              <div class='input-measure'>
+                                <p>kg</p><p>lb</p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4" data-action="volume-section">
+                        <div class="w-100 d-flex justify-content-between d-none " data-action="volume-section">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Length
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -148,9 +148,9 @@
                               Width
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -160,21 +160,26 @@
                               Height
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="input-toggler" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                        <div class="input-toggler" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -224,7 +229,7 @@
                     <div class="details-list-container">
                       <div class="details-list-row">
                         <div class="d-xl-flex d-block d-none w-100" data-action="custom-size-inputs">
-                          <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="w-100 d-flex">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Quantity
@@ -288,22 +293,22 @@
                                 Weight
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                                <div class='input-measure' data-action="toggle-weight">
-                                  <p>kg</p>
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                                <div class='input-measure'>
+                                  <p>kg</p><p>lb</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="w-100 d-flex justify-content-between mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="w-100 d-flex justify-content-between" data-action="volume-section">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Length
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -313,9 +318,9 @@
                                 Width
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -325,9 +330,9 @@
                                 Height
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -335,7 +340,7 @@
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-300 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-300 w-md-100 mr-adv-0">
                             <div class="info-input-label">
                               Document type
                             </div>
@@ -346,13 +351,19 @@
                             </select>
                           </div>
                         </div>
+                        <div class="input-toggler d-none" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -423,7 +434,7 @@
                   <div class="col-xl-9 pl-xl-0 d-flex flex-wrap">
                     <div class="details-list-container">
                       <div class="details-list-row">
-                        <div class="w-md-100 d-flex mt-xl-0 mt-4">
+                        <div class="w-md-100 d-flex">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Quantity
@@ -487,22 +498,22 @@
                               Weight
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                              <div class='input-measure' data-action="toggle-weight">
-                                <p>kg</p>
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                              <div class='input-measure'>
+                                <p>kg</p><p>lb</p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4 position-relative" data-action="custom-size-inputs">
+                        <div class="w-100 d-flex justify-content-between d-none position-relative" data-action="custom-size-inputs">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Length
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -512,9 +523,9 @@
                               Width
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -524,16 +535,16 @@
                               Height
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-200 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-200 w-md-100  mr-adv-0">
                             <div class="info-input-label">
                               Package type
                             </div>
@@ -543,7 +554,7 @@
                             </select>
                           </div>
                         </div>
-                        <div class="info-input wf-100 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                        <div class="info-input wf-100 w-md-100  mr-adv-0">
                           <div class="info-input-label">
                             Service type
                           </div>
@@ -558,7 +569,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md mr-5' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -611,7 +622,7 @@
                     <div class="details-list-container">
                       <div class="details-list-row">
                         <div class="d-xl-flex d-block d-none w-100" data-action="custom-size-inputs">
-                          <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="w-100 d-flex">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Quantity
@@ -675,22 +686,22 @@
                                 Weight
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                                <div class='input-measure' data-action="toggle-weight">
-                                  <p>kg</p>
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                                <div class='input-measure'>
+                                  <p>kg</p><p>lb</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="w-100 d-flex justify-content-between mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="w-100 d-flex justify-content-between" data-action="volume-section">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Length
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -700,9 +711,9 @@
                                 Width
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -712,9 +723,9 @@
                                 Height
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -722,7 +733,7 @@
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-300 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-300 w-md-100 mr-adv-0">
                             <div class="info-input-label">
                               Document type
                             </div>
@@ -733,13 +744,19 @@
                             </select>
                           </div>
                         </div>
+                        <div class="input-toggler d-none" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -811,7 +828,7 @@
                     <div class="details-list-container">
                       <div class="details-list-row">
                         <div class="details-list-area">
-                          <div class="w-md-100 d-flex mt-xl-0 mt-4">
+                          <div class="w-md-100 d-flex">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Quantity
@@ -869,59 +886,64 @@
                                 <option value="50">50</option>
                               </select>
                             </div>
-  
+
                             <div class="info-input wf-95 w-md-100 mr-adv-0">
                               <div class="info-input-label">
                                 Weight
                               </div>
                               <div class="input-group">
                                 <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]" data-action="focus-toggle">
-                                <div class='input-measure' data-action="toggle-weight">
-                                  <p>kg</p>
+                                <div class='input-measure'>
+                                  <p>kg</p><p>lb</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4 position-relative" data-action="volume-section">
+                          <div class="w-100 d-flex justify-content-between d-none position-relative" data-action="volume-section">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Length
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
-  
+
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Width
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
-  
+
                             <div class="info-input wf-95 w-md-100 mr-adv-0">
                               <div class="info-input-label">
                                 Height
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="input-toggler offset-20" data-action="target-toggler">kg / cm<i class="fas fa-chevron-down ml-1"></i></div>
+                          <div class="input-toggler offset-20" data-action="target-toggler">
+                            <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                              <option value="1">kg / cm</option>
+                              <option value="2">lb / in</option>
+                            </select>
+                          </div>
                         </div>
-                        <div class="info-input wf-100 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                        <div class="info-input wf-100 w-md-100  mr-adv-0">
                           <div class="info-input-label">
                             Service type
                           </div>
@@ -936,7 +958,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md mr-5' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -989,7 +1011,7 @@
                     <div class="details-list-container">
                       <div class="details-list-row">
                         <div class="d-xl-flex d-block d-none w-100" data-action="custom-size-inputs">
-                          <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="w-100 d-flex">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Quantity
@@ -1053,22 +1075,22 @@
                                 Weight
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                                <div class='input-measure' data-action="toggle-weight">
-                                  <p>kg</p>
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                                <div class='input-measure'>
+                                  <p>kg</p><p>lb</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="w-100 d-flex justify-content-between mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="w-100 d-flex justify-content-between" data-action="volume-section">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Length
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1078,9 +1100,9 @@
                                 Width
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1090,9 +1112,9 @@
                                 Height
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1100,7 +1122,7 @@
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-300 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-300 w-md-100 mr-adv-0">
                             <div class="info-input-label">
                               Document type
                             </div>
@@ -1111,13 +1133,19 @@
                             </select>
                           </div>
                         </div>
+                        <div class="input-toggler d-none" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -1181,7 +1209,7 @@
                   <div class="col-xl-7 pl-xl-0 d-flex flex-wrap">
                     <div class="details-list-container">
                       <div class="details-list-row">
-                        <div class="w-md-100 d-flex mt-xl-0 mt-4">
+                        <div class="w-md-100 d-flex">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Quantity
@@ -1245,22 +1273,22 @@
                               Weight
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                              <div class='input-measure' data-action="toggle-weight">
-                                <p>kg</p>
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                              <div class='input-measure'>
+                                <p>kg</p><p>lb</p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="w-100 d-flex justify-content-between d-none mt-xl-0 mt-4 position-relative" data-action="custom-size-inputs">
+                        <div class="w-100 d-flex justify-content-between d-none position-relative" data-action="custom-size-inputs">
                           <div class="info-input wf-95 w-md-100">
                             <div class="info-input-label">
                               Length
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -1270,9 +1298,9 @@
                               Width
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
@@ -1282,16 +1310,16 @@
                               Height
                             </div>
                             <div class="input-group">
-                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                              <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                               <div class='input-measure'>
-                                <p>cm</p>
+                                <p>cm</p><p>in</p>
                               </div>
                             </div>
                           </div>
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-160 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-160 w-md-100 mr-adv-0">
                             <div class="info-input-label">
                               Package type
                             </div>
@@ -1301,13 +1329,19 @@
                             </select>
                           </div>
                         </div>
+                        <div class="input-toggler d-none" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional" type="submit">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -1360,7 +1394,7 @@
                     <div class="details-list-container">
                       <div class="details-list-row">
                         <div class="d-xl-flex d-block d-none w-100" data-action="custom-size-inputs">
-                          <div class="w-100 d-flex mt-xl-0 mt-4">
+                          <div class="w-100 d-flex">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Quantity
@@ -1424,22 +1458,22 @@
                                 Weight
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]">
-                                <div class='input-measure' data-action="toggle-weight">
-                                  <p>kg</p>
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="weight[]"><input type="hidden" value="1" name="weight_unit[]">
+                                <div class='input-measure'>
+                                  <p>kg</p><p>lb</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="w-100 d-flex justify-content-between mt-xl-0 mt-4" data-action="volume-section">
+                          <div class="w-100 d-flex justify-content-between" data-action="volume-section">
                             <div class="info-input wf-95 w-md-100">
                               <div class="info-input-label">
                                 Length
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="length[]"><input type="hidden" value="1" name="length_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1449,9 +1483,9 @@
                                 Width
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="width[]"><input type="hidden" value="1" name="width_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1461,9 +1495,9 @@
                                 Height
                               </div>
                               <div class="input-group">
-                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]">
+                                <input type="number" class="form-control" data-pv-message="Please enter weight" tabindex="1" name="height[]"><input type="hidden" value="1" name="height_unit[]">
                                 <div class='input-measure'>
-                                  <p>cm</p>
+                                  <p>cm</p><p>in</p>
                                 </div>
                               </div>
                             </div>
@@ -1471,7 +1505,7 @@
                           <div class="details-back" data-action="sizes-back"><i class="fas fa-arrow-circle-left"></i></div>
                         </div>
                         <div class=" w-md-100" data-action="size-selector">
-                          <div class="info-input wf-300 w-md-100 mt-xl-0 mt-4 mr-adv-0">
+                          <div class="info-input wf-300 w-md-100 mr-adv-0">
                             <div class="info-input-label">
                               Document type
                             </div>
@@ -1482,13 +1516,19 @@
                             </select>
                           </div>
                         </div>
+                        <div class="input-toggler d-none" data-action="target-toggler">
+                          <select class='form-control custom-picker theme-text nound' data-live-search="false" data-size="5" data-style="select-light" name="unit[]" data-action="change-unit">
+                            <option value="1">kg / cm</option>
+                            <option value="2">lb / in</option>
+                          </select>
+                        </div>
                         <div class="info-input add-row">
                           <a href="javascript:void(0)" class='info-input-more'><i class="fa fa-plus-circle"></i></a>
                           <a href="javascript:void(0)" class='info-input-more remove'><i class="far fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-xl-0 mt-4 ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
+                    <div class=" ml-adv-10 d-none-md"><button class='btn not-rounded btn-orange mt-sp text-nowrap' data-action="quote-btn">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button></div>
                     <div class="w-100 mt-2 parcel-widget-botton-actions">
                       <button class="btn btn-ocean" data-action="add-row" type="button"><i class="icon-add-new"></i>Add parcel</button>
                       <button class='btn not-rounded btn-orange text-nowrap d-none d-block-md' data-action="quote-btn-additional">QUOTE ME <i class="ml-2 fas fa-chevron-right"></i></button>
@@ -1500,7 +1540,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
