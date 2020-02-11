@@ -184,6 +184,20 @@
   }
 }
 
+.btn-add-simple {
+  padding: 0;
+  transition: color $transition ease;
+
+  i {
+    color: $blue-adv;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
 .btn-outwhite-dark {
   border: 1px solid $dark;
   color: $dark;
