@@ -1,0 +1,58 @@
+{% extends "structure/parcel-hero/_layout.njk" %}
+
+{% block content %}
+
+{% include "../templates/structure/parcel-hero/_breadcrumb.njk" %}
+
+<section class="bg-cover pt-g pb-g">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block pt-5 pb-5">
+          <form action="">
+            <h2 class="text-title-light text-center">Earn a fiver every time you refer a friend</h2>
+            <p class="text-gray-darker mw-500 mt-4 mb-4 mx-auto">Earn £5 for you and each friend who sends their first shipment of more than £10. Refer as many friends as you want, so what are you waiting for!</p>
+            <div class="mw-500 mx-auto">
+              <div class="form-group">
+                <label for="email">Your email</label>
+                <input type="text" name="email" id="email" class="form-control dark-theme" required>
+              </div>
+              <div data-action="friends-container">
+                <div class="form-group" data-action="friends-node">
+                  <label for="femail">Friends email</label>
+                  <input type="text" name="femail[]" id="femail[]" class="form-control dark-theme">
+                </div>
+              </div>
+              <div class="form-group" data-action="add-friend">
+                <button class="btn btn-add p-0" type="button" id="add-item-btn"><i class="fa-plus fa"></i>Add another friend</button>
+              </div>
+              <div class="form-group">
+                <label for="femail">Subject</label>
+                <textarea type="text" placeholder="Hey! We can both earn £5 with ParcelHero." name="subject" id="subject" class="form-control dark-theme"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="femail">Message</label>
+                <textarea type="text" rows="4" placeholder="I send parcels through ParcelHero. If you use my link below to send a shipment costing more than £10 we both get £5 in our accounts!" name="message" id="message" class="form-control dark-theme"></textarea>
+              </div>
+              <button class="btn btn-primary w-100 text-center" type="submit">SEND REFERRAL</button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div><strong>Conditions</strong></div>
+        <ul class="pl-3 mt-4">
+          <li>In order to refer a friend you must be registered with ParcelHero.</li>
+          <li>Once any person you have referred registers with ParcelHero and sends their first shipment of more than £10, we will credit your ParcelHero account with £5. The credit cannot be withdrawn, it can only be used to purchase goods or services on ParcelHero.com.</li>
+          <li>You cannot make multiple referrals from the same household.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script src='/js/parcel-hero/pages/refer.js'></script>
+{% endblock %}
+
+{% endblock %}
