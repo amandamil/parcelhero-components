@@ -229,7 +229,7 @@
         position: absolute;
         top: 0;
         left: -1px;
-        transform: translateY(calc(-100% + 1px));
+        transform: translateY(-100%) translateY(1px);
         display: flex;
         align-items: center;
         border-bottom: 0;

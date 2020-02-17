@@ -919,6 +919,10 @@ textarea {
   box-shadow: none !important;
   display: inline-block !important;
   width: auto !important;
+  height: 1.5rem !important;
+  padding: 0 !important;
+  margin-bottom: 5px !important;
+  margin-left: 5px !important;
 
   &.nound {
     .select-light {
