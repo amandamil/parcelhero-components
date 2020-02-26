@@ -29,12 +29,12 @@ function passwordInputs(){
 function groupRadio(){
   let radios = document.querySelectorAll(".group-radio");
 
-  radios.forEach((radio)=>{
+  radios.forEach(function (radio){
     let radioItems = radio.querySelectorAll(".group-radio-item");
 
-    radioItems.forEach((radioItem)=>{
-      radioItem.addEventListener("click", ()=>{
-        radioItems.forEach((radioItem)=>{
+    radioItems.forEach(function (radioItem){
+      radioItem.addEventListener("click", function(){
+        radioItems.forEach(function(radioItem){
           radioItem.classList.remove("active");
           radioItem.querySelector("input[type=radio]").checked = false;
         })
@@ -161,7 +161,9 @@ function insurance(){
 //   });
 // }
 
-function search (array, value, adv=false){
+function search (array, value, a){
+  var adv = false;
+  if(a) adv=a; 
   if(value.length > 0) {
     return array.filter(function(item){
       if(!adv) {

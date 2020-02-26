@@ -6,6 +6,7 @@ const
     cleanCss = require('gulp-clean-css'),
     changed = require('gulp-changed'),
     nunjucksRender = require('gulp-nunjucks-render');
+    babel = require('gulp-babel');
 
 const paths = {
     Styles: {
@@ -70,6 +71,9 @@ function Images() {
 function Javascript() {
     return gulp.src(paths.Styles.js, { allowEmpty: true })
         .on('error', onError)
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(changed(paths.Styles.destJs))
         .pipe(gulp.dest(paths.Styles.destJs))
 }

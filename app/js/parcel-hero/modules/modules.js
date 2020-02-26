@@ -8,7 +8,7 @@ const SearchInputModule = function (searchContainer) {
 
   let eventActions = {
     inputManuallyAction: function () { },
-    chooseItemAction: (item) => { this.inputElement.value = item.name },
+    chooseItemAction: function(item) { this.inputElement.value = item.name },
     resetAction: function () { },
     hideSearchInputByChoose: false
   };
@@ -38,7 +38,7 @@ const SearchInputModule = function (searchContainer) {
     }, 200);
   });
 
-  this.inputElement.addEventListener("input", (e) => {
+  this.inputElement.addEventListener("input", function(e) {
     const searchData = this.inputElement.dataset.data;
     const searchType = this.inputElement.dataset.type;
 
@@ -111,7 +111,7 @@ const Pagiator = function (querySelector = ".pagiator") {
       let visibleItems = items.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
       pagiatorContent.innerHTML = '';
 
-      visibleItems.forEach((visibleItem) => {
+      visibleItems.forEach(function(visibleItem) {
         pagiatorContent.appendChild(visibleItem);
       });
 
@@ -134,7 +134,7 @@ const Pagiator = function (querySelector = ".pagiator") {
 
     eventActions.rebuild(pagiatorContainer, items);
 
-    pagiatorPrev.addEventListener("click", () => {
+    pagiatorPrev.addEventListener("click", function() {
       pagiatorNext.classList.add("active");
       if (currentPage - 1 == 1) pagiatorPrev.classList.remove("active");
       if (currentPage - 1 > 0) {
@@ -145,7 +145,7 @@ const Pagiator = function (querySelector = ".pagiator") {
         document.dispatchEvent(updatePagiator);
       }
     });
-    pagiatorNext.addEventListener("click", () => {
+    pagiatorNext.addEventListener("click", function() {
       pagiatorPrev.classList.add("active");
       if ((currentPage + 1) == (Math.ceil(items.length / itemsPerPage))) pagiatorNext.classList.remove("active");
       if ((currentPage + 1) < (items.length / itemsPerPage + 1)) {
@@ -163,7 +163,7 @@ const Pagiator = function (querySelector = ".pagiator") {
 }
 
 const SearchWidget = function (querySelector = ".search-widget") {
-  searchs = document.querySelectorAll(querySelector);
+   var searchs = document.querySelectorAll(querySelector);
 
   searchs.forEach(function (search) {
     search.querySelector("input").addEventListener("input", function (e) {

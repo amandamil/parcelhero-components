@@ -33,6 +33,40 @@ NodeList.prototype.forEach = Array.prototype.forEach;
 	}
 })(window.Element.prototype);
 
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('append')) {
+      return;
+    }
+    Object.defineProperty(item, 'append', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function append() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+        
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+        
+        this.appendChild(docFrag);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+Element.prototype.remove = function() {
+  this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+  for(var i = this.length - 1; i >= 0; i--) {
+      if(this[i] && this[i].parentElement) {
+          this[i].parentElement.removeChild(this[i]);
+      }
+  }
+}
 
 NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
   for(var i = this.length - 1; i >= 0; i--) {

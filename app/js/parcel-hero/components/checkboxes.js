@@ -5,9 +5,9 @@ let checkboxesReferenceFirst = document.getElementsByClassName('reference-first-
 let checkboxesReferenceSecond = document.getElementsByClassName('reference-second-static-group');
 
 function radiogroups(radiogroups){
-    for(let box of radiogroups){
+    for(var box in radiogroups){
         box.onclick = function(){
-            for(let box of radiogroups){
+            for(var box in radiogroups){
                 box.classList.remove('active-checkbox');
 
             }
@@ -22,7 +22,7 @@ function radiogroups(radiogroups){
 
 $(function () {
 	let counters = $('[data-action="counter"]').on('change', function (e) {
-        let $input = $(this);
+        var $input = $(this);
         $input.closest('.radio-group').toggleClass('active-checkbox', $input.is(':checked'));
     });
     });
