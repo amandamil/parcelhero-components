@@ -6,14 +6,16 @@ const
     cleanCss = require('gulp-clean-css'),
     changed = require('gulp-changed'),
     nunjucksRender = require('gulp-nunjucks-render');
-    babel = require('gulp-babel');
+babel = require('gulp-babel');
 
 const paths = {
     Styles: {
         src: './app/scss/**/*.+(sass|scss)',
         images: './app/img/**/*.*',
         js: [
-            './app/js/**/*.*',
+            './app/js/**/*.js'
+        ],
+        jsCompiled: [
             './node_modules/jquery/dist/jquery.js',
             './node_modules/popper.js/dist/umd/popper.js',
             './node_modules/bootstrap/dist/js/bootstrap.js',
@@ -69,13 +71,20 @@ function Images() {
 }
 
 function Javascript() {
-    return gulp.src(paths.Styles.js, { allowEmpty: true })
+    gulp.src(paths.Styles.js, { allowEmpty: true })
         .on('error', onError)
         .pipe(babel({
             presets: ['@babel/env']
         }))
         .pipe(changed(paths.Styles.destJs))
         .pipe(gulp.dest(paths.Styles.destJs))
+
+    gulp.src(paths.Styles.jsCompiled, { allowEmpty: true })
+        .on('error', onError)
+        .pipe(changed(paths.Styles.destJs))
+        .pipe(gulp.dest(paths.Styles.destJs))
+
+    return;
 }
 
 function Fonts() {
